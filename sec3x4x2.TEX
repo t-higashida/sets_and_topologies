@@ -1,0 +1,373 @@
+\subsection{順序数の積}
+$m$，$n$を任意の有限順序数とし，$A=(1,2,\cdots,m)$，$B=(1,2,\cdots,n)$とおく．
+集合の直積$A \times B$の元は，$(a,b)	\quad	(1 \leqq a \leqq m,\quad	1 \leqq b \leqq n)$
+の形をしているが，これらの元の間に，次のような順序を入れることができる：
+$(a,b) \prec (a',b')$であるのは，
+（１）$b<B'$
+
+または
+
+（２）$b=b',\quad	a<a'$
+
+が成り立つとき，しかもそのときに限る．
+この順序は，図のような矢印で示すことができる．この順序の定め方を一般の場合に拡張しよう．
+
+\vspace*{10mm}
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(5,5.5)
+	%座標軸
+	\thicklines\put(0,0){\vector(1,0){7}}
+	\thicklines\put(0,0){\vector(0,1){6.5}}
+
+	%格子点
+	\thicklines\put(1,1){\circle{0.05}}
+	\thicklines\put(1,2){\circle{0.05}}
+	\thicklines\put(1,3){\circle{0.05}}
+	\thicklines\put(1,6){\circle{0.05}}
+
+	\thicklines\put(2,1){\circle{0.05}}
+	\thicklines\put(2,2){\circle{0.05}}
+	\thicklines\put(2,3){\circle{0.05}}
+	\thicklines\put(2,6){\circle{0.05}}
+	\thicklines\put(3,1){\circle{0.05}}
+	\thicklines\put(3,2){\circle{0.05}}
+	\thicklines\put(3,3){\circle{0.05}}
+	\thicklines\put(3,6){\circle{0.05}}
+	\thicklines\put(6,1){\circle{0.05}}
+	\thicklines\put(6,2){\circle{0.05}}
+	\thicklines\put(6,3){\circle{0.05}}
+	\thicklines\put(6,6){\circle{0.05}}
+
+	%矢印
+	\thinlines\put(1.1,1){\vector(1,0){0.8}}
+	\thinlines\put(2.1,1){\vector(1,0){0.8}}
+	\thinlines\put(3.1,1){\vector(1,0){0.8}}
+
+	\thinlines\put(4.4,1){\circle{0.02}}
+	\thinlines\put(4.5,1){\circle{0.02}}
+	\thinlines\put(4.6,1){\circle{0.02}}
+
+	\thinlines\put(5.1,1){\vector(1,0){0.8}}
+	\thinlines\put(5.9,1,1){\vector(-4,1){1.5}}
+	\thinlines\put(5.9,2,1){\vector(-4,1){1.5}}
+	\thinlines\put(5.9,3,1){\vector(-4,1){1.5}}
+
+	\thinlines\put(2.5,1.5){\vector(-4,1){1.5}}
+	\thinlines\put(2.5,2.5){\vector(-4,1){1.5}}
+	\thinlines\put(2.5,5.5){\vector(-4,1){1.5}}
+
+	\thicklines\put(3.5,4.4){$\cdot$}
+	\thicklines\put(3.5,4.5){$\cdot$}
+	\thicklines\put(3.5,4.6){$\cdot$}
+
+	\thinlines\put(1.1,2){\vector(1,0){0.8}}
+	\thinlines\put(2.1,2){\vector(1,0){0.8}}
+	\thinlines\put(3.1,2){\vector(1,0){0.8}}
+	\thinlines\put(4.4,2){\circle{0.02}}
+	\thinlines\put(4.5,2){\circle{0.02}}
+	\thinlines\put(4.6,2){\circle{0.02}}
+	\thinlines\put(5.1,2){\vector(1,0){0.8}}
+
+	\thinlines\put(1.1,3){\vector(1,0){0.8}}
+	\thinlines\put(2.1,3){\vector(1,0){0.8}}
+	\thinlines\put(3.1,3){\vector(1,0){0.8}}
+	\thinlines\put(4.4,3){\circle{0.02}}
+	\thinlines\put(4.5,3){\circle{0.02}}
+	\thinlines\put(4.6,3){\circle{0.02}}
+	\thinlines\put(5.1,3){\vector(1,0){0.8}}
+
+	\thinlines\put(1.1,6){\vector(1,0){0.8}}
+	\thinlines\put(2.1,6){\vector(1,0){0.8}}
+	\thinlines\put(3.1,6){\vector(1,0){0.8}}
+	\thinlines\put(4.4,6){\circle{0.02}}
+	\thinlines\put(4.5,6){\circle{0.02}}
+	\thinlines\put(4.6,6){\circle{0.02}}
+	\thinlines\put(5.1,6){\vector(1,0){0.8}}
+
+	%座標軸上の数字
+	\thicklines\put(-0.3,1){1}
+	\thicklines\put(-0.3,2){2}
+	\thicklines\put(-0.3,3){3}
+	\thicklines\put(-0.3,4.4){$\cdot$}
+	\thicklines\put(-0.3,4.5){$\cdot$}
+	\thicklines\put(-0.3,4.6){$\cdot$}
+	\thicklines\put(-0.3,6){$n$}
+
+	\thinlines\put(1.1,2){\vector(1,0){0.8}}
+	\thinlines\put(2.1,2){\vector(1,0){0.8}}
+	\thinlines\put(3.1,2){\vector(1,0){0.8}}
+	\thinlines\put(5.1,2){\vector(1,0){0.8}}
+	\thinlines\put(1.1,3){\vector(1,0){0.8}}
+	\thinlines\put(2.1,3){\vector(1,0){0.8}}
+
+	\thicklines\put(1,-0.5){1}
+	\thicklines\put(2,-0.5){2}
+	\thicklines\put(3,-0.5){3}
+	\thicklines\put(4.5,-0.5){$\cdots$}
+	\thicklines\put(6,-0.5){$m$}
+
+	%目盛
+	\thinlines\path(1,0)(1,0.1)
+	\thinlines\path(2,0)(2,0.1)
+	\thinlines\path(3,0)(3,0.1)
+	\thinlines\path(6,0)(6,0.1)
+
+	\thinlines\path(0,1)(0.1,1)
+	\thinlines\path(0,2)(0.1,2)
+	\thinlines\path(0,3)(0.1,3)
+	\thinlines\path(0,6)(0.1,6)
+
+\end{picture}
+\end{center}
+\end{figure}
+
+\定義{}
+$\alpha$，$\beta$を２つの順序数とし，$(A,\prec_A)$，$(B,\prec_B)$を，
+それぞれ$\langle (A,\prec_A) \rangle=\alpha$，
+$\langle (B,\prec_B) \rangle=\beta$であるような整列集合とする．
+直積，$A \times B$の２つの元$(a,b)$，$(a',b')$に対し，$(a,b) \prec (a',b')$であるのは，
+
+(１)　$b \prec_B b'$，
+
+または
+
+(２)　$b = b'$，$a \prec_A a'$
+
+が成り立つとき，しかもそのときに限ると定めるとき，$\prec$は$A \times B$における
+１つの順序であり，しかも順序集合$(A \times B,\prec)$は整列集合である．
+整列集合$(A \times B,\prec)$の順序数を$\alpha$と$\beta$の\textgt{積}といい，
+$\alpha\beta$（または$\alpha \times \beta$）と記す．すなわち，
+\[
+	\alpha\beta=\langle (A \times B,\prec) \rangle.
+\]
+このような積が意味をもつためには，次の$1^{\circ}$，$2^{\circ}$が成り立たなければならない．
+
+$1^{\circ}$　
+上で定義された関係$\prec$は順序関係で，順序集合$(A \times B,\prec)$は整列集合である．
+
+$2^{\circ}$　
+積$\alpha\beta$の定義は，$\alpha$，$\beta$によって定まり，$\alpha=\langle A \rangle$，
+$\beta = \langle B \rangle$なる整列集合$A$，$B$の選び方に無関係である．
+
+\textgt{$1^{\circ}$の証明　}
+$\prec$が順序であることは容易に確かめられる．$M$を$A \times B$の空でない部分集合とする．
+$\{\, b \,|\, (a,b) \in M \,\}$は$B$の空でない部分集合だから，最初の元$b_0$をもつ．
+次に
+$\{\,	a \,|\, (a,b_0) \in M \,\}$は，$A$の空でない部分集合だから最初の元$a_0$をもつ．
+このとき，$(a_0,b_0)$が$M$の最初の元である．
+
+\textgt{$2^{\circ}$の証明　}
+$A_1 \simeq A_2$，$B_1 \simeq B_2 \Rightarrow A_1 \times B_1 \simeq A_2 \times B_2$を示せばよい．
+$f_1: A_1 \rightarrow A_2$，$f_2:B_1 \rightarrow B_2$を順序同型写像とするとき，写像の積
+\[
+	f_1 \times f_2 : A_1 \times B_1 \rightarrow A_2 \times B_2 : (a,b) \mapsto (f_1(a),f_2(b))
+\]
+は容易に示されるように順序同型写像であるから，$A_1 \times B_1 \simeq A_2 \times B_2$
+\■
+
+\例{４}
+$A=(1,2)$とすれば，
+$\langle A \rangle=2$，$A \times \N=((1,1),(2,1),(1,2),(2,2),\cdots,(1,n),(2,n),\cdots)$　$(n \in \N)$
+である．写像
+\[
+	f:\N \rightarrow A \times \N; 2n-1 \mapsto (1,n),	\,2n \mapsto(2,n)
+\]
+は順序同型写像であるから，$\langle A \times \N \rangle =\langle \N \rangle=\omega$．したがって，
+$\omega=\langle A \times \N \rangle=\langle A \rangle\langle \N \rangle=2\omega$が得られる．
+一般に，$m \geqq 1$なる任意の有限順序数$m$に対して，$\omega=m\omega$が成り立つことが
+$(1,2,\cdots,m) \times \N$を考えることにより，上と同様にして示される．
+
+\例{５}
+$A=(1,2)$に対し，$\N \times A =((1,1),(2,1),\cdots,(n,1),\cdots;(1,2),(2,2),\cdots,(n,2),\cdots) \quad (n \in \N)$
+である．
+$\langle((1,i),(2,i),\cdots,(n,i),\cdots) \rangle=\omega \quad ( i=1,2),\quad (m,1) \ne (n,2) \quad (m,n \in \N)$
+であるから，$\langle \N \times A \rangle = \omega+\omega$．
+したがって，$\omega+\omega=\langle \N \times A \rangle = \langle \N \rangle \langle A \rangle=\omega 2$が得られる．一般に，$m \geqq 1$なる任意の有限順序数$m$nに対して，$\omega+\omega+\cdots+\omega(m\text{個})=\omega m$が成り立つことが，同様にして示される．
+
+\vspace{3mm}
+\例{６}
+\begin{align*}
+	\langle \N \times \N \rangle	
+		&=																						\\
+		&\langle (	(1,1),(2,1),\cdots,(n,1),\cdots ;	\\
+							&(1,2),(2,2),\cdots,(n,2),\cdots ;	\\
+							&\cdots ;														\\
+							&(1,m),(2,m),\cdots,(n,m),\cdots)	
+		\rangle	\\
+		&=\omega\omega.
+\end{align*}
+
+\定理{９}
+順序数の積（と和）に関して，次が成り立つ．
+\begin{align*}
+	&\text{（ⅰ）　}	(\alpha\beta)\gamma=\alpha(\beta\gamma)				&\textgt{（結合法則）}&&&&&&\\
+	&\text{（ⅱ）　}	1\alpha=\alpha 1=\alpha												&											&&&&&&\\
+	&\text{（ⅲ）　}	0\alpha=\alpha 0=0														&											&&&&&&\\
+	&\text{（ⅳ）　}	\alpha(\beta+\gamma)=\alpha\beta+\alpha\gamma	&\textgt{（分配法則）}&&&&&&\\
+\end{align*}
+
+\証明
+(ⅰ)　$\langle A \rangle=\alpha$，$\langle B \rangle=\beta$，$\langle C \rangle=\gamma$なる
+整列集合$A$，$B$，$C$をとるとき，
+\begin{align*}
+	(\alpha\beta)\gamma &=\langle A \times B \rangle \langle C \rangle= \langle (A \times B) \times C \rangle \\
+	\alpha(\beta\gamma) &=\langle A \rangle \langle B \times C \rangle= \langle A \times (B \times C) \rangle
+\end{align*}
+が成り立つ．全単射$f:(A T\times B) \times C \rightarrow A \times (B \times C);((a,b),c) \mapsto (a,(b,c))$
+が順序を保つことが次のようにしてわかるから，$(A \times B) \times C \simeq A \times (B \times C)$が得られる．
+順序集合$X$上の順序を$\prec_X$で表わそう．$a$，$a' \in A$，$b$，$b' \in B$，$c$，$c' \in C$に対し
+\begin{align*}
+	((a,b),c) \prec_{(A \times B) \times C} ((a',b'),c') 																				\\
+	& \Longleftrightarrow c \prec_C c' \text{　または　} c=c', (a,b) \prec_{A \times B} (a',b')	\\
+	& \Longleftrightarrow c \prec_C c' \text{　または　} c=c', b \prec_B b' 
+																		 \text{　または　} c=c',b=b', a \prec_A a'
+\end{align*}
+一方，
+\begin{align*}
+	(a,(b,c)) \prec_{A \times (B \times C)} (a',(b',c')) 																									\\
+	& \Longleftrightarrow (b,c) \prec_{B \times C} (b',c')	\text{　または　} (b,c)=(b',c'), a \prec_A a'	\\
+	& \Longleftrightarrow c \prec_C c' \text{　または　} c=c', b \prec_B b' 
+																		 \text{　または　} c=c',b=b', a \prec_A a'
+\end{align*}
+が成り立つから，$f$は順序を保つ．
+
+(ⅱ)　$\{ 0 \} \times A \simeq \{ 0 \} \simeq A$より，$1	\cdot	\alpha=\alpha	\cdot	1=\alpha$．
+
+(ⅲ)　$\varnothing \times A = A \times \varnothing = \varnothing$より，$0	\cdot	\alpha=\alpha	\cdot	0=0$．
+
+(ⅳ)　$\langle A \rangle=\alpha$，$\langle B \rangle = \beta$，$\langle C \rangle=\gamma$
+，$B \cap C = \varnothing$なる整列集合$A$，$B$，$C$をとるとき，$(A \times B) \cap (A \times C) = \varnothing$で，
+$A \times (B \cup C) \simeq A \times B \cup A \times C$．
+\■
+
+{ \small
+\注意{３}
+分配法則$ (\alpha + \beta) \gamma= \alpha\gamma+\beta\gamma$は，一般には成立しない．実際，
+例４より$(1+1)\omega=2\omega=\omega$，また，定理７(ⅱ)，定理８(ⅰ)，定理９(ⅱ)より
+$\omega=\omega+0 < \omega+\omega=1\omega+1\omega$であるから，$(1+1)\omega < 1\omega+1\omega$．
+
+\注意{４}
+交換法則$\alpha\beta=\beta\alpha$は，一般には成立しない．実際，定理７，定理８(ⅰ)，例４，例５により，
+$m \geqq 1$なる任意の有限順序数$m$に対し，
+$m\omega=\omega<\omega+\omega<\cdots<\omega+\omega+\cdots+\omega \quad (m \text{個)}=\omega m$
+が成り立つ．
+}
+
+\vspace{3mm}
+\定理{１０}
+順序数の積と大小に関し，次が成り立つ．
+
+(ⅰ)　$\alpha < \beta,\quad 0 < \nu \Rightarrow \nu\alpha < \nu \beta$
+
+(ⅱ)　$\alpha < \beta \Rightarrow \alpha\nu < \beta\nu $
+
+\証明
+(ⅰ)　$\langle A \rangle=\alpha$，$\langle B \rangle = \beta$，$\langle C \rangle=\gamma$
+，$C \ne \varnothing$なる整列集合$A$，$B$，$C$をとる．$c_0 = \min C$とする．
+$\alpha	<	\beta$より$A \simeq B(b)	\quad	(b \in B)$が存在する．
+$C	\times	A	\simeq	C	\times B(b)	=	(C \times B)(c_0,b)$．
+ゆえに，$\nu \alpha < \nu \beta$．
+
+(ⅱ)　
+$\langle A \rangle=\alpha$，$\langle B \rangle=\beta$なる整列集合$A$，$B$をとるとき，
+$\alpha<\beta$より$A \simeq B(b)$なる$b \in B$が存在する．
+$\langle C \rangle=\nu$なる整列集合$C$に対し，$A \times C \simeq B(b) \times C \subset B \times C$
+（積の定義の確認$2^\circ$）が成り立つ．
+$B \times C$が$B(b)	\times	C$の１つの切片と順序同型になることはあり得ないから，整列集合の
+比較定理より，$B(b) \times C \simeq B \times C$または$B(b) \times C \simeq (B \times C)(b_0,c_0)$なる
+$(b_0,c_0) \in B \times C$が存在する．したがって，$\langle A \times C \rangle \leqq \langle B \times C \rangle$．
+すなわち$\alpha\nu \leqq \beta\nu$が成り立つ．
+\■
+{
+\small 
+\注意{５}
+$\alpha < \beta$であっても，必ずしも$\alpha\nu < \beta\nu$となるとは限らない．実際，例４により
+$1\omega=\omega=2\omega$が成り立つ．
+}
+
+\pagebreak
+
+\vspace{3mm}
+\textgt{第３章の問題}
+
+１．$(\Z,<)$と$(\Q,<)$とは順序同型でないことを証明せよ．
+
+\証明　
+順序同型写像$f:\Z \rightarrow \Q$が存在すると仮定すれば，$1<2$より$f(1)<f(2)$．
+$f(1)<x<f(2)$なる$x \in \Q$をとれば，$1< f^{-1}(x) <2$．これは$f^{-1}(x) \in \Z$
+このような$f^{-1}(x)$は存在しないから矛盾．
+\■
+
+２．任意の開区間$]\,a,b	\,	[$は，開区間$]\,-1,1\,[$と順序同型であることを示せ．
+
+\証明
+$\displaystyle 
+f	:	\,	]\,	a,b	\,	[	\,	\rightarrow	\,	]\,-1,1\,[\,	
+	;	\,	x \mapsto \frac{2}{b-a}x-\frac{b+a}{b-a}
+$
+は順序同型写像．
+\■
+
+３．$\R$はその任意の開区間$]\,a,b\,[$と順序同型であることを示せ．
+
+\証明
+$\displaystyle 
+g	:	\,]\,-1,1\,[ \,	\rightarrow	\,	\R	\,
+	;	\,	y						\mapsto	\tan\,	\frac{\pi}{2}y$
+は順序同型写像であるから，$g$と問題２の$f$との結合$g	\circ	f$が求める
+順序同型写像である．
+\■
+
+４．次の整列集合の順序型を求めよ．
+
+(ⅰ)　
+$\displaystyle 
+\Bigl(
+0,\frac{1}{2},\frac{2}{3},\cdots,\frac{n-1}{n},\cdots;1,1+\frac{1}{2},1+\frac{2}{3},\cdots,1+\frac{n-1}{n},\cdots 
+\Bigr)$	$\quad (n \in \N)$
+
+(ⅱ)　
+$\displaystyle 
+\Bigl(
+0,\frac{1}{2},\frac{2}{3},\cdots,\frac{n-1}{n},\cdots;1,1+\frac{1}{2},1+\frac{2}{3},\cdots,1+\frac{n-1}{n},\cdots;
+m,m+\frac{1}{2},m+\frac{2}{3},\cdots,m+\frac{n-1}{n},\cdots
+\Bigr)$ $\quad (n \in \N)$
+
+\解
+
+(ⅰ)　$\omega+\omega=\omega 2$
+
+(ⅱ)　$\omega\omega$
+\■
+
+５．順序数の列$\alpha_1,\alpha_2,\cdots,\alpha_n,\cdots$が
+$\alpha_1 \geqq \alpha_2 \geqq\cdots \geqq \alpha_n \geqq \cdots$を満たすとき，
+ある番号$m$をとれば$\alpha_m=\alpha_{m+1}=\cdots$が成り立つことを証明せよ．
+
+\証明
+$\{\alpha_1,\alpha_2,\cdots,\alpha_n,\cdots \}$は順序数を元とする集合だから整列集合である．
+よって，最小数$\alpha_m$つまり，すべての$n$について，$\alpha_m < \alpha_n$を満たすものが
+存在する．仮定より$n \geqq m \Rightarrow \alpha_m \geqq \alpha_n$だから，
+$n \geqq m \Rightarrow \alpha_m = \alpha_n$．
+\■
+
+６．　順序数$\alpha$，$\beta$について，$\alpha < \beta$ならば，$\beta=\alpha+\gamma$を満たす順序数
+$\gamma > 0$が存在することを証明せよ．
+
+\証明
+$\langle A \rangle=\alpha$，$\langle B \rangle=\beta$なる整列集合$A$，$B$をとるとき，$A \simeq B(b)$なる
+$b \in B(b)$なる$b \in B$が存在する．
+$C=B-B(b) \quad (\ni b)$とおけば，$C$は$B$の空でない整列部分集合，
+よって$ \langle C \rangle = \gamma \quad (>0)$とするとき，$B(b) \ni a, \quad C \ni c$に対して$a \prec c$である
+ことに注意すれば（和の定義（１）），$B=B(b) \cup C$より，$\beta=\alpha+\gamma$が得られる．
+\■
+
+７．　順序数$\alpha$，$\beta$，$\gamma$について，$\gamma+\alpha=\gamma+\beta \Rightarrow \alpha=\beta$を示せ．
+
+\証明
+対偶を証明する．
+$\alpha > \beta \Rightarrow \nu+\alpha > \nu+\beta, \alpha < \beta \Rightarrow \nu+\alpha < \nu+\beta$
+が成り立つから$\alpha \ne \beta \Rightarrow \nu+\alpha \ne \nu + \beta$
+\■

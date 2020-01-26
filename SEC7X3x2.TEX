@@ -1,0 +1,73 @@
+\subsection{閉区間のコンパクト性}
+次の定理は，\textgt{ハイネ-ボレルの被覆定理}
+といわれる．
+
+\vspace{3mm}
+\定理{１３}
+$\R$の閉区間$[a,b]$はコンパクトである．
+
+\証明
+$[a,b]$がコンパクトでないと仮定して矛盾を導こう．いま$\R$の開集合族
+$\mathscr{C}$の元からいかなる有限個を選んでも$[a,b]$を覆うことができない
+仮定する．$\displaystyle c_1=\frac{a+b}{2}$とおくと，$[a,c_1]$，$[c_1,b]$
+のうちのすくなくとも一方は，$\mathscr{C}$に属する有限個の元で覆われない
+(§7.3.1問７)．
+$[a,c_1]$が有限個の元で覆われないときには，$a=a_1$，$c_1=b_1$とおき，
+しからざるときには$c_1=a_1$，$b=b_1$とおくと，
+$[a_1,b_1]$は$\mathscr{C}$の有限個の元で覆われない．
+この操作を続けるときに，$\mathscr{C}$の有限個の元で覆われない閉区間の族
+$\{[a_n,b_n]	\,	|	\,n \in \N]\}$で，任意の$n \in \N$に対し
+\begin{align*}
+	&	[a_n,b_n] \supseteq [a_{n+1},b_{n+1}],	\\
+	&	b_{n+1}-a_{n+1}=\frac{b_n-a_n}{2}=\frac{1}{2^{n+1}}(b-a) \rightarrow 0 \quad (n \rightarrow \infty)
+\end{align*}
+を満たすものがとれる．§4.2定理５により，	$\bigcap_{n=1}^\infty [a_n,b_n]$は１つの実数$x$
+（$\lim_{n\rightarrow \infty} a_n = \lim_{n\rightarrow \infty} b_n$）から成る
+集合である．このとき，$x \in \overline{[a,b]}=[a,b]$であるから，$\mathscr{C}$の元$G$で，
+$x$を含むものがある（§5.5定理９)．
+したがって，$x$を含む開区間$\:	]x-\varepsilon,x+\varepsilon[ \:	\subseteq G$が存在する（$\varepsilon>0$）．
+$x-\varepsilon \notin \bigcap_{n=1}^\infty [a_n,b_n]=\{x\}$より，
+$x-\varepsilon < a_l$なる$l \in \N$が存在し，
+同様に$b_m<x+\varepsilon$なる$m \in \N$が存在することがわかる．
+$n=\max\{l,m\}$とおくと，
+\[
+	[a_n,b_n] \subseteq \:	]x-\varepsilon,x+\varepsilon[ \:	\subseteq G
+\]
+が成立し，このとき，$[a_n,b_n]$が$\mathscr{C}$の１つの元$G$で覆われることを示すから，矛盾である．
+\■
+
+\定理{１４}
+$X$，$Y$がともにコンパクト位相空間ならば，積空間$X \times Y$もコンパクトである．
+
+\証明
+
+$\mathscr{C}=\{G_\alpha\,| \alpha \in \Lambda\}$を$X \times Y$の任意の開被覆とする．
+各$G_\alpha$は，$U \times V$（ただし，$U$は$X$の開集合，$V$は$Y$の開集合）の形の
+開集合の和集合である（§6.1 問3，§6.4）から，$G_\alpha$ははじめから$U \times V$の形をしているもの
+と仮定して証明すればよい．$x \in X$を固定するとき，$\{x\} \times Y$は$Y$と同相であるから，
+$Y$のコンパクト性より，$\{x\} \in Y$はコンパクトである（定理１１）．したがって，$\mathscr{C}$
+の有限個の元$U_1 \times V_1,\cdots,U_n \times V_n$が存在し，
+\[
+	\{x\} \times Y \subseteq \bigcup_{i=1}^n (U_i \times V_i)
+\]
+が成り立つ（注意１）．このとき，$x \in U_i \,(i=1,2,\cdots,n)$，$Y=\bigcup_{i=1}^n V_i$である
+から，（$U_i	\not\ni	x$なる$U_i$を取り除いてあらためて）
+$U(x)=\bigcap_{i=1}^n U_i$とおくと，$U(x)$は$x$を含む開集合（§5.3[O$_2$]）で，
+\begin{align*}
+	U(x) \times Y &= U(x) \times \left(\bigcup_{i=1}^n V_i\right)	\\
+								&= \bigcup_{i=1}^n (U(x) \times Y_i) \subseteq \bigcup_{i=1}^n (U_i \times V_i)
+\end{align*}
+が成り立つ．$X$はコンパクトであるから，開被覆$\{U(x)\,|\, x \in X \}$に対し適当な有限個の
+点$x_1,x_2,\cdots,x_m$を選べば，$X=\bigcup_{i=1}^m U(x_i)$となる．したがって，
+\[
+	X \times Y = \left(\bigcup_{i=1}^m U(x_i)\right) \times Y
+							= \bigcup_{i=1}^m (U(x_i) \times Y)
+\]
+となるが，上で調べたように，$U(x_i) \times Y$は$\mathscr{C}$の適当な有限個の元で被覆されるが，
+$X \times Y$もそうである．
+
+\■
+
+\例{６}
+閉区間の$m$個の直積$[a_1,b_1] \times \cdots \times [a_m,b_m]$はコンパクトである．
+実際，数学的帰納法により，定理１３，１４から結果は直ちに得られる．

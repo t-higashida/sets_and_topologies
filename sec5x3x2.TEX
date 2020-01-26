@@ -1,0 +1,111 @@
+\subsection{相対位相}
+
+$X$を位相$\mathscr{T}$をもつ位相空間とし，$A$をその空でない部分集合とする．
+$\mathscr{T}_A$を．$\mathscr{T}$の任意の元$G$と$A$との共通部分からなる集合族
+\[
+	\mathscr{T}_A=\{G \cap A \,|\, G \in \mathscr{T}\}
+\]
+とすると，下で示されるように，$\mathscr{T}_A$は集合$A$の上の位相となる．この位相は
+$A$の$X$に関する\textgt{相対位相}といわれ，この位相をもつ位相空間$A$は$X$の\textgt{部分位相空間}
+（または単に\textgt{部分空間}）と称される．$\mathscr{T}_A$が集合$A$の上の位相であることを
+知るには，次を証明すればよい．
+
+\定理{４}
+$A$を位相空間$X$の空でない部分集合とする．$A$の部分集合$H$が$A$の開集合であることを，$H=G \cap A$
+となるような$X$の開集合$G$が存在することであると定義すれば，次が成立する．
+\begin{list}{}{}
+	\item(ⅰ)　$A$および$\varnothing$は，$A$の開集合である．
+	\item(ⅱ)　$A$の任意の有限個の開集合の共通部分は，$A$の開集合である．
+	\item(ⅲ)　$A$の任意個の開集合の和集合は，$A$の開集合である．
+\end{list}
+
+\証明
+(ⅰ)　$A=X \cap A$，$\varnothing = \varnothing \cap A$だから，［O$_1$］と定義により，
+$A$および$\varnothing$は$A$の開集合である．
+
+(ⅱ)　$H_1,H_2,\cdots,H_n$を$A$の開集合とすれば，仮定より，
+\[
+	H_i = G_i \cap A
+\]
+となる$X$の開集合$G_i \,(i=1,2,\cdots,n) $が存在する．
+\[
+	\bigcap_{i=1}^n H_i = \bigcap_{n=1}^n (G_i \cap A) = \Bigl(\bigcap_{n=1}^n G_i	\Bigr) \cap A
+\]
+が成立するから，［O$_2$］と定義により$\bigcap_{i=1}^n H_i$は$A$の開集合である．
+
+(ⅲ)　$H_\alpha \, (\alpha \in \Lambda)$を$A$の開集合とすると，
+$H_\alpha=G_\alpha \cap A$なる$X$の開集合$G_\alpha$が存在する．
+\[
+	\bigcup_{\alpha \in \Lambda} H_\alpha=	\Bigl(\bigcup_{\alpha \in \Lambda} G_\alpha \Bigr) \cap A
+	\text{　　（第２章定理６）}
+\]
+より，$\bigcup_{\alpha \in \Lambda} H_\alpha$は$A$で開．
+\■
+
+\例{７}
+距離$d$を持つ距離空間$X$の部分距離空間$A$（§5.1例２）の距離位相は，
+距離位相をもつ$X$に関する相対位相である．このことを示すためには，
+次の２つを証明すればよい．
+\begin{list}{}{}
+	\item(１)　$X$の任意の開集合$G$に対し$G \cap A$は$A$の開集合である．
+						\[
+							\mathscr{T}_A \supseteq\{G \cap A \,|\, G \in \mathscr{T}\}
+						\]
+	\item(２)　$A$の任意の開集合$H$に対し$H=G\cap A$となる$X$の開集合$G$が存在する．
+						\[
+							\mathscr{T}_A \subseteq\{G \cap A \,|\, G \in \mathscr{T}\}
+						\]
+\end{list}
+(１)の証明：
+はじめに，$x \in A$の$A$における$\varepsilon$近傍は，
+\begin{align*}
+	U(A;x;\varepsilon)	&=\{y\,|\,y \in A,d(x,y)<\varepsilon \}	\\
+											&=U(X;x;\varepsilon) \cap A	\qquad\text{・・・①}
+\end{align*}
+であることに注意する．任意の点$x \in G \cap A \subseteq G$をとれば，
+$G$が$X$の開集合であることから，$U(X;x;\varepsilon) \subseteq G$となる
+$\varepsilon>0$が存在し，したがって，（両辺に$\cap	A$を掛けて①より）
+\[
+	U(A;x;\varepsilon(x)) \subseteq G \cap A
+\]
+が成立する．ゆえに，$G \cap A$は$A$の開集合である．
+
+(２)の証明：
+$A$の開集合$H$の各点$x$に対し
+\[
+	U(A;x;\varepsilon(x)) \subseteq H
+\]
+となる正数$\varepsilon(x)$が存在する．$\bigcup_{x \in H} U(X;x;\varepsilon(x))=G$とおけば，
+［O$_3$］により$G$は$X$の開集合であり，しかも，
+\begin{align*}
+	H \subseteq G \cap A &=(\bigcup_{x \in H}U(X;x;\varepsilon(x))) \cap A	\\
+											 &=(\bigcup_{x \in H}U(A;x;\varepsilon(x)))					\\
+											 &\subseteq H
+\end{align*}
+であるから，$H=G \cap A$となる．
+\■
+
+\例{８}
+例６の位相$\mathscr{T_1}$
+\begin{align*}
+	\mathscr{T}_1 &= \{\varnothing,\{a\},\{c,d\},\{a,c,d\},\{b,c,d\},X \} \\
+\end{align*}
+をもつ集合$X=\{a,b,c,d\}$の部分集合$A=\{a,c,d\}$を
+考える．$A$の$X$に関する相対位相は，
+\[
+	\mathscr{T}_A=\{\varnothing,\{a\},\{c,d\},A\}
+\]
+である．
+
+{\small
+\vspace{3mm}
+\注意{}
+	実数直線$\R$の部分集合であるところの閉区間$[a,b]$に相対位相を与えて$\R$の部分空間と考える．
+このとき，$a<c<b$なる点$c$に対し
+\[	
+	[a,c[	\,=\,	]-\infty,c[ \,\cap\,[a,b]
+\]
+で，$]-\infty,c[$は$\R$の開集合(§4.3例４)であるから，$[a,c[$は$[a,b]$の開集合である．しかるに，
+$[a,c[$は$\R$の開集合ではない（§4.3例２）．ある集合$G$が開集合であるというとき，
+$G$がいかなる位相空間の部分集合と考えているかを明確にしておくことは肝要である．
+}

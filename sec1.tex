@@ -1,0 +1,66 @@
+\chapter{集合と写像}
+
+本章は，以後の章に用いられる概念の基礎的な部分の解説である．はじめに，集合の概念を導入し，集合の和，共通部分，差，直積などの集合の演算について研究する．次に，集合の間の写像の性質，および写像と集合算との関連を調べ，終わりに同値関係を説明しよう．
+
+\section{集合}
+
+本節では，まず，集合とは何かを説明する．次いで，２つの集合が等しいとはどういうことか，集合をどのように表したらよいか，部分集合とは何かを述べよう．
+
+\subsection{集合の概念}
+\textgt{集合}とは，一言でいえば，"ある性質をもち，きまった範囲をなすものの集まり"である．たとえば，"ある中学校の生徒の全体"，"海の中にいる魚の全体"，"平面上の三角形の全体"，"$0$より大きく$1$より小さい実数の全体"，"素数の全体"などは集合である．しかし，"背の高い人間の全体"は集合ではない．背が高いということは確かに１つの性質であるが，身長1ｍ67cmの人が背が高いかどうかを判定することは一般にはできないからである．この人は，小学生なら背が高い方だろうし，バスケットボールの選手の中ではむしろ背が低い方であろう．言葉をかえていえば，\textgt{集合}とは，"ものの集まり"であって，
+"どんなものをとっても，それがその集まりの中にあるかどうかを判定できる"ようなものである．
+
+よく知られている集合で，本書においてひんぱんに現れる数の集合の例を以下に列挙しておこう．
+
+\vspace{5mm}
+\textgt{例１．}整数全体の集まりは集合である．この集合を$\Z$で表わす．
+
+\vspace{5mm}
+\textgt{例２．}自然数（すなわち正の整数）全体の集まりは集合である．この集合を$\mathbb{N}$で表わす．
+
+\vspace{5mm}
+\textgt{例３．}有理数（すなわち分数）全体の集まりは集合である．この集合を$\mathbb{Q}$で表わす．
+
+\vspace{5mm}
+\textgt{例４．}実数全体の集まりは集合である．この集合を$\mathbb{R}$で表わす．
+
+\vspace{5mm}
+\textgt{例５．}実数全体の集まりは集合である．この集合を$\mathbb{C}$で表わす．
+
+\pagebreak
+\vspace{3mm}
+{\small \textgt{注意１．}$\mathbb{Z}$はドイツ語のZahl，$\mathbb{N}$は英語のNatural number，$\mathbb{R}$は英語のReal number，$\mathbb{C}$は英語のcomplex numberの頭文字である．なお，整数，有理数は英語ではそれぞれ，integer，rational numberである．
+}
+
+一般に，集合を英語のアルファベットの大文字を用いて
+\[A,B,C,X,Y,\cdot\cdot\cdot
+\]
+などと表わす．集合を構成するものを\textgt{元(げん）}（または\textgt{要素})という．元は小文字で$a,b,c,x,y,\cdot\cdot\cdot$などと表わすことにしよう．"$a$は集合$X$の元である"ことを
+\[
+	a \in X \text{　または（} X \ni a \text{）}
+\]
+と表わす．このとき，"$a$は$X$に\textgt{属する}"，"$a$は$X$に\textgt{含まれる}"，"$X$は$a$を\textgt{含む}などともいう．上の否定，すなわち，"$a$は$X$の元ではない"ことを
+\[
+	a \notin X \text{　または（} X \not\ni a \text{）}
+\]
+と記す．
+
+\vspace{5mm}
+\textgt{例６．}$1$は自然数であるから，$1 \in \mathbb{N}$．
+
+\vspace{5mm}
+\textgt{例７．}$-1$は整数であるから，$-1 \in \mathbb{Z}$で表わす．$-1$は自然数ではないから，$-1 \notin \mathbb{N}$.
+
+\vspace{5mm}
+\textgt{例８．}$\displaystyle \frac{3}{8}$は有理数であるから，$\displaystyle \frac{3}{8}   \in \mathbb{Q}$．$\displaystyle \frac{3}{8}$は整数ではないから，$\displaystyle \frac{3}{8} \notin \mathbb{Z}$．
+
+\vspace{5mm}
+\textgt{例９．}$\sqrt{2}$は実数であるから，$\sqrt{2} \in \mathbb{R}$．$\sqrt{2}$は有理数ではないから$\sqrt{2} \notin \mathbb{Q}$．
+
+\vspace{5mm}
+\textgt{問１．}$\sqrt{2} \notin \mathbb{Q}$を証明せよ．
+
+\textgt{証明}
+
+背理法で示す．$\sqrt{2} \in \mathbb{Q}$とすると，$\mathbb{Q}=\displaystyle \Bigl\{x \Bigm| x=\displaystyle \frac{m}{n},n,m \in \mathbb{Z} \Bigr\}$であるから，$\displaystyle \sqrt{2}=\frac{m}{n}$と表わすことができる（但し，$m$，$n$は互いに素）．ここで両辺を2乗して$2n^2=m^2$となり，$m^2$は偶数．従って，$m$は偶数であるから，$m=2k$（$k \in \mathbb{Z}$）とおくと，$2n^2=4k^2$となり，$n^2$は偶数．従って$n$は偶数であるから，$n=2l$（$l \in \mathbb{Z}$）とおけるが，これは$m$，$n$が互いに素であることに矛盾する．従って$\sqrt{2} \notin \mathbb{Q}$．
+\■

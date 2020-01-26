@@ -1,0 +1,129 @@
+\section{位相空間}
+{\small
+本節では，距離空間の一般化として，位相空間の概念を導入する．はじめに，位相空間の
+定義およびさまざまな位相空間の例を与え，次に，位相空間の部分集合は自然な形で位相空間と
+なることを示す．	
+}
+
+\subsection{位相}
+前節では，距離を用いて近傍を定義し，それによって開集合を定めた．それゆえ，開集合が，ある意味で近さという概念を
+内蔵していると考えてもよりであろう．われわれは，必ずしも距離が与えられていない集合に対して，開集合というものを
+与えることによって，一般化された近さ，すなわち位相の概念を導入しよう．空でない集合$X$に，定理２の性質を満たす
+部分集合族を定めることを$X$に位相を与えるという．もっと詳しくのべれば，次のようになる．
+
+\定義{}
+$X$を空でない集合とする．$X$の部分集合の族$\mathscr{T}$が$X$の上の\textgt{位相}であるとは，$\mathscr{T}$が
+次の公理を満たすときである．
+\begin{list}{}{}
+	\item ［O$_1$］　$X$および$\varnothing$は，$\mathscr{T}$に属する．
+	\item ［O$_2$］　$\mathscr{T}$の任意の有限個の集合の共通部分は，$\mathscr{T}$に属する．
+	\item ［O$_3$］　$\mathscr{T}$の任意個の集合の和集合は，$\mathscr{T}$に属する．
+\end{list}
+
+$\mathscr{T}$の元は$X$の\textgt{開集合}（厳密には，$X$の$\mathscr{T}$-\textgt{開集合}）とよばれる．
+$\mathscr{T}$が与えられた集合は\textgt{位相空間}といわれ，$(X,\mathscr{T})$と書かれるが，誤解の恐れが
+ないときには，単に$X$と記される．$A$が$X$の開集合であることを，$A$は$X$で\textgt{開である}ともいう．
+
+\vspace{3mm}
+\例{１}
+$\mathscr{U}$を，§4.3で定義された$\R$の開集合全体から成る部分集合族とする．このとき，§4.3定理３により，
+$\mathscr{U}$は$\R$上の位相であり，$\R$は位相空間になる．この位相を，§4.3注意３でも述べたように
+\textgt{直線の位相}という．
+
+\vspace{3mm}
+\例{２}
+$\mathscr{U}_n$を，§5.1のユークリッド距離を用いて定義される$\R^n$の開集合全体からなる部分集合族とする．
+このとき，定理２により$\mathscr{U}_n$は$\R^n$上の位相であり，$\R^n$は位相空間となる．この位相を
+\textgt{ユークリッド空間の位相}という．例１より明らかに，$\mathscr{U}_1=\mathscr{U}$である．
+
+\vspace{3mm}
+\例{３}
+$X$を，距離$d$をもつ距離空間とする．§5.2におけるように，$d$を用いて定義された$X$の開集合全体
+からなる部分集合を$\mathscr{M}$とする．このとき，定理２により$\mathscr{M}$は$X$の上の位相であり，
+$X$は位相空間となる．この位相を\textgt{距離位相}という．例１，例２の位相は距離位相である．
+
+\pagebreak
+\例{４}
+$\mathscr{D}$を，集合$X$のすべての部分集合からなる集合族（$2^X$）とする．このとき，明らかに$\mathscr{D}$
+は$X$の１つの位相となる．この位相は\textgt{離散位相}といわれ，集合$X$は，この位相が与えられたとき，
+\textgt{離散空間}といわれる．
+
+\vspace{3mm}
+\問{４}
+§5.1例４の離散距離によって定義される距離位相（$\mathscr{D}_0$）は，離散位相（$\mathscr{D}$）である
+（$\mathscr{D}=\mathscr{D}_0$）ことを示せ．
+
+\証明
+
+$(X,d_0)$の開集合全体からなる部分集合族
+$\mathscr{D}_0=\{G	\in	2^X	\,|\,	\forall	x	\in	G,\,\exists	\varepsilon	>	0,\,
+U(x;\varepsilon)=\{y	\in	X	\,|\,	d_0(x,y)<\varepsilon	\}	\subseteq	G	\}\}$は
+定理２により[O$_1$]～[O$_3$]を満たし，距離位相となる．
+
+任意の点$x \in X$に対し$\{x\}$は開集合である．
+なぜならば，$\displaystyle	\varepsilon=\frac{1}{2}$とおくと，
+$\displaystyle U\Bigl(x;\frac{1}{2};d_0\Bigr) \subseteq \{ x \}$が成立し，
+$\{x\}$は開集合となる．ゆえに[O$_3$]より任意の$A \, (\subseteq X)$は開集合．
+
+よって$O	\in	\mathscr{D}	\Longrightarrow	O	\in	\mathscr{D}_0$となり，一方$D_0	\subseteq	D$であるから，
+$\mathscr{D}=\mathscr{D}_0$．
+\■
+
+\例{５}
+集合$X$において，$X$と$\varnothing$だけからなる部分集合の族$\{X,\varnothing\}$は，
+$X$の上の位相を与える．この位相は\textgt{密着位相}といわれ，集合$X$は，この位相が与えられたとき，
+\textgt{密着空間}といわれる．
+
+\vspace{3mm}
+\例{６}
+４個の異なる元からなる集合$X=\{a,b,c,d\}$において，２つの部分集合族
+\begin{align*}
+	\mathscr{T}_1 &= \{\varnothing,\{a\},\{c,d\},\{a,c,d\},\{b,c,d\},X \} \\
+	\mathscr{T}_2 &= \{\varnothing,\{a\},\{c,d\},\{a,c,d\},\{a,b,d\},X \} 
+\end{align*}
+を考えるとき，$\mathscr{T}_1$は$X$の上の位相を与えるが，$\mathscr{T}_2$は$X$の上の位相には
+なり得ない．実際，$\mathscr{T}_1$においては，
+\[
+	\{a,c,d\} \cap \{b,c,d\}=\{c,d\} \in \mathscr{T}_1,\quad \{a\} \cup \{c,d\}=\{a,c,d\} \in \mathscr{T}_1,\cdots
+\]
+などを調べて，［O$_1$］，［O$_2$］，［O$_3$］が成立することを確かめることができるから，$\mathscr{T}_1$は$X$の上の
+位相である．しかしながら，$\mathscr{T}_2$においては，
+\[
+	\{c,d\} \cap \{a,b,d\} = \{d\} \notin \mathscr{T}_2
+\]
+であるから，［O$_2$］が成立しない．
+
+\vspace{3MM}
+\問{５}
+集合$X$の上の２つの位相$\mathscr{T}$および$\mathscr{T}'$が与えられたとき，共通部分$\mathscr{T} \cap \mathscr{T}'=\{G \, |\, G \in \mathscr{T}\text{　かつ　}G \in \mathscr{T}'\}$はまた$X$の上の位相であることを証明せよ．
+
+\証明
+［O$_1$］：仮定より$\varnothing	\in	\mathscr{T}$かつ$\varnothing	\in	\mathscr{T}'$，
+よって$\varnothing	\in	\mathscr{T}	\cap	\mathscr{T}'$．同様に$X \in \mathscr{T}	\cap	\mathscr{T}'$．は容易．
+
+［O$_2$］：$G_1,\cdots,G_n \in \mathscr{T} \cap \mathscr{T}'$ならば，
+$G_1,\cdots,G_n \in \mathscr{T} $かつ$G_1,\cdots,G_n \in \mathscr{T}'$．ゆえに，
+$\bigcap_{n=1}^n G_i \in \mathscr{T}$かつ$\bigcap_{n=1}^n G_i \in \mathscr{T}'$.
+よって，$\bigcap_{n=1}^n G_i \in \mathscr{T} \cap \mathscr{T}'$．
+
+［O$_3$］：$\forall	G_\alpha	\in	\mathscr{T}	\cap	\mathscr{T}'$について
+$G_\alpha	\in	\mathscr{T}$かつ$G_\alpha	\in	\mathscr{T}'$，よって$\bigcup_{\alpha}	G_\alpha	\in	\mathscr{T}$
+かつ$\bigcup_{\alpha}	G_\alpha	\in	\mathscr{T}'$となり，
+$\bigcup_{\alpha}	G_\alpha	\in	\mathscr{T}' \cap \mathscr{T}'$．
+\■
+
+\pagebreak
+\問{６}
+問５において，和集合$\mathscr{T}	\cap	\mathscr{T}'=\{G	\,|\,	G	\in	\mathscr{T}	\text{または}	\mathscr G	\in	\mathscr{T}'\}$
+は必ずしも$X$の上の位相空間とはならない．そのような例を考えよ．
+
+\解
+$X	=	\{\,	a,b,c,d	\,\}$として，
+\begin{align*}
+	\mathscr{T}_1	&=\{\,	\varnothing,\{a\},\{c,d\},\{a,c,d\},\{b,c,d\},X\}\\
+	\mathscr{T}_3	&=\{\,	\varnothing,\{a,b,d\},X\}
+\end{align*}
+を考えるとき，
+$\mathscr{T}_1	\cup	\mathscr{T}_3=\{\varnothing,
+																			\{a\},\{c,d\},\{a,c,d\},\{b,c,d\},\{a,b,d\},X\}
+$は位相ではない($\{a,c,d\}	\cap	\{a,b,d\}=\{a,d\}	\notin	\mathscr{T}_1	\cup	\mathscr{T}_3$)．

@@ -1,0 +1,3 @@
+eufm9.tfm	C:\usr\local\share\texmf\fonts\tfm\ams\euler
+eufm9.300pk	C:\usr\local\share\texmf\fonts\pk\cx\ams\euler
+eufm9.300gf	C:\usr\local\share\texmf\fonts\pk\cx\ams\euler

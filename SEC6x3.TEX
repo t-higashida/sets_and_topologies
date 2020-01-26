@@ -1,0 +1,426 @@
+\section{同相写像}
+{\small
+本節では，まず，同相写像の定義を述べ，同相であるという関係は同値関係で，
+したがってあらゆる位相空間を同相という関係で類別できることを示す．次に，同相な位相空間のいろいろな
+例を与える．終りに位相的な性質および位相の強弱について説明しよう．
+}
+
+\subsection{同相写像}
+位相空間$(X,\mathscr{T})$から位相空間$(Y,\mathscr{T}')$への連続写像$f:X \rightarrow Y$が
+\textgt{同相写像}（または\textgt{位相写像}）といわれるのは，$f$が全単射で，更に
+$f^{-1}:Y \rightarrow X$が連続写像となるときである．$X$から$Y$への同相写像が少なくとも１つ存在するならば，
+$X$は$Y$と\textgt{同位相}である（または単に\textgt{同相}であるといい，
+\[
+	(X,\mathscr{T}) \approx	(Y,\mathscr{T}')	\quad (\text{または} X \approx Y)
+\]
+と表わす．
+
+{\small
+\注意{}
+連続写像$f:X \rightarrow Y$が全単射であるとき，次の３つの条件は同値である．
+
+\begin{list}{}{}
+	\item	(１)　$f$は同相写像
+	\item	(２)　$f$は開写像
+	\item	(３)　$f$は閉写像
+\end{list}
+定理５より上の条件(２)，(３)はどちらも$f^{-1}$の連続性を意味する．
+
+\証明
+（１）$\Rightarrow$（２）の証：
+$f$は同相写像であるから$f^{-1}:Y	\rightarrow	X$は連続写像である．
+よって$X$の任意の開集合$G$に対して，$(f^{-1})^{-1}(G)$
+は$Y$の開集合である（定理５）．$(f^{-1})^{-1}=f$が成り立つから，$X$の任意の開集合$G$に対して
+$f(G)$は$Y$の開集合である．よって$f$は開写像である．
+
+（２）$\Rightarrow$（１）の証：
+$f$は開写像であるから$X$の任意の開集合$G$に対して$f(G)$は$Y$開集合である．
+$(f^{-1})^{-1}=f$が成り立つから，$X$の任意の開集合$G$に対して$(f^{-1})^{-1}(G)$は$Y$の開集合である．
+よって$f^{-1}:Y	\rightarrow	X$は連続写像である（定理５）．つまり$f$は同相写像である．
+
+（１）$\Rightarrow$（３）の証：
+$f$は同相写像であるから$f^{-1}:Y	\rightarrow	X$は連続写像である．
+よって$X$の任意の閉集合$F$に対して，$(f^{-1})^{-1}(F)$
+は$Y$の閉集合である（定理５）．$(f^{-1})^{-1}=f$が成り立つから，$X$の任意の閉集合$F$に対して
+$f(F)$は$Y$の閉集合である．よって$f$は閉写像である．
+
+（３）$\Rightarrow$（１）の証：
+$f$は閉写像であるから$X$の任意の開集合$F$に対して$f(F)$は$Y$閉集合である．
+$(f^{-1})^{-1}=f$が成り立つから，$X$の任意の閉集合$F$に対して$(f^{-1})^{-1}(F)$は$Y$の閉集合である．
+よって$f^{-1}:Y	\rightarrow	X$は連続写像である（定理５）．つまり$f$は同相写像である．
+}
+
+\定理{６}
+同相写像に関し，次が成り立つ．
+\begin{list}{}{}
+	\item (ⅰ)　恒等写像$1_X:X \rightarrow X;x \mapsto x$は同相写像である．
+	\item (ⅱ)　同相写像$f:X \rightarrow Y$の逆写像$f^{-1}:Y \rightarrow X$も同相写像である．
+	\item (ⅲ)　２つの同相写像$f:X \rightarrow Y,\,g:Y \rightarrow Z$の合成写像$g \circ f:X \rightarrow Z$も
+							同相写像である．
+\end{list}
+
+\証明
+（ⅰ）まず$1_X$は全単射である．
+$1_X^{-1}=1_X$であるから，例２により逆写像$1_X^{-1}:X	\rightarrow	X;x	\mapsto	x	$は連続．
+よって$1_X$は同相写像である．
+
+（ⅱ）まず$f$が全単射であるから$f^{-1}$も全単射である（§1.3.3　定理１２）．
+次に$f$が同相写像であるから，定義より$f^{-1}$は連続写像であり，$(f^{-1})^{-1}=f$は連続写像である．
+よって$f^{-1}$は同相写像である．
+
+（ⅲ）$f$と$g$は全単射であるから$f	\circ	g$は全単射である（§1.3.2　例１１）．
+また$f$と$g$は連続写像であるから，$f	\circ	g$も連続写像である（§6.2.1　例３）．
+
+また$f$と$g$は同相写像であるから$f^{-1}$と$g^{-1}$は連続写像であり，
+よって$f^{-1}	\circ	g^{-1}=(g	\circ	f)^{-1}$も連続写像である（§6.2.1　例３）．
+よって$g	\circ	f$は同相写像である．
+
+\■
+
+定理６の(ⅰ)は$X \approx X$，(ⅱ)は$ X \approx Y \Rightarrow Y \approx X$，
+(ⅲ)は$X \approx Y,\,Y \approx Z \Rightarrow X \approx Z$を示すから，関係$\approx$は同値関係である．
+したがって，すべての位相空間は同相という関係によって類別される．
+
+\vspace{3mm}
+\定理{７}
+連続写像$f:X \rightarrow Y$が同相写像であるための必要十分条件は，
+$g \circ f=1_X$，$f \circ g=1_Y$を満たす連続写像$g:Y \rightarrow Y$が存在することである．
+
+\証明　必要性：$f$は同相写像であるから，定理６（ⅱ）により$f^{-1}$も同相写像である．
+$f^{-1}=g$とおけば$f	\circ	g=1_Y$，$g	\circ	f=1_X$．
+
+十分性：$g	\circ	f	=1_X$より$f$は単射である（§1.3.2　定理１１（ⅰ）），
+$f	\circ	g=1_Y$より$f$は全射（§1.3.2　定理１１（ⅰ）），
+よって$f$は全単射である．すなわち$g=f^{-1}$となる（§1.3.3 定理１２），
+$g=f^{-1}$は連続写像であるから，定義より$f$は同相写像である．
+\■
+
+\例{１}
+$X$，$Y$を位相空間，$A$を$X$の部分空間とする．$f:X \rightarrow Y$が同相写像であるならば，$f$の制限によって得られる写像
+\[
+	\overline{f}:A \rightarrow f(A); x \mapsto f(x)
+\]
+も同相写像である．
+
+\証明
+$\overline{f}$が全単射であることは明らか．$\overline{f}$が連続であることを示そう．
+$f(A)$の任意の開集合$H$に対し$G \cap f(A)=H$となる$Y$の開集合$G$が存在し，
+$\overline{f}^{-1}(H)=f^{-1}(H)=f^{-1}(G \cap f(A))=f^{-1}(G) 
+\cap A$となる．$f^{-1}(G)$は$X$で開だから，$\overline{f}^{-1}(H)=f^{-1}(H)$は$A$で開である．
+よって$\overline{f}$は連続写像である．
+
+$\overline{f}$が開写像であることを示す．
+$A$の任意の開集合$H$に対して$A	\bigcap	G	=H$となる$X$の開集合$G$が存在する．
+$\overline{f}(H)=\overline{f}(A	\cap	G)=f(A	\cap	G)=f(A)	\cap	f(G)$であり，
+$f(G)$は$Y$の開集合であるから，$\overline{f}(H)$は$f(A)$の開集合である．
+よって$\overline{f}$は開写像である．
+
+以上より$\overline{f}$は同相写像である．
+\■
+
+\例{２}
+$a$，$b$を実数とする．$\R^2$の平行移動$f:\R^2 \rightarrow \R^2;(x,y) \mapsto (x+a,y+b)$は同相写像である．
+実際，$\R^2$の任意の点$(x,y)$をとったとき，$(x+a,y+b)$の任意の$\varepsilon$近傍$U$に対し$f^{-1}(U)$は点$(x,y)$の
+$\varepsilon$近傍であるから，定理５(５)により$f$は連続である．
+同様に，$g:\R^2 \rightarrow \R^2;(u,v) \mapsto (u-a,v-b)$も連続で，更に$g \circ f=1_{\R^2}$，$f \circ g=1_{\R^2}$
+が成り立つから，定理７により$f$は同相写像である．
+
+\vspace{3mm}
+\例{３}
+$A$を平面$\R^2$の部分空間とし，$f:\R^2 \rightarrow \R^2$を平行移動とする．このとき，
+$A$は$f(A)$と同相である．これは，例１と例２から直ちに示される．
+
+\pagebreak
+\例{４}
+$\R^2$における任意の２つの円周$S_1$，$S_2$は同相である．
+証明にあたっては$S_1$と$S_2$を例３で主張する部分空間とし，
+中心が原点にあるものと考えて証明したのち，
+定理６（ⅲ）により任意の平行移動の像に対しても同相であることが示される．
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(8,6)
+
+	%座標軸
+	\thicklines\put(1,3){\vector(1,0){6}}
+	\thicklines\put(4,0){\vector(0,1){6}}
+
+	%S_1,S_2
+		\thicklines	\put(4,3){\circle{0.09}}
+		\thinlines 	\put(4,3){\circle{4}}
+		\thinlines 	\put(4,3){\circle{2}}
+
+	%O,r_1,r_2
+	\put(3.6,2.6){$O$}
+	\put(5.0,2.7){$r_1$}
+	\put(6.0,2.7){$r_2$}
+
+	%３本の半径
+	\thinlines	\path(4,3)(5.9318,3.5176)
+	\thinlines	\path(4,3)(5.4142,4.4142)
+	\thinlines	\path(4,3)(4.5176,4.9318)
+
+	%２本の弦
+	\thinlines	\path(5.9318,3.5176)(5.4142,4.4142)
+	\thinlines	\path(5.4142,4.4142)(4.5176,4.9318)
+
+	%半角の中線
+	\thinlines	\qbezier[40](4,3)(4.86603,3.5000)(5.6730,3.9659)
+
+	%epsilon近傍
+	\thinlines	\qbezier[20](5.9318,3.5176)(5.51554,3.87500)(5.4142,4.4142)
+	\thinlines	\put(5.47224,3.85000){\small$\varepsilon$}
+	\thinlines	\qbezier[20](4.51764,4.93185)(4.87500,4.51554)(5.4142,4.4142)
+	\thinlines	\put(4.85000,4.47224){\small$\varepsilon$}
+
+	%z_1,z_2
+		\thicklines	\put(4.70711,3.70711){\circle{0.03}}
+		\thinlines	\put(4.70711,3.70711){\small$z_1$}
+		\thicklines	\put(5.41421,4.41421){\circle{0.03}}
+		\thinlines	\put(5.41421,4.41421){\small$z_2$}
+
+	%delta近傍
+	\thinlines	\put(4.69282,3.40000){\tiny$\delta$}
+	\thinlines	\qbezier[13](4.72444,3.19411)(4.69282,3.40000)(4.53033,3.53033)
+	\thinlines	\put(4.40000,3.69282){\tiny$\delta$}
+	\thinlines	\qbezier[13](4.19411,3.72444)(4.40000,3.69282)(4.53033,3.53033)
+
+	%theta
+	\thinlines	\put(4,3){\arc{0.9}{-0.78540}{0}}
+	\thinlines	\put(4,3){\arc{0.8}{-0.78540}{0}}
+	\thinlines	\put(4.38971,3.22500){\tiny$\theta$}
+
+
+
+
+\end{picture}
+\end{center}
+\end{figure}
+
+$S_1$，$S_2$の半径をそれぞれ$r_1$，$r_2$とするとき，$S_i$の点は，
+\[
+	z_i=(r_i\cos \theta,r_i \sin \theta),\quad \theta \in \R \quad (i=1,2)
+\]
+と表される．このとき，写像
+\[
+	f:S_1 \rightarrow S_2;z_1 \mapsto z_2
+\]
+は連続である．なぜならば，$S_2$における$z_2$の$\varepsilon$近傍（ただし，$0 < \varepsilon < 2r_2$）は，
+$\displaystyle \frac{\varepsilon}{2}=r_2\sin \frac{\delta}{2}$を満たす正数$\delta$をとるとき，
+\[
+	U=\{(r_2\cos \alpha,r_2 \sin \alpha)\,|\, \theta-\delta<\alpha<\theta+\delta \}
+\]
+の形をしており，このとき，
+\[
+	f^{-1}(U)=\{(r_1\cos \alpha,r_2 \sin \alpha) \,|\, \theta-\delta<\alpha < \theta+\delta \}
+\]
+は$S_1$における$z_1$の$\displaystyle 2 r_1 \sin \frac{\delta}{2}$近傍となるからである．同様にして，
+$g:S_2 \rightarrow S_1;z_2 \mapsto z_1$も連続で，更に$g \circ f=1_{S_1}$，$f \circ g=1_{S_2}$が成り立つから，
+定理７により$f$は同相写像である．
+
+\pagebreak
+\問{６}
+$\R^2$の角$\theta$の回転移動$f:\R^2 \rightarrow \R^2;
+(x,y) \mapsto (x \cos \theta +y \sin \theta,-x \sin\theta +y\cos \theta)$は同相写像である．これを証明せよ．
+
+\証明
+$g:\R^2 \rightarrow \R^2;(x,y) \mapsto (x\cos\theta-y\sin\theta,x\sin\theta+y\cos\theta)$
+は連続で，
+\begin{align*}
+	f	\circ	g(x,y)
+		&=g(f(x,y))=g(x\cos\theta+y\sin\theta,-x\sin\theta+y\cos\theta)	\\
+		&=(	(x\cos\theta+y\sin\theta)\cos\theta-(-x\sin\theta+y\cos\theta)\sin\theta,
+				(x\cos\theta+y\sin\theta)\sin\theta+(-x\sin\theta+y\cos\theta)\cos \theta)	\\
+		&=(	x\cos^2\theta+y\sin\theta\cos\theta+x\sin^2\theta-y\cos\theta\sin\theta,
+				x\cos\theta\sin\theta+y\sin^2\theta-x\sin\theta\cos\theta+y\cos^2\theta)	\\
+		&=	(x,y)	\\
+	g	\circ	f(x,y)
+		&=f(g(x,y))=f(x\cos\theta-y\sin\theta,x\sin\theta+y\cos\theta)	\\
+		&=(	(x\cos\theta-y\sin\theta)\cos\theta+(x\sin\theta+y\cos\theta)\sin\theta,
+				-(x\cos\theta-y\sin\theta)\sin\theta+(x\sin\theta+y\cos\theta)\cos\theta)	\\
+		&=(	x\cos^2\theta-y\sin\theta\cos\theta+x\sin^2\theta+y\cos\theta\sin\theta,
+				-x\cos\theta\sin\theta+y\sin^2\theta+x\sin\theta\cos\theta+y\cos^2\theta)	\\
+		&=	(x,y)	\\
+\end{align*}
+
+$g \circ f = 1_{\R^2},\,f \circ g=1_{\R^2}$を満たすから，定理７より同相写像である．
+\■
+
+\例{５}
+円周$S$から１点$p$を取り除いてできる部分空間$S - \{p \}$は直線$\R$
+と同相である．このことを示すために，例３（部分空間とその像は同相），
+例４（２つの円は同相）より$S$は平面$\R^2$の中にあって，
+中心が$(0,1)$で半径が1の円周（$x^2+(y-1)^2=1$）で，
+$p$はその上の点$(0.2)$で，$\R$は
+$\R^2$における横軸（いわゆる$x$軸）であると仮定しても一般性を失わない．
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(8,6)
+
+	%座標軸
+	\thicklines\put(-1,1){\vector(1,0){10}}
+	\thicklines\put(4,0){\vector(0,1){6}}
+
+	%円周
+		\thicklines 	\put(4,3){\circle{4}}
+
+	%原点
+		\put(3.6,0.6){$O$}
+
+	%p
+		\thinlines	\put(4,5){\circle{0.15}}
+		\thicklines	\put(3.7,5.1){$p$}
+		\thicklines	\put(4.1,5.1){$2$}
+
+	%写像の線
+		\thinlines	\path(4,5)(8,1)
+
+	%写像の線と円周の交点z
+		\thicklines	\put(6,3){\circle{0.07}}
+		\thicklines	\put(6.1,3){\small	$z$}
+
+	%zのx座標，y座標
+		\thicklines	\qbezier[20](6,3)(6,2)(6,1)
+								\put(6,0.75){\small	$x$}
+								\put(8,1.2){\small	$f(z)$}
+		\thicklines	\qbezier[20](6,3)(5,3)(4,3)
+								\put(3.75,3){\small	$y$}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+
+２つの写像
+\begin{align*}
+	f	&:S-\{p\} \rightarrow \R ; (x,y) \mapsto \frac{2x}{2-y}	\\
+	g	&:\R \rightarrow S - \{p\};t \mapsto \biggl( \frac{4t}{t^2+4},\frac{2t^2}{t^2+4}	\biggr)
+\end{align*}
+を定めることができて，$f$，$g$はともに連続で，$g \circ f=1_{S-\{p\}}$，$f \circ g=1_\R$を満たすことが
+確かめられる
+\begin{align*}
+	g	\circ	f	=f(g(t))
+						&=\frac{\displaystyle	2\biggl(\frac{4t}{t^2+4}\biggr)}{\displaystyle	2-\frac{2t^2}{t^2+4}}	\\
+						&=\frac{\displaystyle	\frac{8t}{t^2+4}}{\displaystyle	\frac{2t^2+8-2t^2}{t^2+4}}	\\
+						&=t	\\
+	f	\circ	g	=g(f(x,y))
+						&=\left(
+								\frac{\displaystyle	4\frac{2x}{2-y}}{\displaystyle	\biggl(\frac{2x}{2-y}\biggr)^2+4},	
+								\frac{\displaystyle	2\left(\frac{2x}{2-y}\right)^2}{\displaystyle	\biggl(\frac{2x}{2-y}\biggr)^2+4}
+							\right)	\\
+						&=\left(
+								\frac{8x(2-y)}{4x^2+4(2-y)^2},	
+								\frac{8x^2}{4x^2+4(2-y)^2}
+							\right)	\\
+						&=\left(
+								\frac{x(16-8y)}{4x^2+16-16y+4y^2},	
+								\frac{8-8(y-1)^2}{4x^2+16-16y+4y^2}
+							\right)	\\
+						&=\left(
+								\frac{x(16-8y)}{4(x^2+y^2-2y)+(16-8y)},	
+								\frac{y(16-8y)}{4(x^2+y^2-2y)+(16-8y)}
+							\right)	\\
+						&=\left(
+								\frac{x(16-8y)}{4\cdot0+(16-8y)},	
+								\frac{y(16-8y)}{4\cdot0+(16-8y)}
+							\right)	\\
+						&=(x,y)
+\end{align*}
+(この際，円周$S$の方程式$x^2+(y-1)^2-1=0$を用いる）．したがって，定理７により$f$は同相写像である．
+
+\vspace{3mm}
+\例{６}
+開区間$]-1,1[$を直線$\R$の部分空間とみなすとき，$]-1,1[$は$\R$と同相である．実際，
+$\displaystyle f:]-1,1[ \rightarrow \R;x \mapsto \frac{x}{1-|x|}$および，
+$\displaystyle g:\R \rightarrow ]-1,1[\,:y \mapsto \frac{y}{1+|y|}$は，ともに連続写像であって，
+$g \circ f=1_{]-1,1[}$，$f \circ g=1_\R$が成立することがわかるから，定理７より$f$は同相写像である．
+
+\begin{align*}
+		f	\circ	g(x)=g(f(x))
+		&=g\left(\frac{x}{1-|x|}\right)	\\
+		&=\frac{\displaystyle	\frac{x}{1-|x|}	}{\displaystyle	1+\left|\frac{x}{1-|x|}\right|}	\\
+		&=\frac{x}{|1-|x||+|x|}	\\
+		&=\frac{x}{1-|x|+|x|}	\quad	\text{（$\because	x	\in	\:]-1,1[$より）}	\\
+		&=x	\\
+\end{align*}
+\begin{align*}
+		g	\circ	f(x)=f(g(x))
+		&=f\left(\frac{x}{1+|x|}\right)	\\
+		&=\frac{\displaystyle	\frac{x}{1+|x|}}{\displaystyle	1-\left|\frac{x}{1+|x|}\right|}	\\
+		&=\frac{x}{|1+|x||-|x|}	\\
+		&=\frac{x}{1+|x|-|x|}		\\
+		&=x	\\
+\end{align*}
+
+\問{７}
+$\R$における任意の２つの開区間は，同相であることを証明せよ．
+
+\証明
+$]a,b[$，$]c,d[$を２つの開区間とする．
+$\displaystyle f:\,]a,b[\,\rightarrow ]c,d[\,;x\mapsto \frac{d-c}{b-a}x+\frac{bc-ad}{b-a}$
+は同相写像である
+$\displaystyle g:\,]c,d[\,\rightarrow ]a,b[\,;x\mapsto \frac{b-a}{d-c}x+\frac{da-cb}{d-c}$
+は逆写像である．
+\begin{align*}
+		f	\circ	g(x)=g(f(x))
+			&=g\left(\frac{d-c}{b-a}x+\frac{bc-ad}{b-a}\right)	\\
+			&=\frac{b-a}{d-c}\left(\frac{d-c}{b-a}x+\frac{bc-ad}{b-a}\right)+\frac{da-cb}{d-c}	\\
+			&=x
+\end{align*}
+また任意の一次関数は$h(x)=\alpha	x	+	\beta$は，任意の正数$\varepsilon>0$に対して，
+$\displaystyle	\delta=\frac{\varepsilon}{|\alpha|}$とおくと
+\begin{align*}
+		|x-y|<\delta=\frac{\varepsilon}{|\alpha|}	
+	&	\Rightarrow	|\alpha||x-y|<\varepsilon	\\
+	&	\Rightarrow	|\alpha	x	+	\beta	-	(\alpha	y	+	\beta)|<\varepsilon	\\	
+\end{align*}
+となり連続関数である．§6.2.1例５より$h|]a,b[=f$は同相写像である．
+\■
+
+\pagebreak
+\問{８}
+$\R^2$の２つの部分空間
+$\displaystyle 
+A=\biggl\{(r \cos \theta, r\sin \theta) \,|\, 0 \leqq r \leqq 1, 0 \leqq \theta \leqq \frac{\pi}{4} \biggr \}$
+（扇形の内部）と，
+$B = \{p \,|\,\text{$p$は$(0,0),(1,0),(1,1)$を頂点とする三角形の周または内部の点} \}$
+は同相であることを示せ．
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(8,6)
+
+	%座標軸
+	\thicklines\put(0,1){\vector(1,0){6}}
+	\thicklines\put(1,0){\vector(0,1){6}}
+
+	%原点O
+	\put(0.7,0.7){$O$}
+
+
+	\put(1,1){\arc{8}{-0.785398163}{0}}
+	\thicklines	\path(1,1)(3.84256926,3.84256926)
+
+	\thicklines	\path(1,1)(5,5)
+	\put(5,5){$(1,1)$}
+
+	\thicklines	\path(5,1)(5,5)
+	\put(5,0.7){$(1,0)$}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+\証明
+$f:A \rightarrow B;(r \sin \theta,r \cos \theta) \mapsto (r,r \tan \theta)$となることを示す．
+
+$f$の全射性：$\forall	(x,y)	\in	B$に対して，
+$x=r$，$y=r\tan\theta$となる$\displaystyle(r,\theta)	\in	[0,1]	\times	[0,\pi/4]$が存在する．
+$r$は$x$そのものであり，$\theta$の構成方法を以下に記す．
+$\displaystyle	\tan	\theta=\frac{y}{x}$となる$\theta$を構成すればよい．
+
+\■

@@ -1,0 +1,161 @@
+\subsection{連続体の濃度}
+
+前項で調べたように，整数全体の集合$\Z$や有理数全体の集合$\Q$は，自然数全体の集合$\N$と対等な集合，
+すなわち可算集合である．それでは実数全体の集合$\R$はどうであろうか．
+以下で証明するように，$\R$は可算ではない．この事実は実数の持つ連続性の性質(第4章参照)に基づいている．
+ここでは，カントルの\textgt{対角線論法}といわれる方法で，上の事実を証明しよう．
+証明の前に$\R$と対等な集合の例を挙げる．
+
+\vspace{3mm}
+\例{１０}
+開区間$]-1,1[$は$\R$と対等である．
+実際，
+\[
+	f:\,	]-1,1[	\,	\rightarrow \R	\,;\,	x	\mapsto	\frac{x}{1-|x|}
+\]
+\[
+	g:\,	\R	\,	\rightarrow	]-1,1[	\,;\,	x	\mapsto \frac{x}{1+|x|}
+\]
+を考えると，
+\begin{align*}
+	g \circ f	&= \frac{\cfrac{x}{1-|x|}}{1+\biggl|\cfrac{x}{1-|x|}\biggr|}
+						 = \frac{\cfrac{x}{1-|x|}\cdot |1-|x||}{|1-|x||+|x|}	\\
+						&= \frac{\cfrac{x}{1-|x|}\cdot (1-|x|)}{(1-|x|)+|x|}	\quad (\because	\, x \in \,]-1,1[ \,)\\
+						&= \frac{x}{1-|x|+x}
+						 = x\\
+f \circ g 	&= \frac{\cfrac{x}{1+|x|}}{1-\biggl|\cfrac{x}{1+|x|}\biggr|}
+						 = \frac{\cfrac{x}{1+|x|}\cdot |1+|x||}{|1+|x||-|x|}	\\
+						&= \frac{\cfrac{x}{1+|x|}\cdot (1+|x|)}{(1+|x|)-|x|}	\\
+					= \frac{x}{1+|x|-x}
+					= x	
+\end{align*}
+
+よって，$g \circ f =1_{]-1,1[}$，$f \circ g =1_{\R}$であるから，§1.3定理１１の系により，$f$は全単射である．
+
+\vspace{4mm}
+\例{１１}
+任意の開区間$]\,a,b\,[$，$]\,c,d\,[$は対等である．
+実際，$\displaystyle f:]\,a,b\,[ \,\rightarrow\, ]\,c,d\,[;
+x \,\mapsto\, \frac{d-c}{b-a}x+\frac{bc-ad}{b-a}$は
+全単射である．
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(5,4)
+	%座標軸
+	\thinlines\put(-1,0){\vector(1,0){6.5}}
+	\thinlines\put(0,-1){\vector(0,1){5}}
+	\thicklines\put(2,0){\line(1,0){3}}
+	\thicklines\put(0,1){\line(0,1){2}}
+
+	%原点
+	\put(-0.5,0.1){\large O}
+
+	%グラフ
+	\thinlines \put(5,3){\line(-3,-2){6}}
+	\thicklines \put(5,3){\line(-3,-2){3}}
+	\thinlines \put(5,3){\line( 3, 2){0.5}}
+
+	%格子線
+	\thinlines \qbezier[20](2,0)(2,0.5)(2,1)
+	\thinlines \qbezier[40](3.5,0)(3.5,1)(3.5,2)
+	\thinlines \qbezier[60](5,0)(5,1.5)(5,3)
+
+	%a,x,b
+	\put(2,  -0.3){$a$}
+	\put(3.5,-0.3){$x$}
+	\put(5,  -0.3){$b$}
+
+	%格子線
+	\thinlines \qbezier[35](0,1)(1,1)(2,1)
+	\thinlines \qbezier[70](0,2)(1.75,2)(3.5,2)
+	\thinlines \qbezier[105](0,3)(2.5,3)(5,3)
+
+	%c,d
+	\put(-0.3,1){$c$}
+	\put(-0.3,3){$d$}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+\vspace{3mm}
+\問{６}
+例１１の事実を証明せよ．
+
+\証明
+$\displaystyle g:]\,c,d\,[ \,\rightarrow\, ]\,a,b\,[\,;\,x \mapsto \frac{b-a}{d-c}x-\frac{bc-ad}{d-c}$は，
+$g \circ f=1_{\,]a,b[\,}, f \circ g=1_{\,]c,d[\,}$を満たすから，$f$は全単射．
+\■
+
+例１０，例１１および定理１(ⅲ)により，任意の開区間は$\R$と対等であることがわかる．
+
+　
+
+\定理{５}
+実数の集合$\R$は可算集合ではない．
+
+\証明
+上に述べたことから，開区間$]\,0,1\,[$が$\N$と対等でないことを示せばよい．
+$]\,0,1\,[$の元すなわち$0<x<1$なる任意の実数$x$は，10進法により\textgt{無限小数}として，
+\[
+x=0.a_1 a_2 \cdots a_n \cdots
+\]
+の形に表わされる．ただし,各$a_n$は，$0 \leqq a_i \leqq 9$であるような整数である．
+ここでいう無限小数は，小数点以下のある位以後ずっと0が続く小数
+（すなわち，\textgt{有限小数}を含むものとする．
+有限小数は，$0.3000\cdot=0.2999\cdots$のように２通りの表わし方があるが，
+いつも左辺のような表わし方をするものと約束する．
+そうすれば，$x$はただ１通りの仕方で表わされる
+(これらの事実は，後に§4.2で詳しく説明されるであろう)．
+
+いま，$]\,0,1\,[$が可算であると仮定すると（背理法の仮定），全単射$f:\N \rightarrow \,]\,0,1\,[$が存在する．
+$f(1)$，$f(2)$，$\cdots$，$f(n)$，$\cdots$を上のような無限小数によって，次のように表わす．
+
+\begin{gather*}
+f(1)=0.\boldsymbol{a_{11}}a_{12}a_{13}\cdots a_{1n}\cdots	\\
+f(2)=0.a_{21}\boldsymbol{a_{22}}a_{23}\cdots a_{2n}\cdots	\\
+\cdots	\\
+f(n)=0.a_{n1}a_{n2}a_{n3}\cdots \boldsymbol{a}_{\boldsymbol{nn}}\cdots	\\
+\cdots
+\end{gather*}
+
+ただし，各$a_{nm}$は，$0 \leqq a_{nm} \leqq 9$であるような整数である．
+上に並んだ数の表の対角線にあたる$a_{11},a_{22},\cdots,a_{nn},\cdots$を用いて，
+各$n \in \N$に対し$b_n$を
+\[
+	b_n=\begin{cases}
+				1	&\text{（$a_{nn}$が偶数のとき）}	\\
+				2 &\text{（$a_{nn}$が奇数のとき）}
+			\end{cases}
+\]
+によって定義する．そして，無限小数
+\[
+	b=0.b_1b_2\cdots b_n \cdots
+\]
+を定める．
+このとき，明らかに$0<b<1$，すなわち$b \in$ $]\,0,1\,[$である．
+背理法の仮定より$f$は全単射であるから，$f(m)=b$となる$m \in \N$が存在する．
+ところが，$f(m)$の小数点以下第$m$位は$a_{mm}$でこれは$b_m$と異なる．
+したがって，$f(m)\ne b$となって矛盾する．
+よって，$]\,0,1\,[$は可算ではない．
+\■
+実数全体の集合$\R$の濃度$|\R|$は\textgt{連続体の濃度}といわれ，
+\[
+	\Aleph
+\]
+と書かれる．
+記号$\Aleph$はアレフと読む．
+
+
+\vspace{3mm}
+\例{１２}
+任意の開区間$]\,a,b\,[$は連続体の濃度を持つ．すなわち，$|]\,a,b\,[|=\Aleph$．
+
+\vspace{3mm}
+{\small \注意{３}すべての区間　$]\,a,b\,]$，　$[\,a,b\,[$，　$[\,a,b\,]$，
+　$]\,\infty,a\,[$，　$]\,-\infty,a\,]$，　
+	$]\,a,-\infty\,[$，　$[\,a,-\infty\,[$　も連続体の濃度を持つ．
+このことは，後に§2.3で示される．
+}

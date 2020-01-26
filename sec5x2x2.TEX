@@ -1,0 +1,301 @@
+\subsection{同値な距離}
+同じ集合にことなる距離が定められることがあるのは，前節の考察からわかった．
+直線に定められるユークリッド距離のように，いわゆる遠い，近いの概念が保存されている距離もあれば，
+離散距離のように，そうでない距離もある．本項では，同値な距離とは何かを調べよう．
+
+\定義{}
+集合$X(\ne \varnothing)$に２つの距離$d,\,d'$が定義されていて，距離空間$(X,d)$の開集合は距離空間
+$(X,d')$の開集合であり，逆に，$(X,d')$の開集合は$(X,d)$の開集合であるとき，$d$と$d'$と互いに
+\textgt{同値な距離}であるという．
+
+\vspace*{3mm}
+\定理{３}
+$X(\ne \varnothing)$の上の２つの距離$d,d'$が同値であるための必要十分条件は，
+次の２条件が成り立つことである．
+
+\begin{list}{}{}
+	\item	(１)	任意の点$x \in X$と，任意の$\varepsilon$近傍$U(x;\varepsilon;d)$ $(\varepsilon>0)$
+							に対し
+							\[
+								U(x;\delta;d') \subseteq U(x;\varepsilon;d)
+							\]
+							となるような$\delta$近傍$U(x;\delta;d')$ $(\delta>0)$が存在する．
+
+	\item (２)	任意の点$x \in X$と，任意の$\varepsilon$近傍$U(x;\varepsilon;d')$ $(\varepsilon>0)$
+							に対し
+							\[
+								U(x;\delta;d) \subseteq U(x;\varepsilon;d')
+							\]
+							となるような$\delta$近傍$U(x;\delta;d)$ $(\delta>0)$が存在する．
+\end{list}
+
+\証明
+必要性：(１)　$U(x;\varepsilon;d)$は，$(X,d)$の開集合で点$x$を含むから，これが
+$(X,d')$の開集合ならば，$x$の適当な$\delta$近傍$U(x;\delta;d')$で
+\[
+	U(x;\delta;d') \subseteq U(x;\varepsilon;d)
+\]
+を満たすものが存在する．
+
+(２)　$U(x;\varepsilon;d')$は，$(X,d')$の開集合で点$x$を含むから，
+これが$(X,d)$の開集合ならば，(２)の包含関係を満たすような$\delta$近傍が存在する．
+
+十分性：$(X,d)$の任意の開集合を$G$とする．$G$任意の点$x$をとると，
+\[
+	U(x;\varepsilon;d) \subseteq G
+\]
+を満たすような正数$\varepsilon$が存在する．これに対して条件（１）より，
+$U(x;\delta;d')	\subseteq	U(x;\varepsilon;d)$となるような正数$\delta$が存在するから，
+\[
+	U(x;\delta;d') \subseteq G
+\]
+が成り立ち，$G$は$(X,\delta')$の開集合になる．同様にして，条件(２)を用いて，
+$(X,d')$の任意の開集合が$(X,d)$の開集合になることが示される．
+\■
+
+\pagebreak
+
+\例{２}
+実数全体の集合に定められたユークリッド距離$d$と離散距離$d_0$とは，互いに同値ではない．
+実際，離散距離$d_0$に関する点$x$の$1$近傍$U(x;1;d_0)$は点$x$のみから成る集合であるが，
+どんな正数$\varepsilon$に対しても，ユークリッド距離$d$に関する点$x$の$\varepsilon$近傍
+$U(x;\varepsilon;d)=]x-\varepsilon,x+\varepsilon[$は無限個の点を含むから，
+$U(x;\varepsilon;d) \not\subseteq U(x;1;d_0)$．
+\■
+
+
+\例{３}
+$\R^n$において，ユークリッド距離$d$と問１の距離$d_1$とは，互いに同値である．
+このことを定理３を利用して証明しよう．
+
+\vspace*{10mm}
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(1.7,1)
+	
+	%座標軸
+	\thinlines \put(0,-2.5){\vector(0,1){5}}
+	\thinlines \put(-2.5,0){\vector(1,0){5}}
+
+	%内点x
+	\put(-0.3,-0.3){$x$}
+
+	%dの距離での円
+	\thicklines \put(0,0){\circle{4}}
+	%d_1の距離での近傍
+	\thicklines \path(-2,0)(0,2)(2,0)(0,-2)(-2,0)
+
+	%dの距離での円
+	\thicklines \put(0,0){\circle{2.8}}
+	\thinlines \qbezier[45](0,0)(1.0,-0.4)(2.0,0)
+	\put(1.0,-0.4){\small$\varepsilon$}
+	\thinlines \qbezier[25](0,0)(0.7,0.4)(1.4,0)
+	\put(0.5,0.4){\small $\frac{\varepsilon}{\sqrt{2}}$}
+
+	\put(-3.5, 2){\small $U\bigl(x;\frac{\varepsilon}{\sqrt{2}};d\bigr)$}
+		\thinlines \put(-1.8,2){\vector(1,-1){1.2}}
+	\put(-3.5,-1){\small $U(x;\varepsilon;d_1)$}
+		\thinlines \put(-2.0,-1){\vector(3,4){0.54}}
+	\put(-3.2,-2){\small $U(x;\varepsilon;d)$}
+		\thinlines \put(-1.8,-2){\vector(1,1){0.7}}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+\vspace*{20mm}
+任意の点$x=(x_1,x_2,\cdots,x_n) \in \R^n$を考える．まず任意の正数$\varepsilon$に対し
+\[
+	U(x;\varepsilon;d_1) \subseteq U(x;\varepsilon;d)
+\]
+が示される．実際，$U(x;\varepsilon;d_1)$に属する任意の元を$y=(y_1,y_2,\cdots,y_n)$とするとき，
+$d_1(x,y)<\varepsilon$であるから，
+\[
+	d(x,y)^2 = \sum_{i=1}^n (x_i-y_i)^2 \leqq \Biggl(\sum_{i=1}^n |x_i-y_i| \Biggr)^2=d_1(x,y)^2 < \varepsilon^2.
+\]
+したがって，$d(x,y)<\varepsilon$が成り立ち，$y \in U(x;\varepsilon;d)$がわかり，
+$U(x;\varepsilon;d_1) \subseteq U(x;\varepsilon;d)$がわかる（定理３（１）が成立）．
+
+また任意の正数$\varepsilon$に対し
+\[
+	U\biggl(x;\frac{\varepsilon}{\sqrt{n}};d \biggr) \subseteq U(x;\varepsilon;d_1)
+\]
+が成立する．実際，$ \displaystyle U\biggl(x;\frac{\varepsilon}{\sqrt{n}};d \biggr)$に属する任意の元を
+$y=(y_1,y_2,\cdots,y_n)$とするとき，$\displaystyle d(x,y)<\frac{\varepsilon}{\sqrt{n}}$であるから，
+$n$に関する帰納法により
+\[
+	d_1(x,y)^2=\bigl(\sum_{i=1}^n |x_i-y_i| \bigr)^2 \leqq n \sum_{i=1}^n (x_i-y_i)^2 = nd(x,y)^2 < \varepsilon^2.
+\]
+{\small
+\begin{list}{}{}
+
+\item $n=1$のとき，
+	\[
+		|x_1-y_1|^2=1\cdot(x_1-y_1)^2
+	\]
+となり，等号が成立する．
+
+\item $n=2$のとき（予備的考察），
+	\begin{align*}
+		\text{（左辺）}&=(|x_1-y_1|+|x_2-y_2|)^2=|x_1-y_1|^2+2|x_1-y_1||x_2-y_2|+|x_2-y_2|^2	\\
+		\text{（右辺）}&=2(x_1-y_1)^2+2(x_2-y_2)^2	\\
+		\text{（右辺）}-\text{（左辺）}&=|x_1-y_1|^2-2|x_1-y_1||x_2-y_2|+|x_2-y_2|^2	\\
+																	 &=\{|x_1-y_1|-|x_2-y_2|\}^2	\\
+																	 &\geqq 0.
+	\end{align*}
+
+\item $n=3$のとき（予備的考察），
+	\begin{align*}
+	\text{（左辺）}	&=(|x_1-y_1|+|x_2-y_2|+|x_3-y_3|)^2		\\
+									&=|x_1-y_1|^2+|x_2-y_2|^2+|x_3-y_3|^2	\\
+									&\quad +2 \{ |x_1-y_1||x_2-y_2|+|x_2-y_2||x_3-y_3|+|x_3-y_3||x_1-y_1|\}	\\
+									\\
+	\text{（右辺）}	&=3(x_1-y_1)^2+3(x_2-y_2)^2+3(x_3-y_3)^2	\\
+	\text{（右辺）}-\text{（左辺）}
+									&=2|x_1-y_1|^2+2|x_2-y_2|^2+2|x_3-y_3|^2	\\
+									&\quad -2|x_1-y_1||x_2-y_2|-2|x_2-y_2||x_3-y_3|-2|x_3-y_3||x_1-y_1| \\
+									\\
+									&= \{|x_1-y_1|-|x_2-y_2|\}^2
+										+\{|x_2-y_2|-|x_3-y_3|\}^2
+										+\{|x_3-y_3|-|x_1-y_1|\}^2	\\
+									&\geqq 0.
+	\end{align*}
+
+\item $n=4$のとき（予備的考察），
+	\begin{align*}
+	\text{（左辺）}	&=(|x_1-y_1|+|x_2-y_2|+|x_3-y_3|+|x_4-y_4|)^2		\\
+									&=|x_1-y_1|^2+|x_2-y_2|^2+|x_3-y_3|^2+|x_4-y_4|^2	\\
+									&\quad +2 \{\quad |x_1-y_1||x_2-y_2|+|x_1-y_1||x_3-y_3|+|x_1-y_1||x_4-y_4|	\\
+									&\quad\quad\quad	+|x_2-y_2||x_3-y_3|+|x_2-y_2||x_4-y_4|	\\
+									&\quad\quad\quad	+|x_3-y_3||x_4-y_4|\}.\\
+									\\
+		\text{（右辺）}	
+									&=4(x_1-y_1)^2+4(x_2-y_2)^2+4(x_3-y_3)^2+4(x_4-y_4)^2.	\\
+									\\
+		\text{（右辺）}-\text{（左辺）}
+									&=3(x_1-y_1)^2+3(x_2-y_2)^2+3(x_3-y_3)^2+3(x_4-y_4)^2	\\
+									&\quad -2 \{\quad |x_1-y_1||x_2-y_2|+|x_1-y_1||x_3-y_3|+|x_1-y_1||x_4-y_4|	\\
+									&\quad\quad\quad	+|x_2-y_2||x_3-y_3|+|x_2-y_2||x_4-y_4|	\\
+									&\quad\quad\quad	+|x_3-y_3||x_4-y_4|\}	\\
+									\\
+									&=(\text{$n=3$のときの右辺})+3(x_4-y_4)^2	\\
+									&\quad -[\,|x_1-y_1|^2+|x_2-y_2|^2+|x_3-y_3|^2	\\
+									&\quad\quad 	+2 \{ |x_1-y_1||x_2-y_2|+|x_2-y_2||x_3-y_3|+|x_3-y_3||x_1-y_1|\}\,]	\\
+									&\quad +|x_1-y_1|^2+|x_2-y_2|^2+|x_3-y_3|^2 \\
+									&\quad -2\{\,|x_1-y_1||x_4-y_4|+|x_2-y_2||x_4-y_4|+|x_3-y_3||x_4-y_4|\,\}	\\
+									\\
+									&=(\text{$n=3$のときの右辺})-[\text{$n=3$のときの左辺}]	\\
+									&\quad +\{|x_1-y_1|-|x_4-y_4|\}^2+\{|x_2-y_2|-|x_4-y_4|\}^2+\{|x_3-y_3|-|x_4-y_4|\}^2
+									\\
+									&\geqq 0.
+	\end{align*}
+
+\item $n=k-1$のとき成立すると仮定すると，
+\[
+	\bigl(\sum_{i=1}^{k-1} |x_i-y_i| \bigr)^2 \leqq (k-1) \sum_{i=1}^{k-1} (x_i-y_i)^2.
+\]
+	\begin{align*}
+		\Longrightarrow 
+		\text{（右辺）}-\text{（左辺）}
+			&=(k-1)(x_1-y_1)^2+\cdots+(k-1)(x_{k-1}-y_{k-1})^2	\\
+			&\quad	-\Biggl( 
+								\sum_{i=1}^{k-1}|x_i-y_i|^2+ 2\sum_{i=1}^{k-2}\sum_{j=i+1}^{k-1} |x_i-y_i||x_j-y_j|
+							\Biggr)	\\
+			&\geqq 0.
+	\end{align*}
+\item $n=k$のとき，
+\begin{align*}
+	\text{（右辺）}-\text{（左辺）}
+			&= k \sum_{i=1}^k (x_i-y_i)^2 - \biggl( \sum_{i=1}^k |x_i-y_i| \biggr)^2 \\
+			&= k(x_1-y_1)^2+\cdots+k(x_k-y_k)^2 \\
+			&\quad	-\Biggl( \sum_{i=1}^k |x_i-y_i|^2+2\sum_{i=1}^{k-1}\sum_{j=i+1}^{k}|x_i-y_i||x_j-y_j| \Biggr)	\\
+			\\
+			&=[(k-1)(x_1-y_1)^2+\cdots+(k-1)(x_{k-1}-y_{k-1})^2]+(k-1)(x_k-y_k)^2 \\
+			&\quad	-2 \sum_{i=1}^{k-2}\sum_{j=i+1}^{k-1}|x_i-y_i||x_j-y_j| -2\sum_{i=1}^{k-1}|x_i-y_i||x_k-y_k|
+			\\
+			&=[\text{（$n=k-1$の右辺）}]+(k-1)(x_k-y_k)^2 \\
+			&\quad		-\Biggl[\,\sum_{i=1}^{k-1}|x_i-y_i|^2+2\sum_{i=1}^{k-2}\sum_{j=i+1}^{k-1}|x_i-y_i||x_j-y_j| \,\Biggr]	\\
+			&\quad		+\sum_{i=1}^{k-1}|x_i-y_i|^2-2\sum_{i=1}^{k-1}|x_i-y_i||x_k-y_k|
+			\\
+			&=[\text{（$n=k-1$の右辺）}]-[\text{（$n=k-1$の左辺）}]\\
+			&\quad		+(\,|x_1-y_1|-|x_k-y_k|\,)^2+\cdots+(\,|x_{k-1}-y_{k-1}|-|x_k-y_k|\,)^2	\\
+			&\geqq 0.
+\end{align*}
+\end{list}
+}
+したがって，$d_1(x,y) < \varepsilon$が成り立ち，$y \in U(x;\varepsilon;d_1)$が示され，
+$U(x;\varepsilon;d) \subseteq U(x;\varepsilon;d_1)$が示される（定理３（２））．
+\■
+
+\問{３}
+集合$X$に定められる距離が同値であると言う関係は，同値関係であることを証明せよ．
+
+\証明
+　$d$，$d_1$，$d_2$を$X$の上に定められた距離とする．
+
+（反射律）：$d$は$d$自身と同値である．定理３を用いてこれを証明する．
+
+（１）（２）任意の点$x	\in	X$と，任意の$\varepsilon$近傍$U(x;\varepsilon;d)	\quad	\varepsilon>0$に対して，
+$\delta=\varepsilon$とおくと
+\[
+	U(x;\delta;d)	\subseteq	U(x;\varepsilon;d)
+\]
+となるような$\delta$近傍$U(x;\delta;d)$が存在する．よって，$d$と$d$は同値である．
+
+（対称律）：$d_1$と$d_2$が同値ならば，$d_2$と$d_1$も同値である．定理３を用いてこれを証明する．
+仮定と定理３より，次の（１），（２）が成り立つ．
+\begin{list}{}{}
+	\item	(１)	任意の点$x \in X$と，任意の$\varepsilon$近傍$U(x;\varepsilon;d_1)$ $(\varepsilon>0)$
+							に対し
+							\[
+								U(x;\delta;d_2) \subseteq U(x;\varepsilon;d_1)
+							\]
+							となるような$\delta$近傍$U(x;\delta;d_2)$ $(\delta>0)$が存在する．
+
+	\item (２)	任意の点$x \in X$と，任意の$\varepsilon$近傍$U(x;\varepsilon;d_2)$ $(\varepsilon>0)$
+							に対し
+							\[
+								U(x;\delta;d_1) \subseteq U(x;\varepsilon;d_2)
+							\]
+							となるような$\delta$近傍$U(x;\delta;d_1)$ $(\delta>0)$が存在する．
+\end{list}
+よって（２）（１）より定理３を再び用いて$d_1$と$d_2$は同値である．
+
+
+（推移律）：$d_1$と$d_2$は同値な距離，$d_2$と$d_3$は同値な距離とする．
+このときそれぞれの仮定に定理３を適用して，
+\begin{list}{}{}
+	\item	(１)	任意の点$x \in X$と，任意の$\varepsilon$近傍$U(x;\varepsilon;d_1)$ $(\varepsilon>0)$
+							に対し
+							\[
+								U(x;\delta;d_2) \subseteq U(x;\varepsilon;d_1)
+							\]
+							となるような$\delta$近傍$U(x;\delta;d_2)$ $(\delta>0)$が存在する．
+	\item (１)’任意の点$x \in X$と，（１）の$\delta$近傍$U(x;\delta;d_2)$ $(\delta>0)$
+							に対し
+							\[
+								U(x;\gamma;d_3) \subseteq U(x;\delta;d_2)
+							\]
+							となるような$\gamma$近傍$U(x;\gamma;d_3)$ $(\gamma>0)$が存在する．
+\end{list}
+よって（１）（１）’より
+\begin{list}{}{}
+	\item	(１)’’	任意の点$x \in X$と，任意の$\varepsilon$近傍$U(x;\varepsilon;d_1)$ $(\varepsilon>0)$
+							に対し
+							\[
+								U(x;\gamma;d_3) \subseteq U(x;\varepsilon;d_1)
+							\]
+							となるような$\gamma$近傍$U(x;\gamma;d_3)$ $(\gamma>0)$が存在する．
+\end{list}
+同様にして，
+\begin{list}{}{}
+	\item	(２)’’	任意の点$x \in X$と，任意の$\gamma'$近傍$U(x;\gamma';d_1)$ $(\gamma'>0)$
+							に対し
+							\[
+								U(x;\varepsilon';d_1) \subseteq U(x;\gamma';d_3)
+							\]
+							となるような$\varepsilon'$近傍$U(x;\varepsilon';d_1)$ $(\varepsilon'>0)$が存在する．
+\end{list}
+（１）’’（２）’’と定理３より$d_1$と$d_3$が同値となる
+\■

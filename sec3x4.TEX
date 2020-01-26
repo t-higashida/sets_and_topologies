@@ -1,0 +1,230 @@
+\section{順序数の演算}
+{
+\small 
+本節では，順序数の和と積を導入し，その性質を調べよう．濃度の演算の場合と異なり，
+これらの演算においては，交換法則が一般に成立しない．
+このことは，和や積がその順番に関係していることに起因する．
+}
+
+\subsection{順序数の和}
+２つの順序数$\alpha$，$\beta$に対し，それらの和をどう定義したらよいであろうか．
+$\alpha=\langle A \rangle$，$\beta=\langle B \rangle$なる整列集合$A$，$B$をとるとき，
+$A$，$B$はそれぞれの順序に従って元が１列に並んでいる．$A \cap B=\varnothing$であれば，
+$A$のあとに$B$をつなぐと１つの整列集合ができる．その整列集合の順序数を$\alpha+\beta$と定めよう．
+詳しく述べると次のようになる．
+
+\vspace{3mm}
+\定義{}
+$\alpha$，$\beta$を２つの順序数とし，$(A,\prec_A)$，$(B,\prec_B)$をそれぞれ
+$\langle (A,\prec_A) \rangle=\alpha$，$\langle (B,\prec_B) \rangle=\beta$で，
+かつ$A \cap B = \varnothing$を満たす整列集合とする．和集合$A \cup B$に，
+次の(１),(２),(３)によって関係$\prec$を定義する．
+
+(１)　$a \in A$，$b \in B$ $\Rightarrow$ $a \prec b$
+
+(２)　$a \in A$，$b \in A$，$a \prec_A b$ $\Rightarrow$ $a \prec b$
+
+(３)　$a \in B$，$b \in B$，$a \prec_B b$ $\Rightarrow$ $a \prec b$
+
+この関係は順序関係で，しかも順序集合$(A \cup B,\prec)$は整列集合である．
+整列集合$(A \cup B,\prec)$の順序数を$\alpha$，$\beta$と\textgt{和}といい，
+$\alpha+\beta$と記す．すなわち，
+\[
+	\alpha+\beta=\langle (A \cup B, \prec ) \rangle.
+\]
+このような和の定義ができるためには，
+次の$1^{\circ}$，$2^{\circ}$，$3^{\circ}$を証明しておく必要がある．
+
+$1^{\circ}$
+任意の順序数$\alpha$，$\beta$に対し$\alpha=\langle A \rangle$，$\beta= \langle B \rangle$で，
+$A \cap B = \varnothing$を満たす整列集合$A$，$B$が存在する．
+
+$2^{\circ}$
+上の(１)，(２)，(３)によって定義される関係$\prec$は順序関係で，順序集合$(A \cup B,\prec)$は
+整列集合である．
+
+$3^{\circ}$
+和$\alpha+\beta$の定義が$\alpha$，$\beta$のみによって定まり，
+$\alpha=\langle A \rangle$，$\beta=\langle B \rangle$なる整列集合$A$，$B$の選び方には無関係である．
+
+\textgt{$1^{\circ}$の証明}　
+$\alpha=\langle A \rangle$，$\beta=\langle B \rangle$なる$A$，$B$に対し，
+もし$A \cap B \ne \varnothing$ならば，$A$，$B$のかわりに$A \times \{0 \}$，
+$B \times \{1\}$を用いればよい．実際，$A \times \{ 0 \}$，$B \times \{1\}$は，
+それぞれの順序を
+$(a,0) \prec (a',0) \Longleftrightarrow a \prec a' \quad (a,a' \in A), \quad 
+ (b,1) \prec (b',1) \Longleftrightarrow b \prec b' \quad (b,b' \in B)
+$
+によって定めることにより，$A \times \{ 0 \} \simeq A$，$B \times \{ 1 \} \simeq B$
+であるような整列集合となり，更に$A \times \{ 0 \} \cap B \times \{ 1 \} = \varnothing$が成立する．
+
+\textgt{$2^{\circ}$の証明}　
+(１)，(２)，(３)で定められる関係が順序関係であることは，以下の様に容易に確かめられよう．
+\begin{align*}
+	a	\prec	b	\text{　かつ　}b	\prec	c	
+	&	\Longleftrightarrow	\\
+		&	a	\prec_A	b		\text{　または　}	
+			a	\prec_B	b	\text{　または　}	
+			(a	\in	A			\text{　かつ　}	b	\in B)	\\
+	&\text{　かつ　}	\\
+		&	b	\prec_A	c		\text{　または　}	
+			b	\prec_B	c		\text{　または　}	
+			(b	\in	A	\text{　かつ　}	c	\in	B)\\
+	&	\Longleftrightarrow	\\
+		&	(a	\prec_A	b	\text{かつ}	b	\prec_A	c)	\text{または}	
+			(a	\prec_A	b	\text{かつ}	b	\prec_B	c)	\text{または}
+			(a	\prec_A	b	\text{かつ}	(b	\in	A	\text{かつ}	c	\in	B))\\
+		&	\text{または}	\\
+		&	(a	\prec_B	b	\text{かつ}	b	\prec_A	c)	\text{または}	
+			(a	\prec_B	b	\text{かつ}	b	\prec_B	c)	\text{または}
+			(a	\prec_B	b	\text{かつ}	(b	\in	A	\text{かつ}	c	\in	B))\\
+		&	\text{または}	\\
+		&	((a	\in	A	\text{かつ}	b	\in	B)	\text{かつ}	b	\prec_A	c)	\\
+		&	\text{または}	\\
+		&	((a	\in	A	\text{かつ}	b	\in	B)	\text{かつ}	b	\prec_B	c)	\\
+		&	\text{または}	\\
+		&	((a	\in	A	\text{かつ}	b	\in	B)	\text{かつ}	(b	\in A	\text{かつ}	c	\in	B))	\\
+	&	\Longleftrightarrow	\\
+		&	(a	\prec_A	c)	\text{　または　}
+			False						\text{　または　}
+			(a	\in	A	\text{　かつ　}	c	\in	B)	\\
+		&	\text{または}	\\	
+			&False						\text{　または　}
+			a	\prec_B	c			\text{　または　}
+			False	\\
+		&	\text{または}	\\
+			&False															\text{　または　}
+			(a	\in	A	\text{　かつ　}	c	\in	B)	\text{　または　}
+			False	\\
+		&	\Longleftrightarrow	\\
+			&	(a	\prec	c)	\text{　または　}		(a	\prec	c)	\text{　または　}
+				(a	\prec	c)	\text{　または　}		(a	\prec	c)	\\
+		&	\Longleftrightarrow	\\
+			&	a	\prec	c	\\
+\end{align*}
+よって，$\prec$は順序性を持つ．
+
+つぎに，$(A	\cup	B,\prec)$の任意の2つの元$a,b$に対して
+\begin{align*}
+		&(a	\in	A	\text{　かつ　}	b	\in	A)	\text{　または　}	\\
+		&(a	\in	A	\text{　かつ　}	b	\in	B)	\text{　または　}	\\
+		&(b	\in	A	\text{　かつ　}	a	\in	B)	\text{　または　}	\\
+		&(a	\in	B	\text{　かつ　}	b	\in	B)	\text{　または　}	\\
+	&\Longrightarrow	\\
+		&(a	\prec_A	\text{　または　}	a=_A	b	\text{　または　}	b	\prec_A)	\text{　または}	\\
+		&(a	\prec	b)	\text{　または}	\\
+		&(b	\prec	a)	\text{　または}	\\
+		&(a	\prec_B	b	\text{　または　}	a=_B	b	\text{　または　}	b	\prec_B	a)	\\
+	&\Longrightarrow	\\
+		&a	\prec	b	\text{　または　}	a=b	\text{　または　}	b	\prec	a
+\end{align*}
+となり，$A	\cap	B	=	\varnothing$であるから，どの２つも同時に成り立たない．よって，$(A	\cup	B,\prec)$は
+順序集合である．
+
+$(A	\cup	B,\prec)$が整列集合であることは，以下のようにして示される．$A	\cup	B$の空でない部分集合$M$を任意のとるとき，$M	\cap	A	\ne	\varnothing$ならば，
+$M	\cap	A$は整列集合$A$の空でない部分集合として最初の元$a$をもつ，	$B$の元は
+すべて，	$A$の元より後ろにあるから，$a$は$M$の最初の元である．
+$M	\cap	A	=	\varnothing$ならば，$M	\subseteq	B$であり，
+$M$は整列集合$B$の空でない部分集合として最初の元$a$をもつ．
+$(A	\cup	B,\prec)$の任意の部分集合$M$は最初の元をもつ．よって$(A	\cup	B,\prec)$は整列集合である．
+
+\textgt{$3^{\circ}$の証明　}
+
+$A_1	\simeq	A_2$，$B_1	\simeq	B_2$，$A_1	\cap	B_1	=\varnothing$，
+$A_2	\cap	B_2	=\varnothing$を満たす整列集合$A_1,\,	B_1,\,	A_2,\,	B_2$を任意にとるとき，$A_1	\cup	B_1	\simeq	A_2	\cup	B_2$が成り立つことを示す．
+
+$f_1:A_1	\longrightarrow	A_2,\,	f_2:B_1	\longrightarrow	B_2$を順序同型写像とするとき，
+\[
+	g(x)=
+	\begin{cases}
+		\quad	f_1(x)	\quad	\text{$x	\in	A_1$のとき}	\\
+		\quad	f_2(x)	\quad	\text{$x	\in	B_1$のとき}
+	\end{cases}
+\]
+によって定義される$g:A_1	\cup	B_1	\longrightarrow	A_2	\cup	B_2$は順序同型写像である．
+\■
+
+\例{１}
+任煮の順序数$\alpha$に対し，$\alpha+1$を$\alpha$の\textgt{次の順序数}という．
+
+　
+
+\例{２}
+$n	\in	\N$とする．$A=(1,2,\cdots,n)$，$B=(n+1,n+2,\cdots,n+m,\cdots,)$に対し，
+$A	\cap	B=\varnothing$，$A	\cup	B=(1,2,\cdots,n,n+1,\cdots)$で，更に，
+$\langle	A	\rangle=n$，$\langle	B	\rangle=\langle	A	\cup	B	\rangle	=\omega$
+が成り立つから，$n	+	\omega=\omega$．
+
+　
+
+\例{３}
+$\displaystyle A=	\biggl(0,\frac{1}{2},\frac{2}{3},\cdots,\frac{n-1}{n},\cdots										\biggr)$,
+$\N=(1,2,3,\cdots,m,\cdots	)$に対し	$A	\cap	\N=\varnothing$，
+$\displaystyle	A	\cup	\N=\biggl(0,\frac{1}{2},\frac{2}{3},\cdots,\frac{n-1}{n},\cdots,;1,2,3,\cdots,m,\cdots	\biggr)$で，
+更に$\langle	A	\rangle=\langle	\N	\rangle=\omega$が成り立つから，
+
+$	\displaystyle	
+	\biggl\langle	\biggl(0,\frac{1}{2},\frac{2}{3},\cdots,\frac{n-1}{n},\cdots,;1,2,3,\cdots,m,\cdots	\biggr)\biggr\rangle=\omega+\omega$．
+
+　
+
+\定理{７}
+順序数の和は次の性質をもつ．
+\begin{list}{}{}
+	\item	(ⅰ)　$(\alpha+\beta)+\gamma=\alpha+(\beta+\gamma)$	\textgt{　（結合法則）　}
+	\item	(ⅱ)　$\alpha+0=0+\alpha=\alpha$
+\end{list}
+
+\証明
+
+（ⅰ）　$A,\,B,\,C$を，$\langle	A	\rangle=\alpha$，$\langle	B	\rangle=\beta$，
+$\langle	C \rangle=\gamma$を満たすものとする．このとき，更に
+$(A	\cup	B)	\cap	C	=	\varnothing=A	\cap	(B	\cup	C)$であるから，
+\begin{align*}
+	(\alpha	+	\beta	)+	\gamma	=\langle	A	\cup	B	\rangle	+	\langle	C	\rangle
+															=\langle	(A	\cup	B)	\cup	C	\rangle	\\
+	\alpha	+	(\beta+	\gamma)		=\langle	A	\rangle	+	\langle	B	\cup	C	\rangle
+															=\langle	A	\cup	(B	\cup	C)	\rangle	\\
+\end{align*}
+が成り立つ．ところが，整列集合$(A	\cup	B)	\cup	C$および$A	\cup	(B	\cup	C)$
+は，その作り方~から明らかに順序同型である．よって$(\alpha+\beta)+\gamma=\alpha+(\beta+\gamma)$
+
+（ⅱ）$\langle	\varnothing	\rangle=	0$に注意すれば，和の定義から，
+\begin{align*}
+		\alpha+0=\langle	A \rangle	+	\langle	\varnothing	\rangle=\langle	A	\cup	\varnothing	\rangle
+						=\langle	A \rangle=\alpha	\\
+		0	+	\alpha=\langle	\varnothing	\rangle+\langle	A	\rangle	=	\langle	\varnothing	\cup	A	\rangle
+						=\langle	A \rangle=\alpha
+\end{align*}
+
+　
+
+\定義{８}
+順序数の和と大小に関し，次が成り立つ．
+\begin{list}{}{}
+		\item	（ⅰ）　$\alpha	<	\beta	\Longrightarrow	\gamma	+\alpha	<	\gamma	+	\beta$
+		\item	（ⅱ）　$\alpha	<	\beta	\Longrightarrow	\alpha	+	\nu	\leqq	\beta	+	\nu$
+\end{list}
+\証明
+（ⅰ）$\langle	A	\rangle=\alpha,	\quad	\langle	B	\rangle=\beta,	\quad	\langle	C	\rangle=\gamma,
+\quad	A	\cap	C	=	B	\cap	C	=	\varnothing$なる整列集合$A$，$B$，$C$をとる．
+$\alpha	<	\beta$より，$A	\simeq	B(b)$なる$b	\in B$が存在する．このとき，$C	\cup	A	\simeq	C	\cup
+(B(b))=(C	\cup	B)(b)$であるから，$\nu	+	\alpha	<	\nu	+	\beta$．
+
+（ⅱ）$\langle	A	\rangle	=\alpha,\,\langle	B	\rangle=\beta,\,	\langle	C	\rangle=\nu,\,
+A	\cap	C=B	\cap	C=	\varnothing$なる整列集合$A,\,B,\,C$をとる．
+仮定より，$A	\simeq	B(b)	\quad	(b	\in	B)$，ゆえに	$A	\cup	C	\simeq	B(b)	\cup	C	\subset	B	\cup	C$．
+よって，$A	\cup	C	\simeq	B	\cup	C$または$A	\cup	C	\simeq	(B	\cup	C)(x)	\quad	(x	\in	B	\cup	C)$．
+したがって，$\alpha+\nu	\leqq	\beta+\nu$．
+\■
+
+{\small
+\注意{１}	$	\alpha	<	\beta$であっても，$\alpha	+	\nu	<	\beta+\nu$とは限らない．実際，定理７（ⅱ）
+および，例２により，$0+\omega	=	\omega=	n+\omega$が成り立つ．
+}
+
+{\small
+\注意{２}	交換法則	$\alpha+\beta	=	\beta+\alpha$は一般には成立しない．なぜならば，
+例２，定理７（ⅱ）および，定理８（ⅰ）より$1+\omega=\omega=\omega+0	<	\omega+1$．
+すなわち，$1+\omega	<	\omega+1$が成り立つからである．
+}

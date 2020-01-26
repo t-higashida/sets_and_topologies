@@ -1,0 +1,167 @@
+\subsection{$p$進展開}
+本項では，実数の$p$進法による展開について述べよう．はじめに，任意の実数は，
+有理数から成る単調増加数列の極限として表わされることを示す．
+
+\vspace{3mm}
+\定理{６}
+$p$を$1$より大きい整数とする．任意の実数$a$は，適当な単調増加数列
+\[
+	\Bigl\{\,a_0,\frac{a_1}{p},\frac{a_2}{p^2},\cdots,\frac{a_{n-1}}{p^{n-1}}	,\cdots \,\Bigr\}
+\quad (a_i \in \Z)
+\]
+の極限として表すことができる．
+
+\証明
+任意に$n \in \N$をとるとき，例１１により，$a_n \leqq p^na < a_n+1$なる整数
+$a_n$が存在する．このとき，
+\[
+	\frac{a_n}{p^n} \leqq a < \frac{a_n+1}{p^n} \text{　　　すなわち　　　}
+	0 \leqq a-\frac{a_n}{p^n} < \frac{1}{p^n}   \text{　　　（＊）　　　}
+\]
+が成り立つ．つまり，$a_n$は，$\displaystyle a \geqq \frac{m}{p^n}$を満たす整数$m$のうち最大数である．
+$p>1$より，$\displaystyle \lim_{n \rightarrow \infty} \frac{1}{p^n}=0$である（問４参照）から，
+（＊）とはさみうちの原理より
+\[
+	\lim_{n \rightarrow \infty} \frac{a_n}{p^n}=a
+\]
+更に，
+$\displaystyle \frac{a_{n-1}p}{p^n}=\frac{a_{n-1}}{p^{n-1}} \leqq a$であるから
+$a_{n-1}p \leqq ap^n$．
+$a_n$の性質「$a_n$は$p^na$を超えない最大の整数」より$a_{n-1}p \leqq a_n$．ゆえに，
+\[
+	\displaystyle \frac{a_{n-1}}{p^{n-1}} \leqq \frac{a_n}{p^n}
+\]
+が成り立つ．よって，数列$\displaystyle \Bigl\{ \,\frac{a_n}{p^n} \,\Bigr\}$は単調増加である．
+\■
+この定理を用いると，次が証明される．
+
+\系
+任意の実数$a$は，整数$p>1$を用いて，
+\[
+	a=b_0+\frac{b_1}{p}+\frac{b_2}{p^2}+ \cdots + \frac{b_n}{p^n}+\cdots		\text{　　（１）　　}
+\]
+のように無限級数の形に表わすことができる．ただし，$b_0$は$a$を超えない最大の整数で，
+各$b_n \,(n=1,2,\cdots )$は$0 \leqq b_n < p $を満たす整数である．
+
+{ \small
+\注意{２}
+（１）の展開を，実数$a$の\textgt{$p$進法による展開}（または単に\textgt{$p$進展開}）といい，
+\[
+	a=b_0 b_1 b_2 \cdots b_n \cdots
+\]
+と略記される．特に，$p=10$のときが$a$の\textgt{$10$進法による展開}である．
+}
+
+\textgt{系の証明}　
+定理６の証明より，
+\[
+	\frac{a_{n-1}}{p^{n-1}} \leqq \frac{a_n}{p^n} \leqq a < \frac{a_{n-1}+1}{p^{n-1}}
+\]
+であるから，
+\[
+	a_0=b_0,\quad \frac{a_n}{p^n}-\frac{a_{n-1}}{p^{n-1}}=\frac{b_n}{p^n}	\text{　　　（２）}
+\]
+とおけば，$b_0$は$a$を超えない最大の整数で，
+$b_n	=	a_n-a_{n-1}p	\geqq	0$（定理６の性質「$a_{n-1}p	\geqq	a_n$」）である．
+また
+\begin{align*}
+		\frac{a_{n-1}}{p^{n-1}}	\leqq	\frac{a_n}{p^n}	\leqq	a	<	\frac{a_{n-1}+1}{p^{n-1}}	\\
+&	\Longrightarrow	
+	\frac{a_n}{p^n}	<	\frac{a_{n-1}+1}{p^{n-1}}	\\
+&	\Longrightarrow	
+	\frac{a_n}{p^n}	<	\frac{a_{n-1}}{p^{n-1}}+\frac{1}{p^{n-1}}\\
+&	\Longrightarrow	
+	\frac{a_n}{p^n}-\frac{a_{n-1}}{p^{n-1}}	<	\frac{1}{p^{n-1}}\\
+&	\Longrightarrow	
+	b_n	<	p
+\end{align*}
+よって，$n \in \N$に対して$0 \leqq b_n < p$が成り立つ
+
+ところで（2）を$1,2,\cdots , n$について加えることにより，
+\begin{align*}
+		&	\frac{a_1}{p^1}-\frac{a_0}{p^0}	=\frac{b_1}{p^1}	\\
+		&	\frac{a_2}{p^2}-\frac{a_1}{p^1}	=\frac{b_2}{p^2}	\\
+		&\cdots																						\\
+		&\frac{a_n}{p^n}-\frac{a_{n-1}}{p^{n-1}}=\frac{b_n}{p^n}	\\
+		&+	\quad	+	\quad	+	\\
+		&\frac{a_n}{p^n}-\frac{a_0}{p^0}	=\frac{b_1}{p^1}+\frac{b_2}{p^2}+\cdots	+\frac{b_n}{p^n}	\\
+\end{align*}
+\[	\Longrightarrow	
+		\frac{a_n}{p^n}=b_0+\frac{b_1}{p}+\cdots + \frac{b_n}{p^n}
+\]
+が得られる．それゆえ，定理６により，
+\[
+	a=\lim_{n \rightarrow \infty} \frac{a_n}{p^n}=b_0+\frac{b_1}{p}+\cdots + \frac{b_n}{p^n} +\cdots
+\]
+\■
+
+{\small
+\注意{３}
+逆に，$b_0$を任意の整数，$b_k \, (k \in \N)$を$0 \leqq b_k < p$なる整数とするとき，
+\[
+	c_n=\sum_{k=0}^n \frac{b_k}{p^k}
+\]
+によって得られる数列$\{\,c_n\,\}$は，１つの実数に収束する．実際，$\{\,c_n\,\}$は単調増加で有界
+$(c_n \leqq b_0+1)$であるから，定理３により収束する．
+}
+
+\pagebreak
+\問{５}
+実数$a$が，いかなる整数$n \quad ( \geqq 0)$に対しても$\displaystyle \frac{a_n}{p^n} \quad ( a_n \in \Z)$
+と一致しないとき，展開（１）は一意的である．このことを証明せよ．
+
+\証明
+対偶を証明する．
+$a$，$a'$の$p$進展開$a=b_0b_1b_2 \cdots$，$a'=b_0'b_1'b_2' \cdots$，
+が与えられたとし，これらの展開が異なるものとする．$i < m$なるすべての$ i$
+に対して，$b_i=b_i'$で，$b_m \ne b_m'$となる$m$が存在する．$b_m > b_m'$
+としよう．仮定より$\displaystyle a \ne \frac{a_m}{p^m}$であるから，
+\begin{align*}
+	a	&=	b_0b_1b_2 \cdots	\\
+		&=	b_0+\frac{b_1}{p}+\cdots+\frac{b_m}{p^m}+\frac{b_{m+1}}{p^{m+1}}+\frac{b_{m+2}}{p^{m+2}}+\cdots	\\
+		&\ne	b_0+\frac{b_1}{p}+\cdots+\frac{b_m}{p^m}+\frac{0}{p^{m+1}}+\frac{0}{p^{m+2}}+\cdots	\\
+		&=\frac{a_m}{p^m}
+\end{align*}
+
+$m < n$なる$n	\quad	(m+1,m+2,\cdots)$の中には$0$にならない$b_n$が必ずあり
+(系の証明の（２）を$1,2,\cdots , n$について加えた式参照），
+よって$\displaystyle a > \frac{a_m}{p^m}$である．
+$m$の決め方から，
+
+\begin{align*}
+	\frac{a_m}{p^m}	&=
+		b_0+\frac{b_1}{p}+\cdots+\frac{b_m}{p^m}+\frac{0}{p^{m+1}}+\frac{0}{p^{m+2}}+\cdots	\\
+		&	>	
+		b_0+\frac{b_1}{p}+\cdots+\frac{b_m'}{p^m}+\frac{b_{m+1}'}{p^{m+1}}+\frac{b_{m+2}'}{p^{m+2}}+\cdots	\\
+		&	=	a'
+\end{align*}
+
+$\displaystyle	\frac{a_m}{p^m} \geqq a'$
+（{\small
+	$b_m>b_m'	$であっても$m+1$以降の繰り下がりを考慮すると$b_m-1=b_m'$の場合もあり必ずしも
+$\displaystyle	\frac{a_m}{p^m}	>	a'$までいえない
+}）．したがって，$a > a'$．$b_m < b_m'$の場合も
+同様にして，$a < a'$．
+\■
+
+{
+\small 
+\注意{４}
+$10$進法で，たとえば，$0.5=0.499999\cdots$となるように，
+$\displaystyle a=\frac{a_m}{p^m}$なる
+$m$が存在する場合には，$a$の$p$進展開はただ１通りではない．
+$\displaystyle a=\frac{a_m}{p^m}$となるような$m$のうちで
+最小のもの（$0.5$の場合には$m=1$）をとれば，
+\begin{align*}
+		a	&=b_0+\frac{b_1}{p}+\frac{b_2}{p^2}+\cdots+\frac{b_m}{p^m}	\\
+		a	&=b_0+\frac{b_1}{p}+\frac{b_2}{p^2}+
+			\cdots+\frac{b_m-1}{p^m}+\frac{p-1}{p^{m+1}}+\frac{p-1}{p^{m+2}}
+			\cdots +\frac{p-1}{p^n}+\cdots
+\end{align*}
+のように２通りの展開が存在する．
+このような場合には，下の展開で表現される$a_m$が上に有界な単調増加数列であり，
+その上限が上の展開であることを示した上で，
+いつも上の展開を用いること
+と約束すれば，任意の実数は(1)の形にただ１通りに展開される．
+}
+

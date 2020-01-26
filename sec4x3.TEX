@@ -1,0 +1,132 @@
+\section{実数直線の開集合}
+{
+\small 
+	$x$，$y$を２つの実数とする．$y-x$の絶対値$|y-x|$は，$y$が$x$からどのくらい離れているかを
+示す値で，直線上における$y$と$x$の距離といわれる．これにより実数全体の集合には近さの
+概念が定められる．本節では，開区間によって$\varepsilon$近傍を定義し，これを
+用いて開集合の概念を導入しよう．
+}
+
+\subsection{$\varepsilon$近傍と開集合}
+実数$x$および正数$\varepsilon$が与えられたとき，開区間
+\[
+	]\,x-\varepsilon,x+\varepsilon\,[\,=\,\{\,y\,|\,y \in \R,\,|y-x|<\varepsilon\,\}
+\]
+を$x$の$\bold{\varepsilon}$\textgt{近傍}といい，
+$U(x;\varepsilon)$で表わす．
+$U(x;\varepsilon)$は，$x$からの距離が$\varepsilon$より小さい点の全体にほかならない．
+明らかに，$x \in U(x;\varepsilon)$である．
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(5,1)
+
+	\thinlines \path(-2,0)(-1.55,0)
+	\thinlines \put(-1.5,0){\circle{0.1}}
+	\thinlines \put(-1.9,-0.3){\small $x-\varepsilon$}
+	\thicklines \path(-1.45,0)(2.45,0)
+	\put(2.5,0){\circle{0.05}}
+	\thinlines \put(2.4,-0.3){\small $x$}
+	\thicklines \path(2.55,0)(6.45,0)
+	\thinlines \put(6.5,0){\circle{0.1}}
+	\thinlines \put(6.1,-0.3){\small $x+\varepsilon$}
+	\thinlines \path(6.55,0)(7,0)
+
+	\thinlines \put(4.5,-3.75){\arc{8.5}{-1.52}{-1.09}}
+	\thinlines \put(4.5,0.5){\small $\varepsilon$}
+	\thinlines \put(4.5,-3.75){\arc{8.5}{-2.05}{-1.6}}
+
+	\thinlines \put(0.5,-3.75){\arc{8.5}{-1.52}{-1.09}}
+	\thinlines \put(0.5,0.5){\small $\varepsilon$}
+	\thinlines \put(0.5,-3.75){\arc{8.5}{-2.05}{-1.6}}
+	
+\end{picture}
+\end{center}
+\end{figure}
+
+\定義{}
+実数全体の集合$\R$の部分集合$G$が$\R$の\textgt{開集合}であるといわれるのは，
+$G$のすべての元$x$に対し
+\[
+	U(x;\varepsilon) \subseteq G
+\]
+となるような正数$\varepsilon$が存在するときである．
+
+{\small
+\注意{１}
+空集合$\varnothing$は，特別な場合として，開集合と考える．空集合に属する元は
+存在しないので，このことは，上の定義に含まれていると解釈してよい．
+}
+
+\vspace{3mm}
+\例{１}
+開区間$]\,a,b\,[$は$\R$の開集合である．なぜならば，任意の$x \in \,]\,a,b\,[$に対し
+$\min \,]\,x-a,b-x\,[\,=\varepsilon$とおけば，$\varepsilon>0$であり，
+$U(x;\varepsilon) \subseteq \,]\,a,b\,[$が示されるからである．
+
+例１より直ちに，任意の$\varepsilon$近傍は$\R$の開集合であることが導かれる．
+
+\例{２}
+左閉区間$[\,a,b\,[\,=\,\{\,x\,|\,x \in \R,a \leqq x < b\,\}$は$\R$の開区間ではない．
+なぜならば，$[\,a,b\,[$に属する最小数$a$を考えると，どのように小さく正数$\varepsilon$を
+選んでも，$U(a;\varepsilon)$は$a$より小さい実数を含むので，$U(a;\varepsilon) \subseteq \,[\,a.b\,[$が
+成立しないからである．
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(5,1)
+
+	\thinlines \path(-4.5,0)(-2.05,0)
+	\thicklines \put(-2.0,0){\circle{0.07}}
+	\thinlines \put(-2.1,-0.3){\small $a$}
+	\thicklines \path(-1.95,0)(6.44,0)
+	\thinlines \put(6.5,0){\circle{0.1}}
+	\thinlines \put(6.4,-0.3){\small $b$}
+	\thinlines \path(6.55,0)(7,0)
+
+	\thinlines \put(-3,-0.75){\arc{2.5}{-1.39}{-0.65}}
+	\thinlines \put(-3,0.5){\small $\varepsilon$}
+	\thinlines \put(-3,-0.75){\arc{2.5}{-2.50}{-1.65}}
+	
+
+	\thinlines \put(-1,-0.75){\arc{2.5}{-1.39}{-0.65}}
+	\thinlines \put(-1,0.5){\small $\varepsilon$}
+	\thinlines \put(-1,-0.75){\arc{2.5}{-2.50}{-1.65}}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+\pagebreak
+\問{６}
+$\R$の部分集合$G$が$\R$の開集合であるための必要十分条件は，$G$の任意の元$x$に対し
+$\displaystyle U\Bigl(x;\frac{1}{n} \Bigr) \subseteq G$となるような自然数$n$が
+存在することである．これを証明せよ．
+
+\証明
+必要性：$G$が$\R$の開集合であるから，$\forall	x	\in	G$に対して，
+$U(x;\varepsilon)	\subseteq	G$を満たす$\varepsilon	>0$が存在する．
+この$\varepsilon>0$に対し$\displaystyle \frac{1}{n}<\varepsilon$なる$n \in \N$が存在するから，
+$\displaystyle U\Bigl(x;\frac{1}{n} \Bigr) \subseteq U(x;\varepsilon)$．
+
+十分性：仮定より$\forall	x	\in	G$に対してある$n	\in	\N$が存在して
+$\displaystyle	U\Bigl(x;\frac{1}{n}\Bigr)	\subset	G$
+が成り立つ．
+$\displaystyle	\frac{1}{n}=\varepsilon$とおくと，
+$\forall	x	\in	G$に対して，ある$\varepsilon>0$が存在して$U(x;\varepsilon)	\subset	G$．
+よって，定義より$G$は開集合である．
+
+\■
+
+\問{７}
+有限個の実数$a_1,a_2,\cdots,a_n$から成る$\R$の部分集合$\{\,a_1,a_2,\cdots,a_n \,\}$は，$\R$の開集合ではない
+ことを証明せよ．
+
+\証明
+任意の元$a_i \,(\, \in A \,)$をとるとき，どんな$\varepsilon$近傍$U(a_i;\varepsilon)\,(\varepsilon>0)$も
+無限個の点を含むから$	\exists	x	\in	\R	\quad$かつ	$x	\in	U(a_i;\varepsilon)	\quad	(\varepsilon>0)$かつ$\quad	x	\notin	A$．
+よって$U(x;\varepsilon) \not\subseteq A$．
+よって$A$は$\R$の開集合ではない．
+\■

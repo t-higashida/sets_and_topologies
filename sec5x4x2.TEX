@@ -1,0 +1,158 @@
+\subsection{閉集合}
+位相空間$X$の部分集合$A$が$X$の\textgt{閉集合}（または$X$で\textgt{閉}）であるといわれるのは，
+$X$に関する$X$に関する$A$の補集合$X-A$が$X$の開集合となるときである．
+
+
+\vspace{3mm}
+\例{６}
+2次元ユークリッド空間$\R^2$（すなわち平面）における原点を中心とし半径$r\,(r>0)$の\textgt{閉円板}
+$B=\{(x,y)\,|\,(x,y) \in \R^2,x^2+y^2 \leqq r^2\,\}$は$\R^2$の閉集合である．実際，$\R^2-B$
+の任意の点$(a,b)$に対し，$\varepsilon=\sqrt{a^2+b^2}-r$とおくと$\varepsilon>0$で，
+$U((a,b);\varepsilon) \subseteq \R^2-B$がいえるから，$\R^2-B$は$\R^2$は$\R^2$の開集合である．
+ゆえに，$B$は$\R^2$の閉集合である．
+
+\vspace{3mm}
+\例{７}
+離散空間$X$においては，$X$の任意の部分集合$A$は$X$の閉集合である．
+なぜならば，$X-A$は$X$の開集合であるから(§5.3例４)．
+
+\vspace{3mm}
+\例{８}
+集合$X=\{a,b,c,d\}$が位相
+\[
+	\mathscr{T}_1=\{\varnothing,\{a\},\{c,d\},\{a,c,d\},\{b,c,d\},X\}
+\]
+もつとき（§5.3例６参照），$X$の閉集合の族は，
+\[
+	\{X,\{b,c,d\},\{a,b\},\{b\},\{a\},\varnothing \}
+\]
+である．したがって，$\varnothing,\{a\},\{b,c,d\},X$は，開集合であると同時に
+閉集合でもある．
+
+なお，
+$\{c\},\{d\},\{a,c\},\{a,d\},\{b,c\},\{b,d\},\{a,b,c\},\{a,b,d\}$は開集合でも閉集合でもない．
+
+\vspace{3mm}
+\問{９}距離位相をもつ位相空間$X$(§5.3例３)の，有限個の点からなる部分集合$A=\{a_1,a_2,\cdots,a_m\}$
+は，$X$の閉集合であることを証明せよ．
+
+\証明
+任意の点$x \in X-A$に対し$\min\{d(x,a_i)\,|\,i=1,2,\cdots,m\}=\varepsilon>0$とおくとき，
+$U(x;\varepsilon) \cap A = \varnothing$．したがって$U(x;\varepsilon) \subseteq X-A$（§1.2定理１０の系）．
+ゆえに，$X-A$は$X$の開集合．
+\■
+
+\問{１０}
+位相空間$X$において，その部分集合$A$が開集合であるための必要十分条件は，$X-A$が$X$の閉集合であること
+である．（$A$:開　$\Longleftrightarrow$　$X-A$:閉）これを示せ．
+
+\証明
+$X-(X-A)=A$に注意すれば，
+
+$(\Longrightarrow):X-(X-A)=A:open,\Longrightarrow X-A:close$.
+
+$(\Longleftarrow):$閉集合の定義より$X-A:close \Longrightarrow A:open$.
+
+\■
+
+\pagebreak
+第４章で，定理８から定理１０を導いたのとまったく同じ方法で，次の定理が得られる．
+
+\定理{５}
+位相空間$X$の閉集合は，次の性質をもつ．
+\begin{list}{}{}
+	\item［C$_1$］　$X$および$\varnothing$は，$X$の閉集合である．
+	\item［C$_2$］　$X$の任意の有限個の閉集合の和集合は，$X$の閉集合である．
+	\item［C$_3$］　$X$の任意個の閉集合の共通部分は，$X$の閉集合である．
+\end{list}
+
+\証明
+［C$_1$］:$X=X-\varnothing,\,\varnothing=X-X$による．
+
+［C$_2$］:$F_1,\cdots,F_n$が閉ならば，$X-F_1,\cdots,X-F_n$は開．
+$\bigcup_{i=1}^n F_i=X-\bigcap_{i=1}^n (X-F_i)$および［O$_2$］より，$\bigcup_{i=1}^n F_i$は閉．
+
+［C$_3$］:$F_\lambda,\lambda	\in	\Lambda$が閉ならば，$X-F_\lambda$は開.
+$\bigcap_{\lambda	\in	\Lambda} F_\lambda=X-\bigcup_{\lambda	\in	\Lambda} (X-F_\lambda)$および［O$_3$］より，
+$\bigcap_{\lambda	\in	\Lambda} F_\lambda$は閉．
+
+\■
+
+{\small
+\注意{２}空でない集合$X$に，［C$_1$］～［C$_3$］を満たす閉集合と呼ばれる部分集合族が与えられているとする．
+$X-G$が閉集合であるような$G$を開集合と称するとき，$X$に位相が定義されることは，容易に確かめられよう．
+
+}
+\vspace{3mm}
+次の定理が成り立つことも，直線の場合（§4.4定理１１）と同様である．
+
+\定理{６}
+位相空間$X$の部分集合$A$が閉集合であるための必要十分条件は，
+$A$の導集合$D(A)$が$A$の部分集合となることである．
+
+$A \subseteq X :close	\quad	\Longleftrightarrow	\quad	D(A)	\subseteq	A$，
+
+\証明
+必要性：閉集合$A$の任意の集積点$a \in D(A)$に対し$a \notin A$と仮定すれば，
+$X-A$は$a$を含む開集合であるが，この開集合に対して，
+\[
+	(X-A) \cap (A-\{a\}) \subseteq (X-A) \cap A=\varnothing
+\]
+であり，これは$a \notin D(A)$を意味する．これは矛盾である．したがって$D(A) \subseteq A$が示される．
+
+　
+
+十分性：$D(A) \subseteq A$と仮定する．$X-A$が$X$で開でない（①）と仮定すれば，ある点$a \in X-A$をとれば，
+$a$を含むどんな開集合$U(a)$をとっても，$U(a) \not\subseteq X-A$となる．
+\begin{list}{}{}
+	\item	$\because$
+	\item	すべての$a \in X-A$に対して$U(a) \subseteq X-A$（②）となる開集合$U(a)$が存在すれば，
+				$X-A=\bigcup_{a \in X-A}U(a)$
+					\begin{list}{}{}
+						\item	$\because$　
+						\item	$x	\in	X-A	\Longrightarrow	x	\in	U(x)	\subseteq	\bigcup_{a	\in	X-A}	U(a)$，
+						\item	$x	\in	\bigcup_{a	\in	X-A}	U(a)	\Longrightarrow	
+												x	\in		\exists	U(a)	\stackrel{\text{②}}{\subseteq}	X-A$，
+					\end{list}
+				は開集合となって矛盾である（①）からである．
+\end{list}
+
+このとき，$U(a) \cap (A-\{a\})=U(a) \cap A \ne \varnothing$であるが，このことは
+$a \in D(A)$を意味する．仮定から$a \in A$が得られるが，これは矛盾である．
+よって，$X-A$は$X$の開集合．すなわち$A$は$X$の閉集合である．
+\■
+部分空間の閉集合に関し,次が成り立つ．
+
+\定理{７}
+$A$を位相空間$X$の部分集合とする．$A$の部分集合$K$が$A$の閉集合であるための必要十分条件は，
+$K=F \cap A$となるような$X$の閉集合$F$が存在することである．
+
+$K	\subseteq	A:\text{Close}	\Longleftrightarrow	\exists	F	\subseteq X:\text{Close}	\quad	\text{s.t}	\quad	K=F	\cap	A$.
+
+\証明
+必要性（$\Longrightarrow$）：$K$が$A$の閉集合ならば，$A-K$は$A$の開集合であり，
+\[
+	A-K=G \cap A
+\]
+を満たす$X$の開集合$G$が存在することである（定理４）．
+このとき
+\begin{align*}
+		K	&=A-(G \cap A)	\\
+			&=A	\cap	(X-(G	\cap	A))	\\
+			&=A	\cap	((X-G) \cup	(X-A))	\\
+			&=(A	\cap	(X-A))	\cup	(A	\cap	(X-G))	\\
+			&=\varnothing	\cup	(A	\cap	(X-G))	\\
+			&=(A	\cap	(X-G))
+\end{align*}
+で，$X-G$は$X$の閉集合である．
+
+十分性（$\Longleftarrow$）：
+\begin{align*}
+	A-K	&=A-(F \cap A)	\\
+			&=A	\cap	((X-F) \cup (X-A))	\\
+			&=(A	\cap	(X-F))	\cup	(A	\cap	(X-A))	\\
+			&=(A	\cap	(X-F))	\cup	\varnothing	\\
+			&=(A	\cap	(X-F))\\
+\end{align*}
+より，$A-K$が$A$の開集合であることが示される（定義と定理４）．
+\■

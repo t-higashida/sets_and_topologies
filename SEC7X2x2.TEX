@@ -1,0 +1,117 @@
+\subsection{弧状連結成分}
+$X$を位相空間とし，$x \in X$とする．$x$を含む弧状連結な部分集合全体の和集合を$X$における\textgt{弧状連結成分}
+（または単に\textgt{弧状成分}）といい，$P(x)$と書く．下の定理により，$P(x)$は弧状連結で，したがって，
+$x$を含む最大の弧状連結な部分集合であることがわかる．
+
+\vspace{3mm}
+
+\定理{９}
+$\{Y_\lambda,\|\l,\lambda \in \Lambda\}$（$\Lambda$は添え字の集合）を$X$の弧状連結部分空間
+からなる１つの族で，$\bigcap_{\lambda \in \Lambda} Y_\lambda \ne \varnothing$とする．
+このとき，$Y= \bigcup_{\lambda \in \Lambda} Y_\lambda$は弧状連結である．
+
+\証明
+$x$，$y \in Y$とすると，$x \in Y_\nu$，$y \in Y_\mu$なる$\nu$，$\mu \in \Lambda$
+が存在する．$\bigcap_{\lambda \in \Lambda} Y_\lambda \ni z$をとる．
+$Y_\nu$，$Y_\mu$は弧状連結だから，$x$を$z$に結ぶ$Y_\nu$nにおける道$\sigma$
+および$z$を$y$に結ぶ$Y_\mu$における道$\tau$が存在する．そのとき，
+積$\sigma\tau$は$x$を$y$に結ぶ道である．ゆえに，$Y$は弧状連結である．
+\■
+
+\定理{１０}
+位相空間$X$は弧状連結ならば，連結である．
+
+\証明
+$x$を$X$の１つの点とする．$X$の任意の点$y$をとるとき，弧状連結性より，
+$y$を$x$に結ぶ道$\sigma:I \rightarrow X$が存在する．$I$は連結（§7.1例３）
+であるから，定理２により$\sigma(I)$は連結である．したがって，$y$は$x$の成分
+$C(x)$に属する
+（{\small
+$\because	\:	\sigma(I)	\ni	x,y,\quad	C(x)	=	\bigcup	C	\cup	\sigma(I)$
+}）．
+ゆえに$y	\in	C(x)$となり$X	\subseteq	C(X)$．
+一方の$C(X)	\subseteq	X$は自明であるから$X=C(x)$．
+$X$はただ１つの成分をもつから，連結である．
+\■
+
+{\small
+\注意{１}連結であっても弧状連結とは限らないことが次の例によってわかる．
+}
+
+\vspace{3mm}
+\例{２}
+§7.1例６における$\R^2$の連結部分空間$X \cup Y$は弧状連結でない．このことを示すためには，
+$Y$の点$(0,0)$と$X$の点$(1,0)$とが道で結べないことを証明すればよい．
+いま，連続写像$\sigma:I \rightarrow X \cup Y$で，$\sigma(0)=(0,0)$，
+$\sigma(1)=(1,0)$を満たすものが存在すると仮定する．
+$Y$は$X \cup	Y$における閉集合で
+（{\small	$Y$は$\R^2$の閉集合で$Y=(X\cup	Y)	\cap	Y$
+}），
+$(0,0)$を含む．したがって，$\sigma^{-1}(Y)$は
+$I$における閉集合（§6.2定理５）で，$0$を含む．
+\[
+a=\sup \sigma^{-1}(Y)
+\]
+とおくと，$a \in \overline{\sigma^{-1}(Y)}=\sigma^{-1}(Y)$
+（§5.5 例２），つまり$\sigma(a) \in Y$である．
+$\sigma$は連続写像であるから，
+$\sigma(a)$の$X \cup Y$における$\displaystyle \frac{1}{2}$近傍
+$\displaystyle
+	U=U\left(\sigma(a),\frac{1}{2}\right)$
+に対し適当な正数$\delta$が存在して，
+
+\[
+	\sigma(]a-\delta,a+\delta[ \:	\cap I) \subseteq U, 
+	\quad	\text{したがって}
+	\quad	\sigma \left(	\left[ a, a	+	\frac{\delta}{2}	\right] \cap I \right) \subseteq U
+\]
+となる．$a$の定義（$a$は上限）から，
+$\displaystyle \sigma \left(a+\frac{\delta}{2}\right) \in X$である．
+$\displaystyle \sigma \left(a+\frac{\delta}{2} \right)$を含む$U$における
+連結成分を$C$とすれば，$C$は$U$における開かつ閉集合である．
+$\sigma$の定義域を$\bigl[a,a+\frac{\delta}{2} \cap I$に制限
+して得られる写像を$\tau$で表そう．すなわち，
+\[
+\tau:\bigl[a,a+\frac{\delta}{2} \cap I \rightarrow U;t \mapsto \sigma(t).
+\]
+$\tau^{-1}(C)$および$\tau^{-1}(U-C)$は
+$\displaystyle \bigl[a,a+\frac{\sigma}{2} \bigr] \cap I$における
+開集合で，
+\[
+	\bigl[a,a+\frac{\delta}{2} \cap I=\tau^{-1}(C),\quad
+	\tau^{-1}(C) \cap \tau^{-1}(U-C)=\varnothing,	\quad
+	\tau^{-1}(C) \ni a+\frac{\delta}{2},\quad
+	\tau^{-1}(U-C) \ni a
+\]
+を満たす．したがって，
+$\displaystyle \bigl[a,a+\frac{\delta}{2} \bigr] \cap I$
+は連結でないが，これは矛盾である（例７．１例３）
+．
+
+図　保留
+
+{\small
+\注意{２}連結成分は閉集合であったが，弧状連結成分は閉集合
+とは限らない．実際例２で，点$(1,0) \in X$の弧状連結成分は
+$X$であるが，$ \overline{X} \supset X$であるから，$X$は閉集合
+ではない（§5.5定理８(ⅲ)参照）．
+}
+
+\vspace{3mm}
+\例{３}
+$\R$と$\R^2$は同相ではない．実際，同相者像$f:\R^2 \rightarrow \R$が
+存在すると仮定すると，
+§6.3例１により$\R^2-\{(0,0)\} \approx \R-\{f(0,0) \}$である．
+$\R^2-\{(0,0)\}$は弧状連結であるが，$\R-\{f(0,0)\}$は弧状連結ではないから，
+定理７に矛盾する．
+
+\vspace{3mm}
+\問{５}
+直線$\R$と円周$S$が同相でないことを，弧状連結性を利用して証明せよ．
+
+\証明
+
+同相写像$f:\R \rightarrow S$が存在すると仮定すれば，$\R-\{p\} \approx S-\{f(p)\} \, (p \in \R)$
+となる．$S-\{f(p)\}$は弧状連結であるが，$\R-\{p\}$は弧状連結でないから，定理７に矛盾する．
+\■
+

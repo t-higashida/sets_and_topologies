@@ -1,0 +1,145 @@
+\section{実数の数列}
+{\small
+	本節では，実数の数列がいかなる場合に収束するかを研究しよう．前節で$\R$の部分集合
+に対して定義した概念を数列に対して定義し，収束する数列は有界であること，有界な単調数列は
+収束することを証明する．次に，後でしばしば利用されるアルキメデス（Archimedes）の原則および
+カントルの共通点定理を導き，実数の$p$進法による展開について述べる．終りに，コーシー（Cauchy）
+の収束判定法に言及する．	
+}
+
+\subsection{数列の収束}
+数列とは，各自然数に対し実数を対応させる関数$f:\N \rightarrow \R$のことである．$1,2,\cdots,n,\cdots$
+の$f$による像を
+$f(1)=a_1,f(2)=a_2,\cdots,f(n)=a_n,\cdots$とするとき，この数列は$f$は，
+\[
+	\{a_1,a_2,\cdots,a_n,\cdots \}, \quad \{\,a_n \,| \,n \in \N \,\},	\text{　または　} \{\,a_n \,\} 
+\]
+によって表わされる．$a_n$はこの数列の\textgt{第$n$項}と称される．
+
+$n$が限りなく大きくなるとき，$a_n$が限りなく1つの実数$a$に近づくならば，
+数列$\{a_n\}$は$a$に収束するという．このことを，いわゆる$\varepsilon - n_0$法により，もっと
+正確に述べると次のようになる．以後，正の実数のことを単に正数という．
+
+\定義{１}
+数列$\{\,a_n \,\}$が$a$に\textgt{収束}するといわれるのは，どんな正数$\varepsilon$が与えられても，
+それに対して自然数$n_0$を，
+\begin{list}{（＊）}{}
+	\item　　　$n>n_0$なるすべての$n \in \N$に対して$| a_n - a | < \varepsilon$
+\end{list}
+が成り立つように選ぶことができるときである．この$a$を$ \{\, a_n \,\}$の\textgt{極限}という．
+$\{a_n\}$が$a$に収束することを，
+\[
+\lim_{n \rightarrow \infty} a_n \text{　または　} 
+n \rightarrow \infty \text{ のとき } a_n \rightarrow a
+\]
+と表わす．
+
+容易にわかるように，条件（＊）は次のように述べてもよい．
+\begin{list}{}{}
+	\item $a_1,a_2,\cdots,a_{n_0}$を除くすべての$a_n$に対して$a_n \in \,]\,a-\varepsilon,a+\varepsilon \,[$
+\end{list}
+
+\例{１}
+$a$を１つの実数とする．すべての$n \in \N$に対して$a_n=a$であるような数列$ \{ a_n \}$は,
+$a$に収束する．実際，どんな正数$\varepsilon$に対しても$|a_n-a|=0 < \varepsilon$であるから，
+自然数$n_0$をどのようにとっても，
+$n > n_0$なるすべての$n \in \N$に対して$ | a_n-a | < \varepsilon$が成り立つ．
+
+
+\pagebreak
+\例{２}
+数列$\{(-1)^n \}$は収束しない．このことを背理法によって証明しよう．
+$\{(-1)^n \}$が$a$に収束すると仮定する．
+どんな$\varepsilon>0$に対しても，適当な$n_0 \in \N$を選べば，
+\begin{list}{}{}
+	\item　　　$n>n_0$なるすべての$n \in \N$に対して$| (-1)^n - a | < \varepsilon$
+\end{list}
+となる．
+$n>n_0$ならば，$2n+1 > 2n > n > n_0$であるから，
+\begin{list}{}{}
+	\item　$\varepsilon > |(-1)^{2n+1}-a |=|1+a|$　および　$\varepsilon >|(-1)^{2n}-a |=|1-a|$
+\end{list}
+が成り立つ．
+$a \geqq 0$ならば，$\varepsilon=1+a>0$とおくと，これによってきまる$n_0$が存在して，
+上の第１の不等式から，$1+a > 1+a$となって矛盾である．$a<0$ならば，
+$\varepsilon=1-a>0$とおくと，同じようにして，上の第２の不等式から，$1-a>1-a$となるから矛盾である．
+
+\vspace{3mm}
+\例{３}
+数列$\{a_n\}$，$\{b_n\}$，$\{c_n\}$が，すべての$n \in \N$に対し$a_n \leqq c_n \leqq b_n$を満たし，
+$\displaystyle \lim_{n \rightarrow \infty}a_n=\lim_{n \rightarrow \infty}b_n=a$ならば，
+$\displaystyle \lim_{n \rightarrow \infty}c_n=a$である（\textgt{はさみうちの原理}）．
+実際，任意の正数$\varepsilon$が与えられたとき，
+\begin{list}{}{}
+\item　$n_0<n$なるすべての$n\in \N$に対して
+	\[
+		| a_n-a| < \varepsilon \text{　　　すなわち　　　}	a-\varepsilon < a_n < a+\varepsilon 
+	\]
+\item　$n_1<n$なるすべての$n\in \N$に対して
+	\[
+		| b_n-a| < \varepsilon \text{　　　すなわち　　　}	a-\varepsilon < b_n < a+\varepsilon 
+	\]
+\end{list}
+となるような$n_0,\,n_1 \in \N$が存在する．したがって，$\max\{\,n_0,\,n_1\,\}=n_2$とおくとき，
+\begin{list}{}{}
+\item　$n_2<n$なるすべての$n \in \N$に対して
+	\[
+		a-\varepsilon < a_n \leqq c_n \leqq b_n< a+\varepsilon \text{　　したがって　　　}
+		|\,c_n-a\,|<\varepsilon
+	\]
+\end{list}
+が成り立つから，$\displaystyle \lim_{n \rightarrow \infty}c_n=a$である．
+
+\vspace{3mm}
+\問{２}
+数列が収束すれば，その極限はただ１つであることを証明せよ．
+
+\証明
+$\displaystyle \lim_{m \rightarrow \infty} a_n=a,\,\lim_{m \rightarrow \infty} a_n=b$と
+仮定する．
+任意の$\varepsilon>0$に対し，
+\[
+	n>n_0 \Rightarrow |\,a_n-a\,|<\varepsilon,	\qquad
+	n>n_1 \Rightarrow |\,a_n-b\,|<\varepsilon
+\]
+なる$n_0,\,n_1 \in \N$が存在する．
+$\max\{\,n_0,n_1\,\}=n_2$とすると，
+\[
+	n>n_2	\Longrightarrow
+	| a-b |=|a_n-b-a_n+a| \leqq | a_n-a |+|a_n-b| < \varepsilon+\varepsilon=2\varepsilon
+\]
+$\varepsilon$は任意だから$|a-b|=0$，すなわち$a=b$．
+
+\pagebreak
+\定義{２}
+数列$\{\,a_n\,\}$の\textgt{部分数列}（または\textgt{部分列}）とは，
+$\{\,a_n\,\}$を定める関数$f:\N \rightarrow \R; n \mapsto a_n$，および$n<m$ならば$g(n)=k_n<k_m=g(m)$となるよう
+な大小の順序を保つ関数$g:\N \rightarrow \N;n \mapsto k_n$に対し，合成関数
+\[
+	f \circ g: \N \rightarrow \R;n \mapsto a_{k_n}
+\]
+によって定まる数列$\{\,a_{k_n}\,\}$のことをいう．つまり，部分列は，もとの数列から
+その一部分を順序関係をくずさずに取り出してできる数列である．
+
+\vspace{3mm}
+\定理{１}
+数列$\{\,a_n\,\}$が$a$に収束すれば，その任意の部分列$\{a_{k_n}\}$も$a$に収束する．
+
+\証明
+まず，定義２の写像$g$では，任意の$n	\in \N$に対して$n	\leqq	g(n)=k_n$となることを証明する．
+$k_n=g(n)	\leqq	n$なる$n	\in	\N$が存在すると仮定して（背理法の仮定）このような自然数を
+まとめた集合を$M=\{\,n	\in	\N	\,|\,	k_n=g(n)	\leqq	n	\,\}$とすると$M$の最小数$n_0$が存在する
+（§2.1.4	定理３）．
+$n_0-1	<	n_0$と$n_0$の最小性より$n_0-1	\leqq	k_{n_0-1}	<	k_{n_0}	<	n_0$であるが，
+$n_0-1$と$n_0$の間にこのような自然数$k_{n_0-1},	\,	k_{n_0}$は存在せず矛盾．
+よってすべての自然数$n$に対して$n	\leqq	g(n)=k_n$．
+
+
+任意の正数$\varepsilon$に対し適当な$n_0 \in \N$で，$n > n_0$なるすべての$n \in \N$に対し
+$|\,a-a_n\,|<\varepsilon$を満たすものが存在する．各$n$に対し$n \leqq k_n$であるから，
+$n_0<n<k_n$より$|\,a-a_{k_n}\,|<\varepsilon$が成り立つ．このことは，$n \rightarrow \infty$のとき
+$a_{k_n} \rightarrow a$を意味する．
+
+\例{４}
+$\displaystyle \Big\{1,\frac{1}{3},\frac{1}{5},\cdots,\frac{1}{2n-1},\cdots, \Bigr\}$は，
+$\displaystyle \Big\{1,\frac{1}{2},\frac{1}{3},\cdots,\frac{1}{n},\cdots, \Bigr\}$の部分列である．

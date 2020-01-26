@@ -1,0 +1,252 @@
+\chapter{連続写像}
+{\small
+	集合から集合への写像に対する概念が位相空間から位相空間への連続写像である．
+この概念は，第４章で定義された直線から直線への連続関数の概念の自然な拡張として
+とらえられ，開集合の概念が位相空間の間の同相写像である．これは，集合から集合への全単射であって，
+更に，開集合族から開集合族への全単射を与えるような写像のことである．
+
+	本章では，まず，距離空間の$\varepsilon$近傍に相当する開基について述べ，連続写像や同相写像について
+論じた後，積空間および等化空間を説明する．
+}
+
+\section{基本近傍系と開基}
+{\small
+位相空間のある点の近傍とは，その点を含む開集合の事である．距離空間における$\varepsilon$近傍のような
+役割を果たすものは，位相空間では基本近傍とよばれるものである．
+本節では，まず基本近傍系の性質について研究する．次に，同じ集合の上に与えられた２つの位相が同じであるための
+条件を，基本近傍系の言葉でいい表わし，§5.2で定義された同値な距離によって得られる距離空間は，
+位相空間と同じものであることを示す．終りに，すべての点における基本近傍系を集めてできる開基の性質を述べる．
+}
+
+\subsection{基本近傍系}
+$x$を位相空間$X$の点とする．$X$の開集合で，点$x$を含むものを$x$の\textgt{近傍}という．
+$x$の近傍の全体を$x$の\textgt{近傍系}といい，$\mathscr{N}(x)$で表わす．
+更に，$\mathscr{N}(x)$に包まれる（部分）集合族$\mathscr{N}^*(x)$で，任意の$U \in \mathscr{N}(x)$に対して
+\[
+	V \subseteq U
+\]
+となる$V \in \mathscr{N}^*(x)$が存在するような$\mathscr{N}^*(x)$を点$x$の\textgt{基本近傍系}
+（または\textgt{近傍の基}）といい，$\mathscr{N}^*(x)$の元を\textgt{基本近傍}という．
+
+\vspace{3mm}
+\例{１}
+距離空間$X$の点$x$に対し，$x$の$\varepsilon$近傍全体$\mathscr{N}^*(x)=\{U(x;\varepsilon)\,|\,\varepsilon \in \R,
+\varepsilon>0\}$は，$x$の基本近傍系である．
+
+\vspace{3mm}
+\例{２}
+例１において，任意の正数$\varepsilon_0$を固定するとき，$\{U(x;\varepsilon)\,|\, \varepsilon \in \R,\,
+0 < \varepsilon<\varepsilon_0 \}$も，$x$の基本近傍系である．
+
+
+\pagebreak
+\問{１}
+例１で，$\{U(x;r)\,|\,r \in \Q,r>0\}$も，$x$の基本近傍系であることを示せ．
+
+\証明
+$\forall	G	\in	\mathscr{N}(x)$に対して，
+$\exists	\varepsilon>0	\quad	\text{s.t}	\quad	U(x;\varepsilon)	\subseteq	G$．
+アルキメデスの原理より，$\exists	n	\in	\N	\quad	\text{s,t}	\quad	n\varepsilon>1$．
+すなわち，$\displaystyle	\exists	n	\in	\N	\quad	\text{s.t}	\quad	\varepsilon	>	\frac{1}{n}>0$．
+この$n$について，
+$	\displaystyle	U	\Bigl(x;\frac{1}{n}\Bigr)	\in	\{U(x;r)	\:|\:	r	\in	\Q	,	r>0\}$
+
+以上より，$\displaystyle	\forall	G	\in	\mathscr{N}(x)$に対して，
+$\displaystyle	\exists	V=U\Bigl(x;\frac{1}{n}\Bigr)	\subseteq	G	\quad	V	\in	\{U(x;r)	\:|\:	r	\in	\Q	,r>0\}$
+
+\■
+
+\定理{１}
+位相空間$X$の各点$x$の基本近傍系$\mathscr{N}^*(x)$は，次の性質をもつ．
+\begin{list}{}{}
+	\item［N$_1$］$\mathscr{N}^*(x) \ne \varnothing$．すべての$V \in \mathscr{N}^*(x)$に対して$x \in V$が成立する．
+	\item［N$_2$］任意の$V_1$，$V_2 \in \mathscr{N}^*(x)$に対して，$V_3 \subseteq V_1 \cap V_2$となる
+								$V_3 \in \mathscr{N}^*(x)$が存在する．
+	\item［N$_3$］任意の$V \in \mathscr{N}^*(x)$と任意の$y \in V$に対して$W \subseteq V$となる
+								$W \in \mathscr{N}^*(y)$が存在する．
+\end{list}
+\証明
+［N$_1$］：$\mathscr{N}(x) \ni X$であり，$\mathscr{N}^*(x)$は基本近傍系であるから，
+$V \subseteq X$となる近傍$V \in \mathscr{N}^*(x)$が存在する．
+よって$\mathscr{N}^*(x) \ne \varnothing$．
+$V \in \mathscr{N}^*(x)$ならば，
+$\mathscr{N}^*(x) \subseteq \mathscr{N}(x)$より$V \in \mathscr{N}(x)$．よって$x \in V$．
+
+［N$_2$］：［N$_1$］より$x \in V_1 \cap V_2$で，§5.3の［O$_2$］より$V_1 \cap V_2$は$X$の開集合であるから，
+$V_1 \cap V_2 \in \mathscr{N}(x)$である．したがって，近傍の基の定義より$V_3 \subseteq V_1 \cap V_2$となる
+$V_3 \in \mathscr{N}^*(x)$が存在する．
+
+［N$_3$］：仮定より$V$は開集合で$y	\in	V$だから．$V \in \mathscr{N}(y)$である．
+$\mathscr{N}^*(y)$の定義より，$W \subseteq V$となる$W \in \mathscr{N}^*(y)$が存在する．
+\■
+
+閉集合や閉包などを用いても位相空間が定義できたが，基本近傍系によっても，位相を定義することができる．
+
+{\small
+\注意{１}
+空でない集合$X$および$X$の任意の点$x$に対し，［N$_1$］～［N$_3$］を満たすような近傍とよばれる部分集合の族
+$\mathscr{N}^*(x)$が与えられているとする．
+
+\例{＊}
+$X=\{a,b,c,d\}$に対して，
+\begin{align*}
+		&\mathscr{N}^*(a)=\{\:\{a\}	\:\}	\\
+		&\mathscr{N}^*(b)=\{\:\{b,c,d\}	,X	\:\}	\\
+		&\mathscr{N}^*(c)=\{\:\{c,d\},\{b,c,d\}	,X	\:\}	\\
+		&\mathscr{N}^*(d)=\{\:\{c,d\},\{a,c,d\}	\:\}	\\
+\end{align*}
+
+
+
+$X$の部分集合$G$が$X$の開集合である（すなわち$G \in \mathscr{T}$）とは，
+任意の点$x \in G$に対して
+\[
+	x \in V \subseteq G
+\]
+となるような$V \in \mathscr{N}^*(x)$が存在することであると定義するとき，$\mathscr{T}$は$X$の上の位相
+であり，$X$は位相空間となる（§5,3）．更に，この位相空間に対し，与えられた$\mathscr{N}^*(x)$は
+$X$の基本近傍系となっている．
+
+実際［O$_1$］については，［N$_1$］により，すべての$x \in X$に対して$x \in V(x)$なる
+$V(x) \in \mathscr{N}^*(x)$が存在するから，
+\[
+	x \in V(x) \subseteq X
+\]
+が成り立ち，$X \in \mathscr{F}$がわかる．
+「$\forall	x	\in	\varnothing$に対して，
+$\exists	V	\in	\mathscr{N}^*(x)\quad\text{s.t}	\quad	x	\in	V	\subseteq	\varnothing$」
+は真．よって$\varnothing \in \mathscr{T}$．
+
+［O$_2$］については，$G_1,G_2,\cdots,G_n$を$X$の開集合とし，$x \in \bigcap_{i=1}^n G_n$とすれば，
+すべての$i \, (1\leqq i \leqq n)$に対し$x \in G_i$なることから，
+\[
+	x \in V_i(x) \subseteq G_i
+\]
+となる$V_i(x) \in \mathscr{N}^*(x)$が存在する．
+［N$_2$］を繰り返し適用することにより，
+$V(x) \subseteq \bigcap_{i=1}^n V(x)$となる
+$V(x) \in \mathscr{N}^*(x)$が存在することが導かれる．
+これは明らかに
+\[
+	x \in V(x) \subseteq \bigcap_{i=1}^n G_i
+\]
+を満たすから，$\bigcap_{i=1}^n G_i$は$X$の開集合である．
+
+［O$_3$］については，$\bigcup_{\alpha \in \Lambda} G_\alpha$に属する
+任意の元$x$とると，$x \in G_\alpha$なる$\alpha \in \Lambda$
+が存在する．ゆえに，$x \in V \subseteq G_\alpha \,(\subseteq \bigcup_{\alpha \in \Lambda} G_\alpha)$
+を満たす$V \in \mathscr{N}^*(x)$が存在する．
+
+$\forall	x	\in	\bigcup_{\alpha	\in	\Lambda}	G_\alpha$について
+$\exists	\alpha	\in	\Lambda	\quad	\text{s.t}\quad	x	\in	G_\alpha$．
+$\quad	\therefore	\exists	V(x)	\in	\mathscr{N}^*(x)	\quad	\text{s.t}	\quad
+x	\in	V(x)	\subseteq	G_\alpha$．
+$\therefore	x	\in	V(x)	\subseteq \bigcup_{\alpha	\in	\Lambda}	G_\alpha$．
+$\therefore	\bigcup_{\alpha	\in	\Lambda}	G_\alpha	\in	\mathscr{T}$．
+
+
+
+　最後に，この位相に関し与えられた$\mathscr{N}^*(x)$が基本近傍系に
+なっていることを示す．つまり，
+\begin{list}{}{}
+	\item	（１）　$\mathscr{N}^*(x)$の元$V$は$x$を含み，［N$_1$］から［N$_3$］に基づいて定義された意味で開集合であること．すなわち
+$V$が$x$の近傍であること．
+	\item	（２）　$\mathscr{N}^*(x)$が基本近傍系の定義を満たすこと．
+\end{list}
+
+（１）の証：任意の$V	\in	\mathscr{N}^*(x)$に対して［N$_1$］より$x	\in	V$が成り立つ．
+また，任意の$V	\in	\mathscr{N}^*(x)$の任意の元$y$に対して
+［N$_3$］より$\exists	W	\in	\mathscr{N}^*(y)	\quad	\text{s.t}	\quad	W	\subseteq V$．
+よって任意の$V	\in	\mathscr{N}^*(x)$は［N$_1$］から［N$_3$］に基づく定義の意味で開集合である．
+すなわち任意の$V	\in	\mathscr{N}^*(x)$は$x$の近傍である．
+
+（２）の証：任意の$U	\in	\mathscr{N}(x)$に対して，$U$は$x$を含む$X$の開集合であるから，［N$_1$］から［N$_3$］に基づく
+定義により$x	\in	V	\subseteq U$となるような$V	\in	\mathscr{N}^*(x)$が存在する．
+
+以上（１）（２）より，与えられた$\mathscr{N}^*(x)$は基本近傍系である．
+
+\注意{２}
+上のようにして定められる位相空間は\textgt{近傍空間}ともいわれ,ハウスドルフによってはじめて定義された．
+
+
+}
+
+\vspace{3mm}
+同じ集合$X$の上に与えられた２つの位相$\mathscr{T}_1,\,\mathscr{T}_2$が\textgt{等しい}
+（または\textgt{同じである}とは$\mathscr{T}_1=\mathscr{T}_2$が成り立つときをいう．
+$\mathscr{T}_1=\mathscr{T}_2$であるための条件は，基本近傍系によっていい表される．
+
+\vspace{3mm}
+\定理{２}
+集合$X(\ne \varnothing)$における[N$_1$]～[N$_3$]を満たす２組の集合族
+$\mathscr{N}_1^*(x),\, \mathscr{N}_2^*(x) \,(x \in X)$が$X$の同じ位相の基本近傍系であるための
+必要十分条件は，次の２つの条件が成り立つことである．
+\begin{list}{}{}
+	\item(１)　任意の$V \in \mathscr{N}_1^*(x)$に対して，$W \subseteq V$となる$W \in \mathscr{N}_2^*(x)$
+が存在する．
+	\item(２)　任意の$W \in \mathscr{N}_2^*(x)$に対して，$V \subseteq W$となる$V \in \mathscr{N}_1^*(x)$
+が存在する．
+\end{list}
+すなわち$\mathscr{T}_1=\mathscr{T}_2	\Longleftrightarrow$（１）かつ（２）．
+
+{	\small	
+\注意{}
+	定理２のポイントは，$\forall	x	\in	X$で定義される２つの基本近傍系
+	$\mathscr{N}_1^*(x),\, \mathscr{N}_2^*(x)$に対して，
+	$\mathscr{N}_1^*(x)=\mathscr{N}_2^*(x)$とならなくとも，
+	$\mathscr{T}_1=\mathscr{T}_2$がいえることである．
+}
+
+\証明
+必要性：$G$が$\{\mathscr{N}_2^*(x)\,|\, x \in X \}$によって定められる$X$の開集合ならば，注意１によって，
+任意の$G \ni x$に対して
+\[
+	x \in W \subseteq G
+\]
+となる$W \in \mathscr{N}^*_2(x)$が存在する．$G$として$\mathscr{N}^*_1(x)$の元$V$をとれば，(１)が成立する．
+同様にして，(２)が成立する．
+
+十分性：$\{\mathscr{N}_i^*(x)\,|\,x \in X \}$によって定められる$X$の位相を$\mathscr{T}_i\,(i=1,2)$
+とする（注意１）．任意の$G \in \mathscr{T}_2$に対し$x \in G$ならば，
+$W \subseteq G$となる$W \in \mathscr{N}_2^*(x)$が存在し，
+更に，(２)により$V \subseteq W$となる$V \in \mathscr{N}_1^*(x)$が存在する．
+結局，$x \in V \subseteq G$が成立するから，$G \in \mathscr{T}_1$．
+したがって，$\mathscr{T}_2 \subseteq \mathscr{T}_1$がいえる．
+同様にして，(１)より$\mathscr{T}_1 \subseteq \mathscr{T}_2$がわかるから，
+$\mathscr{T}_1 = \mathscr{T}_2$が成り立つ．
+\■
+
+\例{３}
+同値な２つの距離の定める２つの距離位相は，同じ位相である．
+このことは，例１，定理２および§5.2定理３から直ちに得られる．
+
+\証明
+\begin{align*}
+	\text{$d_1,d_2$が同値}	
+		&\Longleftrightarrow	\text{(1)}	\forall	x	\in	X,\exists	U(x;\delta;d_1)	\subseteq \forall	U(x;\varepsilon;d_2)	\\
+		&\quad\quad\:\:				\text{(2)}	\forall	x	\in	X,\exists	U(x;\delta;d_2)	\subseteq \forall	U(x;\varepsilon;d_1)	
+													\quad	\text{（$\because$§5.2.2　定理３）}	\\
+		&\Longleftrightarrow	\text{(1)}	\forall x	\in	X,	
+																			\forall	V	\in	\{U(x;\varepsilon;d_1)\:|\:\varepsilon	\in	\R,\varepsilon>0\}	
+																			\text{に対して}	\\
+		&\quad\quad\quad\quad\quad\quad\quad\:	
+																			\exists	W	\in	\{U(x;\varepsilon;d_2)\:|\:\varepsilon	\in	\R,\varepsilon>0\}
+																			\text{　s.t　}	W	\subseteq V\\
+		&\quad\quad\:\:				\text{(2)}	\forall x	\in	X,	
+																			\forall	W	\in	\{U(x;\varepsilon;d_2)\:|\:\varepsilon	\in	\R,\varepsilon>0\}
+																			\text{に対して}	\\
+		&\quad\quad\quad\quad\quad\quad\quad\:	
+																			\exists	V	\in	\{U(x;\varepsilon;d_1)\:|\:\varepsilon	\in	\R,\varepsilon>0\}
+																			\text{　s.t　}	V	\subseteq W
+													\quad	\text{（$\because$§6.1.1　例１）}	\\
+		&\Longleftrightarrow	\text{(1)}	\forall x	\in	X,
+																			\forall	V	\in	\mathscr{N}_1^*(x)	
+																			\text{に対して}	
+																			\exists	W	\in	\mathscr{N}_2^*(x)	\text{　s.t　}	W	\subseteq	V	\\
+		&\quad\quad\:\:				\text{(2)}	\forall x	\in	X,
+																			\forall	W	\in	\mathscr{N}_2^*(x)	
+																			\text{に対して}	
+																			\exists	V	\in	\mathscr{N}_1^*(x)	\text{　s.t　}	V	\subseteq	W	\\
+		&\Longleftrightarrow	\mathscr{T}_{d_1}=\mathscr{T}_{d_2}	\quad	\text{（$\because$定理２）}
+\end{align*}
+\■

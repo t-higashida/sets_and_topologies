@@ -1,0 +1,125 @@
+\chapter{連結空間，コンパクト空間}
+{\small
+平面，直線，開区間，閉区間，円周などは，いずれも集合としては対等で，同じ濃度
+をもつ．これらのをユークリッド距離による通常の位相をもつ位相空間と考えたとき，
+同相になるであろうか．本書で述べようとする連結性とコンパクト性は，いずれも位相的
+に不変な性質であり，これらを利用することによって，上に挙げた位相空間が，どの２つも
+同相ではないことを示すことができる．
+}
+
+\section{連結空間}
+{\small
+本節では，位相空間が連結であることの定義を与え，いろいろな性質を調べよう．
+$\R$における区間は連結であることが，第４章で述べられた実数の連続性を用いて証明される．
+}
+
+\subsection{連結性}
+位相空間$X$が\textgt{連結}であるとは，$X$が互いに素な２つの空でない開集合の和として
+表されないとき，すなわち，
+\[
+	X=A \cup B,\, A \cap B=\varnothing \text{（$A$，$B$は$X$の開集合）} 
+	\Rightarrow 
+	A=\varnothing \text{または} B=\varnothing
+\]
+別の表現をすれば
+\[
+	\neg	\exists	V_1	,	V_2	\text{($X$の非空開集合)},	V_1	\cup	V_2	=X	,\;	V_1	\cap	V_2	=	\varnothing
+\]
+が成り立つときいう．$X$の部分集合$Y$が\textgt{連結な集合}であるとは，
+部分空間$Y$が連結のときである．
+
+\例{１}
+$X=\R-\{0\}$は連結ではない．実際，$A=\,]-\infty,0[$，$B=\,]0,\infty[$とおくと，
+\[
+X=A \cup B,\quad A \cap B=\varnothing	\quad
+\text{（$A$，$B$は$X$の開集合，$A \ne \varnothing$，$B \ne \varnothing$）}
+\]
+が成り立つからである．
+p142図保留
+
+\定理{１}
+$X$は位相空間とする．次の条件は同値である．
+\begin{list}{}{}
+	\item(1)　$X$は連結である．
+	\item(2)　$X$の部分集合$A$が$X$の開かつ閉集合$\Rightarrow A =\varnothing$または$A=X$
+	\item(3)　$X=A \cup B$，$\overline{A} \cap B=\varnothing $，$A \cap \overline{B}=\varnothing\,$
+							$\Rightarrow A =\varnothing$または$B =\varnothing$
+	\item(4)　$\{0,1\}$を$0,1$から成る$\R$の部分空間とする．$f:X \rightarrow \{0,1\}$が連続$\Rightarrow$$f$は定値写像，
+							すなわち$f(X)=\{0\}$または$f(X)=\{1\}$
+\end{list}
+
+\証明
+(1)$\Rightarrow$(2)：$A$が$X$の開かつ閉集合とすると，$X-A$も閉かつ開であるから，
+\[
+	X=A \cup (X-A),\quad A \cap (X-A)=\varnothing \quad (A,X-A \text{は$X$の開集合}).
+\]
+ゆえに，(1)より$A = \varnothing$または$X-A=\varnothing$，すなわち
+$A = \varnothing$または$X=A$．
+
+(2)$\Rightarrow$(3)：
+$X=A \cup B$より$X-B \subseteq A$，$\overline{A} \cap B=\varnothing$より，
+$\overline{A} \subseteq X - B$であるから，
+$X-B \subseteq A \subseteq \overline{A} \subseteq X-B$．したがって，
+$A=\overline{A}$が示され，$A$は$X$で閉である．
+また，$X=A \cup B$より$X-A \subseteq B$，$A \cap \overline{B} = \varnothing$より
+$\overline{B} \subseteq X - A$であるから，
+$X-A \subseteq B \subseteq \overline{B} X-A$．よって，
+$\overline{B}=X-A$が示され，$A$は$X$で開である．
+それゆえ，(2)より$A=\varnothing$または$A=X$，すなわち$A=\varnothing$または$B=\varnothing$．
+
+(3)$\Rightarrow$(4)：
+$f:X \rightarrow \{0,1\}$が連続であるならば，$\{0,1\}$の閉集合$\{0\}$，$\{1\}$に対し，
+$f^{-1}(\{0\})$，$f^{-1}(\{1\})$は$X$の閉集合である．このとき，
+\[
+	X=f^{-1}(\{0\}) \cap f^{-1}(\{1\}),
+\]
+$\overline{f^{-1}(\{0\})} \cap f^{-1}(\{1\}) =f^{-1}(\{0\}) \cap f^{-1}(\{1\})=\varnothing$，
+$f^{-1}(\{1\})\cap \overline{f^{-1}(\{1\})}=\varnothing$が成り立つ． したがって，
+(3)より$f^{-1}(\{0\})=\varnothing$または$f^{-1}(\{1\})=\varnothing$，すなわち$f(X)=\{1\}$または
+$f(X=\{0\}$が示される．
+
+(4)$\Rightarrow$(1)：$X$が連結でないと仮定すると，
+\[
+	X=A \cap B,\quad A \cap B=\varnothing \quad (A,B\text{は$X$の開集合，$A \ne \varnothing$，$B \ne \varnothing$，})
+\]
+なる$X$の部分集合$A$，$B$が存在する．写像$f:X \rightarrow \{0,1\}$を，
+\[
+	f(x)=	\begin{cases}	0 & (\text{$x \in A$のとき})	\\
+											1 & (\text{$x \in B$のとき})
+				\end{cases}
+\]
+によって定義するとき，$\{0,1\}$のすべての開集合$\varnothing,\{0\},\{1\},\{0,1\}$に対し
+$f^{-1}(\varnothing)=\varnothing$，$f^{-1}(\{0\})=A$，$f^{-1}(\{1\})=B$，$f^{-1}(\{0,1\})=X$は
+$X$の開集合であるから，$f$は連続である．$f$は定値写像ではないから，これは(4)に矛盾する．
+したがって，$X$は連結である．
+\■
+
+{\small
+\注意{１}
+定理１(1)$\Longleftrightarrow$(3)から直ちに次のことがわかる．位相空間$X$が連結であるための必要十分
+条件は，$X$が互いに素な２つの空でない閉集合の和として表わされないことである．
+}
+
+\vspace{3mm}
+次の定理により，連結性は位相的な性質であることがわかる．
+
+\vspace{3mm}
+\定理{２}$X$が連結で，$f:X \rightarrow Y$が連続な全射であるならば，$Y$も連結である．特に，
+$X$と$Y$が同相であるとき，$X$が連結ならば，$Y$も連結である．
+
+\証明
+まず，前半を証明しよう．$Y$が連結でないと仮定すると，定理１において(4)$\Rightarrow$(1)より，
+連続な全射（非定値な写像）$g:Y \rightarrow \{0,1\}$が存在する．このとき，合成写像$g \circ f:X \rightarrow \{0,1\}$
+は連続な全射である．次に定理１(1) $\Rightarrow$ (4)を用いて，$X$は連結でないことが導かれ，矛盾が生じる．
+よって，$Y$は連結である．
+後半は，$f$が同相写像ならば，それは連続な全射であるから，前半から直ちに得られる．
+\■
+
+\問{１}定理２を連結の定義から直接証明せよ．
+
+\証明
+$Y$が連結でないと仮定すると，$A \cup B=Y$，$A \cap B = \varnothing$，$A \ne \varnothing$，$B \ne \varnothing$
+であるような$Y$の開集合$A$，$B$が存在する．このとき，$f^{-1}(A)$，$f^{-1}(B)$はどちらも空でない
+$X$の開集合で，
+$f^{-1}(A) \cup f^{-1}(B)=X$，$f^{-1}(A) \cap f^{-1}(B)=\varnothing$を満たすから，
+$X$は連結でない．

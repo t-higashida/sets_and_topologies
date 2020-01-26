@@ -1,0 +1,276 @@
+\subsection{開集合と連続性}
+$|x-a|<\delta$ということは$a-\delta<x<a+\delta$，$x \in U(a;\delta)$を意味する．
+同様に，$|f(x)-f(a)|<\varepsilon$ということは
+$f(x) \in U(f(a);\varepsilon)$を意味する．したがって，
+\[
+	|x-a|<\delta \text{　ならば　}\,|f(x)-f(a)|<\varepsilon
+\]
+という命題は，$\varepsilon$近傍の言葉でいえば，
+\[
+	x \in U(a;\delta) \,\text{　ならば　}\,f(x) \in U(f(a);\varepsilon)
+\]
+と同等であり，更に，
+\[
+	U(a;\delta) \subseteq f^{-1}(U(f(a);\varepsilon))
+\]
+と同等である．したがって，連続性の定義は，次のように述べてもよい．
+
+\定義{}
+関数$f:\R \rightarrow \R$が点$a \in \R$で\textgt{連続}であることは，どんな$\varepsilon>0$に対しても，
+\[
+	U(a;\delta) \subseteq f^{-1}(U(f(a);\varepsilon))
+\]
+であるような適当な$\delta>0$が存在することである．
+
+\vspace*{3mm}
+\定理{１２}
+関数$f:\R \rightarrow \R$が連続関数であるための必要十分条件は，$\R$の任意の開集合$G$の$f$による原像
+$f^{-1}(G)$が$\R$の開集合であることである．
+
+\証明
+必要性：任意の$a \in f^{-1}(G)$をとれば，$f(a) \in G$だから，$G$が$\R$の開集合なることから，
+\[
+	U(f(a);\varepsilon) \subseteq G
+\]
+で成り立つような$\varepsilon>0$が存在する．$f$の連続性より，適当な$\delta>0$が存在して，
+\[
+	U(a;\delta) \subseteq f^{-1}(U(f(a);\varepsilon))
+\]
+となる．
+\[
+	U(f(a),\varepsilon)	\subseteq	G	\Longrightarrow	f^{-1}(U(f(a);\varepsilon))	\subseteq	f^{-1}(G)	
+	\text{　	（§1.3	定理１５（ⅰ））}
+\]
+
+これら２つの包含関係より$\exists	\delta	>0	\quad	U(a;\delta) \subseteq f^{-1}(G)$が導かれる．
+したがって，$f^{-1}(G)$は$\R$の開集合である．
+
+十分性：任意の点$a \in \R$をとる．$f(a) \in \R$の任意の$\varepsilon$近傍$U(f(a);\varepsilon)$は
+開集合であるから，仮定より$f^{-1}(U(f(a);\varepsilon))$は$\R$の開集合で，
+しかも点$a$を含む（§1.3	定理１５（ⅰ））．ゆえに，
+\[
+	U(a:\delta) \subseteq f^{-1}(U(f(a);\varepsilon)
+\]
+となる$\delta>0$が存在する．
+\■
+
+次の定理は，定理１２および閉集合の定義より困難なく証明される．
+
+\定理{１３}
+関数$f:\R \rightarrow \R$が連続関数であるための必要十分条件は，$\R$の任意の閉集合
+$F$の$f$による原像$f^{-1}(F)$が$\R$の閉集合となることである．
+
+\証明
+必要性：$f$を連続とする．$\R$の任意の閉集合$F$をとると，$\R-F$は$\R$の開集合であるから，
+$f^{-1}(\R-F)$が$\R$の開集合である（定理１２）．ところが，$f^{-1}(\R-F)=\R-f^{-1}(F)$
+が成り立つから（§1.3　定理１５（ⅳ）），$f^{-1}(F)$は$\R$の閉集合である．
+
+十分性：$\R$の任意の開集合$G$をとる．
+$\R-G$は，$\R$の閉集合であるから，仮定より$f^{-1}(\R-G)=\R-f^{-1}(G)$は$\R$の閉集合で，したがって
+$f^{-1}(G)$は$\R$の開集合である．よって$f$は連続関数である．
+\■
+
+\問{１３}
+$f,g:\R \rightarrow \R$が連続関数ならば，合成関数$f \circ g:\R \rightarrow \R ;x \mapsto f(g(x))$
+も連続関数であることを証明せよ．
+
+\証明
+$G$を$\R$の開集合とすれば，$f$の連続性より$f^{-1}(G)$は開．$g$の連続性より$g^{-1}(f^{-1}(G))$は開．
+ゆえに，$g^{-1}	\circ	f^{-1}$は連続である．$g^{-1}	\circ	f^{-1}=(f	\circ	g)^{-1}$を示す．
+まず，$g^{-1}	\circ	f^{-1}	:	\R	\longrightarrow	\R$と$(f	\circ	g)^{-1}	:	\R	\longrightarrow	\R$とより，
+始域と終域が一致する．
+
+\[
+	(f	\circ	g)^{-1}(x)=y	\Longleftrightarrow	x=f	\circ	g(y).
+\]
+一方	
+\begin{align*}
+	g^{-1}	\circ	f^{-1}(x)=y	&	\Longrightarrow	g^{-1}(f^{-1}(x))=y	\\
+														&	\Longrightarrow	g(y)=f^{-1}(x)			\\
+														&	\Longrightarrow	x=f(g(y))=f	\circ	g(y)	\\
+														&	\Longrightarrow	y=(f	\circ	g)^{-1}(x)	\\	
+	\therefore	(f	\circ	g)^{-1}(x)	=	g^{-1}	\circ	f^{-1}	(x).
+\end{align*}
+よって	$f	\circ	g$は連続．
+\■
+
+\textgt{第４章の問題}
+
+\textgt{1.　}
+$\displaystyle \lim_{n \rightarrow \infty} a_n = a$，$\displaystyle \lim_{n \rightarrow \infty} b_n = b
+ \Rightarrow \lim_{n \rightarrow \infty} (a_n+b_n) = a+b$を示せ．
+
+
+\証明
+$\varepsilon$を任意の正数とする．仮定より$\varepsilon/2$に対して，
+適当な$n_1,	n_2 \in \N$が存在して，$n_1<n,	n_2<n$なる任意の$n$について
+$|a_n - a | < \varepsilon/2$，$|b_n	-	b|	<	\varepsilon/2$．よって，$n_0=\min\{n_1,n_2\}$とおくと，
+$n_0<n$なる任意の$n$で，$|a_n - a |+|b_n	-	b|	<	\varepsilon/2	+	\varepsilon/2	=\varepsilon$．
+
+$|a_n+b_n-(a+b)|	\leqq	|a_n-a|+|b_n-b|$より，
+$|a_n+b_n-(a+b)|<\varepsilon$
+よって$\lim_{n	\rightarrow	\infty}(a_n+b_n)	=	a	+	b$．
+\■
+
+\textgt{2.　}
+数列$\{a_n\}$が$a$に収束し，かつすべての$n$について$a_n \ne a$ならば，
+$a$は集合$A=\{a_1,a_2,\cdots,a_n,\cdots \}$の集積点であることを示せ．
+
+\証明
+仮定より，任意の正数$\varepsilon$に対し，適当な$n_0 \in \N$が存在して，
+$n > n_0 \Rightarrow a_n \in \,]\,a-\varepsilon,a+\varepsilon\,[\,$．したがって，
+$]a-\varepsilon,a+\varepsilon[ \,\cap \,(A - \{a\}) \ne \varnothing$だから，$a$は$A$の集積点．
+\■
+
+\textgt{3.　}
+いかなる実数$x$も，$\Z$の集積点ではないことを示せ．
+
+\証明
+$n \leqq x < n+1$なる$n \in \Z$をとる．
+
+$x=n$のときは，$]x-1,x+1[ \,\cap\, (\Z-\{x\})=\varnothing$．
+
+$x \ne n$のときは，$\min \{n+1-x,x-n\}=\varepsilon>0$とおくとき，
+$]x-\varepsilon,x+\varepsilon[ \,\cap\, (\Z-\{x\})=\varnothing$．
+\■
+
+\textgt{4.　}
+$f:\R \rightarrow \R;x \mapsto |x|$は連続関数であることを示せ．
+
+\証明
+$a>0$（①）のとき，任意の正数$\varepsilon$に対し$\delta=\min \{\varepsilon,a \}$（③）とおくと，
+$|x-a|<\delta$ならば$0 \leqq a-\delta < x < a+\delta$（すなわち$x>0$②），
+\begin{align*}
+	||x|-|a||	&=	|x-a|											&\text{　（①②）　}\\
+						&<	\delta	\leqq \varepsilon	&\text{　（③）　}
+\end{align*}
+ゆえに，$f$は$x=a$で連続．
+
+$a < 0$（④）のときは，$\varepsilon>0$に対し$\delta=\min \{\varepsilon,-a\}$（⑥）とおくと．
+$|x-a|<\delta$ならば$a-\delta < x < a+\delta	\leqq	0$（すなわち$x<0$⑤），
+\begin{align*}
+	||x|-|a||	&=	|-x-(-a)|	=	|x-a|					&\text{　（④⑤）　}\\
+						&<	\delta	\leqq \varepsilon	&\text{　（⑥）　}
+\end{align*}
+ゆえに，$f$は$x=a$で連続．
+
+$a=0$のときは，$\varepsilon>0$に対して$\delta=\varepsilon$とおくと．
+$|x-a|=|x|<\delta$ならば（⑦），
+\begin{align*}
+	||x|-|a||	&=	||x||	=	|x|	\\	
+						&<	\delta	\text{　（⑦）　}	\\
+						&=	\varepsilon	
+\end{align*}
+ゆえに，$f$は$x=a=0$で連続．
+
+\■
+
+\textgt{5.　}
+$f:\R \rightarrow \R$を点$p \in \R$で連続な関数とする．$f(p) > 0$ならば，開区間$G$で，
+任意の点$ x \in G$に対し$f(x) > 0$となるようなものが存在することを示せ．
+
+\証明
+$f$は$x=p$で連続だから，
+$\varepsilon=f(p)>0$に対し$|x-p|<\delta \Rightarrow |f(x)-f(p)|<\varepsilon$
+なる$\delta>0$が存在する．
+すなわち，
+$x \in \,]\,p-\delta,p+\delta\,[\, \Rightarrow f(x) \in \,]f(p)-\varepsilon,f(p)+\varepsilon\,[\,=\,]0,2\varepsilon[$．
+　$]\,p-\delta,p+\delta\,[\,=G$とすれば，$f(x)	\in	\,]0,2\varepsilon[$より$f(x)>0$．
+\■
+
+\pagebreak
+\textgt{6.　}
+$f:\R \rightarrow \R$を$[a,b]$のすべての点で連続であるような関数とする．
+$f(a)\cdot f(b)< 0$ならば，$f(p)=0$となる点$p \in \,]\,a,b\,[$が存在する
+（\textgt{中間値の定理：Intermediate value theoreme}）．
+このことを示せ．
+
+\証明
+$f(a)<0<f(b)$の場合を示す．（$f(b)<0<f(a)$の場合も同様）．$A=\{x \,|\,x \in [a,b],f(x)<0\}$
+とおく．$a \in A$だから$A \ne \varnothing$．
+
+$x_0	\in	A$のとき，ある$\delta>0$が存在して，$]x_0-\delta,x_0+\delta[	\subseteq	A	$が成り立つ．
+実際$f$は連続であるから，$|f(x_0)|>0$に対しても，
+ある$\delta>0$が存在して
+\begin{align*}
+	x	\in\,	]x_0-\delta,x_0+\delta[\,	\cap\,	[a,b]	&	\Longrightarrow	|f(x_0)-f(x)|<|f(x_0)|	\\
+	&	\Longrightarrow	f(x)	\in\,	]f(x_0)-|f(x_0)|\,,\,f(x_0)+|f(x_0)|[	\\
+	&	\Longrightarrow	f(x)	\in\,	]2f(x_0)\,,\,0[	\\
+	&	\Longrightarrow	f(x)<0	\\
+	&	\Longrightarrow	x	\in	A
+\end{align*}
+よって，$]x_0-\delta,x_0+\delta[	\subseteq	A	$．
+
+さて，$A$は有界（$A	\subseteq	[a,b]$で$[a,b]$は有界）だから，	上限が存在する（Weierstrassの公理）．
+それを$\sup A = p$とおくとき，$f(p)=0$でかつ$p \in [a,b]$となることは，以下の背理法で証明される．
+$f(p)<0$ならば，$ x \in	\,]\,p-\delta,p+\delta\,[\,\Rightarrow f(x)<0$となるような
+$\delta$が存在し，$p<x<p+\delta$なる$x$について，$x	\in	A$．
+それゆえ，$p$は$A$の上界になり得ない．$f(p)>0$ならば，
+$x \in \,]p-\delta,p+\delta[\, \Rightarrow f(x)>0$なる$\delta>0$が存在する（問題５）．
+よって，$]\,p-\delta,p+\delta\,[\, \cap A=\varnothing$であり（$p-\delta<y<p$なるある元$y$に対しては，
+$y<x	\Longrightarrow	x	\notin	A$：上限の定義の（２）），$p$は$A$の上限になり得ない．
+したがって，$f(p)=0$．
+
+$a	\in	A$より$a	\leqq	p$．
+
+また$p	=	\sup	A$より$p$は$A$の上界の集合$B$の最小数である．
+なぜなら，$c	<	p$なる$c	\in	B	$が存在すると仮定すると，上限の定義（２）より$c	<	x$なる元
+$x	\in	A$が存在することになり，$c	\in	B$（$c$	が$A$の上界であることに矛盾する．
+よって，$a$は$A$の上界の集合$B$の最小数である．
+
+ところで，$b$は$A$の１つの上界である．よって$p	\leqq b$である（「§4.1.1　上限・下限」
+最小数の定義．）
+
+以上より$a	\leqq	p	\leqq	b$かつ$a	\ne	p,	\,	p	\ne	b$となり$	p	\in	\,]	\,a,b	\,[$である．
+
+
+\■
+
+\pagebreak
+\textgt{7.　}
+$f:\R \rightarrow \R$が連続で，各$q \in \Q$に対して$f(q)=0$ならば，すべての$x \in \R$に対して
+$f(x)=0$であることを証明せよ．
+
+\証明
+$f(p)>0$なる点$p \in \R$が存在すると仮定する．$f$は連続であるから，
+$|p-x|<\delta	\Rightarrow |f(p)-f(x)|<|f(p)|$となる$\delta>0$が存在する．
+すなわち$\forall	x	\in	]\,p-\delta,p+\delta\,[	\,\Longrightarrow	f(x)>0$
+
+　
+
+\framepage{1.0}{
+	{\small $f(x)>f(p)$の場合，$-|f(p)|<|f(x)-f(p)|<|f(p)|	\Longrightarrow	-f(p)<f(x)-f(p)<f(p)
+															\Longrightarrow	0<f(x)<2f(p)
+															$．
+					$f(x)<f(p)$の場合，	$-|f(p)|<|f(x)-f(p)|<|f(p)|	
+															\Longrightarrow	-f(p)<f(p)-f(x)<f(p)
+															\Longrightarrow	-2f(p)<-f(x)<0
+															\Longrightarrow	0<f(x)<2f(p)
+															$}
+}
+　
+
+$]p-\delta,p+\delta[$の中には有理数があるから矛盾．
+
+$f(p)<0$なる点$p \in \R$が存在すると仮定しても，$f$は連続であるから，
+$|p-x|<\delta	\Rightarrow |f(p)-f(x)|<|f(p)|=-f(p)$となる$\delta>0$が存在する．
+すなわち$\forall	x	\in	]\,p-\delta,p+\delta\,[	\,\Longrightarrow	f(x)>0$
+
+　
+
+\framepage{1.0}{
+	{\small $f(x)>f(p)$の場合，$-|f(p)|<|f(x)-f(p)|<|f(p)|	\Longrightarrow	f(p)<f(x)-f(p)<-f(p)
+															\Longrightarrow	0<f(x)<-2f(p)
+															$．
+					$f(x)<f(p)$の場合，	$-|f(p)|<|f(p)-f(x)|<|f(p)|	
+															\Longrightarrow	f(p)<f(p)-f(x)<-f(p)
+															\Longrightarrow	2f(p)<-f(x)<0
+															\Longrightarrow	0<f(x)<-2f(p)
+															$}
+}
+　
+
+同様に矛盾を生ずる．ゆえに，すべての$x \in \R$に対して$f(x)=0$．
+\■
+
+

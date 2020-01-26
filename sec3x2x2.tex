@@ -1,0 +1,115 @@
+\subsection{切片}
+整列集合$X$の元$a$に対し$X$の部分集合
+\[
+X(a)=\{x	\,|\, x \prec a, \, x \in X\},
+\]
+すなわち，$a$よりも前にある元の全体から成る$X$の部分集合を，$X$の$a$による\textgt{切片}という．整列集合の
+切片は，やはり整列集合である（前項$1^\circ$)．$X(a)$が$a$を含まないことは，注意を要する．
+
+\vspace{3mm}
+\例{７}
+$(\N,<)=(1,2,3,\cdots )$に対し$\N(1)=\varnothing$，$\N(n)=(1,2,\cdots,n-1)$（ただし$n \geqq 2$)である．
+
+\vspace{3mm}
+\例{８}
+整列集合
+$\displaystyle
+\biggl(	0,\frac{1}{2},\frac{2}{3},\cdots,\frac{n-1}{n},\cdots	;
+				1,2,\cdots,m,\cdots \biggr)	=X$
+に対し
+\begin{align*}
+	&X(0)											=\varnothing,	\\
+	&X\biggl(\frac{1}{2}\biggr)=(0),					\\
+	&													\cdots					\\
+	&X(1)											=\biggl(0,\frac{1}{2},\frac{2}{3},\cdots,\frac{n-1}{n},\cdots	\biggr),\\
+	&X(2)=\Bigl(0,\frac{1}{2},\frac{2}{3},\cdots,\frac{n-1}{n},\cdots ;1 \Bigr)										,\\
+	&\cdots
+\end{align*}
+である．
+
+　
+
+整列集合の切片の基本的な性質を挙げておこう．
+
+\補題{１}
+$X$を整列集合，$a$，$b$を$X$の２つの元とする．
+\[
+a \prec b \Longleftrightarrow X(a) \subset X(b).
+\]
+
+\証明
+$\Rightarrow$の証：$X(a)$の任意の元を$x$とすれば，$x \prec a$であるから，$a \prec b$と合せて，$x \prec b$，
+したがって$x \in X(b)$を得る．
+それゆえ，$X(a) \subseteq X(b)$．$a \prec b$より$a \in X(b)-X(a)$であり，$X(a) \ne X(b)$が示されるから，
+結局$X(a) \subset X(b)$が得られる．
+
+$\Leftarrow$の証：$X(a) \subset X(b)$ ならば，$c \in X(b)$かつ$c \notin X(a)$なる元$c \in X$が存在する．このとき，
+$c \prec b$かつ$(c=a$または$a \prec c)$であるから，$a \prec b$が成り立つ．
+\■
+
+\例{９}
+整列集合$X$のすべての切片の集合$W(X)=\{X(a) \,|, a \in X \}$を考える．
+$W(X)$の任意の２つの元$X(a)$，$X(b)$に対し，$X(a) \prec X(b) \Leftrightarrow X(a) \subset X(b)$によって
+関係$\prec$を定義するとき，$\prec$は順序関係となる．
+補題１({\small $a \prec b \Leftrightarrow X(a) \subset X(b)$})により，写像
+\[
+ X \rightarrow W(X)\,;\,a \mapsto X(a)
+\]
+は順序同型写像であることがわかるから，$W(X)$も整列集合である(前項$3^{\circ}$)．
+
+　
+
+\補題{２}
+$X$を整列集合，$a$，$b$を$X$の２つの元とする．
+\[
+a \prec b \Rightarrow X(b)(a)=X(a).
+\]
+
+\証明
+$a \prec b$ならば，$a \in X(b)$であるから，$X(b)$の$a$による切片$X(b)(a)$が定義される．
+$X(b)(a)$の任意の元$x$に対し$x \prec a$，したがって$x \in X(a)$であるから，$X(b)(a) \subseteq X(a)$．
+逆に，任意の元$x \in X(a)$をとるとき，$x \prec a$であるから，仮定$a \prec b$と合せて$x \prec b$，すなわち
+$x \in X(b)$が得られる．したがって，$x \in X(b)(a)$．それゆえ，$X(a) \subseteq X(b)(a)$が成り立ち，
+結局$X(b)(a)=X(a)$が示される．\hspace{5zw}■
+
+　
+
+\補題{３}
+$X$，$Y$を共に整列集合，$f:X \rightarrow Y$を順序同型写像とする．任意の$a \in X$に対し，
+\[
+	f(X(a))=Y(f(a))
+\]
+が成り立つ．
+
+\証明
+$y$を$f(X(a))$の任意の元とすれば，$y=f(x)$，$x \prec a$なる元$x \in X$が存在する．
+$f$は順序を保つから，$y=f(x) \prec f(a)$．
+したがって$y \in Y(f(a)))$が成り立つ．それゆえ，$f(X(a)) \subseteq Y(f(a))$．逆に
+$y \in Y(f(a))$とすれば，$y \prec f(a)$．$f^{-1}$も順序を保つから$f^{-1}(y) \prec a$であり，
+$f^{-1}(y) \in X(a)$．よって，$y=f(f^{-1}(y)) \in f(X(a))$．これより$Y(f(a)) \subseteq f(X(a))$が得られ，
+結局$f(X(a))=Y(f(a))$が示される．
+\■
+
+\補題{４}
+整列集合は，そのいかなる切片とも順序同型でない．
+
+\証明
+整列集合$X$が，$a \in X$に対し，その切片$X(a)$と順序同型であると
+仮定し，$f:X \rightarrow X(a)$を順序同型写像とする．このとき，$f(a) \in X(a)$より
+$f(a) \prec a$である．一方，$X(a) \subset X $であるから，定理２により$a=f(a)$または
+$a \prec f(a)$が成り立つ．これは矛盾である．したがって，$X$はそのどんな切片とも
+順序同型ではない．
+\■
+
+\補題{５}
+整列集合$X$の２つの元$a$，$b$に対し
+\[
+	X(a) \simeq X(b) \Longleftrightarrow a=b.
+\]
+\証明
+$\Leftarrow$は明らかに成り立つから，$\Rightarrow$が成り立つことのみを示そう．$a \prec b$
+ならば，補題２より$X(b)(a)=X(a)$である．
+補題４より，整列集合$X(b)$はその切片$X(b)(a)$（$=X(a)$）と順序同型ではないから，
+$X(b) \not\simeq X(a)$であり，これは矛盾である．$b \prec a$としても同様に矛盾がでるから，
+$a=b$でなければならない．
+\■

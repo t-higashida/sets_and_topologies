@@ -1,0 +1,84 @@
+\subsection{開集合の基本的性質}
+次は，開集合の本質を示す定理である．
+
+\定理{８}
+\begin{list}{}{}
+	\item (ⅰ)　$\R$自身および空集合$\varnothing$は，$\R$の開集合である．
+	\item (ⅱ)　$\R$の任意の有限個の開集合の共通部分は，$\R$の開集合である．
+	\item (ⅲ)　$\R$の任意個の開集合の和集合は，$\R$の開集合である．
+\end{list}
+
+\証明
+(ⅰ)　どんな$x \in \R$と正数$\varepsilon$をとっても，$U(x;\varepsilon) \subseteq \R$となるから，
+$\R$は$\R$の開集合である．$\varnothing$が$\R$の開集合であることは，注意１で述べた．
+すなわち「$x	\in	\varnothing	\Longrightarrow \exists	\varepsilon	>	0	\text{ such	that }	U(x;\varepsilon)	\subset	\varnothing$」
+は真なる命題であるから，$\varnothing$は$\R$の開集合である．
+
+(ⅱ)　$G_1,\,G_2,\cdots,G_n$を$\R$の開集合とする．$\bigcap_{i=1}^n G_i$に属する任意の元$x$を考えると，
+すべての$i=1,2,\cdots,n$に対し$x \in G_i$である．$G_i$は$\R$の開集合であるから，
+適当な$\varepsilon_i>0$が存在して，
+\[
+	U(x;\varepsilon_i) \subseteq G_i \quad (i=1,2,\cdots,n)
+\]
+が成り立つ．したがって，$\min\{\varepsilon_1,\varepsilon_2,\cdots,\varepsilon_n\}=\varepsilon$とおくと，
+$\varepsilon>0$で，
+\[
+	U(x;\varepsilon) \subseteq \bigcap_{i=1}^n U(x;\varepsilon_i) \subseteq \bigcap_{i=1}^n G_i
+\]
+となる．
+
+\framepage{1.0}{
+	{\small
+		$\forall	i	(A_i	\subset	G_i)	\Longrightarrow	\bigcap	A_i	\subset	\bigcap	G_i$．
+		$	\because	\forall	x	(x	\in	\bigcap	A_i)	\Longrightarrow	\forall	x	\forall	i	(x	\in	A_i)	
+			\Longrightarrow	\forall	x	\forall	i	(x	\in	G_i)	\Longrightarrow	\forall	x	(x	\in	\bigcap	G_i)$
+	}
+}
+
+よって，$\bigcap_{i=1}^n G_i$は$\R$の開集合である．
+
+(ⅲ)　$\Lambda$を任意の添え字の集合とする開集合の族$\{\, G_\alpha\,|\,\alpha \in \Lambda \}$に対し
+$\bigcup_{\alpha \in \Lambda}G_\alpha$が$\R$の開集合であることを示そう．
+$\bigcup_{\alpha \in \Lambda}G_\alpha$に属する任意の元$x$をとると，$x \in G_\alpha$となる$\alpha \in \Lambda$
+が存在する．$G_\alpha$は$\R$の開集合であるから，適当な正数$\varepsilon$が存在して，
+\[
+	U(x;\varepsilon)	\subseteq G_\alpha \subseteq \bigcup_{\alpha \in \Lambda}  G_\alpha
+\]
+となる．ゆえに，$U_{\alpha \in \Lambda} G_\lambda$は$\R$の開集合である．
+\■
+
+{	\small
+\注意{２}
+定理８の(ⅱ)の仮定にある“有限個”という条件を取り除くことはできない．なぜならば，次の例３で示されるように，
+$\R$無限個の開集合の共通部分で，$\R$の開集合ではないものが存在するからである．
+}
+
+\vspace{3mm}
+\例{３}
+$\displaystyle G_m=\Bigl]\,-\frac{1}{m},\frac{1}{m}\,\Bigr[ \quad (m \in \N)$とすれば，
+$\bigcap_{m=1}^\infty G_m$は，$\R$の開集合ではない．実際，
+$\bigcap_{m=1}^\infty G_m=\{0\}$が下のようにして証明され，$\{0\}$は，$\R$の開集合ではない
+（問７参照）から，$\bigcap_{m=1}^\infty G_n$は$\R$の開集合ではない．まず，
+すべての$m \in \N$に対して$0 \in G_m$であるから，$0 \in \bigcap_{m=1}^\infty G_m$が成り立つ．
+次に，$\bigcap_{m=1}^\infty G_m \ni a$で，$a \ne 0$であるものが存在すると仮定すると，
+$| a | > 0$で，アルキメデスの原理によって十分に大きい$n \in \N$を選べば，$n|a|>1$となるようにできるから，
+$\displaystyle a \notin \Bigl]\, -\frac{1}{n},\frac{1}{n} \Bigr[$である．
+
+これは，$a \in \bigcap_{m=1}^\infty G_m$に反する．したがって，$\bigcap_{m=1}^\infty G_m=\{0\}$を得る．
+
+\vspace{3mm}
+\例{４}
+$]\,a,\infty\,[=\{\,x\,|\,x \in \R,\,x>a\,\}$および$]\,-\infty,a,\,]=\{\,x\,|\,x \in \R,\,x<a\,\}$は，
+$\R$の開集合である．このことは，定義から直接示すことも容易であるが，
+\[
+	]\,a,\infty \,[ \,= \bigcup_{a<x}]\,a,x\,[ \,,\quad \quad 
+	]\,-\infty,a\,[ \,= \bigcup_{x<a}]\,x,\,a[
+\]
+に注意して，定理８(ⅲ)と例１とから導くことがもできる．
+
+{\small
+\注意{３}
+実数全体の集合$\R$は，本節のように定義された開集合が与えられたとき，
+\textgt{直線の位相}をもつといわれ，このとき，$\R$は\textgt{実数空間}
+あるいは，\textgt{実数直線}と称される．実数空間$\R$はの元は\textgt{点}ともいわれる．
+}

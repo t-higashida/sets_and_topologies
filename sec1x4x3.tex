@@ -1,0 +1,222 @@
+\subsection{同値類　}集合$X$に同値関係$R$が定義されているとする．$X$の元$x$と同値な元$y \in X$の全体の集合を
+$[x]$と表し，$x$の\textgt{同値類}という．すなわち，
+\[
+	[x]=\{y \,|\, y \in X,yRx \}.
+\]
+
+\textgt{定理１６．}$x \in X$のすべての同値類$[x]$について，次が成り立つ．
+
+\begin{list}{}{}
+	\item(ⅰ)　すべての$x \in X$に対し$x \in [x]$
+
+	\item(ⅱ)　$[x]=[y] \Longleftrightarrow xRy$
+
+	\item(ⅲ)　$[x] \ne [y] \Longleftrightarrow [x] \cap [y]=\varnothing$
+\end{list}
+
+\証明
+(ⅰ)反射律より$xRx$であるから，$x \in [x]$.
+
+(ⅱ)$\Rightarrow$の証：$z \in [x]=[y]$ならば，$zRx$，$zRy$である．対称律より$xRz$，$zRy$．ついで推移律より$xRy$．
+$\Leftarrow$の証：$z \in [x]$ならば，$zRx$．仮定$xRy$と推移律より$zRy$．したがって，$z \in [y]$が導かれる．
+よって$[x] \subseteq [y]$．$xRy \Longleftrightarrow yRx$に注意すれば，上と同様に$[y] \subseteq [x]$.
+したがって，$[x]=[y]$が成り立つ．
+
+(ⅲ)$\Rightarrow$の証：対偶を証明しよう．$[x] \cap [y] \ni z$ならば，$zRx$，$zRy$であり，対称律と推移律より$xRy$．よって(ⅱ)より$[x]=[y]$．$\Leftarrow$の証：対偶を示す．$[x]=[y]$ならば，（ⅱ)より$xRy$．
+よって，$x \in [y]$．一方，(ⅰ)より$x \in [x]$であるから，$x \in [x] \cap [y]$．
+したがって，$[x] \cap [y] \ne \varnothing$．
+\■
+
+集合$X$の空でない部分集合の族$\mathscr{C}$は，次の$1^{\circ}$，$2^{\circ}$が成り立つとき，
+$X$の\textgt{分割}といわれる．
+
+\begin{list}{\setlength{\leftmargin}{-4pt}}{}
+\item	$1^{\circ}$　$X$の各元$x$は，$\mathscr{C}$のある元に属する
+			（$\forall\,x \in X$に対して$x \in A \in \mathscr{C}$，$A \subseteq X$なる$A$が存在する）．
+
+\item $2^{\circ}$　$\mathscr{C}$の元は互いに素，すなわち$\mathscr{C}$に属するどの２つの集合をとっても，
+			それらの共通部分は空である．（$\forall\, A,\forall\, B \in \mathscr{C}\quad A \cap B = \varnothing$）
+\end{list}
+
+\例{}
+$X=\{1,2,3,4,5,6\}$のとき，
+\begin{list}{}{}
+	\item	$\mathscr{C}=\{\{1,6\},\{2,3,5\},\{4\}\}$は分割
+	\item	$\mathscr{D}=\{\{1,6\},\{2,3,4,5\},\{4\}\}$は分割でない
+	\item	$\mathscr{E}=\{\{1\},\{2,3,4,5\}\}$は分割でない
+\end{list}
+
+\vspace{3mm}
+定理１６は，$X$の部分集合の族$\{[x]|x \in X\}$が$X$の分割であることを示している．同値関係が定められている集合$X$を
+同値類に分割することを，$X$を\textgt{類別する}という．
+
+\vspace{3mm}
+\textgt{例８．　}ある中学校の1年生全体の集合を考える．１年生２人が同じ組であるという関係は，同値関係である．
+実際，次の同値律が成り立つ．(１)自分自身は自分自身と同じ組である．
+(２)甲と乙が同じ組ならば，乙と甲も同じ組である．
+(３)甲と乙が同じく組で，乙と丙が同じ組ならば，甲と丙は同じ組である．
+
+\vspace{3mm}
+$X$の同値類全体の集合$\{[x]	\,|\, x \in X\}$は，$X$の$R$による\textgt{商集合}といわれ，
+$X/R$によって表わされる．$x \in X$に，$x$の同値類$[x]$を対応させる写像
+\[
+X \rightarrow X/R; x \mapsto [x]
+\]
+は明らかに全射で，商集合への\textgt{自然な全射}といわれる．
+
+\vspace{3mm}
+同値関係が定義されている集合$X$から集合$Y$へ写像$f:X \longrightarrow Y$が，
+\begin{gather}
+\tag{＊} xRy \Rightarrow f(x)=f(y)
+\end{gather}
+を満たすものとする．この時$x$の同値類$[x] \in X/R$に対して，$\overline{f}([x])=f(x)$により写像
+\[
+\overline{f}:X/R \rightarrow Y
+\]
+が定義される．実際，$[x]=[y]$ならば，$xRy$であるから，(＊)より$f(x)=f(y)$，
+すなわち$\overline{f}([x])=\overline{f}([y])$が成り立つから，この$\overline{f}$は写像である．
+この$\overline{f}$を$f$によって\textgt{引き起こされる写像}という．
+
+\vspace{3mm}
+\textgt{例９．　}$S^{1}$を，平面における原点を中心とし半径1の円周を表わすものとする．
+例５の同値関係$xRy \Longleftrightarrow x-y \in \Z$によって得られる商集合$\R/R$を考える．
+$\R$から$S^{-1}$への写像
+\[
+f:\R \rightarrow S^{1};x \mapsto (\cos 2 \pi x, \sin 2 \pi x)
+\]
+によって，$\R/R$から$S^{1}$への写像
+\[
+\overline{f}:\R \rightarrow S^{1}; [x] \mapsto (\cos 2 \pi x,\sin 2 \pi x)
+\]
+
+が引き起こされる．実際，$xRy \Longleftrightarrow x-y \in \Z 
+                             \Longleftrightarrow \cos 2 \pi x = \cos 2 \pi y$
+かつ$\sin 2 \pi x = \sin 2 \pi y$．したがって（*)が成り立つ．
+
+\vspace{3mm}
+\問{２１}
+例９の写像$\overline{f}$は全単射であることを示せ．
+
+\証明
+$(\cos 2 \pi x, \sin 2 \pi x)=(\cos 2 \pi y, \sin 2 \pi y) \Longleftrightarrow x-y \in \Z$だから，
+$f$は単射．$S^1$の任意の点$(\cos a, \sin a) \quad (a \in \R)$に対し，$[a/2 \pi] \in \R/R$が存在して，
+$\overline{f}([a/2 \pi])=(\cos a ,\sin a)$を満たすから$\overline{f}$は全射．
+\■
+
+\textgt{\Large 第１章の問題}
+
+\vspace{3mm}
+\textgt{１．　}
+$5$で割ると$1$余る整数全体の集合を説明法によって表わせ．
+
+\textgt{解}　$ \{x \,|\, x=5n+1,n \in \Z \}$．
+\■
+
+\textgt{２．　}
+$A$，$B$を$A \cap B=\varnothing$なる集合とするとき，$(A \cup B)-A=B$を示せ．
+
+\証明
+\begin{align*}
+x \in (A \cup B)-A &\Longleftrightarrow x \in A \cup B	\text{ かつ }	x \notin A	\\ 
+									 &\Longleftrightarrow (x \in A \text{ または } x \in B)	\text{ かつ }	x \notin A	\\ 
+									 &\Longleftrightarrow (x \in A \text{ かつ } x \notin A) \text{ または }	
+																				(x \in B	 \text{かつ} x \notin A) \\
+									 &\Longleftrightarrow x \in B-A.
+\end{align*}
+$A \cap B=\varnothing$だから結果が成立．
+\■
+\textgt{３．}
+$A$，$B$，$C$，$D$とするとき，$(A \times B) \cap (C \times D)=(A \cap C) \times (B \cap D)$
+を証明せよ．
+
+\証明
+\begin{align*}
+(x,y) \in (A \times B) \cap (C \times D) &\Leftrightarrow (x,y) \in (A \times B) \text{ かつ } 
+																						(x,y) \in (C \times D) \\
+																				 &\Leftrightarrow (x \in A \text{ かつ } y \in B) \text{ かつ }
+																												  (x \in C \text{ かつ } y \in D)	\\
+																				 &\Leftrightarrow (x \in A \cap C) \text{ かつ } (y \in B \cap D) \\
+																				 &\Leftrightarrow (x,y) \in (A \cap C) \times (B \cap D).
+\end{align*}
+\■
+\textgt{４．　}
+$f:X \rightarrow Y$を写像とするとき，次を示せ．
+\begin{list}{}{}
+		\item	(ⅰ)　$A \subseteq X$に対し$f^{-1}(f(A)) \supseteq A$．$f$が単射ならば，$f^{-1}(f(A)) = A$．
+		\item (ⅱ)　$B \subseteq Y$に対し$f(f^{-1}(B)) \subseteq B$．したがって，$f(f^{-1}(B))=B \cap f(X)$．
+\end{list}
+
+\証明
+
+(ⅰ) $x \in A$ならば，$f(x) \in f(A)$，したがって，$x \in f^{-1}(f(A))$．ゆえに，$ A \subseteq f^{-1}(f(A))$．
+次に，$x \in f^{-1}(f(A))$ならば，$f(x) \in f(A)$．ゆえに，$f(x)=f(y)$なる$y$が存在する．
+このような$y$に対しては$f$が単射であるから，$x=y \in A$．
+したがって，$f^{-1}(f(A)) \subseteq A$．
+
+(ⅱ) $x \in f(f^{-1}(B))$ならば，$x=f(y)$なる$y \in f^{-1}(B)$が存在する．このとき，$f(y) \in B$だから$x \in B$．
+よって，$f(f^{-1}(B)) \subseteq B$．
+
+さらに等号を示す．まず$B \cap f(X) \subseteq f(f^{-1}(B))$に関しては，
+\begin{align*}
+x \in B \cap f(X)	&\Longrightarrow x \in B	\text{ かつ	} x \in f(X)	\\
+									&\Longrightarrow f^{-1}(x) \in f^{-1}(B)	\text{ かつ }	f^{-1}(x) \in X	\\
+									&\Longrightarrow f^{-1}(x) \in f^{-1}(B)	\quad( \because	f^{-1}(B) \subset X	)	\\
+									&\Longrightarrow x \in f(f^{-1}(B))
+\end{align*}
+次に，$f^{-1}(B) \subseteq B \cap f(X)$に関しては，
+\begin{align*}
+x \in f(f^{-1}(B))	&\Longrightarrow f^{-1}(x) \in f^{-1}(B)	\\
+										&\Longrightarrow f^{-1}(x) \in f^{-1}(B)	\cap X	\quad (\because f^{-1}(B) \subset X)	\\
+										&\Longrightarrow x \in f(f^{-1}(B) \cap X)	\\
+										&\Longrightarrow x \in f(f^{-1}(B) \cap X)	\\
+										&\Longrightarrow x \in f(f^{-1}(B)) \cap f(X)		\quad (\because \text{定理１４（ⅲ）})	\\
+										&\Longrightarrow x \in B \cap f(X)	\quad (\because f(f^{-1}(B))	\subseteq B)
+\end{align*}
+以上より，$f(f^{-1}(B)) = B \cap f(X)$．
+\■
+
+\pagebreak
+\textgt{５．}
+$f:X \rightarrow Y$が単射ならば，$A \cap B=\varnothing$なる$X$の任意の部分集合$A$，$B$
+に対し$f(A) \cap f(B)=\varnothing$が成り立つことを示せ．
+
+\証明
+$x \in f(A) \cap f(B)$とすると，$x \in f(A)$かつ$x \in f(B)$．
+したがって，$x=f(a)$ $(a \in A)$，$x=f(b)$ $b \in f(B)$と表される．
+$f$は単射であるから，$f(a)=x=f(b)$より$a=b \in A \cap B$が得られる．
+これは，$A \cap B = \varnothing$に矛盾．
+\■
+
+\textgt{６．　}
+$\N \times \N$の元の間に関係$R$を，$(m,n)R(m',n') \Longleftrightarrow m+n'=m'+n$　$(m,n,m',n' \in \N)$
+により定義すれば，$R$は同値関係であることを示せ．
+
+\証明
+反射律：$m+n = m+n \Longrightarrow (m,n) R (m,n)$．
+
+対称律：$m+n'=m'+n \Longrightarrow m'+n=m+n' \quad \therefore (m,n') R (m',n) \Longrightarrow (m'n) R (m',n)$．
+
+推移律：$(m,n)R(m',n'),(m',n')R(m'',n'') \Rightarrow m+n'=m'+n,m'+n''=m''+n' \Rightarrow m+n'+m'+n''=m'+n+m''+n'
+\Rightarrow m+n''=m''+n \Rightarrow (m,n)R(m'',n'')$．
+\■
+
+\vspace{3mm}
+\textgt{７．　}問題６で，$(m,n)$の同値類を$[m,n]$で表わすとき，
+\[
+f:(\N \times \N)/R \rightarrow \Z;[m,n] \mapsto m-n
+\]
+は全単射であることを示せ．
+
+\証明
+
+$g:\Z \rightarrow (\N \times \N)/R; m \mapsto [m+1,1]$に対し，
+$g \circ f$，$f \circ g$はいずれも恒等写像であるから$f$は全単射であることを示す．
+
+$f \circ g:Z \longrightarrow Z$，$f \circ g(m)=f(g(m))=f([m+1,1])=m$で$f \circ g$は
+恒等写像で，定理１１より$f$は全射．
+
+$g \circ f:(\N \times \N)/R \Longrightarrow (\N \times \N)/R$，
+$g \circ f([m,n])=g(m-n)=[m-n+1,1]=[m,n]	\quad ( \because m-n+1+n=m+1 )$で
+$g \circ f$は恒等写像で，定理１１（ⅱ）より$f$は単射．
+
+\■

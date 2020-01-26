@@ -1,0 +1,185 @@
+\subsection{開基}
+$X$を位相$\mathscr{T}$をもつ位相空間とする．$\mathscr{T}$の部分集合，すなわち
+$X$の開集合よりなる1つの集合族$\mathscr{B}$が位相空間$X$の\textgt{開集合の基底}
+（または単に\textgt{開基}）といわれるのは，任意の開集合$U \in \mathscr{T}$と
+任意の点$x \in U$に対して
+\[
+	x \in V \subseteq U
+\]
+となる$V \in \mathscr{B}$が存在するときである．換言すれば，
+\[
+	\mathscr{B}=\{V \,|\, V \in \mathscr{N}^*(x),\,x \in X \} \quad
+ (\mathscr{N}^*(x) \text{は$x$の近傍の基)}
+\]
+である．
+
+\例{＊}
+$X=\{a,b,c,d\}$に対して，
+\begin{align*}
+	&\mathscr{N}^*(a)=\{\:\{a\}	\:\},	
+	&\mathscr{N}^*(b)=\{\:\{b,c,d\},X	\:\},	\\
+	&\mathscr{N}^*(c)=\{\:\{c,d\},\{b,c,d\}	,X	\:\},	
+	&\mathscr{N}^*(d)=\{\:\{c,d\},\{a,c,d\}	\:\}	\\
+\end{align*}
+よって，$\mathscr{B}=\{\{a\},\{b,c,d\},X,\{c,d\},\{a,c,d\}\}$．
+
+\vspace{3mm}
+\問{３}
+$\mathscr{B}$が$X$の開基であるための必要十分条件は，$X$の任意の開集合が$\mathscr{B}$の
+集合の和集合として表されることである．これを証明せよ．
+
+\証明
+必要性：$\mathscr{B}$を$X$の開基とする．
+任意の開集合$U\	\in \mathscr{T}$と$U$の任意の点$x$に対し，$x \in V(x) \subseteq U$なる
+$V(x) \,( \in \mathscr{N}^*(x) \subseteq \mathscr{B})$が存在する．
+このとき，$\bigcup_{x \in U} V(x)=U$.
+（{	\small	
+	$\because	\forall	x	\in	U	\Leftrightarrow	\exists	V(x)	\text{　s.t　}	x	\in	V(x)	
+														\Leftrightarrow	x	\in	\bigcup_{x	\in	U}	V(x)$，
+}）
+
+十分性：任意の開集合$U$が$U = \bigcup_{\alpha \in \Lambda} V_\alpha \,(V_\alpha \in \mathscr{B})$
+と表されたとき，$U$の任意の$x$に対し$x \in V_\alpha \subseteq U$なる$V_\alpha$が存在する．よって
+$\mathscr{B}$は$X$の開基である．
+\■
+
+\例{４}
+例１および例２で，$\{U(x;\varepsilon) \,|\, \varepsilon \text{は正の実数},x \in X \}$，
+$\{U(x;\varepsilon)\,|\,\varepsilon \text{は} 0<\varepsilon<\varepsilon_0 \text{なる実数，}x \in X\}$
+は，いずれも$X$の開基である．
+	
+\vspace{3mm}
+\定理{４}
+位相空間$X$の開基$\mathscr{B}$は，次の性質をもつ．
+\begin{list}{}{}
+	\item ［B$_1$］任意の点$x \in X$に対し，$x \in V$となる$V \in \mathscr{B}$が存在する．
+	\item ［B$_2$］$U \cap V \ne \varnothing$なる任意の$U$，$V \in \mathscr{B}$と，
+								任意の$x \in U \cap V$に対して，
+								$x \in W \subseteq U \cap V$となる$W \in \mathscr{B}$が存在する．
+\end{list}
+\証明
+［B$_1$］：$X \in \mathscr{T}$だから，開基の定義より明らか．
+
+［B$_2$］：仮定より$U \cap V \in \mathscr{N}^*(x)$であるから，
+$x \in W \subseteq U \cap V$となる$W \in  \mathscr{N}^*(x) \subseteq \mathscr{B}$が存在する．
+\■
+
+
+{\small
+\注意{３}
+空でない集合$X$に，［B$_1$］，［B$_2$］を満たす部分集合族$\mathscr{B}$が与えられたとする．$X$の部分集合
+$G$が$X$の開集合である（すなわち$G \in \mathscr{T}$）とは，任意の$x \in G$に対して
+\[
+	x \in V \subseteq G
+\]
+となるような$V \in \mathscr{B}$が存在することであると定義するとき，$\mathscr{T}$は$X$の上の位相となる．
+
+\証明
+[O$_1$]：[B$_1$]より$X	\in	\mathscr{T}$が成り立つ．「任意の点$x	\in	\varnothing$に対して，
+$x	\in	V	\subseteq \varnothing$となる$V 	\in \mathscr{B}$が存在する」．
+よって$\varnothing \in	\mathscr{B}$が成り立つ．
+
+[O$_2$]：$G_i	\in	\mathscr{T}$に対して，
+$\forall	x	\in	\bigcap_{i=1}^n	G_i	\Rightarrow	x	\in	G_i	\Rightarrow	x	\in	V_i	\subseteq	G_i$．
+[B$_2$]と数学的帰納法より，$x	\in	W	\subseteq	\bigcap	V_i	\subseteq	\bigcap	G_i$となる$W$が存在する．
+よって$\bigcap	G_i	\in	\mathscr{T}$．
+
+[O$_3$]：$G_\alpha	\in	\mathscr{T}$に対して，
+$\forall	x	\in	\bigcup	G_\alpha	\Rightarrow	\exists	V_\alpha	\in	\mathscr{B}	\text{　s.t　}x	\in	V_\alpha	\subseteq	\exists	G_\alpha
+\Rightarrow	x	\in	V_\alpha	\subseteq	\bigcup	G_\alpha$
+
+　
+
+更に，この位相に対し，与えられた$\mathscr{B}$は$X$の開基となっている．つまり，
+\begin{list}{}{}
+	\item	（１）[B$_1$]，[B$_2$]の意味で$\mathscr{B}$が$\mathscr{T}$の部分集合である．
+	\item	（２）[B$_1$]，[B$_2$]の意味で任意の開集合$U	\in	\mathscr{T}$と任意の点$x	\in	U$に対して，
+							$x	\in	V	\subseteq	U$となる$V	\in	\mathscr{B}$が存在する．
+\end{list}
+
+\証明
+（１）の証：$\mathscr{B}$は[B$_1$]，[B$_2$]を満たす部分集合族であるから，
+[B$_2$]を$U$と$U$に適用すると，
+$U	\cap	U	\ne	\varnothing$となる任意の$U$，$U	\in	\mathscr{B}$と
+（このような$U$の存在は[B$_1$]によって保証される），任意の$x	\in	U	\cap	U=U$に対して，
+$x	\in	V	\subseteq	U	\cap	U=U$となる$V	\in	\mathscr{B}$が存在する．
+したがって$U	\in	\mathscr{T}$，つまり$\mathscr{B}	\subseteq	\mathscr{T}$．
+
+別証：
+$\forall	U	\subseteq	\mathscr{B}$と$\forall	x	\in	U$に対して，$U$は$x	\in	U	\subseteq	U$を
+満たす．よって$U$は注意３の[B$_1$]，[B$_2$]の意味で開集合である．
+
+（２）の証：任意の開集合$U	\in	\mathscr{T}$は，[B$_1$]，[B$_2$]に基づく開集合の定義より，
+任意の点$x	\in	U$に対して，$x	\in	V	\subseteq	U$となるような$V	\in	\mathscr{B}$が存在する．
+
+よって，$\mathscr{B}$は開基である．
+\■
+}
+
+\vspace{3mm}
+集合$X$の上に与えられた２つの位相が同じであるため条件を，開基を用いて述べれば次のようになる．
+
+\定理{４}
+集合$X$$(\ne \varnothing)$における［B$_1$］，［B$_2$］を満たす集合族$\mathscr{B}_1$，$\mathscr{B}_2$
+が$X$の同じ位相の開基であるための必要十分条件は，次の２つが成り立つことである．
+\begin{list}{}{}
+\item(１)　任意の$V \in \mathscr{B}_1$と任意の$x \in V$に対して，$x \in W \subseteq V$となる$W \in \mathscr{B}_2$が存在する．
+\item(２)　任意の$W \in \mathscr{B}_2$と任意の$x \in W$に対して，$x \in V \subseteq W$となる$V \in \mathscr{B}_1$が存在する．
+\end{list}
+
+\証明
+必要性：
+\begin{list}{}{}
+	\item	(a)与えられた位相$\mathscr{T}$上に定義される２つの開基$\mathscr{B}_1$と$\mathscr{B}_2$の間には（１），（２）が成り立つ．
+	\item	(b)または，[B$_1$]，[B$_2$]を満たすの２つ集合族$\mathscr{B}_1$と$\mathscr{B}_2$
+				より定義される位相$\mathscr{T}_{\mathscr{B}_1}$，$\mathscr{T}_{\mathscr{B}_2}$が同じ
+			（$\mathscr{T}_{\mathscr{B}_1}=\mathscr{T}_{\mathscr{B}_2}$）ならば（１），（２）が成り立つ．
+\end{list}
+
+（１）の証：
+(a)$\mathscr{B}_2$は$\mathscr{T}$上に定義された開基であるから任意の開集合$G$に対して，
+(b)または$G$が$\mathscr{B}_2$によって定められる$X$の開集合ならば，
+\[
+	x	\in	W	\subseteq	G
+\]
+となる$W	\in	\mathscr{B}_2$が存在する．
+(a)$G$として$V	\in	\mathscr{B}_1	\subseteq	\mathscr{T}$をとれば，
+(b)または$V	\in	\mathscr{B}_1	\subseteq	\mathscr{T}_{\mathscr{B}_1}$をとれば，
+$x \in W	\subseteq	V$，（１）が成立．
+
+（２）の証：
+(a)$\mathscr{B}_1$は$\mathscr{T}$上に定義された開基であるから任意の開集合$G$に対して，
+(b)または$G$が$\mathscr{B}_1$によって定められる$X$の開集合ならば，
+
+\[
+	x	\in	V	\subseteq	G
+\]
+となる$V	\in	\mathscr{B}_1$が存在する．
+(a)$G$として$W	\in	\mathscr{B}_2	\subseteq \mathscr{T}$をとれば，
+(b)または$V	\in	\mathscr{B}_2	\subseteq \mathscr{T}_{\mathscr{B}_2}$をとれば，
+$x \in V	\subseteq	W$，（２）が成立．
+
+十分性：
+任意の$G	\in	\mathscr{T}_{\mathscr{B}_2}$に対し$x	\in	G$ならば，
+(a)$\mathscr{B}_2$は$\mathscr{T}_{\mathscr{B}_2}$の開基だから，
+(b)または$\mathscr{T}_{\mathscr{B}_2}$は$\mathscr{B}_2$によって定められる位相であるから，
+$x	\in	W	\subseteq	G$となる$W	\in	\mathscr{B}_2$が存在し，
+さらに（２）により，$x	\in	V	\subseteq	W$となる$V	\in	\mathscr{B}_1$が存在する．
+結局
+$x	\in	V	\subseteq	G$が成立し，
+(a)$\mathscr{B}_1$は$\mathscr{T}_{\mathscr{B}_2}$の開基である．
+(b)または$G	\in	\mathscr{T}_{\mathscr{B}_1}$，$\therefore	\mathscr{T}_{\mathscr{B}_2}	\subseteq	\mathscr{T}_{\mathscr{B}_1}$
+
+
+任意の$G	\in	\mathscr{T}_{\mathscr{B}_1}$に対し$x	\in	G$ならば，
+(a)$\mathscr{B}_1$は$\mathscr{T}_{\mathscr{B}_1}$の開基だから，
+(b)または$\mathscr{T}_{\mathscr{B}_1}$は$\mathscr{B}_1$によって定められる位相であるから，
+$x	\in	V	\subseteq	G$となる$V	\in	\mathscr{B}_1$が存在し，
+さらに（１）により，$x	\in	W	\subseteq	V$となる$W	\in	\mathscr{B}_2$が存在する．
+結局
+$x	\in	W	\subseteq	G$が成立し，
+(a)$\mathscr{B}_2$は$\mathscr{T}_{\mathscr{B}_1}$の開基である．
+(b)または$G	\in	\mathscr{T}_{\mathscr{B}_2}$，$\therefore	\mathscr{T}_{\mathscr{B}_1}	\subseteq	\mathscr{T}_{\mathscr{B}_2}$
+
+\■
+

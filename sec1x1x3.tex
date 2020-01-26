@@ -1,0 +1,71 @@
+\subsection{部分集合　}
+集合$A$が集合$B$の\textgt{部分集合}であるとは，$A$のすべての元が$B$に含まれるとき，すなわち，
+\[
+x \in A \Rightarrow x \in B
+\]
+が成り立つときをいい，
+\[
+A \subseteq B
+\]
+と記す．このとき，集合$B$は集合$A$を\textgt{包む}，あるいは集合$A$は集合$B$に\textgt{包まれる}という．
+元$x$が集合$A$に包まれる$(x \in A)$のとき，
+１つの元からなる集合$\{x\}$は集合$A$に包まれる$(\{x\} \subseteq A)$．
+この逆もいえる．
+集合$A$が集合$B$の部分集合ではないとき，つまり，$B$に属さないような$A$の元が存在するとき，
+\[
+A \nsubseteq B \text{　（または　} B \not\supseteq A \text{）}
+\]
+と表わす．
+
+\vspace{3mm}
+\textgt{例１６．}$\{1,2\} \subseteq \{ 1,2,3,\}$，$\{1,2,3,\} \nsubseteq \{2,3,4\}$．
+
+\vspace{3mm}
+\textgt{例１７．}$]a,b[ \subseteq [a,b[ \subseteq [a,b] \subseteq \mathbb{R}$．
+
+\vspace{3mm}
+\textgt{例１８．}$\mathbb{N} \subseteq \mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R}$．
+
+\vspace{5mm}
+\textgt{定理２．}$A$，$B$，$C$を任意の集合とするとき，次ぎが成り立つ．
+
+（ⅰ）$A \subseteq A$．
+
+（ⅱ）$A \subseteq B$，$B \subseteq A$　$\Leftrightarrow$　$A=B$
+
+（ここで，“$\Leftrightarrow$”は，“$\Rightarrow$かつ$\Leftarrow$”表わす記号である．）
+
+（ⅲ）$A \subseteq B$，$B \subseteq C$　$\Rightarrow$　$A \subseteq C$．
+
+\textgt{証明}
+
+（ⅰ）$x \in A \Rightarrow x \in A$が成り立つことから$A \subseteq A$が得られる．
+
+（ⅱ）$\Rightarrow$の証：$A \subseteq B$より，$A$のすべての元は$B$に含まれ，$B \subseteq A$より$B$のすべての元は$A$に含まれるから，$A=B$が示される．$\Leftarrow$の証：定義から明らか．
+
+（ⅲ）$A \subseteq B$より$A$の任意の元$x$は$B$に含まれ，$B \subseteq C$より$x$は$C$に含まれる．従って，$A$のすべての元は$C$に含まれるから，$A \subseteq C$が成り立つ.
+\■
+
+\textgt{定義　}集合$A$が集合$B$の\textgt{真部分集合}であるとは，$A \subseteq B$かつ$A \ne B$なるときをいい，
+\[
+A \subset B \text{　（または} B \supset A \text{）}
+\]
+と記される．
+
+\vspace{5mm}
+{\small　\textgt{注意２．}書物によっては，$A$が$B$の部分集合であることを$A \subset B$，真部分集合であることを$A \varsubsetneqq B$と表わすこともある．
+}
+
+\vspace{5mm}
+\textgt{例１９．}$\{1,2\} \subset \{1,2,3\}$．
+
+\vspace{5mm}
+\例{２０}	$]a,b[	\,\subset\,	[a,b[	\,\subset\,	[a,b] \,\subset\,	\mathbb{R}$．
+
+\vspace{5mm}
+\textgt{例２１．}$\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}$．
+
+\vspace{5mm}
+\textgt{問３．}例２１を確かめよ．
+
+\textgt{（解）．}例７，例８，例９，例１８による．

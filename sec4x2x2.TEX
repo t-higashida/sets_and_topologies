@@ -1,0 +1,92 @@
+\subsection{有界・単調数列}
+数列$\{\,a_n\,\}$が\textgt{上に}（\textgt{下に}）\textgt{有界}であるいわれるのは，
+その像の集合$\{\,a_1,a_2,\cdots,a_n,\cdots \}$が上に（下に）有界であるときである．
+上に有界かつ下に有界な数列は，\textgt{有界}であるといわれる．
+
+\vspace{3mm}
+\例{５}
+数列
+$\displaystyle \Big\{1,\frac{1}{2},\frac{1}{3},\cdots,\frac{1}{n},\cdots, \Bigr\}$は有界である．
+実際，$\displaystyle 0 < \frac{1}{n} \leqq 1$が成り立つ．
+
+\vspace{3mm}
+\例{６}
+数列$\{\,(-1)^n \,\}$は有界である．実際，$-1 \leqq (-1)^n \leqq 1 $が成り立つ．
+
+\vspace{3mm}
+例２，例６からわかるように，数列は有界であっても必ずしも収束しない．しかし，収束する数列は，必ず
+有界であることが示される．
+
+\vspace{3mm}
+\定理{２}
+数列は，収束すれば有界である．
+
+\証明
+数列
+$\{\,a_n\,\}$が実数$a$に収束するとする．正数$\varepsilon$をとると，適当な$n_0 \in \N$が存在して，
+$n> n_0$なるすべての$n \in \N$に対して，$a-\varepsilon < a_n < a+\varepsilon$となる．
+そこで，
+\[
+	\max \{\,|a_1|,|a_2|,\cdots,|a_{n_0}|,|a-\varepsilon|,|a+\varepsilon|\,\}=d
+\]
+とおけば，$n\leqq n_0$ならば，$|a_n| \leqq \max \{\,|a_1|,|a_2|,\cdots,|a_{n_0}|,|a-\varepsilon|,|a+\varepsilon|\,\}\leqq d$
+で，いずれにせよ$|a_n| \leqq d$となるから，
+$\{\,a_n\,\}$は有界である．
+\■
+
+\例{７}
+数列$\{\,a_n\,\}$が$a$に収束し，かつすべての$n \in \N$について$|\,a_n\,| \leqq d$が成り立つならば，
+$|a| \leqq d$である．
+このことを背理法によって証明しよう．
+$|a| > d$と仮定すれば，$|a|>c>d$なる実数
+$c$が存在するが，このとき，
+すべての$n \in \N$に対して$|a_n-a| \geqq |a|-|a_n| \geqq |a|-d > c-d > 0$となる．
+これは，$n \rightarrow \infty$のとき$a_n \rightarrow a$であることに矛盾する．なぜならば
+$\varepsilon=c-d>0$に対して十分大きい$n$をとれば，$|a_n-a|<\varepsilon=c-d$となるはずだからである．
+
+
+\vspace{3mm}
+\定義{３}
+数列$\{\,a_n\,\}$は，
+\[
+	a_1 \leqq a_2 \leqq \cdots \leqq a_n \leqq \cdots \quad\quad
+ (a_1 \geqq a_2 \geqq \cdots \geqq a_n \geqq \cdots )
+\]
+なるとき\textgt{単調増加数列}（\textgt{単調減少数列}）といわれる．
+
+\vspace{3mm}
+{
+\small
+\注意{１}
+書物によっては，上の定義では等号がない場合のみを単調増加（単調減少）といい，
+上のような数列を単調非減少（単調非増加）ということがある．
+}
+
+\例{８}
+$	\displaystyle	\biggl\{\,1,\frac{1}{2},\frac{1}{3},\cdots,\frac{1}{n},\cdots\biggr\}$は，
+有界な単調現象数列である．
+
+\pagebreak
+\定理{３}
+上に有界な単調増加数列（下に有界な単調減少数列）は収束する．
+
+\証明
+上に有界な単調増加数列を$\{\,a_n\,\}$とし，集合$\{\,a_1,a_2,\cdots,a_n,\cdots \,\}$を$A$とする．
+$A$は上に有界な空でない集合であるから，ワイエルシュトラスの公理より$A$の上限$a$が存在する．
+任意の正数$\varepsilon$に対し$a-\varepsilon<a$だから，上限の定義(2)より$a-\varepsilon<a_{n_0}$となる
+$a_0 \in A \,(n_0 \in \N)$が存在する．
+$\{\,a_n\,\}$は単調増加だから，$n_0 \leqq n$ならば$a_{n_0} \leqq a_n$．
+上限の定義の(1)より，すべての$n \in \N$に対して$a_n \leqq a$．ゆえに，
+\begin{list}{}{}
+	\item $n>n_0$なるすべての$n \in \N$に対し
+		\[
+			a-\varepsilon<a_{n_0} \leqq a_n \leqq a \text{　　したがって　　} |a_n-a| < \varepsilon
+		\]
+\end{list}{}{}
+が成り立つ．よって$\{\,a_n\,\}$は$a$に収束する．
+下に有界な単調減少数列の場合にも同様である．
+\■
+
+\例{９}
+$\displaystyle \Big\{1,\frac{1}{2},\frac{1}{3},\cdots,\frac{1}{n},\cdots \Bigr\}$は，
+有界な単調減少数列（例５，例８）だから収束する．

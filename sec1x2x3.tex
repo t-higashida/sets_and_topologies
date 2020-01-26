@@ -1,0 +1,91 @@
+\subsection{空集合}
+$A=\{1,3,5\}$，$B=\{2,4,6\}$のように，$A$と$B$の両方の集合に共通に含まれる元が存在しないとき，
+$A \cap B$をどう考えたらよいだろうか．
+元を１つももたないものを\textgt{空集合}と称し，集合の仲間に入れておくと，
+このようなときに便利である．集合$A$，$B$の共通部分を定義するときに，
+“２つの集合$A$，$B$のどちらにも共通に含まれる元があるとき”という仮定を設けが，
+“$A$，$B$に共通に含まれる元が存在しないときには$A \cap B$は空集合である”と定めておけば，
+この仮定は不要となる．
+
+空集合は記号で
+\[
+\varnothing  \text{　（または$\{$　　$\}$ ）}
+\]
+と表わされる．$A$が空集合であるとき，$A$は\textgt{空である}ともいう．
+空集合は，任意の集合の部分集合で，空集合以外の部分集合をもたないものとする．
+
+\vspace{3mm}
+\例{５}２次方程式$x^2+x+1=0$は実数の根を持たない．
+つまり，$x^2+x+1=0$の根の集合を$A$とすれば，
+\[
+	A=\biggl\{\displaystyle\frac{-1+\sqrt{-3}}{2} , \frac{-1-\sqrt{-3}}{2} \biggr\}
+\]で
+$\R \cap A=\varnothing$である．別のいい方をすれば．
+\[
+	\{x\,|\,x \in \R,\, x^2+x+1=0 \}=\varnothing
+\]
+である．
+
+\vspace{3mm}
+\例{６}
+$A=\{\varnothing\}$ならば，$A \neq \varnothing$である．なぜならば，$A$は空集合という1つの元をもつからである．
+
+\vspace{3mm}
+集合$A$，$B$は$A \cap B=\varnothing$なるとき，\textgt{互いに素である}とか，\textgt{交わらない}とかいわれる．
+
+\vspace{3mm}
+\textgt{例７．}$\{1,3,5\}$と$\{2,4,6\}$とは互いに素である．
+
+\vspace{3mm}
+\textgt{例８．}$x^2+x+1=0$の根と集合と$\R$とは互いに素である．
+
+\vspace{3mm}
+\textgt{例９．}$A$および$B$が平面の部分集合で，それぞれの図のような円の内部として表わされるとき，$A$と$B$とは互いに素である．
+
+\vspace*{1cm}
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(5,1)
+	\thicklines\put(0,-0.5){\circle{4}}
+	\thicklines\put(6,0){\circle{5}}
+
+	\put(0,-3){{\large $A$}}
+	\put(6,-3){{\large $B$}}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+\pagebreak
+\textgt{問９．}平面の部分集合$A=\{(x,y)	\,|\,	x,y \in \R,x^2+y^2=1 \}$と
+$B=\{(x,y)	\,|	\,x,y \in \R,y=x-2 \}$とは互いに素であることを示せ．
+
+\textgt{証明　}$x^2+y^2=1$に$y=x-2$を代入して，$x^2+(x-2)^2=1$，ゆえに$2x^2-4x+3=0$．
+判別式$D=-8<0$であるからこの方程式は，実数根をもたない．
+ゆえに$A$と$B$は互いに素である．
+\■
+
+{\small
+\textgt{注意３．}２つの集合の和や共通部分は，これらのうちの一方または両方が空集合である場合にも，
+自然に定義されて次が成り立つ．
+
+（ⅰ）$A \cup \varnothing =A$
+
+（ⅱ）$A \cap \varnothing =\varnothing$
+
+ただし，$A$は任意の集合（空集合でもよい）．実際，$A \cup \varnothing$は，$A$のすべての元と$\varnothing$のすべての元とからなる集合であり，$\varnothing$に属する元が存在しないことから，これは$A$と等しい．$A \cap \varnothing$は，$A$にも$\varnothing$にも属する元全体からなる集合であり，$\varnothing$に属する元は存在しないから，これは$\varnothing$に等しい．$A$が空集合の場合にも，（ⅰ），（ⅱ）が成立することは容易に確かめられるだろう．
+}
+
+\vspace{3mm}
+本節でこれまで述べた定理１から定理７までは，そこに現れる集合が空集合の場合にも成立することが困難なく確かめられる．
+
+\vspace{3mm}
+\textgt{例１０．}定理２（ⅱ）$A \subseteq B$，$B \subseteq A \Leftrightarrow A=B$は，
+$A$または$B$が空集合の場合にも成り立つことは，次のようにして示される．$A=\varnothing$とする．
+$\Rightarrow$の証：$B \subseteq A$より$B=\varnothing$．
+したがって$A=\varnothing=B$．
+$\Leftarrow$の証：$A=B$より$B=\varnothing$だから$A \subseteq B$．$B \subseteq A$は明らかに成立する．
+$B=\varnothing$の場合も同様である．
+
+今後，集合に関するある命題において，その集合が空集合のときにも命題が明らかに成立するときには，空集合の場合の証明をいちいち述べることはしないことにする．

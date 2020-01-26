@@ -1,0 +1,121 @@
+\section{距離空間の開集合}
+{\small
+§4.3で論じられた実数直線の開集合の概念が，そのまま自然な形で距離空間における開集合の概念に拡張
+される．本節では，前節で導入した距離によって，$\varepsilon$近傍と開集合を定義してそれらの性質を調べ，
+次いで距離が同値であるとはどういうことかを説明しよう．
+}
+
+\subsection{$\bold{\varepsilon}$近傍と開集合}
+$X$を距離$d$をもつ距離空間とする．$\varepsilon$を正数とするとき，
+点$x \in X$の\textgt{$\varepsilon$近傍} $U(x;\varepsilon)$とは，点$x$からの距離が$\varepsilon$より
+小さいような点全体の集合，すなわち
+\[
+	U(x;\varepsilon) = \{ y \,|\, y \in X,d(x,y) < \varepsilon \}
+\]
+をいう．$\varepsilon$近傍のことを，半径$\varepsilon$の\textgt{開球体}であるということもある．
+$U(x;\varepsilon)$は，$X=\R$のときには開区間$]x-\varepsilon,x+\varepsilon[$
+であり，$X=\R^2$のときには点$x$を中心とし，半径が$\varepsilon$の円の内部（すなわち\textgt{開円板}）である．
+
+$\varepsilon$近傍$U(x;\varepsilon)$は，点$x$，正数$\varepsilon$のみならず，
+集合$X$，距離$d$にももちろん関係する．これらを特記したいときには，$U(X;x;\varepsilon;d)$，
+$U(X;x;\varepsilon)$あるいは$U(x;\varepsilon;d)$などと表わすことがある．
+
+\定義{}
+距離空間$X$の部分集合$G$が$X$の\textgt{開集合}であるといわれるのは，任意の$x \in G$に対し
+\[
+	U(x;\varepsilon) \subseteq G
+\]
+となるような正数$\varepsilon$が存在するときである．
+
+\vspace*{3mm}
+\例{１}
+$\varepsilon$近傍$U(x;\varepsilon)$は$X$の開集合である．なぜならば，任意の$y \in U(x;\varepsilon)$
+に対し$\delta=\varepsilon-d(x,y)>0$とおけば，
+\[
+	U(y;\delta) \subseteq U(x;\varepsilon)
+\]
+が成り立つからである．実際，すべての$z \in U(y;\delta)$
+に対し，［M$_3$］より，
+\[
+	d(x,z) \leqq d(x,y)+d(y,z) < d(x,y)+\delta=\varepsilon
+\]
+であり，したがって，$z \in U(x;\varepsilon)$がいえる．
+\vspace*{9mm}
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(1.7,1)
+	\thicklines \put(0,0){\circle{4}}
+	\put(0,0){\circle*{0.04}}
+	\put(1.5,0){\circle{1}}
+	\thicklines \put(1.5,0){\circle*{0.04}}
+	\put(-0.2,0){\scriptsize  $x$}
+	\put(1.4,0.2){\scriptsize $y$}
+
+	\thinlines \path(0,0)(0.05,0)
+	\thinlines \path(0.1,0)(0.2,0)
+	\thinlines \path(0.3,0)(0.4,0)
+	\thinlines \path(0.5,0)(0.6,0)
+	\thinlines \path(0.7,0)(0.8,0)
+	\thinlines \path(0.9,0)(1.0,0)
+	\thinlines \path(1.1,0)(1.2,0)
+	\thinlines \path(1.3,0)(1.4,0)
+	\thinlines \path(1.5,0)(1.6,0)
+	\thinlines \path(1.7,0)(1.8,0)
+	\thinlines \path(1.9,0)(2.0,0)
+
+	\put(1.72,0.1){\scriptsize $\delta$}
+	\put(0.9,-0.32){\scriptsize $\varepsilon$}
+
+	\thinlines \qbezier[35](0,0)(1.0,-0.4)(2.0,0)
+
+	\thinlines \qbezier[10](1.5,0)(1.75,0.2)(2.0,0.0)
+
+\end{picture}
+\end{center}
+\end{figure}
+\■
+
+\pagebreak
+次の定理は，§4.3定理８とまったく同様に示される．
+
+\定理{２}
+距離空間$X$の開集合について，次が成り立つ．
+\begin{list}{}{}
+	\item(ⅰ)　$X$自身および空集合$\varnothing$は，$X$の開集合である．
+	\item(ⅱ)　$X$の任意の有限個の開集合の共通部分は，$X$の開集合である．
+	\item(ⅲ)　$X$の任意個の開集合の和集合は，$X$の開集合である．
+\end{list}
+
+\証明（ⅰ）$x	\in	\varnothing$は偽だから，
+$x	\in	\varnothing	\Longrightarrow	\exists	\varepsilon	>	0	\,	U(x;\varepsilon)	\subseteq	\varnothing$．
+よって，$\varnothing$は開集合である．
+
+また，$x	\in	X	\Longrightarrow	\forall	\varepsilon	>	0	\,	U(x;\varepsilon)	\subseteq	X$．
+よって，$X$は開集合である．
+
+（ⅱ）$G_1,G_2,\cdots,G_n$を$X$の開集合とする．$\bigcap_{n=1}^n	G_i$に属する任意の元を考えると，
+すべての$G_i$は$X$の開集合であるから，適当な$\varepsilon_i>0$が存在して，
+\[
+	U(x;\varepsilon_i)	\subseteq	G_i	\quad	(i=1,\cdots,n)
+\]
+が成り立つ．したがって$\min	\{\,	\varepsilon_1,\varepsilon_2,\cdots,\varepsilon_n\,\}=\varepsilon$とおくと，
+$\varepsilon>0$で$U(x;\varepsilon)	\subseteq	\bigcap_{n=1}^n	U(x;\varepsilon_i)	\subseteq	\bigcap_{n=1}^n	G_i$
+となる．よって$\bigcap_{n=1}^n	G_i$は$X$の開集合である．
+
+（ⅲ）$\Lambda$を任意の添え字の集合とする開集合の族$\{\,G_\alpha	\,|\,	\alpha	\in	\Lambda	\,\}$に対し，
+$	\bigcup_{\alpha	\in	\Lambda}	G_\alpha$が$X$の開集合であることを示す．
+$	\bigcup_{\alpha	\in	\Lambda}	G_\alpha$に属する任意の元$x$をとると，$x	\in	G_\alpha$となる$\alpha	\in	\Lambda$が存在する．
+$G_\alpha$は$X$の開集合であるから，適当な正数$\varepsilon$が存在して，
+$U(x;\varepsilon)	\subseteq	G_\alpha	\subseteq	\bigcup_{\alpha	\in	\Lambda}	G_\alpha$となる．
+ゆえに，$\bigcup_{\alpha	\in	\Lambda}	G_\alpha$は$X$の開集合である．
+
+\■
+
+{\small
+\注意{}
+特に，$X$として$\R$をとるとき，§4.3で定義した開集合は，上の定義した開集合になっていることは
+明白であろう．つまり，一次元ユークリッド空間は，第４章の実数空間，すなわち直線にほかならない．
+２次元ユークリッド空間は，いわゆる平面である．
+}
+

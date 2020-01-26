@@ -1,0 +1,105 @@
+\subsection{アルキメデスの原則}
+次の定理はアルキメデスの原則といわれる．
+
+\定理{４}
+任意の正数$a$，$b$に対して$na>b$となる自然数$n$が存在する
+
+\証明
+すべての自然数$n$に対し$na \leqq b$ならば，数列$\{\,a,2a,\cdots,na,\cdots \,\}$
+は上に有界で，$a>0$だから，$a<2a<\cdots<na<\cdots$が成り立つ．したがって，
+$\{\,na\,|\,n \in \N \}$は，上に有界な単調増加数列である．よって，定理３によりある実数
+$c$に収束する．それゆえ，任意の正数$\varepsilon$に対し適当な$n_0 \in \N$をとれば，$n>n_0$
+なるすべての$n \in \N$に対して$|na-c| < \varepsilon$が成り立つ．したがって，
+\[
+	a=|(n_0+2)a-c-((n_0+1)a-c)| \leqq |(n_0+2)a-c|+|(n_0+1)a-c| < 2\varepsilon,
+\]
+つまり$a < 2\varepsilon$を得る．ゆえに$\displaystyle \varepsilon=\frac{a}{2}$に対して，
+$n_0$を選べば，$a<a$となって矛盾である．よって$na>b$となる$n \in \N$が存在する．
+\■
+
+\例{１０}
+$\displaystyle \lim_{n \rightarrow \infty}\frac{1}{n}=0$．
+実際，任意に$\varepsilon>0$が与えられたとき，
+２つの正数$\varepsilon,\,1$にアルキメデスの原則を適用して，
+$n_0\varepsilon>1$なる自然数$n_0$が得られる．
+このとき，$n>n_0$なるすべての$n \in \N$に対して
+$\displaystyle \Bigl| \frac{1}{n}-0 \Bigr|<\frac{1}{n_0}<\varepsilon$
+が成立するから，$\displaystyle \lim_{n \rightarrow \infty}\frac{1}{n}=0$．
+
+\vspace{3mm}
+\例{１１}
+任意の実数$x$に対し$m-1 \leqq x \leqq m$を満たす整数$m$が存在する．実際，
+$x>0$ならば，２つの正数$1,x$にアルキメデスの原則を適用して，
+$n \cdot 1> x $なる$n \in \N$が存在する．したがって，集合
+\[
+	M=\{\,n\,|\,n \in \N,\,n>x\,\}
+\]
+は$\N$の空でない部分集合だから，$M$の最小数$m$が存在する（§2.1定理３）．
+この$m$は，$m$の最小性より$m-1 \leqq x < m$を満たす．$x<0$ならば$-x > 0$だから，
+上の示したことから，$m-1 \leqq -x < m$すなわち$-m<x \leqq -m+1$なる
+$m \in \N$が存在する．このとき，$-m \leqq x < -m+1 $または
+$-m+1 \leqq x < -m+2$である．
+$x=0$ならば，$m=1$とすればよい．
+
+\vspace{3mm}
+\問{３}$\displaystyle \lim_{n \rightarrow \infty}\frac{1}{n}=0$を仮定すれば，
+定理４（アルキメデスの原理）が得られることを示せ．
+
+\証明
+$a$，$b$を任意の正数とする．どんな$n \in \N$に対しても$na \leqq b$と仮定すると，
+$\displaystyle 0 < \frac{a}{b} \leqq \frac{1}{n}$．ところで，仮定より，
+$\displaystyle \frac{a}{b}>0$に対し
+$\displaystyle	n > n_0 \Rightarrow \frac{1}{n}<\frac{a}{b}$
+となる$n_0 \in \N$が存在するから矛盾である．よって，$na> b$となる$na>b$ となる
+$n \in \N$が存在する．
+\■
+
+\vspace{3mm}
+\問{４}
+$p$を$1$より大きい整数とするとき，$\displaystyle \lim_{n \rightarrow \infty}\frac{1}{p^n}=0$
+を証明せよ．
+
+\証明
+任意の正数$\varepsilon$に対し$\displaystyle \frac{1}{n_0}<\varepsilon$なる$n_0$が存在する．
+$p>1$より，すべての$n \in \N$に対して$p^n > n$が成り立つから，$n > n_0$ならば，
+$\displaystyle \frac{1}{p^n}<\frac{1}{n}<\frac{1}{n}_0<\varepsilon$．
+ゆえに，$\displaystyle \lim_{n \rightarrow \infty}\frac{1}{p^n}=0$．
+\■
+
+次の定理は\textgt{カントルの共通点定理}とよばれる．
+
+\vspace{3mm}
+\定理{５}
+閉区間の族$\{\,[\,a_n,b_n\,]\,|\,n \in \N\,\}$で，
+\begin{list}{}{}
+	\item （１）$[\,a_1,b_1\,] \supseteq [\,a_2,b_2\,] \supseteq \cdots [\,a_n,b_n\,] \supseteq \cdots$
+
+	\item （２）$n \rightarrow \infty $のとき$b_n-a_n \rightarrow 0$
+
+\end{list}
+を満たすものがあれば，共通部分$\bigcap_{n=1}^\infty [\,a_n,b_n\,]$はただ１点のみからなる
+集合である．
+
+\証明
+仮定(1)により，
+\[
+a_1 \leqq a_2 \leqq \cdots \leqq a_n \leqq \cdots \leqq b_n \leqq \cdots \leqq b_2 \leqq b_1
+\]
+が成り立つ．したがって，数列$\{\,a_n\,\}$，$\{\,b_n\,\}$は単調かつ有界である．
+ゆえに，定理３により，$\{\,a_n\,\}$の極限$a$および$\{\,b_n\,\}$の極限$b$が存在する．
+ところで，任意の$m,n$に関して$a_m < b_n$であるから，$n$を固定し，$m \rightarrow \infty$のとき
+$a \leqq b_n$，次いで$n \rightarrow \infty$のとき$a \leqq b$が成立する（例７の証明参照）．
+
+仮定(2)により，任意の正数$\varepsilon$に対し$n$を十分大きくとれば，$b_n-a_n<\varepsilon$となる．
+$a_n \leqq a \leqq b \leqq b_n$に注意すれば，このとき，
+\[
+	0 \leqq b-a \leqq b_n - a_n < \varepsilon
+\]
+が得られる．もし$b-a>0$ならば，$\displaystyle \varepsilon=\frac{b-a}{2}$に対して$n$をとれば，
+$\displaystyle b-a < \frac{b-a}{2}$となって矛盾である．ゆえに，$b=a$．
+
+任意の$n \in \N$に対して$a_n \leqq a \leqq b_n$，すなわち$a \in [\,a_n,b_n\,]$．
+よって，$a \in \bigcap_{n=1}^\infty [\,a_n,b_n\,]$．
+$a$と異なる元で，$\bigcap_{n=1}^\infty [\,a_n,b_n\,]$に属するものが存在しないことは，
+上の考察から明らかであろう（例３（はさみうちの原理）参照）．
+\■

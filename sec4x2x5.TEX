@@ -1,0 +1,153 @@
+\subsection{基本列}
+次の定理は\textgt{コーシーの収束判定法}といわれる．
+
+\定理{７}
+数列$\{\,a_n\,\}$が収束するための必要十分条件は，
+\begin{list}{（＊）}{}
+	\item "任意の整数$\varepsilon$が与えられたとき，適当な$n_0 \in \N$が存在して，
+				$ m > n_0$，$n>n_0$なるすべての$m,\,n \in \N$に対して，$| \, a_m-a_n \, | < \varepsilon$”
+\end{list}
+が成り立つことである．
+
+\証明
+必要性：$n \rightarrow \infty$のとき$a_n \rightarrow a$とすれば，
+正数$\displaystyle \frac{\varepsilon}{2}$
+に対して，適当な$n_0 \in \N$が存在して，
+$n > n_0 \, ( n \in \N)$ならば，
+$\displaystyle | a_n - a| < \frac{\varepsilon}{2} $
+が成り立つ．
+
+　
+\framepage{1.0}{
+	{\small 小平邦彦著　岩波書店『解析入門』p24，定理1.13では，
+	$\displaystyle	\frac{\varepsilon}{2}$が定義されていないことに
+	言及しており，$\displaystyle\frac{\varepsilon}{2}$を使うかわりに
+	$0<a<\varepsilon$なる有理数$a$の$\displaystyle	\frac{a}{2}$を用いて
+	証明している。}
+}
+
+　
+
+したがって，$m>n_0,\,n>n_0$なるすべての$m,\,n \in \N$に対して	
+\[
+	|a_m-a_n|=|a_m-a+a-a_n| \leqq | a_m-a|+|a-a_n| < \frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon
+\]
+よって，$|a_m-a_n|<\varepsilon$が示される．
+
+十分性：まず，数列$\{ a_n \}$が有界であることが，つぎのように示される．
+任意の正数$\varepsilon$に対し（＊）を満たす$n_0$をとれば，$n>n_0$を満たす任意の
+$ n \in \N$に対し$|\,a_{n_0+1}-a_n | < \varepsilon$，すなわち
+\[
+	a_{n_0+1}- \varepsilon < a_n < a_{n_0+1}+ \varepsilon
+\]
+が成り立つ
+（{\small
+$n_0$から先の$n$は必ず満たすが，
+$n_0$より前の$n$についてはどちらともいえない．よって$n_0$より前の$n$についても考慮した
+次の制限にまで拡張する
+}）．
+ゆえに，
+\[
+	\min \{\,a_1,\cdots ,a_{n_0},a_{n_0+1}-\varepsilon \,\} \leqq 
+	a_n 																										\leqq
+	\min \{\,a_1,\cdots ,a_{n_0},a_{n_0+1}+\varepsilon \,\} 
+\]
+が得られるから，$\{\,a_n\,\}$は有界である．
+
+任意の$n \in \N$に対し集合$ \{ a_n,a_{n+1},\cdots \,\}$は有界であるから，その上限$b_n$，下限$c_n$
+が存在する（ワイエルシュトラスの公理）．$b_n=\max\{\,a_n,a_{n+1},\cdots,	\,\}$のとき，
+$\sup	\{\,a_n,a_{n+1},\cdots	\,\}=b_n$である．
+
+\framepage{1.0}{
+	{\small
+　
+
+		$\because$（１）　すべての元$x	\in	\{\,a_n,a_{n+1},\cdots\,\}$に対して，
+		$	b_n=\max\{\,a_n,a_{n+1},\cdots,\,\}	$
+		であるから，$b_n	\geqq	x$である．
+
+		$\because$（２）	$b_n	>	y	$なる任意の実数について$x=b_n$とおくと，
+		$x	\in	\{a_n,a_{n+1},\cdots,\}$で$x>y$である．
+
+（１）（２）より$b_n=\max\{\,a_n,a_{n+1},\cdots,\}$である．
+
+　
+
+	}
+}
+
+また,	$c_n=\min\{\,	a_n,a_{n+1},\cdots	\,\}$のとき，	$\inf	\{\,a_n,a_{n+1},\cdots	\,\}=c_n$である．
+
+\framepage{1.0}{
+	{\small
+　
+
+		$\because$（１）　すべての元$x	\in	\{\,a_n,a_{n+1},\cdots\,\}$に対して，
+		$	c_n=\min\{\,a_n,a_{n+1},\cdots,\,\}	$
+		であるから，$c_n	\leqq	x$である．
+
+		$\because$（２）	$c_n	<	y	$なる任意の実数について$x=c_n$とおくと，
+		$x	\in	\{a_n,a_{n+1},\cdots,\}$で$x<y$である．
+
+（１）（２）より$c_n=\min\{\,a_n,a_{n+1},\cdots,\}$である．
+
+　
+
+	}
+}
+
+そのとき，
+\[
+	c_1 \leqq c_2 \leqq \cdots \leqq c_n \leqq b_n \leqq \cdots \leqq b_2 \leqq b_1
+\]
+が成り立つ（☆）
+（$ a_1 \leqq a_2$のとき，$c_1 < c_2$であり，$ a_1 \geqq a_2$のとき，$c_1 = c_2$である．
+$b_2 \leqq b_1$についても同様で，一番外側に張り出している$a_n$を除いたとき，不等号が成立する）
+
+仮定より，任意の正数$\varepsilon$に対し適当な$n_0 \in \N$が存在して，
+$m > n_0$，$n > n_0$なるとき，
+\[
+	a_m-a_n \leqq |a_m-a_n| < \varepsilon		\text{　　したがって　　} a_m < a_n+\varepsilon
+\]
+となる．（☆☆）
+
+つまり，$a_n+\varepsilon$は$\{\,a_{n_0+1},a_{n_0+2},\cdots \,\}$の１つの上界である
+（（☆☆）で$m=n_0$の場合）．
+
+よって，上限の定義（上限は上界の集合の最小数である）と（☆）より，
+$q > n_0$なる任意の$q \in \N$に対し
+\[
+	b_q \leqq b_{n_0+1} \leqq a_n+\varepsilon	\Longrightarrow	b_q	-	\varepsilon	\leqq a_n
+\]
+が成り立つ，したがって，$b_q-\varepsilon$は$\{\,a_{n_0+1},a_{n_0+2},\cdots	,a_n,\cdots \,\}$の１つの下界であるから，
+下限の定義（下限は下界の集合の最大値である）より，$q>n_0$ならば，
+\[
+	b_q-\varepsilon \leqq c_q \text{　　すなわち　　}	b_q-c_q \leqq \varepsilon
+\]
+が示される．それゆえ，$q \rightarrow \infty$のとき，$b_q-c_q \rightarrow 0$であるから，カントルの共通点
+定理により，数列$\{\,b_q \,\} \quad \{\,c_q \,\}$はいずれもおなじ極限$a$に収束する．このとき，
+数列$\{ a_n \}$も$a$に収束する（例３　はさみうちの原理参照）．
+\■
+
+\vspace{3mm}
+{
+\small
+\注意{５}
+性質（＊）を満たす数列は\textgt{基本列}（または\textgt{コーシー列}）といわれる．定理７は，
+$\R$においてはいかなる基本列も収束することを意味する．この事実を，$\R$は\textgt{完備}である．
+といい表わす．
+
+\vspace{3mm}
+\注意{６}
+無理数$\sqrt{2}$を１０進法によって展開して，
+\[
+	\sqrt{2}=1.41421356\cdots
+\]
+と表わす．$a_1=1$，$a_2=1.4$，$a_3=1.41$，$a_4=1.414$，$\cdots$のように，$\sqrt{2}$
+の展開における小数点第$n-1$位までの有限小数を$a_n$と定めて得られる数列$\{a_n\}$は基本列で，
+$\displaystyle \lim_{n \rightarrow \infty} a_n=\sqrt{2}$である．
+このとき，すべての$n \in \N$に対し，$a_n \in \Q$であるが，
+$\displaystyle \lim_{n \rightarrow \infty} a_n \notin \Q$である．
+つまり，有理数からなる基本列の中には，有理数に属する極限をもたないものがある．
+このことを，$\Q$は完備でない．いい表わす．
+}

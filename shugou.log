@@ -1,0 +1,891 @@
+This is pTeX, Version p2.1.5.beta12, based on TeX, Version 3.14159 (SJIS) (Web2c 7.0) (format=platex 5.8.11)  29 AUG 2006 06:54
+**shugou
+(shugou.tex
+pLaTeX2e <1997/07/02>+2 (based on LaTeX2e <1997/06/01> patch level 0)
+(c:/usr/local/share/texmf/tex/platex/local/myjbook.cls
+Document Class: myjbook 1997/08/14 v1.3 Okumura's Classes
+LaTeX Info: Redefining \sffamily on input line 28.
+LaTeX Info: Redefining \ttfamily on input line 31.
+(c:/usr/local/share/texmf/tex/platex/local/myjbk10.clo
+File: myjbk10.clo 1997/08/14 v1.3 Okumura's Classes
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 29.
+)
+\c@part=\count81
+\c@chapter=\count82
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@subparagraph=\count87
+\c@figure=\count88
+\c@table=\count89
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\@lnumwidth=\dimen118
+\bibindent=\dimen119
+)
+(c:/usr/local/share/texmf/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 1997/03/24 v2.2c
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 133.
+)
+(c:/usr/local/share/texmf/tex/latex/amslatex/amsmath.sty
+Package: amsmath 1997/03/20 v1.2d AMS math features
+\@mathmargin=\skip43
+
+(c:/usr/local/share/texmf/tex/latex/amslatex/amstext.sty
+Package: amstext 1996/10/28 v1.2b
+
+(c:/usr/local/share/texmf/tex/latex/amslatex/amsgen.sty
+File: amsgen 1996/10/29 v1.2b
+\@emptytoks=\toks16
+\ex@=\dimen120
+))
+(c:/usr/local/share/texmf/tex/latex/amslatex/amsbsy.sty
+Package: amsbsy 1996/10/28 v1.2b
+\pmbraise@=\dimen121
+)
+(c:/usr/local/share/texmf/tex/latex/amslatex/amsopn.sty
+Package: amsopn 1996/10/28 v1.2b operator names
+)
+LaTeX Info: Redefining \frac on input line 188.
+\uproot@=\count90
+\leftroot@=\count91
+\classnum@=\count92
+\DOTSCASE@=\count93
+LaTeX Info: Redefining \dots on input line 335.
+LaTeX Info: Redefining \ldots on input line 418.
+LaTeX Info: Redefining \cdots on input line 422.
+\Mathstrutbox@=\box41
+\strutbox@=\box42
+\big@size=\dimen122
+LaTeX Font Info:    Redeclaring font encoding OML on input line 500.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 501.
+\skewcharcount@=\count94
+\familycount@=\count95
+\pointcount@=\count96
+\accentdimen@=\dimen123
+\accentmu@=\count97
+\minaw@=\dimen124
+\c@MaxMatrixCols=\count98
+\dotsspace@=\muskip10
+\c@parentequation=\count99
+\dspbrk@lvl=\count100
+\tag@help=\toks17
+\row@=\count101
+\column@=\count102
+\maxfields@=\count103
+\andhelp@=\toks18
+\eqnshift@=\dimen125
+\alignsep@=\dimen126
+\tagshift@=\dimen127
+\tagwidth@=\dimen128
+\totwidth@=\dimen129
+\lineht@=\dimen130
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+)
+(c:/usr/local/share/texmf/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 1996/11/03 v2.2b
+)
+(c:/usr/local/share/texmf/tex/latex/amsfonts/eucal.sty
+Package: eucal 1995/01/06 v2.2 Euler Script fonts
+LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
+(Font)                  U/eus/m/n --> U/eus/b/n on input line 47.
+)
+(c:/usr/local/share/texmf/tex/latex/base/latexsym.sty
+Package: latexsym 1996/11/20 v2.2d Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 85.
+)
+(c:/usr/local/share/texmf/tex/latex/misc/epic.sty
+Enhancements to Picture Environment. Version 1.2 - Released June 1, 1986
+\@@multicnt=\count104
+\d@lta=\count105
+\@delta=\dimen131
+\@@delta=\dimen132
+\@gridcnt=\count106
+\@joinkind=\count107
+\@dotgap=\dimen133
+\@ddotgap=\dimen134
+\@x@diff=\count108
+\@y@diff=\count109
+\x@diff=\dimen135
+\y@diff=\dimen136
+\@dotbox=\box43
+\num@segments=\count110
+\num@segmentsi=\count111
+\@datafile=\read1
+) (c:/usr/local/share/texmf/tex/latex/misc/eepic.sty
+Extension to Epic and LaTeX. Version 1.1b - Released Febrary 7, 1988
+\@gphlinewidth=\count112
+\@eepictcnt=\count113
+\@tempdimc=\dimen137
+\maxovaldiam=\dimen138
+\@filltype=\box44
+) (c:/usr/local/share/texmf/tex/platex/base/ascmac.sty
+(c:/usr/local/share/texmf/tex/platex/base/tascmac.sty
+\@savetbaselineshift=\dimen139
+\@saveybaselineshift=\dimen140
+\scb@x=\box45
+\scscb@x=\box46
+\@bw=\dimen141
+\@nbox=\box47
+\@nbody=\box48
+\@scw=\dimen142
+\@itemh=\dimen143
+\@iboxstr=\toks20
+\@iboxpos=\toks21
+\@bwsp=\box49
+\@@bwsp=\box50
+\@bcal=\count114
+\shaderule=\dimen144
+)) (shugou.aux (sec0.aux)
+(sec1.aux) (sec1x1x2.aux) (sec1x1x3.aux) (sec1x2.aux) (sec1x2x2.aux)
+(sec1x2x3.aux) (sec1x2x4.aux) (sec1x2x5.aux) (sec1x3.aux) (sec1x3x2.aux)
+(sec1x3x3.aux) (sec1x3x4.aux) (sec1x3x5.aux) (sec1x4.aux) (sec1x4x2.aux)
+(sec1x4x3.aux) (sec2.aux) (sec2x1x2.aux) (sec2x1x3.aux) (sec2x1x4.aux)
+(sec2x1x5.aux) (sec2x2.aux) (sec2x2x2.aux) (sec2x3.aux) (sec2x3x2.aux)
+(sec2x3x3.aux) (sec2x4.aux) (sec2x4x2.aux) (sec3.aux) (sec3x1x2.aux)
+(sec3x1x3.aux) (sec3x2.aux) (sec3x2x2.aux) (sec3x2x3.aux) (sec3x3.aux)
+(sec3x3x2.aux) (sec3x4.aux) (sec3x4x2.aux) (sec4x1.aux) (sec4x1x2.aux)
+(sec4x2.aux) (sec4x2x2.aux) (sec4x2x3.aux) (sec4x2x4.aux) (sec4x2x5.aux)
+(sec4x3.aux) (sec4x3x2.aux) (sec4x4.aux) (sec4x4x2.aux) (sec4x5.aux)
+(sec4x5x2.aux) (sec5x1.aux) (sec5x1x2.aux) (sec5x2.aux) (sec5x2x2.aux)
+(sec5x3.aux) (sec5x3x2.aux) (sec5x4.aux) (sec5x4x2.aux) (sec5x5.aux)
+(sec5x5x2.aux) (sec5x5x3.aux) (sec6x1.aux) (sec6x1x2.aux) (sec6x2.aux)
+(sec6x2x2.aux) (sec6x3.aux) (sec6x3x2.aux) (sec6x4.aux) (sec6x4x2.aux)
+(sec6x5.aux) (sec6x5x2.aux) (sec7x1.aux) (sec7x1x2.aux))
+\openout1 = `shugou.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+\openout2 = `sec0.aux'.
+
+ (sec0.tex
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 23.90964pt on input line 1.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 23.90964pt on input line 1.
+LaTeX Font Info:    Try loading font information for U+msa on input line 30.
+
+(c:/usr/local/share/texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 1995/01/05 v2.2e AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 30.
+
+(c:/usr/local/share/texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 1995/01/05 v2.2e AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 30.
+
+(c:/usr/local/share/texmf/tex/latex/base/ulasy.fd
+File: ulasy.fd 1996/11/20 v2.2dLaTeX symbol font definitions
+)
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 46.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 9.60999pt on input line 46.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 46.
+ [1
+
+
+
+
+] [2]
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 172.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 172.
+ [3]) [4] (shugou.toc)
+\tf@toc=\write3
+\openout3 = `shugou.toc'.
+
+ [5
+
+
+] [6
+
+]
+\openout2 = `sec1.aux'.
+
+ (sec1.tex
+ëÊ1èÕ
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 19.9311pt on input line 1.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 19.9311pt on input line 1.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 5.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 5.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 9.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 9.
+[1
+
+
+]
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 32.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 32.
+) [2]
+\openout2 = `sec1x1x2.aux'.
+
+ (sec1x1x2.tex [3
+
+
+]) [4]
+\openout2 = `sec1x1x3.aux'.
+
+ (sec1x1x3.tex [5
+
+
+]) [6]
+\openout2 = `sec1x2.aux'.
+
+ (sec1x2.tex [7
+
+
+])
+[8]
+\openout2 = `sec1x2x2.aux'.
+
+ (sec1x2x2.tex [9
+
+
+] [10]) [11]
+\openout2 = `sec1x2x3.aux'.
+
+ (sec1x2x3.tex [12
+
+
+]) [13]
+\openout2 = `sec1x2x4.aux'.
+
+ (sec1x2x4.tex
+[14
+
+
+] [15] [16]) [17]
+\openout2 = `sec1x2x5.aux'.
+
+ (sec1x2x5.tex) [18
+
+
+]
+\openout2 = `sec1x3.aux'.
+
+ (sec1x3.tex [19
+
+
+]) [20]
+\openout2 = `sec1x3x2.aux'.
+
+ (sec1x3x2.tex
+[21
+
+
+]) [22]
+\openout2 = `sec1x3x3.aux'.
+
+ (sec1x3x3.tex [23
+
+
+] [24]) [25]
+\openout2 = `sec1x3x4.aux'.
+
+ (sec1x3x4.tex [26
+
+
+]) [27]
+\openout2 = `sec1x3x5.aux'.
+
+ (sec1x3x5.tex [28
+
+
+] [29]) [30]
+\openout2 = `sec1x4.aux'.
+
+ (sec1x4.tex [31
+
+
+]) [32]
+\openout2 = `sec1x4x2.aux'.
+
+ (sec1x4x2.tex [33
+
+
+]) [34]
+\openout2 = `sec1x4x3.aux'.
+
+ (sec1x4x3.tex
+LaTeX Font Info:    Try loading font information for U+eus on input line 30.
+
+(c:/usr/local/share/texmf/tex/latex/amsfonts/ueus.fd
+File: ueus.fd 1995/01/05 v2.2e AMS font definitions
+) [35
+
+
+] [36] [37]) [38]
+\openout2 = `sec2.aux'.
+
+
+(sec2.tex
+ëÊ2èÕ
+[39
+
+
+
+]) [40]
+\openout2 = `sec2x1x2.aux'.
+
+ (sec2x1x2.tex [41
+
+
+]) [42]
+\openout2 = `sec2x1x3.aux'.
+
+ (sec2x1x3.tex
+LaTeX Font Info:    Try loading font information for U+euf on input line 38.
+
+(c:/usr/local/share/texmf/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 1995/01/05 v2.2e AMS font definitions
+)) [43
+
+
+]
+\openout2 = `sec2x1x4.aux'.
+
+ (sec2x1x4.tex
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 21.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 21.
+
+[44
+
+
+] [45] [46]) [47]
+\openout2 = `sec2x1x5.aux'.
+
+ (sec2x1x5.tex [48
+
+
+] [49]) [50]
+\openout2 = `sec2x2.aux'.
+
+ (sec2x2.tex) [51
+
+
+]
+\openout2 = `sec2x2x2.aux'.
+
+
+(sec2x2x2.tex [52
+
+
+] [53] [54]) [55]
+\openout2 = `sec2x3.aux'.
+
+ (sec2x3.tex [56
+
+
+] [57] [58] [59]) [60]
+\openout2 = `sec2x3x2.aux'.
+
+
+(sec2x3x2.tex [61
+
+
+]) [62]
+\openout2 = `sec2x3x3.aux'.
+
+ (sec2x3x3.tex [63
+
+
+]) [64]
+\openout2 = `sec2x4.aux'.
+
+ (sec2x4.tex [65
+
+
+] [66])
+[67]
+\openout2 = `sec2x4x2.aux'.
+
+ (sec2x4x2.tex [68
+
+
+] [69] [70]) [71]
+\openout2 = `sec3.aux'.
+
+ (sec3.tex [72
+
+
+
+]
+ëÊ3èÕ
+[73] [74]) [75]
+\openout2 = `sec3x1x2.aux'.
+
+ (sec3x1x2.tex [76
+
+
+] [77]) [78]
+\openout2 = `sec3x1x3.aux'.
+
+ (sec3x1x3.tex) [79
+
+
+]
+\openout2 = `sec3x2.aux'.
+
+ (sec3x2.tex
+[80
+
+
+] [81]) [82]
+\openout2 = `sec3x2x2.aux'.
+
+ (sec3x2x2.tex [83
+
+
+]) [84]
+\openout2 = `sec3x2x3.aux'.
+
+ (sec3x2x3.tex
+Missing character: There is no • in font cmr10!
+ [85
+
+
+]) [86]
+\openout2 = `sec3x3.aux'.
+
+ (sec3x3.tex
+[87
+
+
+] [88]) [89]
+\openout2 = `sec3x3x2.aux'.
+
+ (sec3x3x2.tex) [90
+
+
+]
+\openout2 = `sec3x4.aux'.
+
+ (sec3x4.tex
+Overfull \hbox (26.26547pt too wide) in paragraph at lines 104--104
+[] 
+ []
+
+[91
+
+
+] [92] [93]) [94]
+\openout2 = `sec3x4x2.aux'.
+
+ (sec3x4x2.tex [95
+
+
+] [96]
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.76599pt on input line 254.
+ [97] [98]) [99]
+\openout2 = `sec4x1.aux'.
+
+ (sec4x1.tex
+[100
+
+
+
+]
+ëÊ4èÕ
+[101]) [102] [103]
+\openout2 = `sec4x1x2.aux'.
+
+ (sec4x1x2.tex) [104
+
+
+]
+\openout2 = `sec4x2.aux'.
+
+ (sec4x2.tex [105
+
+
+] [106]) [107]
+\openout2 = `sec4x2x2.aux'.
+
+
+(sec4x2x2.tex [108
+
+
+]) [109]
+\openout2 = `sec4x2x3.aux'.
+
+ (sec4x2x3.tex [110
+
+
+]) [111]
+\openout2 = `sec4x2x4.aux'.
+
+ (sec4x2x4.tex [112
+
+
+]
+[113]) [114]
+\openout2 = `sec4x2x5.aux'.
+
+ (sec4x2x5.tex
+Overfull \hbox (25.29373pt too wide) in paragraph at lines 20--28
+[]\JY1/mc/m/n/10 Å@[] 
+ []
+
+
+Overfull \hbox (16.04686pt too wide) in paragraph at lines 77--78
+[][] 
+ []
+
+
+Overfull \hbox (16.04686pt too wide) in paragraph at lines 97--98
+[][] 
+ []
+
+[115
+
+
+]) [116]
+\openout2 = `sec4x3.aux'.
+
+ (sec4x3.tex
+
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
+d on input line 15.
+
+[117
+
+
+]) [118]
+\openout2 = `sec4x3x2.aux'.
+
+ (sec4x3x2.tex
+Overfull \hbox (16.04686pt too wide) in paragraph at lines 36--37
+[][] 
+ []
+
+[119
+
+
+]) [120]
+\openout2 = `sec4x4.aux'.
+
+ (sec4x4.tex [121
+
+
+]
+Overfull \hbox (16.04686pt too wide) in paragraph at lines 134--135
+[][] 
+ []
+
+[122]) [123]
+\openout2 = `sec4x4x2.aux'.
+
+ (sec4x4x2.tex [124
+
+
+]) [125]
+\openout2 = `sec4x5.aux'.
+
+ (sec4x5.tex [126
+
+
+] [127] [128]) [129]
+\openout2 = `sec4x5x2.aux'.
+
+
+(sec4x5x2.tex [130
+
+
+] [131] [132] [133]
+Overfull \hbox (16.04686pt too wide) in paragraph at lines 250--252
+[][]
+ []
+
+
+Overfull \hbox (16.04686pt too wide) in paragraph at lines 270--272
+[][]
+ []
+
+) [134]
+\openout2 = `sec5x1.aux'.
+
+ (sec5x1.tex
+ëÊ5èÕ
+[135
+
+
+
+]) [136]
+\openout2 = `sec5x1x2.aux'.
+
+ (sec5x1x2.tex [137
+
+
+] [138]) [139]
+\openout2 = `sec5x2.aux'.
+
+ (sec5x2.tex [140
+
+
+]) [141]
+\openout2 = `sec5x2x2.aux'.
+
+
+(sec5x2x2.tex [142
+
+
+] [143] [144] [145]) [146]
+\openout2 = `sec5x3.aux'.
+
+ (sec5x3.tex [147
+
+
+] [148]) [149]
+\openout2 = `sec5x3x2.aux'.
+
+
+(sec5x3x2.tex [150
+
+
+]
+Missing character: There is no 1 in font eusm7!
+) [151]
+\openout2 = `sec5x4.aux'.
+
+ (sec5x4.tex [152
+
+
+] [153]) [154]
+\openout2 = `sec5x4x2.aux'.
+
+ (sec5x4x2.tex
+[155
+
+
+] [156]) [157]
+\openout2 = `sec5x5.aux'.
+
+ (sec5x5.tex [158
+
+
+] [159] [160]) [161]
+\openout2 = `sec5x5x2.aux'.
+
+ (sec5x5x2.tex [162
+
+
+])
+[163]
+\openout2 = `sec5x5x3.aux'.
+
+ (sec5x5x3.tex [164
+
+
+] [165] [166] [167]) [168]
+\openout2 = `sec6x1.aux'.
+
+ (sec6x1.tex
+ëÊ6èÕ
+[169
+
+
+
+] [170] [171]) [172]
+\openout2 = `sec6x1x2.aux'.
+
+ (sec6x1x2.tex [173
+
+
+] [174]) [175]
+\openout2 = `sec6x2.aux'.
+
+ (sec6x2.tex [176
+
+
+]
+[177] [178]) [179]
+\openout2 = `sec6x2x2.aux'.
+
+ (sec6x2x2.tex [180
+
+
+]) [181]
+\openout2 = `sec6x3.aux'.
+
+ (sec6x3.tex [182
+
+
+] [183] [184]
+Overfull \hbox (43.02283pt too wide) in paragraph at lines 245--245
+[] 
+ []
+
+[185] [186] [187]) [188]
+\openout2 = `sec6x3x2.aux'.
+
+ (sec6x3x2.tex) [189
+
+
+]
+\openout2 = `sec6x4.aux'.
+
+ (sec6x4.tex [190
+
+
+] [191] [192])
+[193]
+\openout2 = `sec6x4x2.aux'.
+
+ (sec6x4x2.tex [194
+
+
+]) [195]
+\openout2 = `sec6x5.aux'.
+
+ (sec6x5.tex) [196
+
+
+]
+\openout2 = `sec6x5x2.aux'.
+
+ (sec6x5x2.tex [197
+
+
+]
+[198] [199] [200]
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 7.68799pt on input line 6371.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6372
+.
+ (c:/usr/local/share/texmf/tex/latex/base/omscmr.fd
+File: omscmr.fd 1997/06/16 v2.5e Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6372.
+
+ [201])
+[202]
+\openout2 = `sec7x1.aux'.
+
+ (sec7x1.tex
+ëÊ7èÕ
+[203
+
+
+
+]) [204]
+\openout2 = `sec7x1x2.aux'.
+
+ (sec7x1x2.tex [205
+
+
+] [206]) [207]
+\openout2 = `sec7x1x3.aux'.
+
+ (sec7x1x3.tex) [208
+
+
+]
+\openout2 = `sec7x2.aux'.
+
+ (sec7x2.tex
+[209
+
+
+]) [210]
+\openout2 = `sec7x2x2.aux'.
+
+ (sec7x2x2.tex
+
+LaTeX Warning: Command \l invalid in math mode on input line 9.
+
+[211
+
+
+]) [212]
+\openout2 = `sec7x3.aux'.
+
+ (sec7x3.tex [213
+
+
+] [214]) [215]
+\openout2 = `sec7x3x2.aux'.
+
+ (sec7x3x2.tex [216
+
+
+]) [217]
+\openout2 = `sec7x3x3.aux'.
+
+
+(sec7x3x3.tex [218
+
+
+] [219]) [220]
+\openout2 = `sec7x3x4.aux'.
+
+ (sec7x3x4.tex [221
+
+
+] [222] [223]) [224]
+(shugou.aux (sec0.aux) (sec1.aux) (sec1x1x2.aux) (sec1x1x3.aux) (sec1x2.aux)
+(sec1x2x2.aux) (sec1x2x3.aux) (sec1x2x4.aux) (sec1x2x5.aux) (sec1x3.aux)
+(sec1x3x2.aux) (sec1x3x3.aux) (sec1x3x4.aux) (sec1x3x5.aux) (sec1x4.aux)
+(sec1x4x2.aux) (sec1x4x3.aux) (sec2.aux) (sec2x1x2.aux) (sec2x1x3.aux)
+(sec2x1x4.aux) (sec2x1x5.aux) (sec2x2.aux) (sec2x2x2.aux) (sec2x3.aux)
+(sec2x3x2.aux) (sec2x3x3.aux) (sec2x4.aux) (sec2x4x2.aux) (sec3.aux)
+(sec3x1x2.aux) (sec3x1x3.aux) (sec3x2.aux) (sec3x2x2.aux) (sec3x2x3.aux)
+(sec3x3.aux) (sec3x3x2.aux) (sec3x4.aux) (sec3x4x2.aux) (sec4x1.aux)
+(sec4x1x2.aux) (sec4x2.aux) (sec4x2x2.aux) (sec4x2x3.aux) (sec4x2x4.aux)
+(sec4x2x5.aux) (sec4x3.aux) (sec4x3x2.aux) (sec4x4.aux) (sec4x4x2.aux)
+(sec4x5.aux) (sec4x5x2.aux) (sec5x1.aux) (sec5x1x2.aux) (sec5x2.aux)
+(sec5x2x2.aux) (sec5x3.aux) (sec5x3x2.aux) (sec5x4.aux) (sec5x4x2.aux)
+(sec5x5.aux) (sec5x5x2.aux) (sec5x5x3.aux) (sec6x1.aux) (sec6x1x2.aux)
+(sec6x2.aux) (sec6x2x2.aux) (sec6x3.aux) (sec6x3x2.aux) (sec6x4.aux)
+(sec6x4x2.aux) (sec6x5.aux) (sec6x5x2.aux) (sec7x1.aux) (sec7x1x2.aux)
+(sec7x1x3.aux) (sec7x2.aux) (sec7x2x2.aux) (sec7x3.aux) (sec7x3x2.aux)
+(sec7x3x3.aux) (sec7x3x4.aux)) ) 
+Here is how much of TeX's memory you used:
+ 1825 strings out of 10649
+ 19064 string characters out of 69356
+ 235269 words of memory out of 250001
+ 4616 multiletter control sequences out of 10000+0
+ 30872 words of font info for 142 fonts, out of 100000 for 500
+ 14 hyphenation exceptions out of 1000
+ 28i,19n,23p,609b,397s stack positions out of 300i,100n,500p,3000b,4000s
+
+Output written on shugou.dvi (230 pages, 1239916 bytes).

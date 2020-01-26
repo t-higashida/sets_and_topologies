@@ -1,0 +1,166 @@
+\section{集積点・孤立点・閉集合}
+{\small
+§4.4注意１で，実数直線における集積点が開集合の言葉で特徴付けられた．この形を
+一般の位相空間の場合に拡張して，集積点の定義を行なう．集合$A$の集積点でないような
+$A$の点を孤立点という．この定義も開集合を用いて述べることができる．終りに，開集合
+が§4.4とまったく同じ形で定義され，直線のときに成立したのと同様の定理が一般の形で
+述べられる．
+}
+\subsection{集積点と孤立点}
+$A$を位相空間$X$の部分集合，$a$を$X$の点とする．
+点$a$が集合$A$の\textgt{集積点}であるといわれるのは，$a$を含むいかなる開集合$G$に対しても，
+\[
+	G \cap (A - \{a\}) \ne \varnothing
+\]
+が成り立つときである．$A$のすべての集積点の集合を$A$の\textgt{導集合}といい，
+$D(A)$で表わす．
+
+\vspace{3mm}
+\例{１}$\R$の開集合$]a,b[$の導集合は，閉区間$[a,b]$である(§4.4例１と例２)．
+すなわち$D(]a,b[)=	[a,b]$．
+
+\証明
+
+	{§4.4例1
+
+		閉区間$[\,a,b \,]$に属するどんな点$x$も，開区間$]\,a,b\,[$の集積点である．
+		すなわち，$D(]a,b[)	\supseteq	[a,b]$
+
+		$\because	\quad	\forall x \in [a,b]$をとる．$\varepsilon > 0$で
+		
+		\begin{align*}
+				U(x,\varepsilon)	\cap (]a,b[-\{x\})	\ni	x-\frac{\min\{\varepsilon,|x-a|,|x-b|\}}{2}	\\
+				\therefore	U(x,\varepsilon)	\cap	(]a,b[-\{x\})	\ne	\varnothing.
+		\end{align*}
+		このことをふまえて，$G	\ni	x$なるいかなる開集合$G$に対しても，$\delta>0$	で	$U(x,\delta)	\subset	G$
+		が成り立つ．
+		
+		\begin{align*}
+			\Longrightarrow	\,	\delta>0	\text{で}	&	U(x,\delta)	\cap	(]a,b[-\{x\})	\ne	\varnothing	\\
+																							&	G	\cap	(]a,b[-\{x\})	\ne	\varnothing
+		\end{align*}
+		よって，$	x	\in	D(]a,b[)$	$\quad	\therefore	D(]a,b[)	\supseteq	[a,b]$.
+
+	§4.4例2
+
+		$\R-[\,a,b\,]$に属するどんな点$y$も，$]\,a,b\,[$の集積点でなない．対偶をとると，
+		$]\,a,b\,[$の集積点$x$は，$x	\in	[\,a,b\,]$．すなわち$D(]\,a,b\,[)	\subseteq	[\,a,b\,]$．
+
+		$x	\in	D(]\,a,b\,[)$とする．導集合の定義より$x$を含む任意の開集合$G$に対して，$G \cap (]a,b[-\{x\})	\ne	\varnothing$．よって$\forall \varepsilon>0$
+		に対して，$x$の$\varepsilon$近傍も$x$を含む開集合であるから，
+		$U(x,\varepsilon)	\cap	(]a.b[-\{x\})	\ne	\varnothing$，
+		すなわち，ある元$y$が存在して$\exists	y	\in	U(x,\varepsilon)	\cap	(]a,b[-\{x\})$（①）
+		\begin{align*}
+			&\Longrightarrow	|x-y|<\varepsilon	\text{　かつ　}	a<y<b	\text{　かつ　}x	\ne	y	\\
+			&\Longrightarrow	-\varepsilon	<	x-y	<	\varepsilon	\\
+			&\Longrightarrow	y-\varepsilon	<	x	<	y+\varepsilon	\\
+			&\Longrightarrow	a-\varepsilon	<	x	<	b+\varepsilon	\quad	(\because	y	\in	]a,b[	\quad\text{（①）})
+			\text{(	for	any	$\varepsilon	>	0$	)}
+		\end{align*}
+		ここで，$a>x$と仮定すると，$\displaystyle	\varepsilon=\frac{a-x}{2}$としたとき，
+		\[
+			(a-\varepsilon)-x=2\varepsilon-\varepsilon=\varepsilon>0
+		\]
+		つまり$a-\varepsilon>x$となり，①に矛盾．
+
+		同様に$b<x$と仮定すると，$\displaystyle	\varepsilon=\frac{x-b}{2}$としたとき，
+		\[
+			(b+\varepsilon)-x=-2\varepsilon+\varepsilon=-\varepsilon<0
+		\]
+		つまり$b+\varepsilon<x$となり，①に矛盾．
+		したがって，$a	\leqq	x	\leqq	b$　$\therefore	x	\in	[a,b]$　$\therefore	D(\,]a,b[\,)	\subseteq	[a,b]$．	
+	}
+	§4.1例1，例2より$D(\,]a,b[\,)=[a,b]$
+
+\■
+
+
+
+\例{２}$\R$の部分集合$\Q$の導集合は$\R$である，すなわち$D(\Q)=\R$（§4.4例３）．
+
+\証明
+$D(\Q)	\supseteq	\R$は§4.4例３で証明済み．$D(\Q)	\subseteq	\R$を示す．
+$\forall	x	\in	D(\Q)$とすると，集積点の定義より$x	\in	\R$，$D(\Q)	\subseteq	\R$．
+以上より，$D(\Q)=\R$．
+
+
+\vspace{3mm}
+{\small
+\注意{１}
+§4.4注意２で確認したように，$\R$の部分集合$A$の集積点$a$の近くに，$A$の点が無限個存在している．
+次の例は，一般の位相空間の場合には，この場合と状況が異なることがあることを示している．
+}
+
+\vspace{3mm}
+\例{３}集合$X = \{a,b,c,d\}$に位相
+\[
+	\mathscr{T}_1=\{\varnothing,\{a\},\{c,d\},\{a,c,d\},\{b,c,d\},X\}
+\]
+が与えられているものとする（§5.3例６参照）．$X$の部分集合$A=\{a,b,c\}$を
+考える．このとき，$A$の導集合は$\{b,d\}$である．実際，点$b$が$A$の集積点であることは，
+$b$を含む開集合$\{b,c,d\}$および$X$に対し
+\[
+	\{a,c,d\} \cap (A-\{b\})=\{c\},\quad X \cap(A-\{b\})=\{a,c\}
+\]
+が成り立つことからわかる．同様にして，点$d$も$A$の集積点であることが示される．
+点$a$が$A$の集積点ではないことは，$\{a\}$は$a$を含む開集合で，
+\[
+	\{a\}	\cap	(A-\{a\})=\varnothing
+\]
+が成り立つことからわかる．同様にして，点$c$も$A$の集積点でないことが示される．
+$\{c,d\}	\cap	(A-\{c\}=\varnothing$．
+
+\vspace{3mm}
+\定義{}
+$A$を位相空間$X$の部分集合とする．集積点ではない$A$の点のことを\textgt{孤立点}
+という．つまり，点$a \in A$が$A$の孤立点であるのは
+\[
+	G \cap (A-\{a\})=\varnothing \quad\text{すなわち}\quad G \cap A = \{a\}
+\]
+が成り立つような$X$の開集合$G \ni a$が存在するときである．孤立点だ
+けから
+成る集合を\textgt{孤立集合}という．$A$の集積点は必ずしも$A$の点ではないが，
+$A$の孤立点は$A$の点であることに注意する．
+
+\vspace{3mm}
+\pagebreak
+\例{４}$a,b$および$c$を，$a<b<c$なる実数とする．
+このとき，点$c$は集合$[a,b] \cap \{c\}$の孤立点である．
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(1.7,1)
+
+	\thinlines \path(-3,0)(-2,0)
+	\put(-2,0){\filltype{black}\circle*{0.1}}
+	\put(-2.1,-0.3){\small $a$}
+	\thicklines \path(-2,0)( 2,0)
+	\put( 2,0){\filltype{black}\circle*{0.06}}
+	\thinlines \path( 2,0)( 4,0)
+	\put( 1.9,-0.3){\small $b$}
+	\put( 4,0){\filltype{black}\circle*{0.1}}
+	\thinlines \path( 4,0)( 5,0)
+	\put( 3.9,-0.3){\small $c$}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+\証明
+$\exists	\varepsilon=|c-b|>0,	\quad	U(c;\varepsilon)	\ni	c$:openを採用すれば，
+$U(c,\varepsilon)	\cap	([a,b]\cap	\{c\}-\{c\})	=	\varnothing$．
+
+\■
+
+
+\例{５}
+例３において，$A$の孤立点は$a$と$c$である．
+
+\問{８}
+$\R$の部分集合$\Z = \{\cdots,-2,-1,0,1,2,\cdots \}$は，$\Z$の孤立集合であることを示せ．
+
+\証明
+$\forall z \in \Z$に対して，$\displaystyle	\exists \varepsilon=\frac{1}{2}$とすると，
+$\displaystyle U\biggl(z;\frac{1}{2}\biggr) \cap (\Z-\{z\})=\varnothing$.
+\■

@@ -1,0 +1,291 @@
+\subsection{カントル集合}
+終りに，数々の興味深い性質をもつカントル集合について説明しよう．
+閉区間$I=[0,1]$から中央の$\frac{1}{3}$の開区間$]\frac{1}{3},\frac{2}{3}[$をとり除いたものを，
+$I_1=]0,\frac{1}{3}[ \:	\cup \:	]\frac{2}{3},1[$，
+$I_1$の各閉区間からそれぞれ中央の$\frac{1}{3}$の開区間$]\frac{1}{9},\frac{2}{9}[$，$]\frac{7}{9},\frac{8}{9}[$をとり除いたものを
+$I_2=]0,\frac{1}{9}[ \:	\cup \:	]\frac{2}{9},\frac{1}{3}[\:	\cup	\:	 ]\frac{2}{3},\frac{7}{9}[ \:	\cup	\: ]\frac{8}{9},1[$
+とする．以下この操作を続けることにより，
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{20mm}
+\begin{picture}(5,1.2)
+
+	\thicklines
+
+	%I
+	\path(1,1)(4,1)
+	\put(1,1){\circle{0.03}}
+	\put(4,1){\circle{0.03}}
+	\put(0.95,0.8){$0$}
+	\put(3.95,0.8){$1$}
+	\put(0.8,1){$I$}
+
+
+	%I_1
+	\path(1,0.5)(2,0.5)
+	\path(3,0.5)(4,0.5)
+	\put(1,0.5){\circle{0.03}}
+	\put(4,0.5){\circle{0.03}}
+
+	\put(2,0.5){\circle{0.03}}
+	\put(3,0.5){\circle{0.03}}
+
+	\put(0.95,0.3){$0$}
+	\put(1.95,0.3){$\frac{1}{3}$}
+	\put(2.95,0.3){$\frac{2}{3}$}	
+	\put(3.95,0.3){$1$}
+
+	\put(0.8,0.5){$I_1$}
+
+	%I_2
+	\path(1,0)(1.33,0)
+	\path(1.66,0)(2,0)
+
+	\path(3,0)(3.33,0)
+	\path(3.66,0)(4,0)
+
+	\put(1,0){\circle{0.03}}
+	\put(1.33,0){\circle{0.03}}
+	\put(1.66,0){\circle{0.03}}
+	\put(2,0){\circle{0.03}}
+	\put(3,0){\circle{0.03}}
+	\put(3.33,0){\circle{0.03}}
+	\put(3.66,0){\circle{0.03}}
+	\put(4,0.0){\circle{0.03}}
+
+
+	\put(0.95,-0.2){$0$}
+	\put(1.28,-0.2){$\frac{1}{9}$}
+	\put(1.61,-0.2){$\frac{2}{9}$}
+	\put(1.95,-0.2){$\frac{1}{3}$}
+
+	\put(2.95,-0.2){$\frac{2}{3}$}
+	\put(3.28,-0.2){$\frac{7}{9}$}
+\put(3.61,-0.2){$\frac{8}{9}$}
+
+	\put(3.95,-0.2){$1$}
+	\put(0.8,0){$I_2$}
+	
+
+\end{picture}
+\end{center}
+\end{figure}
+
+
+\[
+	I	\supseteq I_1 \supseteq I_2 \supseteq \cdots \supseteq I_{m-1}	\supseteq	I_m \supseteq \cdots
+\]
+を得る．ここで，$I_m$は，$I_{m-1}$のおのおのの閉区間の中央の$\frac{1}{3}$の開区間を取り除いたものである．
+集合
+\[
+	K=\bigcap_{m=1}^\infty I_m
+\]
+を\text{カントル集合}という．$K$は直線$\R$の部分空間として位相空間と考えられる．
+
+$1^\circ$　カントル集合はコンパクトである．
+
+\証明
+任意の$m \in \N$に対し$I_m$は閉集合であるから，§5.4[C$_3$]により，
+$K$は閉集合である．したがって，$K$は有界な閉集合で，定理１８よりコンパクトである．
+\■
+
+$2^\circ$　カントル集合に属する点は，3進法による無限小数展開（§4.2の第4項）により，
+\[
+	0.a_1a_2\cdots a_n=\frac{a_1}{3}+\frac{a_2}{3^2}+\cdots+\frac{a_n}{3^n}+\cdots,	
+	\quad \text{$a_n=0$または$2	\,(n \in \N)$}
+\]
+の形にただ1通りに表される．
+
+\証明
+$I_1$の点$x$は，$0 \leqq x \leqq \frac{1}{3}$または$\frac{2}{3} \leqq x \leqq 1 $を満たす．
+$x$の3進法による無限小数展開$0.a_1a_2\cdots a_n \cdots $を考えるとき，$I_1$に包まれる各閉区間
+を右端を，
+\begin{align*}
+	\frac{1}{3}	&=	\frac{0}{3}+\frac{2}{3^2}+\frac{2}{3^3}+\cdots+\frac{2}{3^n}+\cdots	\\
+						1	&=	\frac{2}{3}+\frac{2}{3^2}+\cdots+\frac{2}{3^n}+\cdots		\\
+\end{align*}
+における右辺のような表し方をすれば，すべての$x \in I_1$に対し$a_1=0$または$2$，
+すなわち$a_1 \ne 1$である（いうまでもないが，$I_1$に包まれる区間の左端は，
+$\displaystyle \frac{2}{3}=\frac{1}{3}+\frac{2}{3^2}+\frac{2}{3^3}+\cdots+\frac{2}{3^n}+\cdots$
+における左辺の表わし方を用いる）．一般に，$I_m$の点$x$を3進展開して，
+$0.a_1a_2\cdots a_n \cdots	\quad	(a_n=0,1,2)$と表わすとき，
+$I_m$に包まれる各閉区間の右端を上のように無限小数で表わすことにすれば，
+$a_1,a_2,\cdots,a_m$はいずれも$1$に等しくないことが，数学的帰納法により証明される．
+\■
+
+{
+\small
+\注意{２}
+カントル集合は，$2^\circ$で述べた性質をもつゆえに，\textgt{カントルの３進集合}ともいわれる．
+}
+
+\vspace{3mm}
+$3^\circ$　カントル集合の濃度は$\Aleph$に等しい．
+
+\証明
+$I=[0,1]$の点を2進法により展開し，
+$x = \sum_{n=1}^\infty a_n 2^{-2}\,(a_n=0\text{　または　}1)$と表わす．ここで，
+たとえば$0.5$のように，$2^{-1}=\sum_{n=2}^\infty 2^{-n}$という2通りの展開がある場合には，
+左辺の表わし方を用いるものとすると，上の展開はただ１通りである（§4.2の第4項参照）．
+いま，$a_n=0$のときは$b_n=0$，$a_n=1$のときは$b_n=2$と定め，写像
+\[
+	f:I \rightarrow K;\sum_{n=1}^\infty	a_n 2^{-n} \mapsto	\sum_{n=1}^\infty b_n 3^{-n}
+\]
+を考えると，この$f$は明らかに単射である（$f$は全射ではない．なぜならば，たとえば
+$\sum_{n=2}^\infty	2 \cdot 3^{-n}=3^{-1}$に写されるべき元
+$\sum_{n=2}^\infty 2^{-n}$は，約束により$I$の元の展開の中には存在しないからである）．
+したがって，$K \subset I$に注意すれば，ベルンシュタインの定理（§2.3）により，
+$|K|=|I|=\Aleph$が得られる．
+\■
+
+\定義{}
+集合$A$の導集合$D(A)$（すなわち，$A$の集積点全体の集合）が$A$と一致するとき，$A$を\textgt{完全集合}という．
+
+\vspace{3mm}
+\例{１２}
+直線$\R$，区間$[a,\infty[$，$]-\infty,a]$，$[a,b]$は，いずれも完全集合である．
+
+　
+
+$4^\circ$　カントル集合は完全集合である．
+
+\証明
+$K$の任意の点$x$を$2^\circ$の形で$x=0.a_1a_2\cdots a_n\cdots \,(a_n=0 \text{ または }2)$と
+表わすとき，$x_1=0.a_1$，$x_2=0.a_1a_2$，$\cdots$，$x_n=0.a_1a_2\cdots a_n$，$\cdots$と定めれば，
+$x_n \in K$かつ$x_n \rightarrow x\,(n \rightarrow \infty)$となる．
+したがって，$K \subseteq D(K)$．$K$は閉であるから(1$^\circ$の証明)，$D(K) \subseteq \overline{K}=K$．
+(§5.5定理１０）．ゆえに，$K=D(K)$．
+\■
+
+{\large
+\textgt{第７章の問題}
+}
+
+\vspace{3mm}
+\textgt{1.}
+位相空間$X$が完全可分(第二可算公理：$X$が可算個の開集合からなる開基をもつ）ならば，
+$X$の任意の開被覆$\mathscr{U}$には高々可算な部分開被覆が存在する
+（\textgt{リンデレフ}(Lindelof)\textgt{の被覆定理}）．このことを示せ．
+
+　
+
+\証明
+$X$は可分だから，可算開基$\mathscr{B}=\{B_n \,| \, n \in \N \}$がある．
+$\mathscr{U}=\{U_\alpha \, | \alpha \in \Lambda \}$を
+$X$の任意の開被覆とする($X=\bigcup_{U_\alpha\in\mathscr{U}}	U_\alpha $)．
+任意の$x \in X$に対し$x \in U_\alpha$なる$U_\alpha \in \mathscr{U}$が存在する．
+よって，$x \in B_n \subseteq U_\alpha$と成る$n \in \N$がある．このような$n$のうちの最小数を$\alpha(x)$とすると，
+各$x$に対し$x \in B_{\alpha(x)} \subseteq U_\alpha$となる$B_{\alpha(x)} \in \mathscr{B}$が存在する．
+$\{B_{\alpha(x)} \,|\,x \in X \} \, (\subseteq \mathscr{B})$は高々可算な開被覆である．これら$B_{\alpha(x)}$に対し
+$B_{\alpha(x)} \subseteq U_\beta$を満たす$U_\beta$を１つずつとれば，$\{U_\beta\}$は高々可算な$X$の部分開被覆である．
+\■
+
+\pagebreak
+\textgt{2.}
+$f:[0,1[ \:	\rightarrow \:	S^{1};x \mapsto (\cos 2\pi x,\sin 2 \pi x)$は，左閉区間から円周への
+連続写像で，かつ全単射であるが，同相写像ではないことを示せ．
+
+　
+
+\証明
+$f$が全単射であることは，これまでのようにして確かめられる．
+$\R	\rightarrow	S^1:x	\mapsto	(\cos	2	\pi	x,\sin	2	\pi	x)$は連続（§6.4	例4）より，
+§6.2例５より$f$は連続．
+
+$\bigl[0,\frac{1}{2}\bigr]$
+は$[0,1[$で開であるが，$f([0,\frac{1}{2}[)$は$S^1$で開ではないので，$f^{-1}$は連続ではない
+（連結性，コンパクト性を用いてもよい）．
+\■
+
+\vspace{3mm}
+\textgt{3.}
+$A$をユークリッド空間$\R^n$の部分集合とする．任意のコンパクト集合$B$に対して$A \cap B$が
+コンパクトならば，$A$は$\R^n$での閉集合であることを示せ．
+
+　
+
+\証明
+$\R^n-A$の任意の点$x$をとる．$x$の$\varepsilon$近傍$U(x;\varepsilon)=U	\,(\varepsilon>0)$に対し
+$\overline{U}$はコンパクトだから，$\overline{U} \cap A$はコンパクト（部分空間のコンパクトの定義より）で，
+したがって$\overline{U} \cap A$は$\R^n$の閉集合である（定理１５）．
+ゆえに，$\R^n-(\overline{U} \cap A)=(\R^n-\overline{U}) \cup (\R^n-A)$は
+$\R^n$の開集合である．よって，$U \cap (\R^n-(\overline{U} \cap A))$は$x$を含む開集合で，しかも$\R^n-A$に包まれる．
+したがって，$\R^n-A$は$\R^n$の開集合である．
+\■
+
+\vspace{3mm}
+\textgt{4.}
+コンパクト距離空間$(X,d)$から距離空間$(Y,d')$への連続写像$f$は，一様連続であることを示せ．
+
+　
+
+\証明
+$a$を$X$の任意の点とする．
+任意の$\displaystyle \varepsilon>0$に対し
+$\displaystyle d(x,a) < \delta(a) \Longrightarrow d'(f(x),f(a)) < \frac{\varepsilon}{2}$を
+満たす$\delta(a) > 0$が存在する．
+このとき，$\displaystyle \mathscr{U}=\Biggl\{U\Biggl(a;\frac{\delta(\alpha)}{2} \Biggr) \,\Biggl|\, a \in X \Biggr\}$は
+$X$の開被覆となるが，$X$はコンパクトであるから，適当な有限個の点$a_1,a_2,\cdots,a_k	\,	(\in X)$をとれば，
+$\displaystyle	X = \bigcup_{i=1}^k U	\biggl(a_i;\frac{\delta(a_i)}{2}	\biggr)$が成り立つ．
+$\displaystyle	\delta=\min \biggl\{ \frac{\delta(a_i)}{2}	\,\biggl|	\,i=1,2,\cdots,k	\biggr\}$と
+おき，$d(x,y)<\delta$を満たす$x,y	\in X$をとる．
+$\displaystyle	x \in U\biggl(a_j;\frac{\delta(a_j)}{2} \biggr)$となる
+$j	\,(1	\leqq j	\leqq	k)$が存在する．このとき，
+$\displaystyle	d(a_j,y)	\leqq	d(a_j,x)+d(x,y) <	\frac{\delta(a_j)}{2}+\delta =\frac{\delta(a_j)}{2}+\frac{\delta(a_j)}{2}<	\delta(a_j)$
+である．ゆえに，$d'(f(x),f(a_j))<\frac{\varepsilon}{2}$，$d'(f(y),f(a_j))<\frac{\varepsilon}{2}$が成り立つ．
+したがって，$d'(f(x),f(y)) \leqq	d'(f(x),f(a_j))+d'(f(a_j),f(y)) < \varepsilon$．
+
+\■
+
+\pagebreak
+
+\vspace{3mm}
+\textgt{5.}
+位相空間$X$がハウスドルフ空間であるための必要十分条件は，積空間$X \times X$の
+対角線集合$\mathcal{\Delta}=\{(x,x)\,|\,x \in X\}$が閉集合であることを証明せよ．
+
+　
+
+\証明
+必要性：$(a,b)$を$X \times X-\Delta$の任意の点とすると$a \ne b$．$X$はハウスドルフ空間
+だから，$a$の近傍$U$，$b$の近傍$V$で，$U \cap V = \varnothing$となるものがある．
+このとき，$U \times V \subset X \times X - \Delta$だから，$X \times X - \Delta$は開．
+
+十分性：$a$，$b$を$X$の異なる2点とする．$(a,b) \in X \times X - \Delta$だから，
+$(a,b)$の近傍$U \times V$で，$U \times V \subseteq X \times X - \Delta$を満たすものがある．
+このとき，$U \cap V = \varnothing$．
+\■
+
+\vspace{3mm}
+\textgt{6.}
+位相空間$X$の部分集合$A$が$X$で\textgt{全疎}であるとは，$A$の閉包の内部が空集合
+（すなわち$\Int \overline{A}=\varnothing$）なることをいう．カントル集合
+$K$は$[0,1]$で全疎であることを示せ．
+
+　
+
+\証明
+カントル集合$K$はコンパクトである（カントル集合の性質$1^{\circ}$）から，
+$K$は閉集合である（定理1１５）．したがって
+\begin{align*}
+	\Int	\overline{K}	&=	\Int	K	\quad\text{(カントル集合は閉集合)}	\\
+											&=	\Int	(I-(I-K))	\\
+											&=	I	-	\overline{(I-K)}	\quad\text{(§5.5.3定理１４)}\\
+											&=	I-I	\quad\text{(閉包の定義)}	\\
+											&=	\varnothing	\\
+\end{align*}
+したがって$K$は全疎である．
+\■
+
+\vspace{3mm}
+\textgt{7.}
+カントル集合$K$は完全不連結である（すなわち，各点の成分はただ1点からなる）ことを証明せよ．
+
+　
+
+\証明
+$x (	\in	K)$の連結成分$C$が$x$と異なる点$y$を含むと仮定する．$x < y$ならば，（$I$から除かれる十分小さい）
+中央の$\displaystyle \frac{1}{3}$の区間$G$で，$G \subset \,]x,y[ $を満たすものが存在する．
+これより連結でないことが導かれるから矛盾．$x > y$の場合も同様．
+\■
+

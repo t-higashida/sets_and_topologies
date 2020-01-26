@@ -1,0 +1,154 @@
+\subsection{写像と集合算}
+写像$f:X \rightarrow Y$が与えられたとき，$X$の部分集合$A$の$f$による\textgt{像}とは，集合
+\[
+f(A)=\{\,	f(x)	\,|\,	x \in A	\,\}
+\]
+のことをいう．
+$f(A)$は$Y$の部分集合（$f(A)	\subseteq Y$）で，$A$を決めればただ１つ定まる．
+しかたって，$f:X \rightarrow Y$は，$X$の巾集合$P(X)$から$Y$の巾集合$P(Y)$への写像
+\[
+	P(X) \rightarrow P(Y);A \rightarrow f(A)
+\]
+を引き起こす．
+
+$Y$の部分集合$B$の$f$による\textgt{原像}（または\textgt{逆像}）とは，集合
+\[
+	\{\,x 	\,|\,	f(x) \in B,	\,x \in X	\,\}
+\]
+のことをいう．この集合は$X$の部分集合で，$f^{-1}(B)$と表される．
+$f^{-1}(B)$は$B$をきめればただ１つ定まるので，写像$f:X \rightarrow Y$は， 
+$Y$の巾集合$P(Y)$から$X$の巾集合$P(X)$への写像
+\[
+P(Y) \rightarrow P(X);B \mapsto f^{-1}(B)
+\]
+を引き起こす．$P(X) \rightarrow P(Y)$や$P(Y) \rightarrow P(X)$のような，集合族を定義域とする関数は，\textgt{集合関数}と称される．
+
+\vspace{3mm}
+{\small \textgt{注意６．　}
+第３項の逆写像$f^{-1}:Y \rightarrow X$は，$f$が全単射の場合にのみ定義された．
+集合$f^{-1}(B)$は，任意の写像$f$に対して定義される．
+同じ記号$f^{-1}$が使われているが混同しないように注意されたい．
+}
+
+\vspace{3mm}
+\textgt{定理１４．　}
+$f:X \rightarrow Y$を写像，$A$，$B$を$X$の任意の部分集合とするとき，次が成り立つ．
+\begin{description}
+\item（ⅰ）$A \subseteq B \Rightarrow f(A) \subseteq f(B)$
+\item（ⅱ）$f(A \cup B)=f(A) \cup f(B)$
+\item（ⅲ）$f(A \cap B) \subseteq f(A) \cap f(B)$
+\item（ⅳ）$f(A - B) \supseteq f(A) - f(B)$
+\end{description}
+
+\textgt{証明　}（ⅰ）$f(A)$に属する任意の元は，適当な元$a \in A$により，$f(a)$と表される．仮定より$a \in A$ならば$a \in B$であるから，$f(a) \in f(B)$．したがって，$f(A) \subseteq f(B)$が示される．
+
+（ⅱ）$f(A \cup B)$に属する任意の元を$f(a)	\quad (\,a \in A \cup B	\,)\,$とするとき，$a \in A$または$a \in B$であるから，$f(a) \in f(A)$または$f(a) \in f(B)$，したがって$f(a) \in f(A) \cup f(B)$が成り立つ．よって，$f(A \cup B) \subseteq f(A) \cup f(B)$が得られる．
+
+次に定理３（ⅰ）より，$A \subseteq A \cup B$，$B \subseteq A \cup B$であり，
+これらに定理１４（ⅰ）を適用すると，$f(A) \subseteq f(A \cup B)$，$f(B) \subseteq f(A \cup B)$が成り立つから，
+$f(A) \cup f(B) \subseteq f(A \cup B)$がわかる．
+したがって，上のことと合わせると，$f(A) \cup f(B) = f(A \cup B)$が証明される．
+
+（ⅲ）定理５（ⅰ）より$A \cap B \subseteq A$，$A \cap B \subseteq B$であり，
+これらに（ⅰ）を適用して，$f(A \cap B) \subseteq f(A)$，$f(A \cap B) \subseteq f(B)$，
+したがって，$f(A \cap B) \subseteq f(A) \cap f(B)$が示される．
+
+（ⅳ）$f(A)-f(B)$に属する任意の元を$b$とすると，$b \in f(A)$かつ$b \notin f(B)$であるから，
+$A$に属するが$B$には属さない適用な元$a$により，$b=f(a)$と表される．
+よって，$b \in f(A-B)$が成立し，$f(A)-f(B) \subseteq f(A-B)$が示される．
+\■
+
+\pagebreak
+\textgt{例１９．　}定理１４（ⅲ）で，等号は必ずしも成立しない．
+そのような例は，例４の$f:\R \rightarrow \R;x \mapsto x^2$に対し，
+$A=\{x | x \in \R,x \leqq 0\}$，$B=\{x | x \in \R,x \geqq 0\}$（$=\R^{+}$）とおくことにより与えられる．
+実際，このとき$f(A)=\R^{+}$，$f(B)=\R^{+}$，$f(A \cap B)=f(\{0\})=\{0\}$であるから，
+$f(A \cap B) \ne f(A) \cap f(B)$．
+
+\vspace{3mm}
+\textgt{問１７．　}定理１４（ⅳ）で，等号は必ずしも成立しない．そのような例を挙げよ．
+
+\textgt{解　}$f:\R \rightarrow \R;x \mapsto x^2$に対し，
+$A=\{x | x \in \R,x \leqq 0\}$，$B=\{x | x \in \R,x \geqq 0\}$（$=\R^{+}$）とおくと，
+$f(A)=\R^{+}$，$f(B)=\R^{+}$，よって$f(A)-f(B)=\varnothing$．
+一方，$f(A-B)=f(\{x | x \in \R,x > 0\})=\R^{+}-\{0\}$．よって$f(A-B)\ne f(A)-f(B)$．
+\■
+
+\textgt{問１８．　}$f$が単射ならば，定理１４(ⅲ),(ⅳ)で等号が成立することを証明せよ．
+
+\textgt{証明　}(ⅲ)　 $ b \in f(A) \cap f(B)   \Longrightarrow b \in f(A)$ 　かつ　 $b \in f(B)$
+\begin{align*}
+		& \Longrightarrow b=f(\alpha) \text{なる} \alpha \in A \text{が存在し，かつ}\\
+		& \text{　}b=f(\beta) \text{なる} \beta  \in B \text{が存在する．}
+\end{align*}
+ここで，$f$は単射であることと$f(\alpha)=b=f(\beta)$であることより，
+\begin{align*}
+		& \Longrightarrow \alpha=\beta	\text{　　　　　　　　　　　　　　}\\
+		& \Longrightarrow \beta \in A	\\
+		& \Longrightarrow \beta \in A \cap B \\
+		& \Longrightarrow f(\beta)=b \in f(A \cap B)
+\end{align*}
+よって，$f(A) \cap f(B) \subseteq f(A \cap B)$．
+定理１４．(ⅲ)と合わせて，$f(A) \cap f(B) = f(A \cap B)$．
+
+\text{(ⅳ)}　　$ b \in f(A - B) 	 \Longrightarrow$ある元$a$が存在して$b=f(a)$
+\begin{align*}
+										&	\text{\hspace{3zw}かつ}a \in A		\text{，・・・①}	&		\\
+										&	\text{\hspace{3zw}かつ}a \notin B	\text{，・・・②}	&		\\
+\text{\hspace{11zw}}&	\Longrightarrow f(a)=b \in f(A)		\text{，・・・①}	&		\\
+										&	\text{\hspace{3zw}かつ$a' \in B$なる任意の$a'$に対して}a \ne a' \in B	
+																																		\text{・・・②}	&		\\
+										&	\Longrightarrow f(a)=b \in f(A)		\text{，・・・①}	&		\\
+										&	\text{\hspace{3zw}かつ$f(a') \in f(B)$なる任意の$f(a')$に対して}f(a) \ne f(a') \in f(B)	\\	
+										&	\text{\hspace{3zw}（}\because\text{$f$は単射）・・・②}	\\	
+										&	\Longrightarrow f(a)=b \in f(A)-f(B)
+\end{align*}
+よって$f(A-B) \subseteq f(A)-f(B)$．定理１４．(ⅳ)と合わせて，$f(A-B) = f(A)-f(B)$．
+\■
+
+\textgt{定理１５．　}$f:X \rightarrow Y$を写像，$A$，$B$を$Y$の部分集合とするとき，次が成り立つ．
+
+(ⅰ)　$A \subseteq B \Rightarrow f^{-1}(A) \subseteq f^{-1}(B)$
+
+(ⅱ)　$f^{-1}(A \cup B) = f^{-1}(A) \cup f^{-1}(B)$
+
+(ⅲ)　$f^{-1}(A \cap B) = f^{-1}(A) \cap f^{-1}(B)$
+
+(ⅳ)　$f^{-1}(A - B) = f^{-1}(A) - f^{-1}(B)$
+
+\証明
+(ⅰ)　$f^{-1}$に属する任意の元を$a$とすると，$f(a) \in A$．したがって，仮定より$f(a) \in B$．
+ゆえに$a \in f^{-1}(B)$．よって，$f^{-1}(A) \subseteq f^{-1}(B)$．
+
+(ⅱ)
+\begin{align*}
+	a \in f^{-1}(A \cup B)	&	\Longleftrightarrow f(a) \in A \cup B \\
+													&	\Longleftrightarrow f(a) \in A \text{または} f(a) \in B	\\
+													&	\Longleftrightarrow a \in f^{-1}(A)	\text{または} a \in f^{-1}(B)	\\
+													&	\Longleftrightarrow a \in f^{-1}(A)	\cup f^{-1}(B).
+\end{align*}
+\[
+\]
+したがって，$f^{-1}(A	\cup B) = f^{-1}(A) \cup f^{-1}(B)$．
+
+(ⅲ)\hspace{6zw}$ a \in f^{-1}(A \cap B) \Longleftrightarrow f(a) \in A \cap B \Longleftrightarrow f(a) \in A $かつ$  f(a) \in B$
+\begin{align*}
+& \Longleftrightarrow a \in f^{-1}(A) \text{かつ} a \in f^{-1}(B)	\\
+& \Longleftrightarrow a \in f^{-1}(A) \cap f^{-1}(B)	
+\end{align*}
+したがって，$f^{-1}(A \cap B) \subseteq f^{-1}(A) \cap f^{-1}(B)$かつ$f^{-1}(A \cap B) \supseteq f^{-1}(A) \cap f^{-1}(B)$が成り立つから求める等式が得られる．
+
+(ⅳ)\hspace{6zw}$ a \in f^{-1}(A - B) \Longleftrightarrow f(a) \in A - B \Longleftrightarrow f(a) \in A $かつ$  f(a) \notin B$
+\begin{align*}
+& \Longleftrightarrow a \in f^{-1}(A) \text{かつ} a \notin f^{-1}(B)	\\
+& \Longleftrightarrow a \in f^{-1}(A) - f^{-1}(B)	
+\end{align*}
+したがって，$f^{-1}(A - B) \subseteq f^{-1}(A) - f^{-1}(B)$かつ$f^{-1}(A \- B) \supseteq f^{-1}(A) - f^{-1}(B)$が成り立つから求める等式が得られる．
+\■
+
+$f^{-1}=X$であるから，定理１５．(ⅳ)の特別な場合として，次の系が得られる．
+
+\textgt{系．　}$f:X \rightarrow Y$を写像，$B$を$Y$の任意の部分集合とするとき，
+\[
+f^{-1}(Y-B)=X-f^{-1}(B).
+\]

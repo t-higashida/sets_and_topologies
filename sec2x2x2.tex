@@ -1,0 +1,178 @@
+\subsection{集合の和と共通部分}
+２つの集合$A_1$，$A_2$の和とは，$A_1$に属する元と$A_2$に属する元の全部を寄せ集めてできる集合である．
+この和は，任意個の集合に対しても自然に拡張される．
+
+$\varLambda$を添え字の集合とする集合族$\{A_\lambda \,|\, \lambda \in \varLambda \}$に対し，集合
+\[
+	\{x \,|\, \varLambda \,\text{のある元}\, \lambda \,\text{に対して} \, x \in A_\lambda \},
+\]
+すなわち，すべての$\lambda \in \varLambda$について集合$A_\lambda$の元を全部寄せ集めて得られる集合を
+$\{A_\lambda \,|\, \lambda \in \varLambda \}$の\textgt{和集合}といい，
+\[
+	\bigcup_{\lambda \in \varLambda}	A_\lambda
+\]
+と記す．特に，$\N$を添え字の集合とする集合族$\{A_1,A_2,\cdots,A_n,\cdots\}$に対しては，
+$\bigcup_{n \in \N}A_n$を，$\bigcup_{n=1}^\infty A_n$とも，
+$A_1 \cup A_2 \cup \cdots \cup A_n \cup \cdots $
+とも書く．
+
+　
+
+\例{２}
+$\alpha \in \R$に対し$A_\alpha$を開区間$]\,\alpha-1,\alpha+1\,[$と定義するとき，$\bigcup_{\alpha \in \R} A_\alpha=\R$
+である．
+
+　
+
+２つの集合$A_1$，$A_2$の共通部分とは，$A_1$と$A_2$に共通に含まれる元全体の集合であるが，
+この概念も任意個の集合に対して自然に拡張される．
+
+$\varLambda$を添え字の集合とする集合族$\{A_\lambda \,|\, \lambda \in \varLambda \}$に対し，集合
+\[
+	\{\,x \,|\, \varLambda \,\text{のすべての元}\,\lambda	\,\text{に対し}\,x \in A_\lambda \,\}
+\]
+すなわち，すべての$A_\lambda$に共通に含まれる元全体の集合を$\{A_\lambda | \lambda \in \varLambda \}$の
+\textgt{共通部分}といい，
+\[
+	\bigcap_{\lambda \in \varLambda}A_\lambda
+\]
+と記す．和の場合と同じように，集合族$\{\,A_1,A_2,\cdots,A_n,\cdots	\,\}$に対しては，
+$\bigcap_{n \in \N}A_\lambda$を，$\bigcap_{n=1}^{\infty} A_n$とも
+$A_1 \cap A_2 \cap \cdots \cap A_n \cap \cdots $
+とも表わす．
+
+　
+
+\例{３}
+$n \in \N$に対し$A_n=\{1,2,\cdots,n\}$と定義するとき，$\bigcap_{n=1}^\infty A_n=A_1=\{1\}$である．
+
+\pagebreak
+拡張された和や居通部分に対して，第1章で得られたいろいろな定理（定理７，９，１４(ⅱ)，(ⅲ)，１５(ⅱ)，(ⅲ))は，
+次のように一般化される．
+
+\vspace{3mm}
+\定理{６}
+$\{A_\lambda | \lambda \in \varLambda \}$を，$\varLambda$を添え字の集合とする集合族，$B$を任意の集合とする．
+このとき，次の\textgt{分配法則}が成り立つ．
+\begin{list}{}{}
+		\item	(ⅰ)　$(\bigcap_{\lambda\in\varLambda}A_{\lambda})\cup B=\bigcap_{\lambda\in\varLambda}(A_{\lambda}\cup B)$
+		\item	(ⅱ)　$(\bigcup_{\lambda\in\varLambda}A_{\lambda})\cap B=\bigcup_{\lambda\in\varLambda}(A_{\lambda}\cap B)$
+\end{list}
+
+\証明
+	
+（ⅰ）
+\begin{align*}
+		\forall	 a \in \biggl( \bigcap_{\lambda \in \Lambda} A_\lambda \biggr) \cup B 
+			&\Longleftrightarrow a \in \bigcap_{\lambda \in \Lambda} A_\lambda \text{　または　} a \in B	\\
+			&\Longleftrightarrow \Bigl( \forall \lambda \in \Lambda \,,\, a \in A_\lambda \Bigr) \text{　または　} a \in B	\\
+			&\Longleftrightarrow \forall \lambda \in \Lambda \,,\, a \in A_\lambda \cup B	\\
+			&\Longleftrightarrow a \in \bigcap_{\lambda \in \Lambda} (A_\lambda \cup B)
+\end{align*}
+
+（ⅱ）
+\begin{align*}
+		\forall	 a \in \biggl( \bigcup_{\lambda \in \Lambda} A_\lambda \biggr) \cap B 
+			&\Longleftrightarrow a \in \bigcup_{\lambda \in \Lambda} A_\lambda \text{　かつ　} a \in B	\\
+			&\Longleftrightarrow \Bigl( \exists \lambda \in \Lambda \,,\, a \in A_\lambda \Bigr) \text{　かつ　} a \in B	\\
+			&\Longleftrightarrow \exists \lambda \in \Lambda \,,\, a \in A_\lambda \cap B	\\
+			&\Longleftrightarrow a \in \bigcup_{\lambda \in \Lambda} (A_\lambda \cap B)
+\end{align*}
+\■
+
+\定理{７}
+$\varLambda $のすべての元$\lambda$に対しを$A_\lambda \subseteq X$とする．
+次の\textgt{ド・モルガンの法則}が成り立つ．
+
+\begin{list}{}{}
+		\item(ⅰ)　$X-\bigcup_{\lambda\in\varLambda}A_{\lambda}=\bigcap_{\lambda\in\varLambda}(X-A_{\lambda})$
+		\item(ⅱ)　$X-\bigcap_{\lambda\in\varLambda}A_{\lambda}=\bigcup_{\lambda\in\varLambda}(X-A_{\lambda})$
+\end{list}
+\証明
+
+（ⅰ）
+\begin{align*}
+	\forall \in X - \bigcup_{\lambda \in \Lambda} A_\lambda
+		&\Longleftrightarrow	a \in X \text{　かつ　}	a \notin \bigcup_{\lambda \in \Lambda} A_\lambda	\\
+		&\Longleftrightarrow	a \in X \text{　かつ　}	\forall	\lambda \in \Lambda	\quad	(a	\notin	A_\lambda)	\\
+		&\Longleftrightarrow	\forall	\lambda \in \Lambda	\quad	(a \in X-A_\lambda)	\\
+		&\Longleftrightarrow	a \in	\bigcap_{\lambda \in \Lambda}	\bigl( X-A_\lambda	\bigl)	\\
+\end{align*}
+
+（ⅱ）
+\begin{align*}
+	\forall \in X - \bigcap_{\lambda \in \Lambda} A_\lambda
+		&\Longleftrightarrow	a \in X \text{　かつ　}	a \notin \bigcap_{\lambda \in \Lambda} A_\lambda	\\
+		&\Longleftrightarrow	a \in X \text{　かつ　}	\exists	\lambda \in \Lambda	\quad	(a	\notin	A_\lambda)	\\
+		&\Longleftrightarrow	\exists	\lambda \in \Lambda	\quad	(a \in X-A_\lambda)	\\
+		&\Longleftrightarrow	a \in	\bigcup_{\lambda \in \Lambda}	\bigl( X-A_\lambda	\bigl)	\\
+\end{align*}
+\■
+
+　
+	
+\定理{８}
+$\varLambda $のすべての元$\lambda$に対しを$A_\lambda \subseteq X$とする．
+$f:X \rightarrow Y$を写像とするとき，
+次が成り立つ．
+\begin{list}{}{}
+		\item	(ⅰ)　$f(\bigcup_{\lambda\in\varLambda}A_{\lambda})=\bigcup_{\lambda\in\varLambda}f(A_{\lambda})$
+		\item (ⅱ)　$f(\bigcap_{\lambda\in\varLambda}A_{\lambda}) \subseteq \bigcap_{\lambda\in\varLambda}f(A_{\lambda})$
+		
+\end{list}
+\証明
+
+（ⅰ）
+\begin{align*}
+		\forall b \in f\Biggl( \bigcup_{\lambda \in \Lambda} A_\lambda \Biggr)
+			&\Longleftrightarrow \exists a \text{ such that } b=f(a),\quad a \in \bigcup_{\lambda \in \Lambda} A_\lambda	\\
+			&\Longleftrightarrow \exists \lambda \in \Lambda \text{ such that } \quad ( a \in  A_\lambda )	\\
+			&\Longleftrightarrow \exists \lambda \in \Lambda \text{ such that } \quad ( b \in  f(A_\lambda) )	\\
+			&\Longleftrightarrow b \in  \bigcup_{\lambda \in \Lambda}	f(A_\lambda)	\\
+\end{align*}
+
+（ⅱ）
+\begin{align*}
+		\forall b \in f\Biggl( \bigcap_{\lambda \in \Lambda} A_\lambda \Biggr)
+			&\Longrightarrow \exists a \text{ such that } b=f(a),\quad a \in \bigcap_{\lambda \in \Lambda} A_\lambda	\\
+			&\Longrightarrow \forall \lambda \in \Lambda \quad ( a \in  A_\lambda )	\\
+			&\Longrightarrow \forall \lambda \in \Lambda \quad ( b \in  f(A_\lambda) )	\\
+			&\Longrightarrow b \in \bigcap_{\lambda \in \Lambda}	f(A_\lambda)	\\
+\end{align*}
+\■
+
+　
+
+\pagebreak
+\定理{９}
+集合$\Gamma$のすべての元$\mu$に対し，$B_\mu \subseteq Y$であるような，
+$\Gamma$を添え字の集合とする集合族$\{B_\mu | \mu \in \Gamma \}$を考える．
+$f:X \rightarrow Y$を写像とするとき，次が成り立つ．
+
+\begin{list}{}{}
+		\item	(ⅰ)　$f^{-1}(\bigcup_{\mu\in\Gamma}A_{\mu)}=\bigcup_{\mu\in\Gamma}f^{-1}(B_{\mu})$
+		\item	(ⅱ)　$f^{-1}(\bigcap_{\mu\in\Gamma}A_{\mu)}=\bigcap_{\mu\in\Gamma}f^{-1}(B_{\mu})$
+\end{list}
+
+\証明
+
+（ⅰ）
+
+\begin{align*}
+		\forall a	\in f^{-1}\Biggl(\bigcup_{\mu \in \Gamma} B_\mu \Biggr)
+			&\Longleftrightarrow f(a) \in \bigcup_{\mu \in \Gamma} B_\mu	\\
+			&\Longleftrightarrow \exists \mu \in \Gamma \text{ such that } (f(a) \in B_\mu)	\\
+			&\Longleftrightarrow \exists \mu \in \Gamma \text{ such that } (a \in f^{-1}(B_\mu))	\\
+			&\Longleftrightarrow a \in \bigcup_{\mu \in \Gamma} f^{-1}(B_\mu)	\\
+\end{align*}
+
+（ⅱ）
+
+\begin{align*}
+		\forall a	\in f^{-1}\Biggl(\bigcap_{\mu \in \Gamma} B_\mu \Biggr)
+			&\Longleftrightarrow f(a) \in \bigcap_{\mu \in \Gamma} B_\mu	\\
+			&\Longleftrightarrow \forall \mu \in \Gamma \text{ } (f(a) \in B_\mu)	\\
+			&\Longleftrightarrow \forall \mu \in \Gamma \text{ } (a \in f^{-1}(B_\mu))	\\
+			&\Longleftrightarrow a \in \bigcap_{\mu \in \Gamma} f^{-1}(B_\mu)
+\end{align*}
+\■

@@ -1,0 +1,125 @@
+\subsection{整列集合の比較定理}
+前項で準備した整列集合のいろいろな性質を用いて，次に述べる整列集合の比較定理を証明することができる．
+
+\定理{３}
+$X$，$Y$を整列集合とするとき，次の(１)，(２)，(３)のうちの少なくとも１つが成り立ち，
+しかもどの２つも同時には成り立たない．
+
+	(１)　$X \simeq Y$
+
+	(２)　$X \simeq Y(b)$となる$b \in Y$が存在する．
+
+	(３)　$X(a) \simeq Y$となる$a \in X$が存在する．
+
+\証明
+$1^{\circ}$　\textgt{【全射$f:A	\rightarrow	B$を構成】}
+
+まず，次のような$X$，$Y$の部分集合$A$，$B$を考える．
+\begin{align*}
+	A	&=\{a	\,|\,	a	\in	X,	\,	X(a)	\simeq	Y(b)	\text{となる}	b	\in Y \text{が存在する} \} \\
+	B	&=\{b	\,|\,	b	\in	Y,	\,	X(a)	\simeq	Y(b)	\text{となる}	a	\in X \text{が存在する} \}
+\end{align*}
+$A$の任意の元$a$に対し$X(a) \simeq Y(b)$，$X(a) \simeq Y(b')$（ただし，$b$，$b' \in Y)$と仮定すると，
+$Y(b) \simeq Y(b')$であるから，補題５より$b=b'$が導かれる．したがって，$a \in A$に対し$X(a) \simeq Y(b)$
+を満たす$b$を対応させることにより，写像
+\[
+	f:A \rightarrow B; a \mapsto b
+\]
+が得られる．$B$の任意の元に対し$X(a) \simeq Y(b)$なる$a \in X$が存在する（$\because$集合$B$の定義）から，
+$f(a)=b$なる$a \in A$が存在することがわかる．それゆえ，$f$は全射である．
+
+　
+
+$2^{\circ}$　\textgt{【$f$が順序集合であること】}
+
+更に，この$f$が順序を保ち順序同型写像であることが，次のようにして示される．
+$a$，$a' \in A$に対し，$a \prec a'$とすると，補題１により$X(a) \subset X(a')$である．
+$a' \in A$と$A$の定義より，順序同型写像
+\[
+	g:X(a') \rightarrow Y(f(a'))
+\]
+が存在し，この$g$は$g(a) \prec f(a')$（★）を満たす（$\because$切片の定義より）．
+補題２，３により，
+$g(X(a))	\stackrel{\text{補題２}}{=}	g(X(a')(a))
+					\stackrel{\text{補題３}}{=}	Y(f(a'))･(g(a))
+					\stackrel{\text{補題２}}{=}	Y(g(a))$
+となるから，$g$の$X(a)$への制限によって
+順序同型写像$g':X(a) \rightarrow Y(g(a));x \mapsto g(x)$が得られる．つまり$X(a) \simeq Y(g(a))$．
+一方，$a \in A$より$X(a) \simeq Y(f(a))$だから，$Y(g(a)) \simeq Y(f(a))$．
+ゆえに，補題５より，$g(a)=f(a)$が得られる．上のこと（★）と合わせて$f(a) \prec f(a')$が示されるから．
+$f$は順序を保つことがわかる．
+
+　
+
+$3^{\circ}$　\textgt{【$A$の切片性】}
+
+次に，
+\textgt{$a \in A$ならば，$x \prec a$なるすべての元$x \in X$も，やはり$x \in A$となる}
+ことを証明しよう．$a \in A$より，順序同型写像
+\[
+	g:X(a) \rightarrow Y(f(a))
+\]
+が存在する（$f$は1$^\circ$で得られる写像）．
+補題１より，$x \prec a$ならば$X(x) \subset X(a)$である．$g$の$X(x)$への制限によって得られる
+写像$g':X(x) \rightarrow Y(g(x));y \mapsto g(y)$ ({\small	補題３より$g(X(x))=Y(g(x))$} ）
+は，順序同型写像であるから，\textgt{$x \in A$である．}
+
+
+$4^{\circ}$　\textgt{$A=X$か，または$A=X(a)$}
+
+これより，$A=X$か，または$A=X(a)	\quad	(a \in	X)$となることが導かれる．
+そのためには，$A \subset X$と仮定したときに，$A$が$X$のある切片に等しいことを示せばよい．
+
+仮定より$X-A \ne \varnothing$だから，$X-A$には最初の元$a$が存在する（$\because X$は整列集合）．
+$A=X(a)$であることを証明しよう．
+
+すべての元$y \in X(a)$に対し$y \prec a$であるから，
+$y \notin X-A$（$a$は$X-A$の最初の元であった），すなわち$y \in A$．それゆえ，$X(a) \subseteq A$．
+
+逆に任意の元$y \in A$をとるとき，$y=a$ならば$a \notin A$より$y \notin A$となるから矛盾で，
+$a \prec y$ならば，上の$3^{\circ}$より$a \in A$となるから矛盾（$a$は$X-A$の元）である．結局，$y \prec a$でなければ
+ならない．したがって，$y \in X(a)$であり，$A \subseteq X(a)$が示される．よって，$A=X(a)$．
+
+　
+
+$5^{\circ}$　同様にして$B=Y$か，または$B=Y(b)	\quad	(b \in Y)$となることが示される．
+そのためには，$B	\subset	Y$と仮定したとき，$B$が$Y$の切片に等しいことを示せばよい．
+
+仮定より$Y-B	\ne	\varnothing$だから，$Y-B$には最初の元$b$が存在する．
+$B=Y(b)$であることを示す．
+
+すべての元$y	\in	Y(b)$に対し$y	\prec	b$であるから，$y	\notin	Y-B$，すなわち$y	\in B$．
+それゆえ$Y(b)	\subseteq B$．
+
+逆に任意の元$y	\in B$をとるとき，$y=b$ならば，$b	\notin	B$より$y	\notin	B$となり矛盾する．
+$b	\prec	y$ならば上の$3^\circ$より$b	\in B$となるから矛盾する．
+結局$y	\prec	b$でなければならない．したがって$y	\in	Y(b)$であり$B	\subseteq	Y(b)$．
+
+よって$B=Y(b)$．
+
+　
+
+$6^{\circ}$　$2^{\circ}$より$A \simeq B$がわかっているから，$4^{\circ}$，$5^{\circ}$から，次の場合が考えられる．
+
+(１)　$A=X$，$B=Y$の場合，$X \simeq Y$
+
+(２)　$A=X$，$B=Y(b)	\quad(b \in Y)$の場合，$X \simeq Y(b)$
+
+(３)　$A=X(a)	\quad(a \in X$），$B=Y$の場合，$X(a) \simeq Y$
+
+(４)　$A=X(a)	\quad(a \in X)$，$B=Y(b)\quad(b \in Y)$の場合，$X(a) \simeq Y(b)$
+
+ところが(４)の場合はあり得ない．なぜならば(４)を満たす$a$，$b$があれば，$A$の定義から$a \in A=X(a)$，
+すなわち，$a \prec a$となって矛盾が生じるからである．
+
+　
+
+$7^{\circ}$　(１)と(２)が同時に成り立つとすれば，$Y \simeq Y(b)$となり，補題４に矛盾する．
+(１)と(３)が同時に成り立つとすれば，$X \simeq X(a)$となり，補題４に矛盾する．
+
+(２)と(３)が同時に成り立つとすれば，
+順序同型写像$g:X \rightarrow Y(b)$の$X(a)	\quad (\subset X)$への制限によって定まる
+順序同型写像$g':X(a) \rightarrow Y(b)(g(a))	\text{（補題３）}	\stackrel{\text{補題２}}{=}Y(g(a))$を考えることにより，
+$Y \simeq X(a) \simeq Y(g(a))$が得られ，やはり補題４に矛盾する．
+したがって(１)，(２)，(３)のどの２つも同時に成り立つことはない．
+\■

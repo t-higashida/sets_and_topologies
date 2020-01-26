@@ -1,0 +1,158 @@
+\section{濃度の演算}
+{\small
+有限集合の元の個数$m$，$n$に対して，それらの和や積が自然数のわや積として自然に定められている．
+一般の集合の濃度の演算は，これらの拡張として定義される．この際に，第１章で導入された
+集合の和や積が利用される．有限濃度の場合と異なり，無限濃度の場合には，
+$\displaystyle \mathfrak{a}>0$であっても必ずしも$\displaystyle \mathfrak{a}+\mathfrak{b}>\mathfrak{b}$
+とならないことに注意する．
+}
+
+
+\subsection{濃度の和}
+２つの有限濃度$m$，$n$の和$m+n$の定め方を，集合にもどって考えてみよう．
+$\{1,2,\cdots,n\}	\sim	\{m+1,m+2,\cdots,m+n\}$であるから，
+$m=|\{1,2,\cdots,m\}|,n=|\{1,2,\cdots,n\}|=|\{m+1,m+2,\cdots,m+n\}|$
+に注意して，
+\[
+	|\{1,2,\cdots,m\} \cup \{m+1,m+2,\cdots,m+n\}|=|\{1,2,\cdots,m,m+1,\cdots,m+n\}|=m+n
+\]
+が得られる．一般に，$m=|A|,\,	n=|B|,\,	A \cap B =\varnothing$なる有限集合$A$，$B$ととるとき，
+$|A \cup B|=m+n$となる．この考え方を一般の濃度の場合に拡張する．
+
+そのために，次の２つのことを準備しよう．
+
+$1^\circ$　任意の濃度$\mathfrak{a}=|A|$，$\mathfrak{b}=|B|$なる集合$A$，$B$で
+$A \cap B=\varnothing$を満たすものが少なくとも１組は存在する．
+
+\証明
+$\mathfrak{a}=|A|$，$\mathfrak{b}=|B|$を満たす集合$A$，$B$を任意にとるとき，
+$A \cap B=\varnothing$ならば，$1^\circ$はすでに成立している．
+$A \cap B \ne \varnothing$のときには，
+直積$A \times \{0\}=\{\,(a,0)\,|\,a \in A \,\}$，
+		$B \times \{1\}=\{\,(b,1)\,|\,b \in B \,\}$を考えるとき，
+写像
+\begin{align*}
+		A \rightarrow A	\times \{0\};a \rightarrow(a,0)	\\
+		B \rightarrow B	\times \{1\};b \mapsto (b,1)
+\end{align*}
+はいずれも全単射であるから，
+$A \sim A \times \{0\}$，
+$B \sim B \times \{1\}$，すなわち$|A \times \{0\}| = \mathfrak{a}$，$|B \times \{1\}| = \mathfrak{b}$
+である．さらに，$A \times \{0\}$の点と$B \times \{1\}$の点とは，第２座標は異なるから，
+$A \times \{0\} \cap B \times \{1\} = \varnothing$である．
+よって
+$A \times \{0\}$，$B \times \{1\}$が求める集合の組である．
+\■
+$2^\circ$　$A_1 \cap B_1=\varnothing$，$A_2 \cap B_2=\varnothing$
+を満たす集合$A_1$，$B_1$，$A_2$，$B_2$に対し，$A_1 \sim A_2$，
+$B_1 \sim B_2$ならば，$A_1 \cup B_1 \sim A_2 \cup B_2$が成り立つ．
+
+\証明
+仮定より，２つの全単射$f_1:A_1 \rightarrow A_2$，$f_2:B_1 \rightarrow B_2$
+が存在する．いま，
+\[
+g(x)=\begin{cases}
+			f_1(x)	&	(x \in A_1 \text{のとき})	\\
+			f_2(x)	&	(x \in B_1 \text{のとき})
+		\end{cases}
+\]
+により，写像	$g:A_1 \cup B_1 \rightarrow A_2 \cup B_2$を定義すれば，
+$g$は全単射であることが容易にわかるから，$A_1 \cup B_1 \sim A_2 \cup B_2$が
+示される．
+\■
+$1^\circ$，$2^\circ$の考察から，濃度の和を次のように定義することができる．
+
+\定義{}
+$\mathfrak{a}$，$\mathfrak{b}$を２つの濃度とする．
+$\mathfrak{a}=|A|$，$\mathfrak{b}=|B|$，$A \cap B=\varnothing$なる集合$A$，$B$をとる
+($1^\circ$によりそのような$A$，$B$は存在する）．
+$A \cup B$の濃度を$\mathfrak{a}$と$\mathfrak{b}$の\textgt{和}といい，
+$\mathfrak{a}+\mathfrak{b}$と記す．すなわち，
+\[
+	\mathfrak{a}+\mathfrak{b}=|A \cup B|
+\]
+($2^\circ$により，$\mathfrak{a}+\mathfrak{b}$の定義が$\mathfrak{a}$，$\mathfrak{b}$のみによって
+定まり，$A$，$B$のとり方には無関係であることがわかる．）
+
+　
+
+\定理{１５}
+濃度の和は次の性質をもつ．
+
+\begin{tabular}{lll}
+	(ⅰ)	&	$(\mathfrak{a}+\mathfrak{b})+\mathfrak{c}=\mathfrak{a}+(\mathfrak{b}+\mathfrak{c})$	&	\textgt{（結合法則）}	\\
+	(ⅱ)	&	$\mathfrak{a}+\mathfrak{b}=\mathfrak{b}+\mathfrak{a}$																&	\textgt{（交換法則）}	\\
+	(ⅲ)	&	$\mathfrak{a}+0=\mathfrak{a}$																												&
+\end{tabular}
+
+\証明
+
+(ⅰ)　$\mathfrak{a}=|A|$，$\mathfrak{b}=|B|$，$\mathfrak{c}=|C|$なる集合$A$，$B$，$C$で，$A \cap B=\varnothing$，
+$B \cap C=\varnothing$，$C \cap A=\varnothing$を満たすものをとる．このような$A$，$B$，$C$が存在することは，
+必要ならば，$A$，$B$，$C$のかわりに$A \times \{0\}$，$B \times \{1\}$，$C \times \{2\}$を考えることにより保証される
+．
+このとき，$\mathfrak{a}+\mathfrak{b}=|A \cup B|$であり，更に§1.2定理７(ⅱ)，および§1.2定理６(ⅱ)より
+$(A \cup B) \cap C = (A \cap C) \cup (B \cap C)=\varnothing \cup \varnothing=\varnothing$であるから，$(\mathfrak{a}+\mathfrak{b})+\mathfrak{c}=|(A \cup B) \cup C|$である．同様にして，
+$\mathfrak{a}+(\mathfrak{b}+\mathfrak{c})=|A \cup (B \cup C)|$である．
+§1.2定理４(ⅰ)より
+$(A \cup B) \cup C= A \cup (B \cup C)$であるから，
+$(\mathfrak{a}+\mathfrak{b})+\mathfrak{c}=\mathfrak{a}+(\mathfrak{b}+\mathfrak{c})$
+が成り立つ．
+
+(ⅱ)　$A \cup B= B \cup A$より明らか．
+
+(ⅲ)　$0=|\varnothing|$で，$\mathfrak{a}=|A|$なる任意の集合$A$をとるとき，
+$A \cup \varnothing = A$，$A \cap \varnothing = \varnothing$
+であるから，$\mathfrak{a}+0=|A \cup \varnothing|=|A|=\mathfrak{a}$.
+\■
+
+\例{１}
+$\Aleph_0+\Aleph_0=\Aleph_0$．実際，$\Aleph_0= |\{1,3,5,\cdots,2n-1,\cdots \} |=|\{2,4,6,\cdots,2n,\cdots \}|$
+(§2.1例2と問4参照)，$\{1,3,5,\cdots,2n-1,\cdots\} \cap \{2,4,6,\cdots,2n,\cdots\}=\varnothing$であるから，
+$\Aleph_0+\Aleph_0=|\{1,3,5,\cdots,2n-1,\cdots\} \cup \{2,4,6,\cdots,2n,\cdots\}|=|\N|=\Aleph_0$．
+
+　
+
+\例{２}．$\Aleph + \Aleph = \Aleph$．実際，$\Aleph=|]0,1[|=|[1,2[|$(§2.1 例12と§2.3問8参照)，$]0,1[ \cap [1,2[=\varnothing$であるから，$\Aleph + \Aleph = |]0,1[ \cup [1,2]|=|]0,2[|=\Aleph$
+
+　
+
+\定理{１６}
+濃度の和と大小に関し，次が成り立つ．
+\[
+	\mathfrak{a} \leqq \mathfrak{b} \Rightarrow \mathfrak{a}+\mathfrak{c} \leqq \mathfrak{b}+\mathfrak{c}
+\]
+
+\証明
+$\mathfrak{a}=|A|$．$\mathfrak{b}=|B|$，$\mathfrak{c}=|C|$，$A \cap C = \varnothing$，$B \cap C = \varnothing$なる
+集合$A$，$B$，$C$をとる．仮定より，単射$f:A \rightarrow B$が存在する．写像$g: A \cup C \rightarrow B \cup C$を
+\[
+g(x)=\begin{cases}
+				f(x)	&(x \in A	\text{のとき})	\\
+				x			&(x \in C	\text{のとき})	\\
+		\end{cases}
+\]
+により定義するとき，$g$は単射であることが容易にわかるから，$|A \cup C| \leqq |B \cup C|$，すなわち
+$\mathfrak{a}+\mathfrak{c} \leqq \mathfrak{b}+\mathfrak{c}$が示される
+\■
+
+\pagebreak
+\問{１２}
+任意の有限濃度$n$に対し$n+\Aleph_0=\Aleph_0$を証明せよ．
+
+\証明
+$\Aleph_0 \leqq n+ \Aleph_0 \leqq \Aleph_0+\Aleph_0=\Aleph_0$（ベルンシュタインの定理と定理１６．）
+より．$\Aleph_0=n+\Aleph_0$．
+
+\■
+
+\問{１３}
+任意の有限濃度$n$に対し$n+\Aleph=\Aleph_0+\Aleph=\Aleph$を証明せよ．
+
+\証明
+$\Aleph \leqq n+ \Aleph \leqq \Aleph_0+\Aleph \leqq \Aleph+\Aleph=\Aleph$（ベルンシュタインの定理と定理１６．）
+より．$\Aleph=n+\Aleph=\Aleph_0+\Aleph$．
+\■
+
+
+

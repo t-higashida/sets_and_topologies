@@ -1,0 +1,55 @@
+\subsection{集合の直積}$A$，$B$を２つの集合とする．$A$と$B$との\textgt{直積}とは，$a \in A$，$b \in B$に対し，順序を考慮に入れた組$(a,b)$からなる集合をいい，
+$A \times B$で表わす．つまり，
+\[
+	A \times B = \{\,(a,b\,)\,|\,a \in A \text{　かつ　}b \in B \}
+\]
+である．ここで順序を考慮に入れた組は\textgt{順序対}とよばれ，
+２つの順序対$\,(\,a,b\,)\,$，$\,(\,a',b'\,)\,$　
+$(a,a' \in A,\quad b,b' \in B)$が\textgt{等しい}とは，$a=a'$かつ$b=b'$が成り立つことである．
+
+\vspace*{5mm}
+\textgt{例１５．}$A=\{1,2\}$，$B=\{a,b,c\}$ならば，
+\[
+A \times B=\{(1,a),(1,b),(1,c),(2,a),(2,b),(2,c)\}.
+\]
+
+\vspace*{5mm}
+\textgt{例１６．}実数全体の集合$\R$に対し，$\R$と$\R$との直線$\R \times \R$は$\R^2$と書かれ，\textgt{カルテシアン平面}
+と称される．$\R^2$の元は\textgt{点}ともいわれ，実数の順序対$(x,y)$（$x,y \in \R$）によってただ1通りに表わされる．$\{(x,0)|x \in \R \}$は\textgt{横軸}（または\textgt{$x$軸}），$\{(0,y)|y \in \R \}$は\textgt{縦軸}（または\textgt{$y$軸}）といわれる．
+
+直積の概念は，自然な仕方で，有限個の集合の場合に拡張される．$m$個の集合$A_1,A_2,\cdot\cdot\cdot,A_m$の直積は，
+\[
+A_1 \times A_2 \times \cdot\cdot\cdot\times A_m \text{　（または　} \prod_{i=1}^{m}A_i  \text{）}
+\]
+によって表わされ，順序を考慮に入れた組$(a_1,a_2,\cdot\cdot\cdot,a_m)$　$(a_i \in A_i,i=1,2,\cdot\cdot\cdot,m)$から成る集合である．ここで，順序を考慮に入れた２つの組$(a_1,a_2,\cdot\cdot\cdot,a_m)$と$(a_1',a_2',\cdot\cdot\cdot,a_m')$　
+$(a_i,a_i' \in A_i,i=1,2,\cdot\cdot\cdot,m)$が\textgt{等しい}とは，$a_i=a_i'$　$(i=1,2,\cdot\cdot\cdot,m)$が成り立つことである．
+
+\textgt{問１３．}任意の集合$A$，$B$，$C$に対し，次の（ⅰ）（ⅱ）が成り立つことを示せ．
+
+（ⅰ）$A \times (B \cup C)=(A \times B) \cup (A \times C)$
+
+（ⅱ）$A \times (B \cap C)=(A \times B) \cap (A \times C)$
+ 
+\textgt{証明}
+
+（ⅰ）
+\begin{align*}
+(a,b) \in A \times (B \cup C) 	&\Longleftrightarrow a \in A \text{　かつ　} b \in B \cup C						\\
+								&\Longleftrightarrow a \in A \text{　かつ　} (b \in B \text{　または　} b \in C)\\
+								&\Longleftrightarrow (a \in A \text{　かつ　} b \in B) \text{　または　}
+										 			 (a \in A \text{　かつ　} b \in C) 							\\
+								&\Longleftrightarrow (a,b) \in A \times B \text{　または　}
+										 			 (a,b) \in A \times C 										\\
+								&\Longleftrightarrow (a,b) \in (A \times B) \cup (A \times C)
+\end{align*}
+
+（ⅱ）
+\begin{align*}
+(a,b) \in A \times (B \cap C) 	&\Longleftrightarrow a \in A \text{　かつ　} b \in B \cap C						\\
+								&\Longleftrightarrow a \in A \text{　かつ　} (b \in B  \text{　かつ　} b \in C)	\\
+								&\Longleftrightarrow 	(a \in A \text{　かつ　} b \in B) \text{　かつ　}
+										 				(a \in A \text{　かつ　} b \in C) 						\\
+								&\Longleftrightarrow (a,b) \in A \times B \text{　かつ　}(a,b) \in A \times C	\\
+								&\Longleftrightarrow (a,b) \in (A \times B) \cap (A \times C)
+\end{align*}
+\■

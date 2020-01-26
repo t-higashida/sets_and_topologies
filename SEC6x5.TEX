@@ -1,0 +1,45 @@
+\section{等化空間}
+位相空間$X$から集合$M$への全射$f:X \rightarrow M$が与えられたとき，
+$f$が連続となるような$M$の位相のうちで最も強いものは等化位相とよばれ，
+新しい位相空間をつくるのに重要な役割を果たす．本節では，等化位相および等化位相を
+もつ空間について考察しよう．
+
+\subsection{等化位相}
+$X$を位相$\mathscr{T}(X)$が与えられた位相空間，$M$を集合，
+$f:X \rightarrow M$を全射とする．
+\[
+	\mathscr{T}(M)=\{G \,|\, G \subseteq M,\,f^{-1}(G) \in \mathscr{T}(X) \}
+\]
+は［O$_1$］～［O$_3$］を満たす．このことは，$\mathscr{T}(X)$が［O$_1$］～［O$_3$］を満たす
+こと，
+\begin{align*}	
+	f^{-1}(\varnothing)	&=\varnothing,
+					&f^{-1}(M)	&=X,		\\
+		\textstyle	f^{-1}\left(\bigcap_{i=1}^n G_i\right) 						&=	\textstyle	\bigcap_{i=1}^n f^{-1}(G_i),	
+	&	\textstyle	f^{-1}(\bigcup_{\alpha \in \Lambda }^n G_\alpha)	&=	\textstyle	\bigcup_{\alpha \in \Lambda}^n f^{-1}(G_i)
+\end{align*}
+が成り立つことに注意すれば容易に示される．それゆえ，$\mathscr{T}(M)$は$M$の位相となる．
+この位相を$f$による\textgt{等化位相}（または\textgt{商位相}）といい，等化位相が与えられた
+集合$M$を\textgt{等化空間}（または\textgt{商空間}）という．このとき，$f$が連続写像となることは
+明らかである（定理５(２)）．
+
+{\small
+\vspace{3mm}
+\注意{１}
+等化位相は，$f$が連続となるような位相のうちで最も強いものである．実際，
+$f$が連続となるような$M$の任意の位相$\mathscr{T}$に対し，$G \in \mathscr{T}$ならば，
+$f^{-1}(G) \in \mathscr{T}(X)$，したがって$G \in \mathscr{T}(M)$だから，
+$\mathscr{T} \subseteq \mathscr{T}(M)$が示される．
+}
+
+{{\small
+\vspace{3mm}
+\注意{２}
+$X$を位相空間，$M$を集合，$f:X \rightarrow M$を全射とする．$f \subseteq M$が
+$M$の閉集合であるのは，$f^{-1}(F)$が$X$の閉集合であるときと定めることにより，
+$M$に位相が与えられ，この位相は等化位相と一致する：
+実際，[C$_1$]～[C$_3$]が上と同じようにして確かめられ，§5.4注意２によって$M$は
+位相空間となる．この位相が等化写像と一致することは，閉集合の定義と§1.3.5定理１５（ⅳ）より
+直ちにわかる．
+
+}

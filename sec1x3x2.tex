@@ -1,0 +1,82 @@
+
+\subsection{全射・単射}
+写像$f:X \rightarrow Y$に対し，集合
+\[
+f(X)=\{\,y\,|\,y=f(x),x \in X\}
+\]
+は$f$の\textgt{像}または\textgt{値域}といわれる．写像$f$は，その像が終域と一致するとき，すなわち$f(X)=Y$なるとき，
+\textgt{全射}といわれる．いいかえれば，$f$が全射であるのは，
+\[
+\text{任意の元}y \in Y\text{に対して}f(x)=y\text{を満たす元}x \in X\text{が存在する}
+\]
+ときである．全射という言葉は，$Y$の全部の元が$f$の像であることを意味している．
+
+\vspace{3mm}
+\textgt{例６．}例４における$g:\R \rightarrow \R^{+};x \mapsto x^2$は全射であるが，$f:\R \rightarrow \R;x \mapsto x^2$は全射ではない．実際，すべての負でない実数$y \in \R^{+}$に対して$g(x)=x^2=y$となる実数$x \in \R$が存在するから，$g$は全射であるが，負の実数$y \in \R$をとると，$f(x)=x^2=y$を満たす実数$x \in \R$は存在しないから，$f$は全射ではない．
+
+\vspace{3mm}
+写像$f:X \rightarrow Y$は，異なる２つの元に対し，それらの像が異なるとき，あるいは，対偶の形で述べれば，
+\[
+f(x)=f(x') \quad (x,x' \in X) \quad \Longrightarrow \quad x=x'
+\]
+が成り立つとき，\textgt{単射}といわれる．単射という名称は，$f(x) \in Y$にうつされる$X$の元の数が単数（ただ１つ）であることを示すよび方である．
+
+\vspace{3mm}
+\textgt{例７．}$A$を集合$X$の部分集合とする．すべての元$x \in A$に対し，$i(x)=x$で定義される写像，すなわち，
+\[
+i:A \rightarrow X;x \mapsto x
+\]
+は単射である．この写像$i$は\textgt{包含写像}といわれる．
+
+\textgt{例８．}例４における$f:\R \rightarrow \R; x \mapsto x^2$は単射ではない．なぜならば，$x^2={x'}^2$から必ずしも$x=x'$が導かれないからである．同様に，例４．における$g:\R \rightarrow \R^{+};x \mapsto x^2$も単射でない．
+
+\vspace{3mm}
+\textgt{例９．}写像$f:\Z \rightarrow \Z;n \mapsto 2n$は単射であるが全射ではない．実際，$2n=2n'$ならば$n=n'$が成り立つから，$f$は単射であるが，奇数$2m+1 \in \Z$に対しては，$f(n)=2m+1$を満たす$ n \in \Z$が存在しないから，$f$は全射でない． 
+
+\vspace{3mm}
+写像$f:X \rightarrow Y$は，全射でありかつ単射であるとき，\textgt{全単射}（または\textgt{１対１の対応}）といわれる．
+
+\vspace{3mm}
+\textgt{例１０．}集合$X$のいかなる元$x$に対しても，$x$を$x$自身にうつす写像を\textgt{恒等写像}といい，$1_{X}$で表す．恒等写像
+\[
+1_{X}:X \rightarrow X;x \mapsto x
+\]
+の，部分集合$A \subseteq X$への制限が，例７の包含写像である．容易にわかるように$1_{X}$は全単射である．
+
+\vspace{3mm}
+\textgt{例１１．}$f:X \rightarrow Y$，$g:Y \rightarrow Z$がともに全単射ならば，合成写像$g \circ f:X \rightarrow Z$も全単射である．実際，$f$，$g$がともに単射ならば$g \circ f$も単射，$f$，$g$がともに全射ならば$g \circ f$も全射であることが確かめられる．
+
+\vspace{3mm}
+\textgt{例１２．}例４の$g:\R \rightarrow \R^{+}$は全射である(例６)が，単射ではない(例８)．しかし，$g$において，定義域を$\R^{+}$にかえれば，
+\[
+h: \R^{+} \rightarrow \R^{+};x \mapsto x^2
+\]
+は全単射である．実際，全射であることは，$y \in \R^{+}$が与えられたとき，($\sqrt{y})^2=y$)となることからわかり，単射であることは，$x^2={x'}^2$，$x \geqq 0$，$x' \geqq 0$から$x=x'$が導かれることによる．
+
+\vspace{3mm}
+\textgt{問１４．}１次関数$f:\R \rightarrow \R;x \mapsto ax+b$　$(a \ne 0)$は全単射であることを示せ．
+
+\textgt{証明　}任意の$y \in \R$に対して，$\displaystyle{x=\frac{y-b}{a}}$なる$x \in \R$は必ず存在する．
+また，$ax+b=ax'+b$より$ax=ax'$，よって$x=x'$となり$f$は単射．
+\■
+
+\vspace{3mm}
+\textgt{定理１１．}$f:X \rightarrow Y$，$g:Y \rightarrow Z$の合成写像$g \circ f:X \rightarrow Z$を考える．
+
+（ⅰ）$g \circ f$が単射ならば，$f$は単射である．
+
+（ⅱ）$g \circ f$が全射ならば，$g$は全射である．
+
+
+\textgt{証明}（ⅰ）$x$，$x'$に対して$f(x)=f(x')$を仮定する．このとき$g(f(x))=g(f(x'))$，すなわち$(g \circ f)(x)=(g \circ f)(x')$．ところが	，$g \circ f$が単射であるから，$x=x'$．よって$f$は単射である．
+
+
+（ⅱ）任意の元$z \in Z$をとる．$g \circ f$は全射であるから，適当な元$x \in X$で，$(g \circ f(x))=z$を満たすものがある．この$x$の写像$f$による$Y$の元$f(x)$が存在して，
+$g(f(x))=z$を満たすから，$g$は全射である．
+\■
+
+この定理において，特に$Z=X$の場合には，次の系が得られる．
+
+
+\vspace{3mm}
+\textgt{系．}$f:X \rightarrow Y$，$g:Y \rightarrow X$の合成写像$g \circ f:X \rightarrow X$，$f \circ g:Y \rightarrow Y$がともに全単射ならば，$f$は全単射である．

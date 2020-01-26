@@ -1,0 +1,116 @@
+
+\subsection{積空間と連続性}
+積空間と連続写像との関連を調べよう．
+
+\定理{８}
+$X$，$Y$，$Z$，$W$を位相空間とするとき，次が成り立つ．
+\begin{list}{}{}
+	\item(ⅰ)　射影	$p_X:X \times Y \rightarrow X ; (x,y) \mapsto x$，
+									$p_X:X \times Y \rightarrow Y ; (x,y) \mapsto y$
+									は連続かつ開写像である．
+	\item(ⅱ)　写像	$f:Z \rightarrow X \times Y$が連続	$\Longleftrightarrow$
+									$f	\circ	p_X:Z \rightarrow X$，
+									$f	\circ	p_Y:Z \rightarrow Y$
+									がともに連続
+	\item(ⅲ)	$f:X \rightarrow Z$，$g:Y \rightarrow W$が共に連続ならば，写像の直積
+						$f \times g: X \times Y \rightarrow Z \times W;(x,y) \mapsto (f(x),g(y))$
+						は連続である．
+\end{list}
+
+\証明
+（ⅰ）$X$の任意の開集合$G$に対し$p_X^{-1}(G)=G \times Y \in \mathscr{B}(X \times Y)$が
+成り立つから，定理５(２)により$p_X$は連続である．また，$\mathscr{B}(X \times Y)$の任意の
+元$G \times H$に対し$p_X(G \times H)=G \in \mathscr{T}(X)$であるから，
+§6.2の注意２により$p_X$は開写像である．$p_Y$についても同様．
+
+(ⅱ) $\Rightarrow$の証：連続写像の合成は連続である（§6.2例３）から明らか．
+
+$\Leftarrow$の
+証：$\mathscr{B}(X \times Y)$の任意の元$G \times H$をとるとき，
+\[
+	f^{-1}(G \times H)=	(f	\circ p_X )^{-1}(G) \cap (f	\circ	p_Y	)^{-1}(H)
+\]
+である．
+\begin{align*}
+	&\because	x	\in	(f	\circ	p_X)^{-1}(G)	\cap	(f	\circ	p_Y)^{-1}(H)	\\
+	&\Longleftrightarrow	x	\in	(f	\circ	p_X)^{-1}(G)	\text{　かつ　}
+											x	\in	(f	\circ	p_Y)^{-1}(H)	\\
+	&\Longleftrightarrow	f(x)	\in	p_X^{-1}(G)	\text{　かつ　}
+											f(x)	\in	p_Y^{-1}(H)	\\
+	&\Longleftrightarrow	f(x)	\in	p_X^{-1}(G)	\cap
+											f(x)	\in	p_Y^{-1}(H)	\\
+	&\Longleftrightarrow	x	\in	f^{-1}(p_X^{-1}(G)	\cap	p_Y^{-1}(H))	\\
+	&\Longleftrightarrow	x	\in	f^{-1}((G	\times	Y)	\cap	(X	\times	H))	\\
+	&\Longleftrightarrow	x	\in	f^{-1}((G	\cap	X)	\times	(H	\cap	Y))	\\
+	&\Longleftrightarrow	x	\in	f^{-1}(G	\times	H)	\\
+\end{align*}
+仮定および［O$_2$］により$f^{-1}(G \times H)$は開集合となる．よって
+定理５(６)により$f$は連続写像である．
+
+(ⅲ) $\mathscr{B}(Z \times W)$の任意の元$G \times H$に対して
+\[
+	(f \times g)^{-1}(G \times H)=f^{-1}(G) \times g^{-1}(H) \in \mathscr{B}(X \times Y)
+\]
+であるから，定理５(６)により$f \times g$は連続である．	
+\■
+
+\例{４}
+$S^1$を，$\R^2$における原点を中心とし半径$1$の円周を表わすとする．
+写像
+\[
+	f:\R \rightarrow S^1;x \mapsto (\cos x ,\sin x)
+\]
+は連続な開写像である．
+実際
+\begin{align*}
+	f	\circ	i	\circ	p_X&:\R	\rightarrow	[1,1];x \mapsto \cos x,\\	
+	f	\circ	i	\circ	p_Y&:\R	\rightarrow	[1,1];x \mapsto \sin x
+\end{align*}
+はともに連続写像$\R \rightarrow \R$
+であるから，定理８(ⅱ)を用いて，合成写像$f \circ i: \R \rightarrow S^1 \rightarrow \R^2$
+(ただし，$i:S^1 \rightarrow \R^2$は包含写像)が連続であることがわかる．
+$S^1$は$\R^2$の閉集合だから
+$i$は閉写像で，
+したがって，$S^1$の任意の閉集合$F$に対し$f^{-1}(F)=(f \circ i)^{-1}(i(F))=i	\circ	i^{-1}	\circ	f^{-1}(F)$は
+$\R$の閉集合である．ゆえに，定理５(３)より$f$は連続である．
+次に，開区間の集合
+\[
+	\{]a,b[ \,|\, a,b \in \R ,\, 0 < b-a < \pi \}
+\]
+は$\R$の開基であるから，２点$f(a)$，$f(b)$を直径の両端とするような開円板を$G$とするとき，
+\[
+	f(]a,b[)=G \cap S^1
+\]
+が成り立つことに注意すれば，$f$が開写像であることがわかる(§6.2注意２)
+
+
+\vspace{3mm}
+\問{１０}
+$f:X \rightarrow Z$，$g:Y \rightarrow W$がともに同相写像ならば，
+積写像$f \times g:X \times Y \rightarrow Z \times W$も同相写像であることを示せ．
+
+\証明
+$f \times g$が全単射．
+$f,g$が同相写像であるから，$f^{-1},g^{-1}$も同相写像．
+このとき定理８(ⅲ）より
+$f \times g$は連続写像で，$f^{-1}	\times g^{-1}$も連続写像．
+$(f \times g)(G \times H)=f(G) \times g(H)$，$(f \times g)^{-1}(A \times B)
+=f^{-1}(A) \times f^{-1}(B)$が成り立つことに注意すれば，
+$(f	\times	g)	\circ	(f^{-1}	\circ	g^{-1})=1_{X	\times	Y}$，
+$(f^{-1}	\circ	g^{-1})	\circ	(f	\times	g)=1_{X	\times	W}$．
+
+
+
+{\small 
+\注意{}
+$X \times Y$の積位相を$\mathscr{T}$とする．$\mathscr{T}$は，射影$p_X:X \times Y \rightarrow X$，
+$p_Y:X \times Y \rightarrow Y$が連続となるような$X \times Y$の位相のうちで最も弱いものである．
+実際，定理８(ⅰ)より$\mathscr{T}$に関して$p_X$，$p_Y$は連続である．次に，$p_X$，$p_Y$が連続となるような
+$X \times Y$の任意の位相$\mathscr{T}'$を考える．このとき，定理８(ⅱ)において，$Z$として$X \times Y$に
+位相$\mathscr{T}'$を与えたもの$(X \times Y,\mathscr{T}')$をとり，
+\[
+	f:(X \times Y,\mathscr{T}') \times (X \times Y,\mathscr{T});z \mapsto z
+\]
+を考えれば，$f	\circ	p_X=p_X$，$f	\circ	p_Y=p_Y$が成り立ち，これらは仮定により連続だから，
+$f$は連続である．したがって，§6.3例１０により，$Z$の位相$\mathscr{T}'$は$\mathscr{T}$より強い．
+}

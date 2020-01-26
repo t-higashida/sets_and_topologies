@@ -1,0 +1,200 @@
+
+	\section{集積点・開集合}
+{\small
+	本節では，無限個の点が近くに集まっているところの集積点を$\varepsilon$近傍の言葉で定義し，
+集積点の存在に関するボルツァノ-ワイエルシュトラス(Bolzano-Weierstrass)の定理の証明を与える．
+次いで，開集合の$\R$に関する補集合として閉集合を定義し，閉集合を集積点を用いて特徴づける．
+}
+
+\subsection{集積点}
+$\R$の部分集合$A$の集積点とは，読んで字のごとく，その点のまわりに$A$の点が無数に集積しているような点の
+ことである．正確に述べると次のようになる．
+
+\定義{}
+$A$を$\R$の部分集合，$a$を$\R$の点とする．点$a$が集合$A$の\textgt{集積点}であると
+いわれるのは，$a$のいかなる$\varepsilon$近傍$U(a;\varepsilon)$に対しても，
+\[
+	U(a;\varepsilon) \cap (A-\{a\})\ne \varnothing
+\]
+が成り立つときである．
+
+{\small
+\注意{１}
+上の定義において，$\varepsilon$近傍を$\R$の開集合におきかえてもよい．すなわち，点$a$が
+$A$の集積点であるための必要十分条件は，$a$を含む$\R$のどんな開集合$G$に対しても，
+\[
+	G \cap (A-\{a\}) \ne \varnothing
+\]
+が成り立つことである．
+
+実際，上の条件が十分条件であることは，$\varepsilon$近傍は，$\R$の開集合である（§4.3 例１）から
+明らかである．これが必要条件であることは，次のようにしてわかる．開集合の定義から，
+$U(a,\varepsilon) \subseteq G$となる正数$\varepsilon$が存在する．したがって，
+仮定を用いれば，
+\[
+	G \cap (A-\{a\}) \supseteq U(a;\varepsilon) \cap (A-\{a\}) \ne \varnothing
+\]
+が成り立つから，$G \cap (A-\{a\}) \not= \varnothing$である．
+
+
+\注意{２}
+点$a$が集合$A$の集積点であるための必要十分条件は，どんな正数$\varepsilon$に対しても，
+\[
+	U(a;\varepsilon) \cap A \text{が無限集合}
+\]
+であることである．
+
+実際，この条件が十分条件であることは，$U(a;\varepsilon) \cap A$が無限集合ならば，
+$U(a;\varepsilon) \cap (A-\{ a \})$も無限集合で，したがって空集合でないことがわかる．
+次に，この条件が必要条件であることを背理法によって示そう．$a$が集積点であって，しかも
+$U(a;\varepsilon) \cap (A-\{a\})$が無限集合にならないような正数$\varepsilon$が存在すると仮定する．
+このとき，$U(a;\varepsilon) \cap (A-\{a\})$は空集合でなく，しかも有限集合である．
+いま，$U(a;\varepsilon) \cap (A-\{a\})=\{a_1,a_2,\cdots,a_n\}$とし，
+\[
+	\min \{ |a_1-a| \,,\, |a_2-a| \,,\,\cdots,\,|a_n-a|\}=\delta
+\]
+とおくと$\delta>0$であり，
+このとき$U(a;\delta) \cap (A-\{a\})=\varnothing$となることが容易にわかるから，
+$a$は$A$の集積点ではない，これは矛盾である．
+
+\注意{３}
+以下の例でもわかるように，点$a$が$\R$の部分集合$A$の集積点であるとき，
+$a$は$A$に属する場合も，属さない場合もある．
+}
+
+\pagebreak
+\例{１}
+閉区間$[\,a,b \,]$に属するどんな点$x$も，開区間$]\,a,b\,[$の集積点である．
+なぜならば，$x$のいかなる$\varepsilon$近傍を選んでも，$x$と異なる$]\,a,b,[$の点を含むからである．
+この際，点$a$と点$b$とは，$]\,a,b,[$に属さない$]\,a,b,[$の集積点である．
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(1,1)
+
+	\thinlines  \path(-5.0,0)(-0.05,0)
+	\thicklines \put(-2.0,0){\circle{0.07}}
+	\thinlines  \put(-2.1,-0.3){\small $y$}
+	\thinlines  \put(0.0,0){\circle{0.1}}
+	\thicklines \path(0.05,0)(4.44,0)
+	\thinlines  \put(4.5,0){\circle{0.1}}
+	\thinlines  \put(4.5,-0.3){\small $b$}
+	\thinlines  \path(4.55,0)(7,0)
+	\thinlines  \put(3.9,-0.3){\small $x$}
+	\thicklines \put(4.0,0){\circle{0.07}}
+	
+
+	\thinlines \put(-3,-0.75){\arc{2.5}{-2.50}{-0.65}}
+
+	\thinlines \put(-1,-0.75){\arc{2.5}{-2.50}{-0.65}}
+
+	\thinlines \put(3,-0.75){\arc{2.5}{-1.39}{-0.65}}
+	\thinlines \put(3,0.5){\small $\varepsilon$}
+	\thinlines \put(3,-0.75){\arc{2.5}{-2.50}{-1.65}}
+
+	\thinlines \put(5,-0.75){\arc{2.5}{-1.39}{-0.65}}
+	\thinlines \put(5,0.5){\small $\varepsilon$}
+	\thinlines \put(5,-0.75){\arc{2.5}{-2.50}{-1.65}}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+\例{２}
+$\R-[\,a,b\,]$に属するどんな点$y$も，$]\,a,b\,[$の集積点でなない．なぜならば，
+$y<a$のときには，$U(y;a-y)$が，また$y>b$のときには，$U(y;y-b)$が，
+$]\,a,b\,[-\{y\}=\,]\,a,b\,[$と共通点をもたないからである．
+\■
+
+\例{３}
+任意の実数$x \in \R$は有理数全体の集合$\Q$の集積点である．実際，任意の$\varepsilon>0$に対し，
+アルキメデスの原理により$n\varepsilon>1$となる自然数$n$が存在する．§4.2例１１により，
+$m-1 \leqq nx < m$なる整数$m$が存在する．このとき，
+\[
+	x < \frac{m}{n}=\frac{m-1}{n}+\frac{1}{n} \leqq x+\frac{1}{n}<x+\varepsilon
+	\text{　　したがって，　　}
+	0<\frac{m}{n}-x < \varepsilon
+\]
+が導かれるから，
+$\displaystyle U(x;\varepsilon) \cap (\Q-\{x\}) \ni \frac{m}{n}$
+が示され，$x$は$\Q$の集積点であることがわかる．
+\■
+
+次の定理は，\textgt{ボルツァノ-ワイエルシュトラス(Bolzano	-	Weierstrass)}といわれる．
+
+\framepage{1}{
+{\small	
+
+Bolzano	Bernhard(1781-1848)	チェコスロバキアの解析学者．彼の業績は厳密な証明の重要性を確立するのに
+大いに役立った．彼はカトリックの司祭であり，1805年にプラハ大学の哲学教授の地位を与えられた．
+しかし，教育の改革，個人の両親の権利，戦争や軍国主義の不合理さなどを語り,自分の発言を取り消すことを拒否した
+ため，1824年にわずかの恩給つきで強制的に退職させられた．
+
+}}
+
+
+\定理{９}
+$\R$の有界な無限部分集合$A$は，少なくとも１つの集積点をもつ．
+
+\証明
+$A$は有界であるから，適当な閉区間$[\,a_1,b_1\,]	\quad	(a_1<b_1)$に包まれる．
+$\displaystyle \frac{a_1+b_1}{2}=c_1$とおく．$[\,a_1,b_1\,]$は，
+$A$の無限個の点を含むから，２つの閉区間$[\,a_1,c_1\,]$，$[\,c_1,b_1\,]$のうち
+少なくとも一方は$A$の無限個の点を含む．
+$[\,a_1,c_1\,]$が無限個の点を含むとき$a_1=a_2\,,\,c_1=b_2$とおき，そうでないとき
+$c_1=a_2\,,\,b_1=b_2$とおく．以下，この操作を続けると，$A$の無限個の点を含む閉区間の
+系列で，
+\begin{align*}
+	& [\,a_1,b_1\,] \supseteq [\,a_2,b_2\,] \supseteq \cdots \supseteq [\,a_n,b_n\,] \supseteq \cdots	,\\
+	& b_n-a_n=\frac{1}{2}(b_{n-1}-a_{n-1})=\cdots=\frac{1}{2^{n-1}}(b_1-a_1)
+\end{align*}
+を満たすものが存在する．
+
+したがって，カントルの共通点定理より，数列$\{a_n\}$は１つの実数$a$に収束する．この$a$は１つの集積点である．
+実際，任意の正数$\varepsilon$に対し，アルキメデスの原理により$m\varepsilon > b_1-a_1$となる自然数$m$
+が存在する．カントルの共通点定理より$a	\in	\bigcap_{n=1}^\infty	[a_n,b_n]$であるから，この$m$に関して
+$a \in [ \,a_{m+1},b_{m+1}\, ]$で，
+\[
+	b_{m+1}-a_{m+1}=\frac{1}{2^m}(b_1-a_1) \leqq \frac{1}{2m}(b_1-a_1) < \frac{\varepsilon}{2}
+\]
+が成り立つから，$U(a:\varepsilon) \supseteq [\,a_{m+1},b_{m+1\,}]$であり，
+
+\framepage{0.6}{
+
+\small	$\because $
+
+				$x	\in	[a_{m+1},b_{m+1}]	\Rightarrow	a-x	<	b_{m+1}-a_{m+1}	<	\frac{\varepsilon}{2}	<	\varepsilon
+				\Rightarrow	x	\in	U(a;\varepsilon)$
+}
+
+　
+
+したがって$U(a;\varepsilon) \cap (A-\{a\}) \supseteq [\,a_{m+1},b_{m+1\,}] \cap (A-\{a\}) \ne \varnothing$が得られる．
+よって，$a$は$A$の集積点である．
+\■
+
+\問{８}
+有界な数列$\{a_n\}$は，収束する部分列をもつことを示せ．
+
+\証明
+２つの場合に分けて証明する．$A=\{a_1,a_2,\cdots,a_n,\cdots \}=\{b_1,b_2,\cdots,b_m\}$ ならば
+（すなわち$a_1,a_2,\cdots,a_n,\cdots$のうち異なるものが有限個ならば），$\{\,k\,|\,k \in \N,a_k=b_i\,\}=M_i$
+とおくとき，$U_{i=1}^m M_i = \N$だから，少なくとも１つの$i$に対し$M_i$は無限集合．
+かかる$M_i$の元を小さい方から
+$k_1,k_2,\cdots$とすると，すべての$a_{k_n}$は$b_i$に等しいから，$a_{k_n} \rightarrow b_i$．
+
+$A$が無限集合ならば，ボルツァノ-ワイエルシュトラスの定理（定理９）より，
+$A$は少なくとも１つの集積点$a$をもつ．
+よって空でない集合$U(a;1) \cap (A-\{a\})$に属する$A$の元で番号が最小のものを$a_{k_1}$，
+$\displaystyle U\Bigl(a;\frac{1}{2}\Bigr) \cap (A-\{a,a_{k_1}\})$に属する$A$の元で番号が最小のものを$a_{k_2}$,
+$\cdots$,
+$\displaystyle U\Bigl(a;\frac{1}{n}\Bigr) \cap (A-\{a,a_{k_1},\cdots,a_{k_{n-1}}\})$
+に属する$A$の元で番号が最小のものを$a_{k_n},\cdots$のように$\{a_{k_n}\}$を選べば，
+$\{a_n\}$の部分列で,
+\[
+a_{k_n}	\in	U\Bigl(a;\frac{1}{n}\Bigr)	=	\Bigl]a-\frac{1}{n},a+\frac{1}{n}\Bigr[
+\]
+なるものが得られる．このとき，カントルの共通点定理より
+$a_{k_n} \rightarrow a$．
+

@@ -1,0 +1,390 @@
+\subsection{開核}
+$A$を位相空間$X$の部分集合とする．$A$に包まれる$X$のすべての開集合の和集合のことを$X$に関する$A$の
+\textgt{開核}（または\textgt{内部}）といい，$\Int A$と表わす．
+\[
+\textstyle
+	\Int	A	=\bigcup_{G	\in	\mathscr{G}}G,	\quad	\mathscr{G}=\{G	\:	|	\:	A	\subseteq G,\:	G:\text{open}\}	
+\]
+開核に含まれる点のことを$A$の\textgt{内点}という．閉包に関する定理８と対称的な次の定理が困難なく
+証明される．
+
+\定理{１３}
+\begin{list}{}{}
+	\item(ⅰ)　$\Int A$は$X$の開集合である．
+	\item(ⅱ)　$\Int A$は，$A$に包まれる開集合のうちでもっとも大きいものである．すなわち，
+							もし$G$が$G \subseteq A$であるような$X$の開集合であるならば，$G \subseteq \Int A \subseteq A$
+							が成り立つ．
+	\item(ⅲ)　$A$が$X$の開集合$\Longleftrightarrow \Int A =A$．
+\end{list}
+
+\証明
+(ⅰ)$\Int A= \bigcup_{\alpha} G_\alpha$，ただし右辺は$A$に包まれる$X$のすべての開集合の和，が成り立つから
+［O$_3$］より$\Int A$は$X$の開集合．
+
+(ⅱ)$\forall G	\in	\mathscr{G}$について$G	\subseteq A$，よって$\bigcup	G	=	\Int A	\subseteq	A$．
+以上より，$G	\subseteq \Int A	\subseteq	A$．
+
+(ⅲ)$\Rightarrow$の証：$A$が開と$A	\subseteq	A$より
+$A	\in	\mathscr{G}$$\forall G	\in	\mathscr{G}$について$G	\subseteq A$より，$\Int	A	=A$．
+
+$\Leftarrow$の証：$\Int	A=A$と（ｉ）より，$A$は開．
+
+\■
+
+\定義{}
+位相空間$X$の部分集合$A$の\textgt{外部}とは$\Int(X-A)$をいい，外部に属する点のことを
+\textgt{外点}という．$A$の内部にも，$A$の外部にも属さない点全体の集合，
+すなわち$(X-\Int A) \cap (X-\Int(X-A))$を$A$の\textgt{境界}といい，
+境界に属する点を\textgt{境界点}という．
+
+\例{５}
+実数直線における区間$]a,b[$，$[a,b[$，$]a,b]$，$[a,b]$を考える．おのおのの内部は
+開区間$]a,b[$で，おのおのの外部は$]-\infty,a[ \cup ]b,\infty[$で，おのおのの境界は端の２点から成る集合
+$\{a,b\}$である．
+
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(5,1)
+
+	\thinlines \path(-3.0,0)(-2.55,0)
+	\thicklines \put(-2.55,0){\circle{0.07}}
+	\thicklines \path(-2.55,0)(3.44,0)
+
+	\thinlines \put(-0.6,-0.45){\arc{1.5}{-2.50}{-0.65}}
+	\thinlines \put(0.6,-0.45){\arc{1.5}{-2.50}{-0.65}}
+
+	\thicklines \put(0.0,0){\circle{0.06}}
+	\thinlines \put(0.0,-0.3){\small 内点}
+	\thinlines \path(0.0,0)(8,0)
+
+	\thicklines \put(3.5,0){\circle{0.06}}
+	\thinlines \path(3.55,0)(7,0)
+
+	\thinlines \put(2.90,-0.45){\arc{1.5}{-2.50}{-0.65}}
+	\thinlines \put(4.10,-0.45){\arc{1.5}{-2.50}{-0.65}}
+
+	\thicklines \put(3.5,0){\circle{0.06}}
+	\thinlines \put(3.5,-0.3){\small	境界点}
+	\thinlines \path(3.5,0)(7,0)
+
+	\thinlines \put(6.0,-0.45){\arc{1.5}{-2.50}{-0.65}}
+	\thicklines \put(6.6,0){\circle{0.07}}
+	\thinlines \put(6.5,-0.3){\small	外点}
+	\thinlines \put(7.2,-0.45){\arc{1.5}{-2.50}{-0.65}}
+
+
+\end{picture}
+\end{center}
+\end{figure}
+
+
+次は閉包と開核の関係を与える定理である．
+
+\定理{１４}
+$A$を位相空間$X$の任意の部分集合とするとき，
+\[
+	X-\overline{A}=\Int(X-A).
+\]
+\証明
+$\Int(X-A) \subseteq X-A$（定理１３（ⅱ））より$A \subseteq X - \Int(X-A)$であり，一方，定理１３(ⅰ)から
+$X -\Int(X-A)$は$X$で閉だから，定理８(ⅱ)によって，$\overline{A} \subseteq X - \Int(X-A)$，
+すなわち$\Int(X-A)	\subseteq	X - \overline{A}$が成り立つ．
+
+逆に，$A \subseteq \overline{A}$より$X-\overline{A} \subseteq X-A$であり，一方定理８(ⅰ)から
+$X - \overline{A}$は$X$で開だから，定理１３(ⅱ)によって，$X-\overline{A} \subseteq \Int(X-A)$が成り立つ．
+したがって，$X-\overline{A}=\Int(X-A)$が示される．
+\■
+
+定理１２と定理１４から，開核の基本的性質が導かれる．
+
+\定理{１５}
+$A$および$B$を位相空間$X$の部分集合とするとき，
+\begin{list}{}{}
+\item［I$_1$］$\Int X =X$
+\item［I$_2$］$\Int A \subseteq A$
+\item［I$_3$］$\Int (A \cap B)=\Int A \cap \Int B$
+\item［I$_4$］$\Int ( \Int A ) = \Int A$
+\end{list}
+\証明
+［I$_1$］：$X$は$X$で開（［O$_1$］）．定理１３（ⅲ）より．$\Int X =X$
+
+［I$_2$］：定理１３（ⅱ）より$\Int A \subseteq A$
+
+［I$_3$］：［I$_2$］より	
+\begin{align*}
+	\Int	A	\subseteq A,\Int	B	\subseteq B
+	&\Longrightarrow
+	X-	\Int	A	\supseteq X	-	A	,	X	-	\Int	B	\supseteq X-B	\\
+	&\Longrightarrow
+	(X-	\Int	A)	\cup	(X	-	\Int	B)	\supseteq (X-A)	\cup	(X-B)	\\
+	&\Longrightarrow
+	X-	(\Int	A	\cap	\Int	B)	\supseteq X-(A	\cup	B)	\\
+	&\Longrightarrow
+	X-	(\Int	A	\cap	\Int	B)	\supseteq X-(A	\cup	B)	\\
+	&\Longrightarrow
+	\Int	A	\cap	\Int	B	\subseteq A	\cup	B	\\
+\end{align*}
+$\Int	A$，$\Int	B$は開であるから,$\Int	A	\cap	\Int	B$も開．
+定理１４（ⅱ）より$\Int	A	\cap	\Int	B	\subseteq \Int	(A	\cap	B)$．
+
+一方，［I$_2$］より
+\begin{align*}
+	\Int	(A	\cap	B)	\subseteq A	\cap	B
+	&\Longrightarrow
+	\Int	(A	\cap	B)	\subseteq A,
+	\Int	(A	\cap	B)	\subseteq B	\\	
+	&\Longrightarrow
+	\Int	(A	\cap	B)	\subseteq \Int	A,
+	\Int	(A	\cap	B)	\subseteq \Int	B		\text{（定理１４（ⅱ）より）}\\	
+	&\Longrightarrow
+	\Int	(A	\cap	B)	\subseteq \Int	A	\cap	\Int	B	\\	
+\end{align*}
+以上より$\Int (A \cap B)=\Int A \cap \Int B$．
+
+［I$_4$］：定理１４（ⅰ）より$\Int A$は開．定理１４（ⅲ）より$\Int ( \Int A ) = \Int A$
+\■
+{\small
+
+\注意{４}
+注意２と同じように，集合$X$の部分集合$A$に［I$_1$］～[I$_4$]を満足するような部分集合
+$\Int A$を対応させて，$X$に位相を与えることができる．この場合，定理１３(ⅱ)が
+開集合の定義を，定理１４が閉包の定義を与える．
+
+\例{＊}対応$\Int$の与え方の例として$X=\{a,b,c,d\}$のとき，
+
+　
+
+
+\begin{tabular}{llll}
+			$\Int{\varnothing}=\varnothing$,	
+		&	
+		&	
+		&	\\
+			$\Int	\{a\}=\{a\}$
+		&	$\Int	\{b\}=\varnothing$
+		&	$\Int	\{c\}=\varnothing$
+		&	$\Int	\{d\}=\varnothing$	\\
+			$\Int	\{a,b\}=\{a\}$
+		&	$\Int	\{a,c\}=\{a\}$
+		&	$\Int	\{a,d\}=\{a\}$
+		&	\\
+			$\Int	\{b,c\}=\varnothing$
+		&	$\Int	\{b,d\}=\varnothing$
+		&	$\Int	\{c,d\}=\{c,d\}$
+		&	\\
+			$\Int	\{a,b,c\}=\{a\}$
+		&	$\Int	\{a,b,d\}=\{a\}$
+		&	$\Int	\{a,c,d\}=\{a,c,d\}$
+		&	$\Int	\{b,c,d\}=\{d,c,b\}$	\\
+			$\Int	X=X$
+		&	
+		&	
+		&	\\
+\end{tabular}　
+
+このとき，$\Int	A=A$を満たす$X$の部分集合$A$を$X$の開集合とよぶ．
+
+\例{＊}
+$\Int	\varnothing	=	\varnothing$,
+$\Int	\{a\}	=	\{a\}$,
+$\Int	\{c,d\}	=	\{c,d\}$,
+$\Int	\{a,c,d\}=\{a,c,d\}$,
+$\Int	\{b,c,d\}=\{b,c,d\}$,
+$\Int	X=X$
+を開集合と呼ぶ．
+
+実際，[I$_1$]	$\Int	X	=	X$と，[I$_2$]より得られる$\Int	\varnothing	\subseteq \varnothing$，
+自明である$\Int	\varnothing	\supseteq \varnothing$より$\Int	\varnothing	= \varnothing$となり，	[O$_1$]が
+成り立つ．
+
+次に[O$_2$]を示す．$\Int	(A	\cap	B)=\Int A	\cap \Int B=A	\cap	B$がいえるから，$A	\cap	B$は開集合である．
+このことから，$A_1,A_2,\cdots,A_n$が$X$の開集合ならば$A_1	\cap	A_2	\cap	\cdots	\cap	A_n$も
+$X$の開集合であることが，数学的帰納法より証明される．
+
+次に，[O$_3$]を示す．$A=\bigcup_{\alpha	\in	\Lambda}	A_\alpha$としたとき，$\Int	A_\alpha=A_\alpha$から，
+$\Int A=A$を示せばよい．$A	\subseteq \Int$
+}
+
+
+\vspace{3mm}
+\textgt{第５章の問題}
+
+\textgt{1.}
+$d$を集合$X(\ne \varnothing)$の１つの距離とする．$x,y \in X$に対し，
+$\displaystyle \rho (x,y)=\frac{d(x,y)}{1+d(x,y)}$によって定義される関数$\rho$
+も$X$の上の距離であることを示せ．
+
+\証明
+［M$_1$］：$\forall x$について，
+\begin{align*}
+		\rho	(x,x)=\frac{d(x,x)}{1+d(x,x)}=\frac{0}{1+0}=0	
+\end{align*}
+
+［M$_2$］：
+$\forall	x,y$について，
+\begin{align*}
+		\rho	(x,y)	&=\frac{d(x,y)}{1+d(x,y)}	\\
+								&=\frac{d(y,x)}{1+d(y,x)}	\\
+								&=\rho	(y,x)
+\end{align*}
+
+［M$_3$］：$\forall	x,y,z$について，
+\begin{align*}
+		\rho(x,y)+\rho(y,z)	
+	&=			\frac{d(x,y)}{1+d(x,y)}+\frac{d(y,z)}{1+d(y,z)}	\\
+	&\geqq	\frac{d(x,y)}{1+d(x,y)+d(y,z)}+\frac{d(y,z)}{1++d(x,y)+d(y,z)}	\\
+	&\geqq	1-\frac{1}{1+d(x,y)+d(y,z)}	\\
+	&\geqq	1-\frac{1}{1+d(x,z)}					\quad	(\because	d(x,z) \leqq d(x,y)+d(y,z))	\\
+	&=			\frac{d(x,z)}{1+d(x,z)}	\\
+	&=	\rho(x,z)
+\end{align*}
+\■
+
+\textgt{2.}
+$\mathscr{T}=\{\R,\varnothing\} \cup \{]a,\infty[\,|\,a \in \R\}$は集合$\R$の１つの位相であることを示せ．
+
+\証明
+［O$_1$］の証：$\varnothing,\R	\in	\mathscr{T}$
+
+［O$_2$］の証：$]a,\infty[	\:\cap\:	]b,\infty[	\:=\:	]b,\infty[	\:\in	\mathscr{T}	\quad	(a<b)$．
+一般の任意有限個の場合は，数学的帰納法による．
+
+［O$_3$］の証：任意の集合$A \subseteq \R$に対して
+$\bigcup_{a \in A}\,]a,\infty[\, \in \mathscr{T}$をいえばよい．$A$が下に有界でないときは，
+$\bigcup_{a \in A}\,]a,\infty[\,=\R	\in	\mathscr{T}$．
+$A$が下に有界のときは，$\inf A =b$とすれば，
+$\bigcup_{a \in A}\,]a,\infty[\,=\,]b,\infty[	\:	\in	\mathscr{T}$．
+\■
+
+\textgt{3.}
+$\mathscr{T}'=\{\R,\varnothing\} \cup \{]q,\infty[ \,|\, q \in \Q \}$は集合$\R$の位相にはなり得ないことを示せ．
+
+\証明
+$B=\{q\,|\, q \in \Q,q > \sqrt{2} \}$に対し
+$\bigcup_{q \in B}\,]q,\infty[ \,=\, ]\sqrt{2},\infty[ \, \notin \mathscr{T}'$．
+\■
+
+
+\textgt{4.}
+位相空間$X$の部分集合$A$が閉集合と開集合の共通部分として表わされるとき，$\overline{A}-A$は閉集合である事を証明せよ．
+
+\証明
+$A= G \cap F$(ただし$G$は開，$F$は閉）とする．
+\begin{align*}
+	\overline{A}-A	&=\overline{A} \cap (X-A)	\\
+									&=\overline{A} \cap (X-G \cap F)	\\
+									&=\overline{A} \cap ((X-G) \cup (X-F))	\\
+									&=(\overline{A} \cap (X-G)) \cup (\overline{A} \cap (X-F))
+\end{align*}
+ところで，$A \subseteq F$より$\overline{A} \subseteq \overline{F}=F$だから，
+$\overline{A} \cap (X-F) \subseteq \overline{A} \cap (X-\overline{A})=\varnothing$．
+ゆえに，$\overline{A}-A=\overline{A} \cap (X-G)$．
+\■
+
+\textgt{5.}
+$A$を距離空間	$(X,d)$の空でない部分集合，$x$を$X$の点とする．点$x$と集合$A$との\textgt{距離}を
+$d(x,A)=\inf \{d(x,a) \,|\, a \in A \}$により定義する．このとき，任意の$x,y \in X$に対し
+$|d(x,A)-d(y,A)| \leqq d(x,y)$が成り立つことを示せ．
+
+\証明
+任意の$a \in A$に対し，$d(x,A) =\inf	\{	d(x,a)	\:|\:	a	\in	A	\}	\leqq d(x,a)$であるから，
+$d(x,A)-d(x,y) \leqq d(x,a)-d(x,y) \leqq d(y,a)$．$a$は任意だから，$d(x,A)-d(x,y) \leqq d(y,A)$.
+ゆえに，$d(x,A)-d(y,A) \leqq d(x,y)$．
+
+同様にして，$d(y,A)-d(x,A) \leqq d(x,y)$．
+\■
+
+\textgt{6.}
+$A$を距離空間$(X,d)$の空でない部分集合とするとき，
+$\overline{A}=\{x \,|\,d(x,A)=0 \}$が成り立つことを証明せよ．
+
+\証明
+\begin{align*}
+	x \notin \overline{A} 
+		&	\Leftrightarrow	x	\notin	A	\cup	D(A)	\\
+		&	\Leftrightarrow	x	\notin	A	\:\text{かつ}\:	x	\notin	D(A)	\\
+		&	\Leftrightarrow	\exists	\varepsilon	>	0	\text{ s.t }	
+											U(x,\varepsilon)	\cap	A-\{x\}=U(x,\varepsilon)	\cap	A	=\varnothing	\\
+		&	\Leftrightarrow	A	\subseteq	X-U(x;\varepsilon)	\\
+		&	\Leftrightarrow	\forall	a	\in	A		\Rightarrow	d(x,a)	\geqq	\varepsilon	>	0	\Rightarrow	d(x,A)	\ne 0	\\
+		&	\Leftrightarrow	x	\notin	\{x	\:|\:	d(x,A)	=	0	\}	\\
+\end{align*}
+よって$\{x	\:|\:	d(x,A)	=	0	\}	\subseteq \overline{A}$．
+
+逆に，$d(x,A)	> 0$と仮定すると，$\exists	\varepsilon	\overline{A}$
+$U(x;\varepsilon) \cap A= \varnothing$．したがって，$x \notin \overline{A}$となる．よって，$\overline{A} \subseteq \{x \,|\,d(x,A)=0 \}.$
+\■
+
+\pagebreak
+\textgt{7.}
+次の$\R^2$の部分集合の閉包および開核を求めよ（ただし$r>0$）．
+\[
+A=\{(x,y) \,|\,x^2+y^2 \leqq r^2\} \quad
+B=\{(x,y) \,|\, x^2+y^2 < r^2 \}	 \quad
+C=\{(x,y) \,|\, x \in \Q,y \in \Q \}
+\]
+\証明
+\begin{align*}
+	\Int A	&=	\Int	(\R^2-(\R^2-A))	\\
+					&=	\R^2	-	\overline{(\R^2-A)}	\quad	\text{（$\because$定理１４）}	\\
+					&=	\R^2	-	\overline{\{(x,y) \,|\,x^2+y^2 > r^2\})}	\\
+					&=	\R^2	-\{(x,y) \,|\,x^2+y^2 \geqq r^2\}	\\
+					&=	\{(x,y) \,|\,x^2+y^2 < r^2\}	=B	\\
+\end{align*}
+\begin{align*}
+	\overline{A}	&=	A	\text{（$\because	$§5.4.2例６，定理８（ⅲ））}
+\end{align*}
+
+\begin{align*}
+	\Int B	&=B	\quad	\text{（$\because	B	:$open）}
+\end{align*}
+
+\begin{align*}
+	\overline{B}	&=	\R^2-(\R^2-\overline{B})	\\
+								&=	\R^2-\Int(\R^2-B)		\quad	\text{（$\because$	定理１４）}\\
+								&=	\R^2-\Int(\{(x,y) \,|\, x^2+y^2 \geqq r^2 \})		\\
+								&=	\R^2-\{(x,y) \,|\, x^2+y^2 > r^2 \}		\\
+								&=	\{(x,y) \,|\, x^2+y^2 \leqq r^2 \}
+								=	A
+\end{align*}
+
+$\Int	C	=\varnothing$．
+
+\証明
+$G$を$\R^2$の任意の開集合とすると，任意の点$x	\in	G$に対してある$\varepsilon$近傍
+$U(x;\varepsilon)$が存在して$U(x;\varepsilon)	\subseteq	G$．$x$を有理点としても成り立つ．
+この$\varepsilon$に対して，アルキメデスの原則により$n\varepsilon>\sqrt{2}$，すなわち
+$\displaystyle	\varepsilon>\frac{\sqrt{2}}{n}$となる自然数$n$
+が存在する．
+$\displaystyle
+	\left(x+\frac{\sqrt{2}}{n},y+\frac{\sqrt{2}}{n}\right)	\in	U(x;\varepsilon)	\subseteq	G
+$．このとき，
+$
+\displaystyle
+	\left(x+\frac{\sqrt{2}}{n},y+\frac{\sqrt{2}}{n}\right)	\notin	\Q	\times	\Q
+$
+よって
+$\R^2$の任意の開集合$G$に対して$G	\not\subseteq	\Q	\times	\Q$．
+すなわち$\Int	C=\Int	(\Q	\times	\Q)	=	\varnothing$．
+
+$\overline{C}=\R^2$
+\証明
+任意の$\varepsilon>0$に対して，アルキメデスの原理より
+$n\varepsilon>1$となる自然数＄n＄が存在する．§4.2例１１より$nx$，$ny$に
+対して，$m-1	\leqq	nx	\leqq	m$，$m'-1	\leqq	ny	\leqq	m'$となる整数$m,m'$が存在する．
+このとき，
+\begin{align*}
+	x	<	\frac{m}{n}	<\frac{1}{n}+\frac{m-1}{n}	\leqq	x	+	\frac{1}{n}	<	x+\varepsilon
+	\quad	\text{したがって}	0	<	\frac{m}{n}	-x	<	\varepsilon	\\
+	y	<	\frac{m'}{n}<\frac{1}{n}+\frac{m'-1}{n}	\leqq	y	+	\frac{1}{n}	<	y+\varepsilon
+	\quad	\text{したがって}	0	<	\frac{m'}{n}	-y	<	\varepsilon	\\
+\end{align*}
+が導かれるから，
+\[
+	U((x,y);\varepsilon)	\cap	((\Q	\times	\Q)-\{x,y\})	\ni	\left(\frac{m}{n},\frac{m'}{n}\right)
+\]
+よって，任意の点$(x,y)	\in	\R	\times	\R$は$\Q	\times	\Q$の集積点であるから，
+定理１０より$\overline{C}=C	\cup	D(C)=C	\cup	\R	\times	\R=	\R	\times	\R$．
+\■

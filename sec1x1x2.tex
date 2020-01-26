@@ -1,0 +1,99 @@
+\subsection{集合の表し方}
+  集合を簡潔にわかりやすく表わすには，どうしたらよいだろうか．集合を表わすには，その集合を規定する条件を記す方法と，可能ならばその元をすべて列記する方法とがある．前者を\textgt{説明法}，後者を\textgt{列記法}とよぶことにしよう．列記法によれば，$A$が$a$，$b$，$c$，$x$，$y$，$z$を元としてもつ集合であることを
+\[
+A=\{a,b,c,x,y,z\}
+\]
+と書く．このとき，$A$は元$a$，$b$，$c$，$x$，$y$，$z$から\textgt{成る}集合であるともいう．説明法によれば，$B$が性質$P(x)$を満たすような$x$の集合であることを
+\[
+B=\{x \,|\, P(x)\}
+\]
+のように表わす．
+
+\vspace{3mm}
+\textgt{例１０．}1から7までのすべての自然数から成る集合$M$を，列記法で表わすと次のようになる．
+\[
+M=\{1,2,3,4,5,6,7\}
+\]
+これを説明法で表わすと，
+\[
+M=\{x \,|\, x \in \mathbb{N},1 \leqq x \leqq 7 \}
+\]
+のようになる，ここでは，"$x \in \mathbb{N},1 \leqq x \leqq 7$"が上記の$P(x)$に相当する．カンマ$,$は"かつ"の意味で用いられる．つまり，上は$M$が"$x \in \mathbb{N}$かつ$1 \leqq x \leqq 7$"を満たすようなすべての$x$のから成る集合であることを表わすのである．
+
+\vspace{3mm}
+\textgt{例１１.}正の奇数全体からなる集合は，
+\[
+\{m \,|\, m=2n-1,n \in \mathbb{N} \} \text{　または　} \{1,3,5,\cdot\cdot\cdot,2n-1,\cdot\cdot\cdot \}\]
+と表わされる．上の右のような表わし方の場合には，$\{$　$\}$の中にすべての元を列記したわけではないが，その形からすべての元を予測することができ，あらゆる元を列記したのと同じ効果があるので，このような表わし方も一種の列記法と考えられる．
+
+\vspace{3mm}
+\textgt{問２.}１以上100以下の自然数で，3の倍数であるものの全体の集合を，上の例のようにして表わせ．
+
+\textgt{（解）}
+\[
+\{m \,|\, 1 \leqq m \leqq 100,m=3n,n \in \mathbb{N} \},\text{　　}
+\{3,6,9,\cdot\cdot\cdot,3n,\cdot\cdot\cdot,99 \}
+\]
+
+
+\textgt{例１２．}$a$，$b$を$a < b$であるような２つの実数とする．下記の4つの集合
+\[
+]a,b[=\{x \,|\, x \in \mathbb{R},a<x<b \}
+\]
+\[
+[a,b]=\{x \,|\, x \in \mathbb{R},a \leqq x \leqq b \}
+\]
+\[
+]a,b]=\{x \,|\, x \in \mathbb{R},a < x \leqq b \}
+\]
+\[
+[a,b[=\{x \,|\, x \in \mathbb{R},a \leqq x<b \}
+\]
+はそれぞれ\textgt{開区間}，\textgt{閉区間}，\textgt{右閉区間}，\textgt{左閉区間}
+といわれる．各区間において$a$を\textgt{左端}，$b$を\textgt{右端}という．
+
+\pagebreak
+\vspace{3mm}
+\textgt{定義　}
+２つの集合$A$および$B$の元が全く一致するとき，すなわち$A$のすべての元は$B$に含まれ，かつ$B$のすべての元は$A$に含まれるとき，集合$A$は集合$B$に\textgt{等しい}といい，
+\[
+A=B
+\]
+と記す．この否定を
+\[
+A \ne B
+\]
+と表わす．
+
+\vspace{3mm}
+\textgt{例１３．}$\{1,2,3\}=\{3,2,1\},\quad \{1,2,3\} \ne \{1,2\}$．
+
+\vspace{3mm}
+\textgt{例１４．}$\{x \,|\, x \in \mathbb{R},x^2-4x+3=0 \}=\{1,3\}$
+
+\vspace{3mm}
+\textgt{例１５．}$\{x \,|\, x \in \mathbb{N},1<x<10,\, x\text{は素数}\}=\{2,3,5,7\}$
+
+\vspace{3mm}
+次の定理は，上の定義から明らかであろう．
+
+\textgt{定理１．}$A$，$B$，$C$を任意の集合とするとき，次が成り立つ．
+
+（ⅰ）$A=A$
+
+（ⅱ）$A=B$　$\Rightarrow$　$B=A$
+
+（ⅲ）$A=B$，$B=C$　$\Rightarrow$　$A=C$
+
+（ここで，”$\Rightarrow$”は，"ならば"を表わす記号である．）
+
+\textgt{証明}
+
+（ⅰ）すべての$x \in A$なる$x$は，$x \in A$．よって$A \subseteq A$．同様に$A \supseteq A$．
+よって$A=A$．
+
+（ⅱ）$A=B$より，$A \subseteq B$　かつ　$B \subseteq A$．よって，$B \subseteq A$　かつ　$A \subseteq B$．よって，$B=A$．
+
+（ⅲ）仮定より，$A \supseteq B$，$B \supseteq C$．よって，$A \supseteq C$．同様に仮定より$A \subseteq B$，$B \subseteq C$．よって，$A \subseteq C$．よって，$A=C$．
+\■
+

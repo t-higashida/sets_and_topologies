@@ -1,0 +1,163 @@
+\subsection{クラトフスキーの公理系}
+次は閉包の基本的な性質である．
+
+\定理{１２}
+$A$および$B$を，位相空間$X$の部分空間とするとき，
+\begin{list}{}{}
+\item［K$_1$］$\overline{\varnothing}=\varnothing$
+\item［K$_2$］$A \subseteq \overline{A}$
+\item［K$_3$］$\overline{A \cup B}=\overline{A} \cup \overline{B}$
+\item［K$_4$］$\overline{\overline{A}}=\overline{A}$
+\end{list}
+
+\証明
+［K$_1$］の証：$\varnothing$は$X$で閉．定理８（ⅰ）より$\overline{\varnothing}=\varnothing$．
+
+［K$_2$］の証：$\mathscr{F}=\{F:close	\:|\:	F	\supseteq	A\}$とおくと，
+定義より$\overline{A}=\bigcap_{F	\in	\mathscr{F}}F$，
+$\forall	F	\in	\mathscr{F}$について$F	\supseteq	A$より$A	\subseteq	\bigcap_{F	\in	\mathscr{F}}F=A$．
+
+は定義より明らか．［K$_4$］は定理８(ⅰ)，(ⅲ)から直ちに得られる．
+
+［K$_3$］の証：［K$_2$］より$A \subseteq \overline{A}$かつ$B \subseteq \overline{B}$だから，
+$A \cup B \subseteq \overline{A} \cup \overline{B}$である．
+ここで定理８（ⅰ）より$\overline{A}$ および $\overline{B}$は閉集合だから，定理５［C$_2$］より
+$\overline{A} \cup \overline{B}$は閉集合である．よって定理８(ⅱ)により
+$\overline{A \cup B} \subseteq \overline{A} \cup \overline{B} $がいえる．
+
+一方［K$_2$］より$A \cup B \subseteq \overline{A \cup B}$であるから，
+$A \subseteq \overline{A \cup B}$かつ$B \subseteq \overline{A \cup B}$．
+したがって，定理８(ⅱ)より
+$\overline{A} \subseteq \overline{A \cup B}$かつ$\overline{B} \subseteq \overline{A \cup B}$．
+ゆえに，$\overline{A} \cup \overline{B} \subseteq \overline{A \cup B}$が成り立つ．
+
+$\therefore	\overline{A	\cup	B}	=	\overline{A}	\cup	\overline{B}$．
+
+［K$_4$］の証：定理８（ⅱ）より$\overline{A}$は閉集合．定理８（ⅲ）より$\overline{\overline{A}}=\overline{A}$．
+\■
+
+
+{\small
+\注意{１}
+［K$_3$］を，次の［K$_3'$］と［K$_3''$］におきかえてもよい．
+\begin{list}{}{}
+	\item［K$_3'$］  $A \subseteq B \Longrightarrow \overline{A} \subseteq \overline{B}$
+	\item［K$_3''$］ $\overline{A \cup B} \subseteq \overline{A} \cup \overline{B}$
+\end{list}
+実際，［K$_3$］から［K$_3''$］が出るのは明らか．次に，$A \subseteq B$より
+$A \cup B = B$．したがって，［K$_3$］より$\overline{A} \cup \overline{B} = \overline{A \cup B}=\overline{B}$
+が得られるから，$\overline{A} \subseteq \overline{B}$が成り立ち，［K$_3'$］が証明される．
+逆に，［K$_3'$］と［K$_3''$］が成立すれば，$A \subseteq A \cup B$かつ$B \subseteq A \cup B$より，
+［K$_3'$］を用いて，$\overline{A} \subseteq \overline{A \cup B}$かつ$\overline{B} \subseteq \overline{A \cup B}$
+が導かれ，$\overline{A} \cup \overline{B} \subseteq \overline{A \cup B}$が成り立つから，
+［K$_3''$］と合わせることにより［K$_3$］が示される．
+\■
+}
+
+\pagebreak
+{\small
+\注意{２}
+空でない集合$X$の各部分集合$A$に対し，［K$_1$］～［K$_4$］を満足するような$X$の部分集合$\overline{A}$が対応するものとする．
+
+\例{＊}対応の与え方の例として$X=\{a,b,c,d\}$のとき，
+
+　
+
+\begin{tabular}{llll}
+			$\overline{\varnothing}=\varnothing$,	
+		&	
+		&	
+		&	\\
+			$\overline{\{a\}}=\{a\}$
+		&	$\overline{\{b\}}=\{b\}$
+		&	$\overline{\{c\}}=\{b,c,d\}$
+		&	$\overline{\{d\}}=\{d,c,b\}$	\\
+			$\overline{\{a,b\}}=\{a,b\}$
+		&	$\overline{\{a,c\}}=X$
+		&	$\overline{\{a,d\}}=X$
+		&	\\
+			$\overline{\{b,c\}}=\{d,c,b\}$
+		&	$\overline{\{b,d\}}=\{d,c,b\}$
+		&	$\overline{\{c,d\}}=\{d,c,b\}$
+		&	\\
+			$\overline{\{a,b,c\}}=X$
+		&	$\overline{\{a,b,d\}}=X$
+		&	$\overline{\{a,c,d\}}=X$
+		&	$\overline{\{b,c,d\}}=\{d,c,b\}$	\\
+			$\overline{X}=X$
+		&	
+		&	
+		&	\\
+\end{tabular}　
+
+このとき，$\overline{A}=A$を満たす$X$の部分集合$A$を$X$の閉集合とよぶとき，
+
+\例{＊}
+$\overline{\varnothing}=\varnothing$,
+$\overline{\{a\}}=\{a\}$,
+$\overline{\{b\}}=\{b\}$,
+$\overline{\{a,b\}}=\{a,b\}$,
+$\overline{\{b,c,d\}}=\{d,c,b\}$,
+$\overline{X}=X$
+を閉集合と呼ぶとき
+　
+
+　
+
+［C$_1$］～［C$_3$］が成立し，
+§5.4注意２により$X$に位相が定義される．しかも，このようにして定義された位相空間$X$の部分集合$A$の，
+$X$に関する閉包は，はじめに与えられた$\overline{A}$と一致する（下問１２）．
+
+実際，［K$_1$］より$\overline{\varnothing}=\varnothing$より，$\varnothing$は閉集合．
+［K$_2$］より$X \subseteq \overline{X}$，$\overline{X}$は$X$の部分集合であり，$\overline{X} \subseteq X$，よって
+$X=\overline{X}$となり［C$_1$］が成り立つ．
+
+［C$_2$］を示す．$A$と$B$を$X$の閉集合とすれば，［K$_3$］および定義より
+$\overline{A \cup B}=\overline{A} \cup \overline{B}=A \cup B$がいえるから，$A \cup B$は$X$の閉集合である．
+このことから，$A_1,A_2,\cdots,A_n$が$X$の閉集合ならば，
+$\overline{A_1	\cup	A_2	\cup	\cdots	\cup	A_n	}
+		=\overline{A_1}	\cup	\overline{A_2}	\cup	\cdots	\cup	\overline{A_n}
+		=A_1	\cup	A_2	\cdots	\cup	A_n$が成り立ち，
+$A_1 \cup A_2 \cup \cdots \cup A_n$も$X$の閉集合であることが，数学的帰納法によって証明される．	
+
+［C$_3$］を証明するには，$A=\bigcap_{\alpha \in \Lambda} A_{\alpha}$として
+$\overline{A}_\alpha=A_\alpha$から$\overline{A}=A$を示せばよい．$A \subseteq A_\alpha$であるから，注意１［K$_3'$］により，$\overline{A} \subseteq \overline{A}_\alpha = A_\alpha$がすべての$\alpha \in \Lambda$に対して成立する．
+ゆえに，$\overline{A} \subseteq \bigcap_{\alpha \in \Lambda} A_\alpha=A$である．
+したがって，［K$_2$］と合わせて$\overline{A}=A$が得られる．■
+\■}
+
+
+
+
+\問{１２}
+上の注意２で得られた位相空間$X$の部分集合$A$の閉包$\widetilde{A}$は，
+はじめに与えられた$\overline{A}$と一致する（$\widetilde{A}=\overline{A}$）ことを証明せよ．
+
+\証明
+
+はじめに与えられた（すなわち$[$O$_1]$～$[$O$_3]$の開集合，閉集合の定義より得られる）$\overline{A}$は
+\begin{align*}
+	&\overline{A}=	\bigcap_{F	\in	\mathscr{F}}F	\\	
+	&\mathscr{F}	\text{は}	\mathscr{F}=\{F	\:|\:	F	\supseteq	A,	X-F	\in	\mathscr{T}\}	\text{を満たす$X$の集合族．}	\\
+	&\mathscr{T}	\text{は}	[\text{O}_1]	\text{～}[	\text{O}_3]	\text{を満たす$X$の集合族．}
+\end{align*}
+
+一方注意２で与えられた位相空間$X$において$\widetilde{A}$は，
+\begin{align*}
+	&\widetilde{A}=	\bigcap_{E	\in	\mathscr{E}}E	\\	
+	&\mathscr{E}	\text{は}	\mathscr{E}=\{E	\:|\:	E	\supseteq	A,\overline{E}=E\}	\text{を満たす$X$の集合族．}	\\
+	&\overline{\text{　}}	\text{は}	[\text{K}_1]	\text{～}[	\text{K}_4]	\text{を満たす集合族$X$から集合族$X$への対応．}
+\end{align*}
+
+まず
+$A \subseteq \overline{A},\,\overline{\overline{A}}=\overline{A}$（定理１２としての[K$_2$]，[K$_4$]）より，
+$\overline{A}	\in	\mathscr{E}$，すなわち$\widetilde{A} \subseteq \overline{A}$．
+
+一方，$\widetilde{A}$は$\overline{\widetilde{A}}=\widetilde{A}$（注意２[C$_3$]の証明）で，
+$\widetilde{A}$の定義より$A \subseteq \widetilde{A}$だから，公理としての[K$_3'$]を用いて，
+$\overline{A} \subseteq \overline{\widetilde{A}}=\widetilde{A}$．したがって，$\widetilde{A}=\overline{A}$．
+
+{\small
+\注意{３}
+［K$_1$］～［K$_3$］は\textgt{クラトフスキーの閉包公理系}と称される．
+}

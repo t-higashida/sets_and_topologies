@@ -1,0 +1,212 @@
+\subsection{濃度の積}
+
+２つの有限集合$A=\{1,2,\cdots,m\}$と$B=\{1,2,\cdots,n\}$との直積
+\[
+	A \times B= \{(1,1),\cdots,(1,n),(2,1),\cdots,(2,n),\cdots,(m,1),\cdots,(m,n)\}
+\]
+の濃度$|A \times B |$は，明らかに$mn$に等しい．このことを，一般の濃度に拡張
+しよう．
+
+　
+
+\定義{}
+$\mathfrak{a}$，$\mathfrak{b}$を２つの濃度とする．
+$\mathfrak{a}=|A|$，$\mathfrak{b}=|B|$なる任意の２つの集合$A$，$B$を
+とるとき，直積$A \times B$の濃度$|A \times B|$を
+$\mathfrak{a}$と$\mathfrak{b}$の\textgt{積}といい，$\mathfrak{a}\mathfrak{b}$
+または，$\mathfrak{a} \times \mathfrak{b}$で表わす．すなわち，
+\[
+	\mathfrak{a}\mathfrak{b}=|A \times B|.
+\]
+この定義が意味をもつためには，
+$\mathfrak{a}=|A_1|=|A_2|$，$\mathfrak{b}=|B_1|=|B_2|$なる任意の集合の組
+$A_1$，$B_1$；$A_2$，$B_2$に対し，$|A_1 \times B_1$，$A_2 \times B_2 |$が成立することを
+証明する必要がある．実際，仮定より
+$A_1 \sim A_2$，$A_2 \sim B_2$であるから，２つの全単射
+$f_1:A_1 \rightarrow A_2$，$f_2:B_1 \rightarrow B_2$が存在する．写像
+$g:A_1 \times B_1 \rightarrow A_2 \times B_2$を，
+$(x,y) \in A_1 \times B_2$に対し
+\[
+	g(x,y)=(f_1(x),f_2(y))
+\]
+により定義すれば，$g$は全単射である．したがって，$A_1 \times B_1 \sim A_2 \times B_2$，
+すなわち$|A_1 \times B_1|=|A_2 \times B_2|$が得られる．
+
+\定理{１７}
+濃度の積（と和）に関し，次が成り立つ．
+
+\begin{tabular}{lll}
+	（ⅰ）	&	$(\mathfrak{a}\mathfrak{b})\mathfrak{c}=\mathfrak{a}(\mathfrak{b}\mathfrak{c})$	&	(\textgt{結合法則})	\\
+	（ⅱ）	&	$\mathfrak{a}\mathfrak{b}=\mathfrak{b}\mathfrak{a}$															&	(\textgt{交換法則})	\\
+	（ⅲ）	&	$\mathfrak{a}0=0$																																&											\\
+	（ⅳ）	&	$\mathfrak{a}1=\mathfrak{a}$																										&											\\
+	（ⅴ）	&	$\mathfrak{a}(\mathfrak{b}+\mathfrak{c})=\mathfrak{a}\mathfrak{b}+\mathfrak{b}\mathfrak{c}$	&(\textgt{分配法則})
+\end{tabular}	
+
+\証明
+(ⅰ)　$(\mathfrak{a}\mathfrak{b})\mathfrak{c}=|(A \times B) \times C|$，
+			$\mathfrak{a}(\mathfrak{b}\mathfrak{c})=|A \times (B\times C)|$，
+			とおくと$(A \times B) \times C \sim A \times (B \times C)$より．
+			$(\mathfrak{a}\mathfrak{b})\mathfrak{c}=\mathfrak{a}(\mathfrak{b}\mathfrak{c})$
+
+(ⅱ)　$\mathfrak{a}=|A|$，$\mathfrak{b}=|B|$なる集合$A$，$B$をとる．
+			$A \times B \sim B \times A$ (§2.1問２)であるから，
+			$\mathfrak{a}\mathfrak{b}=|A \times B|=|B \times A|=\mathfrak{b}\mathfrak{a}$．
+
+(ⅲ)　$A \times \varnothing = \varnothing$より．
+
+(ⅳ)　$\mathfrak{a}=|A|$なる集合$A$をとる．$A \times \{1\} \sim A$であるから，
+			$\mathfrak{a}1=|A \times \{1\}|=|A|=\mathfrak{a}$．
+
+(ⅴ)　$\mathfrak{a}=|A|$，$\mathfrak{b}=|B|$，$\mathfrak{c}=|C|$なる集合$A$，$B$，$C$で，
+			$B \cap C= \varnothing$を満たすものをとる．
+			このとき，$\mathfrak{b}+\mathfrak{c}=|B \cup C|$であるから，
+			$\mathfrak{a}(\mathfrak{b}+\mathfrak{c})=|A \times (B \cup C)|$．
+			一方，$(A \times B) \cap (A \times C)=A \times (B \cap C)=A \times \varnothing = \varnothing$
+			(§1.2問１３(ⅱ))であるから，
+			$\mathfrak{a}\mathfrak{b}+\mathfrak{a}\mathfrak{c}=|(A \times B) \cup (A \times C)|$．
+			ところで，$A	\times	(B	\cup	C)=(A	\times	B)	\cup	(A	\times	C)$（§1.2	問１３（ⅰ）より）
+			$\mathfrak{a}(\mathfrak{b}+\mathfrak{c})=\mathfrak{a}\mathfrak{b}+\mathfrak{a}\mathfrak{c}$．
+\■
+
+\例{３}
+$\Aleph_0\Aleph_0=\Aleph_0$．実際，§2.1例７により$\N \times \N$は可算であるから，
+$\Aleph_0\Aleph_0=\Aleph_0=|\N \times \N|=\Aleph_0$．
+
+\pagebreak
+\定理{１８}
+濃度の積と大小に関し，次が成り立つ．
+\[
+	\mathfrak{a} \leqq \mathfrak{b} 
+	\Rightarrow \mathfrak{a}\mathfrak{c} \leqq \mathfrak{b}\mathfrak{c}
+\]
+\証明
+$\mathfrak{a}=|A|$，$\mathfrak{b}=|B|$なる集合$A$，$B$をとるとき，仮定より単射$f:A \rightarrow B$が存在する．
+$\mathfrak{c}=|C|$なる集合$C$に対し，$g:A \times C \rightarrow B \times C;(a,c) \mapsto (f(a),c)$は単射
+となるから，
+$ \mathfrak{a}\mathfrak{c} =|A \times C| \leqq |B \times C|=\mathfrak{b}\mathfrak{c}$	■
+
+\vspace{10mm}
+\例{４}
+$\Aleph\Aleph=\Aleph$．$A$，$B$ともに開区間$]0,1[$とする．このとき，$A \times B$は平面上の正方形の内部
+$\{(x,y) | 0 < x < 1,0 < y < 1 \}$である．この中の点を
+$(x,y)$とすれば$x$，$y$はともに
+\begin{gather*}
+	x=0.a_1a_2\cdots a_n\cdots	\\
+	y=0.b_1b_2\cdots b_n\cdots
+\end{gather*}
+(ただし，$a_i$，$b_i$は，$0 \leqq a_i \leqq 9$，$0 \leqq b_i \leqq 9$であるような整数）なる
+無限小数の形にただ１通りに展開される（§2.1定理５の証明参照）．対$(x,y)$に対し実数
+\[
+0.a_1b_1a_2b_2\cdots a_nb_n \cdots
+\]を対応させる写像$f:A \times B \rightarrow \R$を考える．このとき，$f$は単射であり，
+$\Aleph\Aleph=|A \times B| \leqq |\R| = \Aleph$が成り立つ．定理１７，１８より
+$\Aleph=1\Aleph \leqq \Aleph\Aleph$であるから，定理１２(ⅰ)ベルンシュタインの定理より
+$\Aleph\Aleph=\Aleph$が得られる．
+\■
+
+\問{１６}
+任意の有限濃度$n$に対して，$n\Aleph_0=\Aleph_0$を証明せよ．
+
+\証明
+\begin{align*}
+	\Aleph_0	&\leqq	n\Aleph_0						&\text{（定理１８）}	\\
+						&\leqq	\Aleph_0\Aleph_0		&\text{（定理１８）}	\\
+						&=			\Aleph_0						&\text{（例３）}
+\end{align*}
+より，$\Aleph_0=n\Aleph_0$
+\■
+
+\問{１７}
+任意の有限濃度$n$に対して，$n\Aleph=\Aleph_0\Aleph=\Aleph$を証明せよ．
+
+\証明
+\begin{align*}
+	\Aleph	&\leqq	n\Aleph					&\text{（定理１８）}	\\
+					&\leqq	\Aleph_0\Aleph	&\text{（定理１８）}	\\
+					&\leqq	\Aleph\Aleph		&\text{（定理１８）}	\\
+					&=			\Aleph					&\text{（例４）}
+\end{align*}
+より，$n\Aleph=\Aleph_0\Aleph=\Aleph$．
+\■
+
+\textgt{第２章の問題}
+
+\textgt{１．　}
+$]0,1[$に含まれる有限小数全体の集合$A$は可算集合であることを示せ．
+
+\証明
+$B=\{x | x=10^{-n},n \in \N \}$は$A$に包まれる可算集合である．$B \subset A \subseteq \Q$，$B \sim \Q$
+であるから$A \sim \Q$（定理１０）．ゆえに，$A$は可算．
+\■
+
+\textgt{２．　}
+$\N$の有限部分集合全体のつくる集合族$\mathscr{F}$は可算集合であることを示せ．
+
+\証明
+$\{	\,\{n\}	\,|\, n \in \N	\,\}$は$\mathscr{F}$に包まれる可算集合である
+$(|\{	\,\{n\}	\,|\, n \in \N	\,\}|	\leqq	|\mathscr{F}|)$．
+
+$\N$の有限部分集合が$n$を含むときには，
+$a_n=1$，含まないときには$a_n=0$として，有限小数$0.a_1a_2 \cdots a_n \cdots$をつくれば，
+$\mathscr{F}$から問題１の有限小数全体の集合$A$の中への単射が得られる．
+
+よって$|\{	\,\{n\}	\,|\, n \in \N	\,\}|	\leqq	|\mathscr{F}|	\leqq	|A|$．ゆえに，$\mathscr{F}$は可算．
+\■
+
+\textgt{３．　}
+$\R$上の開区間全体のつくる集合族$\mathscr{Y}$の濃度は$\Aleph$であることを示せ．
+
+\証明
+$\{]a,a+1[|a \in \R \}$は，$\mathscr{Y}$に含まれる濃度$\Aleph$の集合である
+	({\small	$|\{]a,a+1[|a \in \R \}|	\leqq	|\mathscr{Y}|$})．
+
+$]a,b[ \in \mathscr{Y}$
+に対し$(a,b) \in \R^2$を対応させる写像は$\mathscr{Y}$から$\R^2$への単射で，
+$\R^2$の濃度は$\Aleph$だから，$|\mathscr{Y}|	\leqq	|\{]a,b[|a \in \R \}|	$．
+よって$\mathscr{Y}$の濃度も$\Aleph$である．
+\■
+
+\textgt{４．　}
+無理数全体の集合$B$の濃度は$\Aleph$であることを示せ．
+
+\証明
+$A=\{n \sqrt{2} | n \in \N \}$は$B$に包まれる可算集合である．
+
+$B=(B-A) \cup A$，$(B-A) \cap A= \varnothing$であるから，
+$|B|=|B-A|+|A|=|B-A|+\Aleph_0$が成り立ち，
+一方　$|B|+\Aleph_0=|B|+|\Q|=|B \cup \Q | = |\R|= \Aleph$．
+したがって，$|B|=|B-A|+\Aleph_0=|B-A|+(\Aleph_0+\Aleph_0)=(|B-A|+\Aleph_0)+\Aleph_0
+=|B|+\Aleph_0=\Aleph$
+が得られる．
+\■
+
+\textgt{５．　}
+$\mathfrak{a}$，$\mathfrak{b}$，$\mathfrak{c}$を濃度とする．
+$\mathfrak{a}<\mathfrak{b}$でも$\mathfrak{a}+\mathfrak{c}<\mathfrak{a}+\mathfrak{c}$とは限らない．
+そのような例を挙げよ．
+
+\解
+$1 < 2$でも，$1+\Aleph_0=\Aleph_0=2+\Aleph_0$となる.\■
+
+\textgt{６．　}
+濃度$\mathfrak{a}$，$\mathfrak{b}$に対し，$\mathfrak{a}+1=\mathfrak{b}+1 \Rightarrow \mathfrak{a}=\mathfrak{b}$
+が成り立つことを示せ．
+
+\証明
+$|A|=\mathfrak{a}$，$|B|=\mathfrak{b}$なる集合$A$，$B$をとり，$a \notin A$，$b \notin B$とするとき，仮定より
+全単射$f:A \cup \{a\} \rightarrow B \cup \{b\}$が存在する．$f(a)=b$ならば，$f(A)=B$となるから，$f|A$は全単射
+$A \sim B$を与える．$f(a) \ne b$ならば，$c = f(a) \in B$，$d=f^{-1}(b) \in A$であるから，
+$f$によって$A-\{d\} \sim B-\{c\}$．したがって，$d$に$c$を対応させることにより，
+$(A-\{d\}) \cup \{d\} \sim (B - \{c\}) \cup \{c\}$．すなわち$A \sim B$を得る．\■
+
+\textgt{７．　}
+$f:A \rightarrow B$を全射とするとき，単射$g:B \rightarrow A$が存在することを示せ．
+
+\証明
+$B$の任意の元$b$に対して$f^{-1}(\{b\}) \ne \varnothing$であるから，$A_b=f^{-1}(\{b\})$とおくとき，
+$\{A_b|b \in B\}$は空でない集合からなる集合族である．
+選択公理より，写像$h:B \rightarrow \bigcup_{b \in B}A_b$で，$b \in B$ならば，$h(b)\in A_b$なるものが存在する．
+$h$に包含写像$i:\bigcup_{b \in B}A_b \rightarrow A$を結合させて得られる写像$g=i \circ h:B \rightarrow A$に対し
+$f \circ g=1_B$が成立するから，$g$は単射である．
+\■

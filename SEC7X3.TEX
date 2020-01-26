@@ -1,0 +1,184 @@
+\section{コンパクト空間}
+{\small
+本節では，コンパクトという概念について述べよう．これは，連結性や弧状連結性と同じく，
+位相的に不変な性質である．まず，コンパクトの定義を与え，次いで位相的不変性をはじめ
+種々の性質を調べる．閉区間がコンパクトであることを示す定理は，ハイネ-ボレル(Heine-Borel)の
+被覆定理と呼ばれ，極めて重要である．これを用いて，ユークリッド空間においてはコンパクトな集合は
+有界な閉集合と同等な概念であることが証明される．終わりにカントル集合について説明する．
+}
+
+\subsection{コンパクト性}
+位相空間$X$の開集合から成る部分集合族
+\[
+	\mathscr{C}=\{G_\alpha\,|\,\alpha \in \Lambda \}
+	\quad \text{（$\Lambda$は添え字の集合）}
+\]
+を考える．$\mathscr{C}$のすべての元の和集合が$X$に等しいとき，すなわち
+\[
+	\bigcup_{\alpha \in \Lambda} G_\alpha = X
+\]
+が成り立つとき，$\mathscr{C}$は$X$の$\textgt{開被覆}$である
+（あるいは，$\mathscr{C}$は$X$を\textbf{覆う}）という．
+という．
+$\mathscr{C}$の部分集合$\mathscr{S}$がやはり$X$の開被覆であるとき，
+$\mathscr{S}$を$\mathscr{C}$の\textgt{部分開被覆}という．
+
+\vspace{3mm}
+\例{１}
+$X$を位相空間とし，$\mathscr{T}$を位相，つまり$X$のすべての開集合の族
+とすると，$\mathscr{T}$は$X$の開被覆である（$X=\bigcup_{O	\in	\mathcal{T}}	O$)．また$X$の開基$\mathscr{B}$
+は$\mathscr{T}$の部分界被覆である（§6.1問３）．
+
+\vspace{3mm}
+\例{２}
+$\mathscr{C}$が$Y$の開被覆で，$f:X \rightarrow Y$が連続ならば，
+集合族$\{f^{-1}(G)\,|\,G \in \mathscr{C}\}$は$X$の開被覆である．
+
+\証明
+$Y=\bigcup	G	\Longrightarrow	X=f^{-1}(Y)=f^{-1}\left(\bigcup	G\right)=\bigcup	f^{-1}(G)$
+（§2.2定理９）
+\■
+
+\vspace{3mm}
+\例{３}
+任意の位相空間$X$に対し，$\mathscr{C}=\{X\}$は$X$の開被覆である．
+
+\vspace{3mm}
+\定義{}
+位相空間$X$は，そのいかなる開被覆も有限部分開被覆を持つとき，
+すなわち
+\[
+	\bigcup_{\alpha \in \lambda} G_\alpha=X
+\]
+を満たす任意の開集合族$\mathscr{C}=\{G_\alpha\,|\,\alpha \in \Lambda\}$
+に対し，適当な有限個の開集合$G_{\alpha_1},G_{\alpha_2},\cdots,G_{\alpha_n} \in \mathscr{C}$
+を選んで，
+\[
+	\bigcup_{n=1}^n G_{a_i}=X
+\]
+となるようにできるとき，\textgt{コンパクト}であるといわれる．
+$X$の部分集合$A$が\textgt{コンパクト集合}といわれるのは，部分空間$A$がコンパクトのときである．
+
+
+\vspace{3mm}
+{\small
+\注意{１}
+$X$の部分集合$A$がコンパクト集合であるための必要十分条件は，
+$\bigcup_{\alpha \in \Lambda} G_\alpha \supseteq A$を
+満たす任意の開集合族$\mathscr{C}=\{G_\alpha\,|\, \alpha \in \Lambda \}$
+に対し，適当な有限個の元$G_{\alpha_1}$，$G_{\alpha_2}$，
+$\cdots$，$G_{\alpha_n} \in \mathscr{C}$を選んで$\bigcup_{i=1}^n G_{\alpha_i} \supseteq A$
+となるようにできることである．
+}
+
+\vspace{3mm}
+\問{６}
+注意１を証明せよ．
+
+\証明
+
+十分性：$A$を覆う任意の開集合族$\{H_\alpha	\:	|	\:	\alpha	\in	\Gamma	\}$
+が与えられたとする．すなわち$\bigcup	H_\alpha=A$．このとき$X$の開集合$G_\alpha$で
+$H_\alpha	=	G_\alpha	\cap	A$なるものが存在し，
+$\bigcup_{\alpha	\in	\Lambda}	G_\alpha\supseteq	\bigcup_{\alpha	\in	\Lambda}	H_\alpha	=A$．
+仮定により，$\bigcup_{i=1}^n	G_{\alpha_i}	\supseteq	A$なる
+$\alpha_1,\alpha_2,\cdots,\alpha_n	\in	\Lambda$が存在し，このとき，
+$\bigcup_{i=1}^n	H_{\alpha_i}=\bigcup_{i=1}^n	(	G_{\alpha_i}	\cap	A	)	=	A$ 
+(§2.2 定理６）
+
+必要性：
+$\bigcup_{\alpha	\in	\Lambda}	G_\alpha	\supseteq	A	
+\Longleftrightarrow	A	=	A	\cap	\bigcup_{\alpha	\in	\Lambda}G_\alpha
+											=	\bigcup_{\alpha	\in	\Lambda}	(G_\alpha	\cap	A)$．
+（§1.2.1 定理５（ⅱ））．このとき
+$\{G_\alpha	\cap	A	\:	|	\:	G_\alpha	\in	\mathscr{C}	\}$は$A$の開被覆．
+$A$はコンパクトであるから，有限個の開集合
+$	G_{\alpha_1}	\cap	A,	\:	
+	G_{\alpha_2}	\cap	A,	\:	
+	\cdots,									\:
+	G_{\alpha_n}	\cap	A
+	\in	\{G_\alpha	\cap	A	\:	|	\:	G_\alpha	\in	\mathscr{C}	\}$
+が存在して，
+$\bigcup_{i=1}^n	(	G_{\alpha_i}	\cap	A)=A	\cap	\bigcup_{i=1}^n	G_{\alpha_i}	=	A	$
+したがって，再び§1.2.1 定理５（ⅱ）より，$\bigcup_{i=1}^n	G_{\alpha_i}	\supseteq	A$．
+\■
+
+\vspace{3mm}
+\問{７}
+$X$の２つの部分集合$A$，$B$がともにコンパクトならば，和集合$A \cup B$もコンパクトであることを
+証明せよ．
+
+\証明
+$A	\cup	B$の任意の開被覆を$\{G_\alpha	\:	|	\:	\alpha	\in	\Lambda	\}$とする．
+$\{G_\alpha	\cap	A	\:	|	\:	\alpha	\in	\Lambda \}$は
+$A$の開被覆であるから，$A$のコンパクト性より$\bigcup_{i=1}^n	G_{\alpha_i}	\supseteq	A$なる
+$\alpha_1,\:	\alpha_2,	\:	\cdots	,	\alpha_n	\in	\Lambda$が存在する．
+同様に$B$のコンパクト性より$\bigcup_{i=1}^m	G_{\beta_i}	\supseteq	B$なる
+$\beta_1,\:	\beta_2,	\:	\cdots	,	\beta_m	\in	\Lambda$が存在する．
+$\{G_{\alpha_1}	,	\:	\cdots	,	G_{\alpha_n},	\:,	G_{\beta_1}	,	\:	\cdots	,	G_{\beta_m}	\}$
+が求める有限開被覆である．
+
+\■
+
+
+\vspace{3mm}
+\例{４}
+位相空間$X$は，$X$が有限集合ならばコンパクトである．実際，このとき，$X$の任意の開被覆は，
+二重に数えなければ有限集合($|2^X|	<	\infty$)である．
+
+\vspace{3mm}
+\例{５}
+離散空間$X$は，$X$が無限集合ならばコンパクトでない．実際，開被覆$\{\{x\}\,|\,x \in X\}$は，
+有限部分開被覆をもたない．
+
+コンパクト性は位相的な性質である．実際，次の結果が成り立つ．
+
+\vspace{3mm}
+\定理{１１}
+$X$がコンパクトで，$f:X \rightarrow Y$が連続な全射ならば，$Y$もコンパクトである．特に，
+$X$と$Y$が同相であるとき，$X$がコンパクトならば，$Y$もコンパクトである．
+
+\証明
+後半は前半から直ちにしたがうから，前半のみを示そう．
+$\mathscr{C}=\{G_\alpha\,|\, \alpha \in \Lambda \}$を$Y$の任意の開被覆とする．$f$は連続であるから，
+集合族$\mathscr{A}=\{f^{-1}(G_\alpha)\,|\, \alpha \in \Lambda\}$は$X$の開被覆である．
+$X$はコンパクトであるから，$\mathscr{A}$は有限部分開被覆$\mathscr{S}$をもつ．
+($\bigcup_{i=1}^n	f^{-1}(G_{\alpha_i})=X$)．
+$f$は全射だから，$\{G\,|\,G \in \mathscr{C},f^{-1}(G) \in \mathscr{S} \}$は
+$\mathscr{C}$の有限部分開被覆である．
+\begin{align*}
+	\bigcup_{i=1}^n	f^{-1}(G_{\alpha_i})=X
+		&	\Longrightarrow
+			f^{-1}(\bigcup_{i=1}^n	G_{\alpha_i})=X	\quad	(\text{§2.2定理９})	\\
+		&	\Longrightarrow
+			\bigcup_{i=1}^n	G_{\alpha_i}	=	f(X)	=	Y	\quad	(\text{$f$は全射})	\\
+\end{align*}
+
+したがって，$Y$はコンパクトである．
+
+\■
+
+\vspace{3mm}
+\定理{１２}
+コンパクト空間$X$の閉集合$A$はコンパクトである．
+
+\証明
+$\{G_\alpha\,|\,\alpha \in \Lambda\}$を$A$の任意の開被覆とする．$G_\alpha$は$A$の開集合だから，
+$G_\alpha=H_\alpha \cap A$となる$X$の開集合$H_\alpha$が存在する．このとき，
+$\bigcup_{\alpha \in \Lambda} H_\alpha \supseteq \bigcup_{\alpha \in \Lambda} G_\alpha=A$
+であるから，
+\[
+	X=(X-A) \cup (\bigcup_{\alpha \in \Lambda} H_\alpha)
+\]
+が成り立つ．$A$は$X$の閉集合であるから，$\{X-A\} \cup \{H_\alpha\,|\,\alpha \in \Lambda\}$は
+$X$の開被覆である．$X$はコンパクトであるから，
+\[
+	X=(X-A) \cup \left(\bigcup_{i=1}^n H_{\alpha_i}\right)	\quad
+	X=\bigcup_{i=1}^n H_{\alpha_i}
+\]
+となるような有限個の$H_{\alpha_i} \,(\alpha \in \Lambda)$が存在する．このとき，
+\[
+	A=X \cap A=\bigcup_{i=1}^n (H_{\alpha_i} \cap A)=\bigcup_{i=1}^n G_{\alpha_i}
+\]
+が成り立つから，$A$はコンパクトである．
+\■

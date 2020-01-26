@@ -1,0 +1,94 @@
+\section{集合の演算}
+
+{\small ２つの数から加法，減法，乗法などの演算によって和，差，積などとよばれる１つの数が定義されることは周知であるが，
+集合の場合にも，２つの集合から和，共通部分，差，直積などとよばれる１つの集合を定める演算がある．これら集合の演算は，結合法則や交換法則のような実数の性質と類似の性質を満たすと同時に，$A \cup A = A$のような実数の演算とは異なる性質も満たす．
+}
+
+\subsection{集合の和}
+$A$，$B$を集合とする．$A$のすべての元と$B$のすべての元とからなる集合のことを，
+$A$と$B$の\textgt{和集合}（または単に\textgt{和}）といい，$A \cup B$と表わす．
+すなわち，
+\[
+A \cup B=\{x\,|\,x \in A \text{または} x \in B\}
+\]
+である．
+
+\vspace{3mm}
+\textgt{例１．}$A=\{1,2,3\}$，$B=\{2,3,4,6\}$ならば$A \cup B=\{1,2,3,4,6\}$．
+
+\textgt{例２．}$A$および$B$が，それぞれ図のような円の内部として表わされるとき，$A \cup B$は影の部分である．
+
+\vspace*{1.0cm}
+\begin{figure}[htbp]
+\begin{center}
+	\setlength{\unitlength}{10mm}
+	\begin{picture}(1.5,1)
+
+	\filltype{shade}
+	\thicklines\put(-1,0){\circle*{4}}
+	\put(-1.25,-2.5){{\large $A$}}
+	\thicklines\put(1,-0.25){\circle*{3}}
+	\put(1,-2.5){{\large $B$}}
+
+	\end{picture}
+
+	\end{center}
+\end{figure}
+\vspace*{1.75cm}
+
+\vspace{3mm}
+{\small \textgt{注意１．}和集合は，\textgt{合併集合}とか\textgt{結び}とも称される．$A \cup B$における記号$\cup$は，英語のunion（合併）の頭文字uを記号化したものと考えられる．
+}
+
+\vspace{3mm}
+\textgt{定理３．}$A$，$B$を任意の集合とするとき，次が成り立つ．
+
+(ⅰ)　$A \subseteq A \cup B$，$B \subseteq A \cup B$
+
+(ⅱ)　$A \subseteq B \Longleftrightarrow A \cup B=B$
+
+\textgt{証明}（ⅰ）$A$の任意の元$x$は$A \cup B$に属するから，$A \subseteq A \cup B$．
+同様に，$B \subseteq A \cup B$．
+
+（ⅱ）$\Rightarrow$の証：$A \cup B$に属する任意の元を$x$とすると，$x \in A$または，$x \in B$である．
+仮定より$x \in A$ならば$x \in B$が成り立つから，
+結局$A \cup B \subseteq B$が示される．
+（ⅰ）より$B \subseteq A \cup B$であるから，定理２（ⅱ）より$A \cup B=B$が得られる．
+$\Leftarrow$の証：（ⅰ）より$A \subseteq A \cup B$であるから，
+仮定および定理２（ⅲ）より$A \subseteq B$が導かれる．
+\■
+
+\pagebreak
+\vspace{3mm}
+\textgt{定理４．}$A$，$B$，$C$を任意の集合とするとき，次が成り立つ．
+
+（ⅰ）$(A \cup B) \cup C=A \cup (B \cup C)	$	\textgt{（結合法則）} 
+
+（ⅱ）$A \cup B=B \cup A					$	\textgt{ 　　　　　 （交換法則）}
+
+\textgt{証明}（ⅰ）
+\begin{align*}
+x \in (A \cup B) \cup C &\Leftrightarrow  x \in A \cup B \text{または} x \in C  				\\
+						&\Leftrightarrow (x \in A \text{または} x \in B ) \text{または} x \in C	\\
+						&\Leftrightarrow x \in A  \text{または} (x \in B \text{または} x \in C)	\\
+						&\Leftrightarrow x \in A  \text{または} x \in B \cup C					\\
+						&\Leftrightarrow x \in A  \cup (B \cup C)
+\end{align*}
+
+（ⅱ）$x \in A \cup B$のすべての$x$について，
+\begin{align*}
+x \in A \cup B  &\Leftrightarrow  x \in A  \text{または} x \in B 	\\
+				&\Leftrightarrow  x \in B  \text{または} x \in A 	\\
+				&\Leftrightarrow  x \in B \cup A
+\end{align*}
+\■
+
+\vspace{1cm}
+\textgt{問５．}任意の集合$A$に対し，$A \cup A=A$が成り立つことを示せ．
+
+\textgt{証明　}
+\begin{align*}
+x \in A \cup A \text{なるすべての$x$に対して} 	&\Leftrightarrow  x \in A  \text{または} x \in A\\
+												&\Leftrightarrow  x \in A
+\end{align*}
+\■

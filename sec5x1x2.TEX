@@ -1,0 +1,144 @@
+\subsection{距離空間}
+距離空間は，ユークリッド空間の一般化である．
+
+\定義{}
+$X$を空でない集合とする．関数
+\[
+	d:X \times X \rightarrow \R;(x,y) \mapsto d(x,y)
+\]
+が，$X$上の\textgt{距離}（または\textgt{距離関数}）といわれるのは，すべての$x,y,z \in X$に対し，
+次の公理が成り立つときである．
+\begin{list}{}{}
+	\item［$\text{M}_1$］$d(x,y) \geqq 0 ; \quad d(x,y)=0 \Longleftrightarrow x=y$
+	\item［$\text{M}_2$］$d(x,y) = d(y,x)$				\textgt{　　　　（対象律）}
+	\item［$\text{M}_3$］$d(x,y) + d(y,z) \geqq d(x,z)$		\textgt{（三角不等式）}
+\end{list}
+距離$d$が与えられている集合$X$を\textgt{距離空間}といい，$(X,d)$と表わす．
+誤解の恐れがないときには，単に$X$で表わす．
+
+\vspace*{3mm}
+\例{１}
+ユークリッド空間は，ユークリッド距離もつ距離空間である（定理１）．
+
+\vspace*{3mm}
+\問{１}
+実数全体$\R$の$n$個の直積$\R^n$の２点$x=(x_1,x_2,\cdots,x_n)$，$y=(y_1,y_2,\cdots,y_n)$に対し，
+\[
+	d_1(x,y)=|x_1-y_1|+|x_2-y_2|+\cdots+|x_n-y_n|
+\]
+により定義される関数$d_1:\R^n \times \R^n \rightarrow \R$は，$\R^n$における距離であることを証明せよ．
+
+\証明
+［M$_1$］．$\forall	i	(i	\leqq	i	\leqq	n)$に対して$|x_i-y_i|	\geqq	0$より$\sum_{i=1}^n|x_i-y_i|	\geqq	0$．
+
+$d_1(x,y)=\sum_{i=1}^n|x_i-y_i|=0	\Longrightarrow	\forall	i	(i	\leqq	i	\leqq	n)$	に対して$|x_i-y_i|=0$，
+$x_i=y_i$．
+
+［M$_2$］．$\forall	i	(i	\leqq	n	\leqq	n)$に対して$|x_i-y_i|=|y_i-x_i|$，
+よって$\sum_{i=1}^n|x_i-y_i|=\sum_{i=1}^n|y_i-z_i|$．
+
+
+［M$_3$］は，
+$ \sum_{i=1}^n |x_i-z_i| \leqq \sum_{i=1}^n (|x_i-y_i|+|y_i-z_i|)
+ =\sum_{i=1}^n |x_i-y_i| + \sum_{i=1}^n |y_i-z_i|
+$
+より示される．
+\■
+
+{\small
+\注意{４}	上の$d_1$は，$n	\geqq	2$のときにはユークリッド距離と同じものではないが，後に定義される意味で，
+ユークリッド距離と同値な距離であることがわかる．
+}
+
+
+\例{２}
+$A$を，距離$d$をもつ距離空間$X$の空でない部分集合とする．$i:A \rightarrow X; a \mapsto a$を包含写像とすると，
+合成写像$d \circ (i \times i) : A \times A \rightarrow \R$は明らかに$A$の１つの距離であり，$A$は距離空間となる．
+こうしてできた距離空間は，$X$の\textgt{部分距離空間}（または単に\textgt{部分空間}）といわれる．
+
+\pagebreak
+\例{３}
+$S$を任意の集合とする．
+写像$f:S \rightarrow \R$は，$f(S)$が$\R$の有界な集合とするとき，\textgt{有界な写像}であるといわれる．
+すなわち$ \forall x \in S$に対して，$\exists a \in R \: \text{s,t} \: |f(x) | \leqq a$．
+有界な写像全体の集合を$\mathscr{B}$とするとき，$f,g \in \mathscr{B}$に対して，
+$\R$の部分集合$\{ | f(x)-g(x)| \,| \, x \in \R\}$は有界である
+
+　
+
+\framepage{0.9}{
+$M$，$M'$を$f(x)$，$g(x)$の１つの上界とすると
+
+\begin{align*}
+	\because	\quad
+		|f(x)-g(x)|	&=			|f(x)-a+a-g(x)|		\\
+												&\leqq	|f(x)-a|+|a-g(x)|	\\
+												&=			|f(x)-a|+|g(x)-a|	\\
+												&\leqq	|M-a|+|M'-a|
+\end{align*}
+
+}
+
+　
+
+から上限をもつ(§4.1　ワイエルシュトラウスの公理)．
+いま，
+\[
+	d(f,g)=\sup \{|f(x)-g(x)||x \in S \}
+\]
+と定義すると，$d$は$\mathscr{B}$における距離関数である．
+
+実際，［M$_1$］$f=g$とすると，
+\begin{align*}
+	d(f,g) &= d(f,f) = \sup_{x \in S} | f(x) -g(x) | \\
+         &= \sup_{x \in S} |f(x) - g(x) | \\
+         &= \sup_{x \in S} \{ 0 \} =0
+\end{align*}．
+
+逆に，$d(f,g)=0$とすると，任意の$f,g \in \mathscr{B}$について，
+\[
+  |f(x) -g(x)| \leqq \sup_{x \in S} | f(x) -g(x) | = d(f,g) =0 \quad (x \in S)
+\]
+一方
+\[
+  |f(x) - g(x) | \geqq 0 , \quad (x \in S)
+\]
+であるから$ |f(x) - g(x) | =0 \quad (x \in S)$すなわち
+$f(x) = g(x) \quad (x \in S)$，となり$f=g$．
+
+［M$_2$］
+$d (f,g) = \sup_{x \in S} | f(x) - g(x) | = \sup_{x \in S} |g(x) - f(x)| = d(g,f)$．
+
+［M$_3$］については，任意の$f,g,h \in \mathscr{B}$
+とすれば，すべての$x \in S$に対し，$\R$における三角不等式と上限の定義より
+\begin{align*}
+	|f(x)-h(x)| & \leqq |f(x)-g(x)|+|g(x)-h(x)| \\
+              & = \sup_{x \in S} |f(x) - h(x)| + \sup_{x \in S} |h(x) -g(x)| \\
+							& \leqq d(f,g)+d(g,h).
+\end{align*}
+$d(f,g)+d(g,h)$は集合$\{|f(x)-h(x)|\,|\,x	\in	\R	\}$の一つの上界であるから，上限の定義から
+（上界の中で最小のもの），
+したがって，$d(f,h) \leqq d(f,g)+d(g,h)$が成り立つ．
+
+\例{４}
+$X$を任意の空でない集合とし，$d_0: X \times X \rightarrow \R$を
+\[
+	d_0(x,y)	=	\begin{cases}
+								0	&	\text{$x = y$のとき}\\
+								1	&	\text{$x\ne y$のとき}
+							\end{cases}
+\]
+によって定義された関数とする．このとき，$d_0$は１つの距離であり，$X$の\textgt{離散距離}といわれる．
+離散距離が与えられた集合は\textgt{離散距離空間}といわれる．
+
+［M$_1$］および［M$_2$］が成り立つことは明らか．［M$_3$］について．
+
+（１）$d(x,y)=0$ならば$d(x,y)	\leqq	d(x,z)+d(z,y)$（▲）．
+
+（２）$d(x,y)=1$ならば$x	\ne	y$（★）である．
+一方，$1=d(x,y)	>	d(x,z)+d(z,y)$と仮定する（▲）と，
+$d(x,z)+d(z,y)=0$．よって$d(x,z)=d(z,y)=0	\Longrightarrow	x=z	\,,	\,	y=x$，
+$\therefore	x=y$で★と矛盾．
+
+（１）（２）より$d(x,y)	<	d(x,z)+d(z,y)$（▲）．
+\■

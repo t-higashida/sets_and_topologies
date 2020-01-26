@@ -1,0 +1,260 @@
+\section{濃度の大小}
+{\small
+前々節で，われわれは有限濃度，可算の濃度$\aleph_0$，連続体の濃度$\aleph$を定義し，
+どんな集合がこれらの濃度を持つかを研究した．
+有限濃度，すなわち有限集合の元の個数の間には，自然数の大小関係がすでに定められている．
+この大小関係を，一般の無限濃度に拡張することが本節の目的である．
+はじめに，集合の濃度を調べる上に極めて有用なベルンシュタイン(Bernstein)の定理を，
+前節で述べた概念などを利用して，証明し，
+次いで，濃度の大小を定義し，$n < \aleph_0 < \aleph$が成り立つことを示す．
+}
+\subsection{ベルンシュタインの定理}
+次の定理は，ベルンシュタイン(Bernstein)の定理といわれ，
+いろいろな集合の濃度を決定する上に役立つ．
+
+\vspace{3mm}
+\定理{１０}
+$A$，$B$を２つの集合とする．$A$から$B$への単射および$B$から$A$への単射が存在すれば，
+$A$と$B$は対等である．
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(5,4)
+
+	\thicklines \put(-2,1){\circle{6}}
+	\thicklines \put(-2,1){\circle{4}}
+	\thicklines \put(-2,1){\circle{2}}
+
+	\thicklines \put(5,1){\circle{6}}
+	\thicklines \put(5,1){\circle{3}}
+
+	\thinlines \path(4.8,2.5)(-2,2)
+	\thinlines \path(4.8,-0.5)(-2,0)
+
+	\thinlines \path(4.8,4.0)(-2,3)
+	\thinlines \path(4.8,-2)(-2,-1)
+
+	\thinlines \path(-1.7,4.00)(5.2,2.5)
+	\thinlines \path(-1.7,-2  )(5.2,-0.5)
+
+	\put(-4.5,3.5){\Large $A$}
+	\put(-3.2,2.0){\Large $C$}
+	\put(-2.2,0.8){\Large $D$}
+
+	\put( 7,3.5){\Large $B$}
+	\put( 4.5,0.8){\Large $f(A)$}
+
+	\put( 1,2.3){\Large $f$}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+　
+
+\vspace*{1cm}
+\証明
+$f:A \rightarrow B$，$g:B \rightarrow A$を単射とする．$g(B)=C	\,$，$\,(g \circ f)(A)=D$とおく．
+仮定より，$A \supseteq C \supseteq D$，$A \sim D=(g \circ f)(A)$，$B \sim C$である．
+したがって，このとき$A \sim C$を証明することができれば，$A \sim B$が示される．
+つまり，次の定理１０'を証明すればよい．
+
+\定理{１０'}
+$A \supseteq C \supseteq D$なる３つの集合$A$，$C$，$D$に対し，
+$A \sim D$ならば，$A \sim C$である．
+
+\証明
+仮定より，$f(A)=D$であるような単射$f:A \rightarrow A$が存在する．
+$A=C$または，$C=D$であるとき明らかであるから，$A\ne C$かつ$C \ne D$
+と仮定する．
+
+\begin{align}
+	\notag 	A	&=(A-C) \cup  C						\\
+	\tag{１}	&=(A-C) \cup (C-D) \cup D
+\end{align}
+であるから，$A$は互いに素な（すなわち共通部分が空であるような)３つの部分集合
+$A-C$，$C-D$，$D$の和として表わされる．次に$D=f(A)$は，定理８（集合の和$\cup$と写像$f$の交換）により，
+\[
+	D=f(A)=f(A-C) \cup f(C-D) \cup f(D)
+\]
+と表わされる．ここで，$f$は単射であるから，§1.3の問１８（集合の差と写像の交換）より
+$f(A-C)=f(A)-f(C)$，$f(C-D)=f(C)-f(D)$が成り立ち，$D$は互いに素な３つの部分集合
+$f(A)-f(C)$，$f(C)-f(D)$，$f(D)$の和として，
+\begin{align}
+	\notag		D=f(A)	&=f(A-C) \cup f(C-D) \cup f(D)				\\
+	\tag{２}					&=(f(A)-f(C)) \cup (f(C)-f(D)) \cup f(D)
+\end{align}
+と表わされる．更に，$f(A)-f(C) \sim A-C$，$f(C)-f(D) \sim C-D$，$f(D) \sim D$が成り立つ．
+
+このような操作を以下繰り返し行なう．
+
+\begin{figure}[htbp]
+\begin{center}
+\setlength{\unitlength}{10mm}
+\begin{picture}(5,8)
+
+	\thinlines \put(-2,4){\framebox(2,4){$D$}}
+	\thinlines \put(-2,2){\framebox(2,2){$C-D$}}
+	\thinlines \put(-2,0){\framebox(2,2){$A-C$}}
+
+	\thinlines \put(2,6){\framebox(2,2){$f(D)$}}
+	\thinlines \put(2,5){\framebox(2,1){$f(C-D)$}}
+	\thinlines \put(2,4){\framebox(2,1){$f(A-C)$}}
+
+	\thinlines \put(6,7){\framebox(2,1){$f^2(D)$}}
+	\thinlines \put(6,6.5){\framebox(2,0.5){$f^2(C-D)$}}
+	\thinlines \put(6,6){\framebox(2,0.5){$f^2(A-C)$}}
+
+	\thinlines \put(0,8){\vector(4,0){2}}
+	\thinlines \put(0,4){\vector(1,1){2}}
+	\thinlines \put(0,2){\vector(2,3){2}}
+	\thinlines \put(0,0){\vector(1,2){2}}
+
+	\thinlines \put(4,8){\vector(4,0){2}}
+	\thinlines \put(4,6){\vector(4,2){2}}
+	\thinlines \put(4,5){\vector(4,3){2}}
+	\thinlines \put(4,4){\vector(1,1){2}}
+
+\end{picture}
+\end{center}
+\end{figure}
+
+その前に，記号の説明をしておこう．
+負でない整数$n$に対し，$f$自身の$n$回の合成写像を$f^n$で表わす．
+すなわち，$f^n$は数学的帰納法により，
+\[
+	f^0=1(=\text{恒等写像)}  ,\qquad f^n=f \circ f^{n-1} \, (n \geqq 1)
+\]
+によって定義されるものである．
+
+すると，（２）は
+\begin{align}
+	\tag{２}		f^0(D)=(f^1(A)-f^1(C)) \cup (f^1(C)-f^1(D)) \cup f^1(D)
+\end{align}
+と表され，$n=0$の場合，$A-C$，$C-D$，$D$とそれぞれ対等であるような，
+互いに素な３つの部分集合$f^1(A)-f^1(C)$，$f^1(C)-f^1(D)$，$f^1(D)$
+の和として表わされること
+を示している．
+
+いま，$n \geqq 1$に対し，$f^{n-1}(D)$が
+\[
+	f^{n-1}(D)=(f^n(A)-f^n(C)) \cup (f^n(C)-f^n(D)) \cup f^n(D)
+\]
+なる形で，$A-C$，$C-D$，$D$とそれぞれ対等であるような，互いに素な３つの
+部分集合$f^n(A)-f^n(C)$，$f^n(C)-f^n(D)$，$f^n(D)$の和として表わされた
+と仮定する．
+このとき，$f^n(D)$は，
+定理８（集合の和$\cup$と写像$f$の交換）
+
+および§1.3問１８（集合の差と写像$f$の交換）より，
+\begin{align*}
+f^n(D)		&=f(f^{n-1}(D))	\\
+					&=f(f^n(A)-f^n(C)) \cup f(f^n(C)-f^n(D)) \cup f(f^n(D))	\\
+\tag{３}	&=(f^{n+1}(A)-f^{n+1}(C)) \cup (f^{n+1}(C)-f^{n+1}(D)) \cup f^{n+1}(D)
+\end{align*}
+となる．ここで，$f^{n+1}(A)-f^{n+1}(C)$，$f^{n+1}(C)-f^{n+1}(D)$，$f^{n+1}(D)$
+は互いに素で，それぞれ$A-C$，$C-D$，$D$と対等である．よって任意の$n$に対して，
+\begin{align*}
+	f^n(D)=(f^{n+1}(A)-f^{n+1}(C)) \cup (f^{n+1}(C)-f^{n+1}(D)) \cup f^{n+1}(D)
+\end{align*}
+が成り立つ．	
+
+かくして，式（１）における$D$を式（２）によって置き換え，以下式（３）を用いて
+次々に$f^n(D)$を代入していくと次のようになる．
+\begin{align*}
+	A			&=(A-C) \cup (C-D) \cup (f(A)-f(C)) \cup (f(C)-f(D)) \cup f(D)	\\
+				&=(f^{0}(A)-f^{0}(C)) \cup (f^{0}(C)-f^{0}(D)) \cup 
+			 		(f^{1}(A)-f^{1}(C))	\cup (f^{1}(C)-f^{1}(D))\cup f(D)				\\
+				&=\bigcup_{n=0}^1(f^{n}(A)-f^{n}(C))	\cup
+					\bigcup_{n=0}^1(f^{n}(C)-f^{n}(D))	\cup
+					f^{1}(D)	\\
+				&=\bigcup_{n=0}^1(f^{n}(A)-f^{n}(C))	\cup
+					\bigcup_{n=0}^1(f^{n}(C)-f^{n}(D))	\cup
+					f^{1}((f(A)-f(C)) \cup (f(C)-f(D))	\cup f(D))	\\
+				&=\bigcup_{n=0}^1(f^{n}(A)-f^{n}(C))	\cup
+					\bigcup_{n=0}^1(f^{n}(C)-f^{n}(D))	\cup
+					(f^{2}(A)-f^{2}(C)) \cup (f^{2}(C)-f^{2}(D))	\cup f^{2}(D))	\\
+				&=\bigcup_{n=0}^2(f^{n}(A)-f^{n}(C))	\cup
+					\bigcup_{n=0}^2(f^{n}(C)-f^{n}(D))	\cup
+					f^{2}(D)	\\
+				&=	\cdots	\cdots	\\
+\tag{☆}&=\bigcup_{n=0}^m(f^n(A)-f^n(C)) \cup \bigcup_{n=0}^m (f^n(C)-f^n(D)) \cup f^m (D)
+\end{align*}
+
+ここで，\[
+					E=\bigcup_{n=0}^\infty(f^n(A)-f^n(C)),	\qquad
+					F=\bigcup_{n=0}^\infty(f^n(C)-f^n(D)),	\qquad
+				G=\bigcap_{n=0}^\infty f^{n}(D)	\]
+とおくと，$E$，$F$，$G$は互いに素で,
+\[
+	A=E	\cup	F	\cup	G
+\]
+と表わされる．これを証明するためには，$A \supseteq E \cup F \cup G$は明らかであり，
+残りの$A	\subseteq	E	\cup	F	\cup	G	\quad \cdots	\text{（４）　}$
+を示せばよい．
+
+$A$の任意の元$x$をとるとき，$x	\in	G$または$x	\notin	G$である．
+
+$x \in G$ならば（４）は成り立つ．
+一方$x	\notin	G=\bigcap_{n=0}^\infty f^{n}(D)$ならば，適当な整数$	n	\geqq 0$で，$x \notin f^n(D)$なるものが存在する．
+したがって集合$M=\{\,n	\,|\,	x	\notin f^n(D),\,n\text{は整数}\geqq 0	\,\}$は空でなく，
+$M$には最小数$m$が存在する（定理３参照）．このとき，$x \in	f^{m-1}(D)$かつ$x \notin f^m(D)$であるから，
+\begin{align*}
+	x \in f^{m-1}(D)-f^m(D)	&=	f^{m-1}(f(A))-f^m(D)=f^m(A)-f^m(D)	\\
+													&=	f^m(A)-f^m(D)												\\
+													&=	(f^m(A)-f^m(C))	\cup (f^m(C)-f^m(D))\\
+													&\subseteq	E	\cup F
+\end{align*}
+となり，$x \in E \cup F$が示される．したがって，$A	\subseteq	E	\cup	F	\cup	G$が示される（４）．
+
+次に(４)，定理６(ⅱ)，§1.3問１８，および定理８から
+\begin{align*}
+	C	&=C	\cap A = C \cap (E	\cup	F	\cup	G)	\\
+		&=(C	\cap	E)	\cup	(C	\cap	F)	\cup	(C	\cap G)=(C	\cap E) \cup	F	\cup	G,		\\
+\tag{$\because$定理６(ⅱ)}	C	\cap E	&=\bigcup_{n=0}^\infty	(C	\cap	(f^n(A)-f^n(C)))	\\
+&\text{( }\because	n=0	\text{のとき} 
+							C=f^0(C),\quad	f^0(C)	\cap	(f^0(A)-f^0(C))=\varnothing,	\\
+&\text{　　任意の$n \geqq 1$に対して}
+							C \cap (f^n(A)-f^n(C))=f^n(A)-f^n(C)\text{　)}				\\
+																			&=\bigcup_{n=1}^\infty	(f^{n}(A)-f^{n}(C))					\\
+																			&=\bigcup_{n=0}^\infty	(f^{n+1}(A)-f^{n+1}(C))			\\
+																			&=\bigcup_{n=0}^\infty	(f(f^{n}(A))-f(f^{n}(C)))		\\
+\tag{$\because$問１８(ⅳ)}						&=\bigcup_{n=0}^\infty	 f(f^{n}(A)-f^{n}(C))				\\
+\tag{$\because$定理８(ⅰ)}						&=f(\bigcup_{n=0}^\infty	(f^n(A)-f^n(C))						\\
+																			&=f(E)
+\end{align*}
+が得られ，かくして$C$は互いに素な集合$f(E)$，$F$，$G$によって
+\begin{align*}
+	\tag{５}	C=f(E)	\cup	F	\cup	G
+\end{align*}
+と表わされる．したがって，(４)，(５)を利用して，写像$\mathscr{F}:A	\rightarrow	C$を
+\[
+	\mathscr{F}(x)=	\begin{cases}	f(x)	&(x	\in	E					\text{のとき)}	\\
+																x			&(x	\in F	\cup G	\text{のとき)}	\\
+									\end{cases}
+\]
+によって定義すれば，$\mathscr{F}$は全単射である．よって$A	\sim	C$が得られる．
+\■
+
+\pagebreak
+\例{１}
+閉区間$[a,b]$は$\R$と対等である．実際，$\R	\supseteq	[q,b]	\supseteq	]a,b[$で，
+$\R	\sim ]a,b[$（§2.1	例１０,例１１)であるから，定理１０'により$\R	\sim	[a,b]$である．
+
+　
+
+\問{８}
+$\R$の部分集合$A$は，適当な開区間$]a,b[$を包むとき，$\R$と対等であることを示せ
+（したがって，$[a,b[$，
+							$]a,b]$，
+							$]-\infty,a[$，
+							$]-\infty,a]$，
+							$]a,\infty[$，
+							$]a,\infty[$，
+							$[a,\infty[$，
+はいずれも$\R$と対等であることがわかる）.
+
+\証明
+$\R	\supseteq A	\supseteq	]a,b[$，$\R	\sim ]a,b[$であるから，$\R	\sim A$．
+\■

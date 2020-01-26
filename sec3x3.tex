@@ -1,0 +1,222 @@
+\section{順序数の大小}
+{\small
+	個数の一般化としての濃度に対し，１番目，２番目，３番目などの序数の一般化として順序数と呼ばれるものがある．
+本節では，順序数の間の大小関係について調べ，さらに数学的帰納法の一般化であるところの超限帰納法を説明しよう．
+}
+
+\subsection{順序数の大小}
+	整列集合の順序型のことを\textgt{順序数}という．
+\[
+	0=\langle \varnothing \rangle,\quad	
+	1=\langle	(1) \rangle,				\quad
+	2=\langle (1,2) \rangle				\quad	,\cdots,	\quad
+	n=\langle (1,2,\cdots,n) \rangle
+\]
+などのような有限整列集合の順序数を\textgt{有限順序数}という．
+\[
+	\omega=\langle (\N,<) \rangle,\,
+	\Bigl<\Bigl(0,\frac{1}{2},\frac{2}{3},\cdots,\frac{n-1}{n},\cdots,;1,2,3,\cdots,m,\cdots \Bigr)\Bigr>
+\]
+などのような無限整列集合の順序数を\textgt{無限順序数}（または\textgt{超限順序数}）という．
+
+順序数の大小を定義するには，前節で導入した切片の概念を用いる．
+はじめに，２つの有限整列集合$A=(1,2,3,\cdots,m),\,B=(1,2,3,\cdots,n)$を考えよう．
+$m<n$ならば，明らかに$A$は$B$の１つの切片$B(m+1)$に等しい，
+逆に$A$が$B$の１つの切片に等しければ，$m<n$である．
+この事実を一般の無限順序数の場合に拡張して定義づけるために，
+次の補題を準備しよう．
+
+\補題{}
+それぞれ順序同型である任意の整列集合$A$，$A'$，$B$，$B'$
+\[
+	\langle A \rangle=\langle A' \rangle	\quad	\langle B \rangle=\langle B'\rangle
+\]に対し
+\[
+	A \simeq B(b)\,(b \in B) \Longleftrightarrow A' \simeq B'(b') \, (b' \in B').
+\]
+\証明
+$\Rightarrow$の証：仮定より，３つの順序同型写像
+$f:A \rightarrow A'$，$g:B \rightarrow B'$，$h:A \rightarrow B(b)$
+が存在する．$g$を$B(b)$（$ \subset B$）に制限することによって得られる写像
+\[
+	g':B(b) \rightarrow B'(g(b));x \mapsto g(x)
+\]
+（§3.2 補題３参照）を考えるとき，$g'$も順序同型写像である．そこで，$g(b)=b'$，
+$g' \circ h \circ f^{-1}=k$とおけば，$k$は順序同型$A' \simeq B'(b')$を与える．
+
+$\Rightarrow$の証も同様である．
+
+この補題により，次の定義が意味をもつ．
+
+\定義{}
+$\alpha$，$\beta$を２つの順序数とする．
+$\alpha$は$\beta$より\textgt{小さい}，または$\beta$は$\alpha$より\textgt{大きい}といわれるのは，
+$\langle A \rangle=\alpha$，$\langle B \rangle=\beta$なる任意の整列集合$A$，$B$に対して，
+$A$が$B$の１つの切片と同型となるときである．
+このとき，
+\[
+	\alpha < \beta
+\]
+と書かれる．
+
+\vspace{3mm}
+\例{１}
+任意の有限順序数$n$に対し$n<\omega$である．実際，$\N=(1,2,3,\cdots)$に対し$(1,2,\cdots,n)=\N(n+1)$が成り立つ．
+
+\vspace{3mm}
+\例{２}
+\[ \omega < 
+ \Bigl<\Bigl(0,\frac{1}{2},\frac{2}{3},\cdots,\frac{n-1}{n},\cdots,;1,2,3,\cdots,m,\cdots \Bigr)\Bigr>
+\]
+である．
+
+実際，
+\[
+	\Bigl(0,\frac{1}{2},\frac{2}{3},\cdots,\frac{n-1}{n},\cdots,;1,2,3,\cdots,m,\cdots \Bigr)=X
+\]
+とおくとき，$\displaystyle
+	X(1)=\Bigl(0,\frac{1}{2},\frac{2}{3},\cdots,\frac{n-1}{n},\cdots \Bigr)	\simeq N
+$
+が成り立つ．
+
+\vspace{3mm}
+\定理{４}
+
+順序数の大小関係に関し，次が成立する．
+
+\begin{list}{}{}
+	\item	(ⅰ)　$\alpha$，$\beta$，$\gamma$を任意の順序数とする．
+							\[
+								\alpha<\beta,\quad \beta<\gamma
+								\Longrightarrow \alpha < \gamma.
+							\]
+	\item	(ⅱ)　任意の順序数$\alpha$，$\beta$に対し，
+								\[
+									\alpha<\beta,\quad
+									\alpha=\beta,\quad
+									\alpha>\beta
+								\]
+							のうちの少なくとも１つが成り立ち，しかもどの２つも同時に成り立たない．
+\end{list}
+
+
+\証明
+(ⅰ)　
+$\langle A \rangle=\alpha$，
+$\langle B \rangle=\beta$，
+$\langle C \rangle=\gamma$なる整列集合$A$，$B$，$C$をとる．
+仮定より，２つの順序同型写像$f:A \rightarrow B(b)\,(b \in B)$，$g:B \rightarrow C(c)\,(c \in C)$が存在する．
+$g$を$B(b)$に制限して得られる写像$g':B(b) \rightarrow C(g(b));x \mapsto g(x)$も順序同型写像であるから，
+$g' \circ f$は順序同型$A \simeq C(g(b))$を与える．
+
+(ⅱ)　
+$	\langle	A	\rangle=\alpha$，$\langle	B	\rangle=\beta$なる整列集合$A$，$B$をとるとき，
+定理３（整列集合の比較定理）より，
+\begin{equation*}
+	A \simeq B,								\qquad 
+	A \simeq B(b) \quad (b\in B),	\qquad 
+	B \simeq A(a) \quad (a \in A)
+\end{equation*}
+のうち少なくとも１つが成り立ち，しかもどの２つも同時には成り立たない．したがって
+\[
+	\alpha<\beta,\qquad
+	\alpha=\beta,\qquad
+	\alpha>\beta
+\]
+のうちの少なくとも１つが成り立ち，しかもどの２つも同時に成り立たない．
+\■
+
+順序数$\alpha	=	\langle	A	\rangle$より小さい順序集合全体の集合を$W\{\alpha\}$と表すとき，定理４は，
+$W\{\alpha\}$が１つの順序集合であることを示している．整列集合$A$に対し$A$の切片
+全体の集合を$W(A)$とするとき，§3.2.2例９により$A \simeq W(A)$である．
+更に，下の問７により$W(A) \simeq W\{\alpha \}$がわかるので，$W\{ \alpha \}$は整列集合となる．
+
+\vspace{3mm}
+\問{７}
+整列集合$A$の順序数を$\alpha$とするとき，
+$A$の切片全体の集合から$\alpha$より小さい順序数全体への写像
+$f:W(A) \rightarrow W\{ \alpha \};A(a) \mapsto \langle A(a) \rangle $
+は順序同型写像であり，しかも
+$\langle W\{\alpha\} \rangle=\alpha$となることを証明せよ．
+
+\証明
+\begin{align*}
+	&	W(A)						=\{\,A(a)\,|\,a	\in A	\,\}	\\
+	&	W\{\,\alpha\,\}	=\{\,x\,|\,x	<	\alpha=\langle	A	\rangle	\,\}
+\end{align*}
+とおく．
+
+\textgt{（ⅰ）$f$の全射性：}$\alpha$より小さい任意の順序数$x	\in W\{\,\alpha\,\}$に対して
+$x	<	\alpha$であるから，
+$x=\langle	X	\rangle$なる任意の整列集合$X$に対して（順序数は整列集合にのみ定義されていること
+に注意）$X$の順序同型となる$A$の切片$A(y)	\quad	(y	\in A)$が存在する（順序数の大小の定義より）．
+よって$f$は全射である．
+
+\textgt{（ⅱ）$f$の順序保存性：}
+$W(A)$の２つの元$A(a),\,	A(b)$について$X(a)	prec	X(b)$ならば§3.3例９の定義より，
+$A(a) \subset A(b)$．よって§3.2.2補題１．より$a	\prec	b$である．
+よって§3.2.2補題２．より$A(b)(a)=A(a)$となり，$A(a)$は$A(b)$の切片$A(b)(a)$と順序同型となる．
+よって順序数の大小の定義より$\langle A(a)\rangle < \langle A(b) \rangle$となり，
+$f$は順序を保つ．（ⅰ）（ⅱ）より$f$は順序同型写像である．
+
+$f$は順序同型写像であるから$W(A)	\simeq	W\{\alpha\}$，よって
+$\langle	W(A)	\rangle	=	\langle	W\{\alpha\}	\rangle$．
+問７前の結論で$\alpha=\langle	A	\rangle	=	\langle	W(A)	\rangle$が得られているから，
+$ \langle W\{\alpha\} \rangle = \langle W(A) \rangle = \langle A \rangle=\alpha$．
+\■
+
+\定理{５}
+順序数からなる任意の集合$W$は，大小の順序に関して整列集合をなす．
+
+\証明
+$W$が順序集合であることは，定理４から直ちにわかる．$M$を$W$の空でない部分集合とする．
+$M$の1つの元$\alpha$をとるとき，$\alpha$より小さい$M$の元が存在しなければ
+$\alpha$は$M$の最初の元である．
+$\alpha$より小さい$M$の元が存在すれば，
+\[
+M'=\{\beta \, | \, \beta<\alpha,\, \beta \in M \} = M \cap W \{ \alpha \}
+\]
+は整列集合$W\{\alpha\}$の空でない部分集合で，したがって最初の元($ \min M'$)が存在する．
+これは，明らかに$M$の最初の元($ \min M $ )に等しい．よって，$W$は整列集合である．
+\■
+
+$A$の整列集合，$\beta \in A$を最初の元ではない$A$の元とする．
+$\beta^{-} \in A$が$\beta$の\textgt{直前の元}であるとは，
+$\beta^{-} \prec \gamma \prec \beta $を満たす元$\gamma \in A$が存在しないときをいう．
+$0$でない任意の順序数$\alpha$に対し，$\alpha$の\textgt{直前の順序数}という概念が上と同じようにして
+定義される．下の例３，４からわかるように，直前の順序数は存在する場合も，存在しない場合もある．
+
+　
+
+\例{３}$0$でない任意の有限順序数$n$は，直前の順序数$n-1$をもつ．
+また$ \langle (1,3,5,\cdots ; 2 ) \rangle$は，直前の順序数$\omega$をもつ．
+一般に，順序数$\alpha$の直前の順序数が存在するとき，$\alpha$を\textgt{孤立数}という．
+最初の順序数$0$も孤立数のうちに含める．
+
+　
+
+\例{４}
+$\omega$は直前の順序数を持たない．一般に直前の順序数をもたない超限順序数を\textgt{極限数}という．
+
+　
+
+整列集合$A$に対し，元$a \in A$による切片$A(a)$の順序数が$\alpha$に等しいとき，
+$a$は\textgt{$\alpha$番目}にあるということにすれば，
+整列集合
+$\displaystyle \Bigl( 0,\frac{1}{2} , \frac{2}{3} , \cdots, \frac{n-1}{n} , \cdots , ;
+ 1 , 2 , \cdots , m , \cdots , \Bigr) $
+において，
+$0$は$0$番目，
+$\displaystyle \frac{1}{2}$は$1$番目，
+$\displaystyle \frac{2}{3}$は$2$番目，
+$1$は$\omega$番目
+（$\displaystyle \because 
+							\langle A(1) \rangle	= 
+							\Bigl\langle \Bigl( 0,\frac{1}{2} , \frac{2}{3} , \cdots, \frac{n-1}{n} \Bigl) \Bigr\rangle 
+																		=	\omega
+$）
+の元である（§3.2例８）．
+$0$番目，$1$番目，$2$番目というよび方は，普通の序数による$1$番目，$2$番目，$3$番目というよび方をずらした
+ものであるから，本質的には序数によるよび方とかわりはない．
+このような考察から，無限順序数$\omega$が序数の一般であることが認められよう．
+

@@ -1,0 +1,74 @@
+\subsection{同値関係}
+集合$X$における関係$R$が次の３つの条件を満たすとき，$R$は$X$における\textgt{同値関係}であるといわれる．
+
+\begin{align*}
+	&\text{(１)　$X$のすべての元$x$に対し，$xRx$} 																&\textgt{（反射律）}\\
+	&\text{(２)　$X$のすべての元$x$，$y$に対し，$xRy \Longrightarrow yRx$} 				&\textgt{（対称律）}\\
+	&\text{(３)　$X$のすべての元$x$，$y$に対し，$xRy$，$yRz \Longrightarrow xRz$} &\textgt{（推移律）}
+\end{align*}
+
+(１)，(２)，(３)の３つを合わせて\textgt{同値律}という．
+
+\vspace{3mm}
+\textgt{例３．　}
+$X$の任意の元の間の相等関係$=$は，同値関係である．
+実際，$X$の元$x$，$y$，$z$に対し，(１)　$x=x$，
+(２)　$x=y \Longrightarrow y=x$，(３)　$x=y$， $y=z \Longrightarrow x=z$が成り立つ．
+
+\vspace{3mm}
+\textgt{例４．　}
+平面における三角形全体の集合を$M$とする．
+$\alpha$，$\beta \in M$に対し，$\alpha R  \beta \Longleftrightarrow \alpha \soji \beta$（$\alpha$と$\beta$は相似）によって定まる関係は同値関係である．
+実際，(１)　$\alpha \soji \alpha$，
+(２)　$\alpha \soji \beta \Longrightarrow \beta \soji \alpha$，
+(３)　$\alpha \soji \beta$， $\beta \soji \gamma 
+\Longrightarrow \alpha \soji \gamma$が成り立つ．
+
+\vspace{3mm}
+\textgt{例５．　}
+実数全体の集合$\R$において，$aRb \Longleftrightarrow a-b \in \Z$によって定まる関係$R$は同値関係である．
+実際，(１) $a-a=0 \in \Z$，
+(２) $a-b \in \Z \Longrightarrow b-a \in \Z$，
+(３) $a-b \in \Z$，$b-c \in \Z \Longrightarrow a-c=(a-b)+(b-c) \in \Z$が成り立から，同値律が満たされる．
+
+\vspace{3mm}
+\textgt{例６．　}
+$X$，$Y$を互いに素な（すなわち$X \cap Y =\varnothing$であるような）２つの集合とし，$A$を$X$の部分集合，
+$f:A \rightarrow Y$を写像とする．和集合$X \cup Y$に属する任意の元$x$，$y$に対し関係$xRy$が成立するのは次の４つの条件：
+\begin{align*}
+&\text{(１) } x=y,													&&\text{(２) } x \in A \text{ かつ } y=f(x),	\\
+&\text{(３) } y \in A \text{ かつ } x=f(y),	&&\text{(４) } x , y \in A \text{ かつ } f(x)=f(y)
+\end{align*}
+のうちいずれか１つが成り立つとき，しかもそのときに限ると定めると,$R$は同値関係になる．実際$x$，$y$を入れかえてできる条件(１)'，(２)'，(３)'，(４)'を考えると(１)'=(１)，(２)'=(３)，(３)'=(２)，(４)'=(４)
+であるから対称律が成立する．
+
+$x$と自分自身$x$に関しては，$x=x$となり(１)が成り立つので，$xRx$　(反射律）．
+
+さらに，$xRy$，$yRz$が(１)の場合の$x=y$，$y=z$の場合には推移律が成り立つ．
+
+(１)と(２)の組合せの場合$x=y$，かつ，$z \in A$かつ$y=f(z)$であり，$x=f(z)$が成り立つから，$xRz$．
+
+(２)と(２)の組合せの場合$x \in A$かつ$y=f(x)$，かつ，$z \in A$かつ$y=f(z)$の場合，$x,z \in A$かつ$f(x)=f(z)$
+すなわち(４)が成り立ち，$xRz$．
+
+(４)と(４)の組合せの場合$x,y \in A$かつ$f(x)=f(y)$，かつ，$y,z \in A$かつ$f(y)=f(z)$の場合，$x,z \in A$かつ$f(x)=f(z)$で(４)が成り立ち，$xRz$．よって，推移律が成り立つ．
+
+
+\vspace{3mm}
+\textgt{例７．　}
+$\R$における大小関係$<$は，同値関係ではない．
+なぜならば，(１)$a < a$，(２)$a < b \Longrightarrow b < a$が成立しないからである．
+
+\pagebreak
+\textgt{問２０．　}
+$p$を1より大き整数とする．$\Z$の元$m$，$n$に対し$m$が$p$を\text{法}として$n$と\textgt{合同}であるとは，$m-n$が$p$の倍数であることと定義する．このことを$m \equiv n ( \text{ mod } p )$と表す．
+$mRn \Longleftrightarrow m \equiv n (\text{ mod } p)$によって定まる関係$R$は，同値関係であることを証明せよ．
+
+\証明
+反射律：$m-m=0$は$p$の倍数であるから，$mRm$．
+
+対称律：$m-n$が$p$の倍数であれば，$n-m$も$p$の倍数である．
+
+推移律：$m \equiv n ( \text{ mod } p)$，$n \equiv q ( \text{ mod } p) \Longrightarrow m-n=kp$，$n-q=lp$なる
+$k,l \in \Z$が存在する．このとき$m-q=m-n+n-q=(k+l)p$だから，$m \equiv q ( \text{ mod } p)$．\■
+

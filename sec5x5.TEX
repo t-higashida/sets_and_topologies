@@ -1,0 +1,226 @@
+\section{閉包・開核}
+{\small
+位相空間$X$の部分集合$A$に対し，閉包とよばれる$X$の部分集合$\overline{A}$と，
+開核（または内部）とよばれる$X$の部分集合$\Int A$が定まる．本節では，これらの
+諸性質について研究する．前節までの考察で，開集合や閉集合によって
+位相空間を定義することができることを知ったが，閉包や開核を用いても位相空間を
+導入することができることにも注意する．
+}
+
+\subsection{閉包}
+$A$を位相空間$X$の部分集合とする．$A$を包むすべての閉集合の共通部分のことを$X$に関する
+$A$の\textgt{閉包}（または\textgt{蝕集合})といい，$\overline{A}$で表わす．
+\[
+	\overline{A}	\stackrel{\text{def}}{=}	\bigcap_{F	\in	\mathscr{F}}	F,
+	\quad	\mathscr{F}	=	\{	F	\,|\,	F	\supseteq	A,	\:	F	\text{	is	Closed	on	}	X	\}
+\]
+閉包に属する点を
+\textgt{蝕点}という．定義から容易に次の性質が証明される．
+
+\vspace{3mm}
+\定理{８}
+\begin{list}{}{}
+	\item(ⅰ)	$\overline{A}$は$X$の閉集合である．
+	\item(ⅱ)	$\overline{A}$は$A$を包む閉集合のうちで最も小さいものである．
+						すなわち，もし$F$が$A \subseteq F$であるような$X$の閉集合であるならば，
+						$A \subseteq \overline{A} \subseteq F$が成り立つ．
+	\item(ⅲ)	$A$が$X$の閉集合$\Longleftrightarrow \overline{A}=A$
+\end{list}
+
+\証明
+(ⅰ) $\overline{A}$は$X$の閉集合の共通部分であるから，定理５の［C$_3$］により，$X$の閉集合である．
+
+(ⅱ) $X$の部分集合の族$\mathscr{F}=\{F \,|\,F \supseteq A,F\text{は}X\text{で閉} \}$を考えれば，
+$\overline{A}=\bigcap_{F \in \mathscr{F}} F$である．すべての$F \in \mathscr{F}$に対し$A \subseteq F$
+だから，$A \subseteq \bigcap_{F \in \mathscr{F}} F \subseteq F$が成り立つ．
+
+(ⅲ) $\Rightarrow$の証：$A$が$X$の閉集合ならば，$A$を包む最小の閉集合は$A$自身だから，
+$\overline{A}=A$．$\Leftarrow$の証：$\overline{A}=A$ならば，(ⅰ)より$A$は$X$の閉集合．
+\■
+
+\例{１}§5.4例８の位相空間$X=\{a,b,c,d\}$では，$X$の閉集合の族は，
+\[
+	\{X,\{b,c,d\},\{a,b\},\{b\},\{a\},\varnothing	\}
+\]
+である．したがって，$\overline{\{c\}}=\{b,c,d\}$，$\overline{\{a,c\}}=X$，$\overline{\{c,d\}}=\{b,c,d\}$
+などが成り立つ．
+
+
+\pagebreak
+次の定理は，$A$の蝕点を，開集合を用いて特徴付けるものである．
+
+\定理{９}
+$A$を位相空間$X$の部分集合とする．このとき，$x \in \overline{A}$であるための必要十分条件は，
+$x$を含む任意の開集合$G$に対し
+\[
+	G \cap A \ne \varnothing
+\]
+となることである．
+
+\証明
+必要性：対偶を証明する．$x$を含む適当な開集合$G$をとって，
+\[
+	G \cap A = \varnothing	\quad\text{すなわち}\quad A \subseteq X-G
+\]
+となったと仮定する．$X-G$は$X$の閉集合で$A$を包むから，定理８(ⅱ)より
+$A \subseteq \overline{A} \subseteq X-G$となるが，$x \notin X -G$であるから，$x \notin \overline{A}$
+である．
+
+十分性：やはり対偶を証明する．
+$x \notin \overline{A}$，すなわち$x \in X-\overline{A}$と仮定する．
+$(X-\overline{A}) \cap A \subseteq (X-A) \cap A = \varnothing$であるから，
+$(X-\overline{A}) \cap A = \varnothing$が成り立ち，すなわち$G=X-\overline{A}$として，
+$G$は$x$を含む$X$の開集合である．
+\■
+	
+\例{２}$A$を実数直線$\R$の部分集合とし，$\inf A$（または$\sup A$）が存在するならば，
+$\inf A \in \overline{A}$（または$ \sup A \in \overline{A}$）である．実際，定理９の
+条件を容易に確かめることができる．
+
+\証明
+定理９より$\inf A$（$\sup	A$）を含む任意の開集合$G$に対し$G \cap A \ne \varnothing$を示せばよい．
+$a=\inf A$（$b=\sup	A$）と下限（上限）の定義より$y>a$（$y<b$）なる任意の$y$に対して$x<y$（$x>y$）となる
+$x \in A$が存在するから，
+$a+\varepsilon>a$（$b-\varepsilon<b$）に対しても，$x<a+\varepsilon$（$x>b-\varepsilon$）となる$x \in A$
+が存在する．
+この$x \in A$に対して下限（上限）の定義（１）と合せて
+$a \leqq x	\leqq	a+\varepsilon$（$b	\geqq	x	\geqq	b-\varepsilon$）．
+よって，任意の正数$\varepsilon$に対して$U(a,\varepsilon) \cap A \ne \varnothing$
+（$U(b,\varepsilon) \cap A \ne \varnothing$）（①）．
+
+$G$は開集合であるから，$G$の任意の点$x$に対してある$\varepsilon>0$が存在して，$U(x;\varepsilon)	\subseteq	G$．
+よって$G$の点$a=\inf	A$（$b=\sup	A$）に対してもある$\varepsilon_a$（$\varepsilon_b$）が存在して，
+$U(a;\varepsilon_a)	\subseteq	G$（$U(b;\varepsilon_b)	\subseteq	G$）（②）．任意の$\varepsilon$に対して①が成り立つ
+から$\varepsilon_a$（$\varepsilon_b$）に対しても①が成り立つ．
+すなわち$U(a,\varepsilon_a) \cap A \ne \varnothing$（$U(b,\varepsilon_b) \cap A \ne \varnothing$）(③）．
+
+②③より$G \cap A \ne \varnothing$
+
+\■
+
+
+\pagebreak
+定理９を用いると，次の証明ができる．
+
+\定理{１０}
+$A$を位相空間$X$の部分集合とするとき，
+\[
+	\overline{A}=A \cup D(A)	\quad (D(A)\text{は$A$の導集合})
+\]
+が成り立つ．
+
+\証明
+$\overline{A}=A \cup D(A)$が成り立つことを示すには，
+$X-\overline{A}=X-(A \cup D(A))$が成り立つことをいえばよい（§1.2	定理１０）．
+任意の$x \in X-\overline{A}$，すなわち$x \notin \overline{A}$，
+をとると，定理９により，$x$を含む適当な開集合$G$で，
+$G \cap A = \varnothing$となるものが存在する．
+よって$G \cap (A-\{x\})=\varnothing$となる（$\because	
+A	\supseteq	A-\{x\}$）から，$x \notin D(A)$すなわち
+$x \in X-D(A)$である．よって$	\subseteq	X-D(A)$．また，$x \notin \overline{A}$より直ちに，$x \notin A$，
+すなわち$x \in X-A$が導かれる．したがってド・モルガンの法則より，
+$x \in (X-A) \cap (X-D(A))=X-(A \cup D(A))$がいえる．
+ゆえに，$X-\overline{A} \subseteq X-(A-D(A))$．
+
+逆に，任意の$x \in X-(A \cup D(A))=(X-A) \cap (X-D(A))$をとると，
+$x \notin A$かつ$x \notin D(A)$である．
+後者より，$x$は$A$の集積点ではないから$G \cap (A-\{x\})=\varnothing$なる開集合$G \ni x$が存在するが，
+$x \notin A$より$A-\{x\}=A$で，結局$G \cap A=\varnothing$となる．
+よって，定理９より，$x \notin \overline{A}$すなわち$x \in X - \overline{A}$
+が導かれる．ゆえに，$X-(A \cup D(A)) \subseteq X-\overline{A}$．
+\■
+
+\補題{＃}
+$D(A	\cup	B)	=	D(A)	\cup	D(B)$
+
+\証明
+\begin{align*}
+	x	\in	D(A	\cup	B)	&\Longleftrightarrow	\text{$x$は$A	\cup	B$の集積点}	\\
+											&\Longleftrightarrow	
+												\text{$x$を含む任意の開集合$G$に対して$G	\cap	(A	\cup	B	-\{x\})	\ne	\varnothing$}\\
+											&\Longleftrightarrow	
+												\text{$x$を含む任意の開集合$G$に対して$G	\cap	(A-\{x\})	\ne	\varnothing$}	\\
+											&\text{または　}	
+												\text{$x$を含む任意の開集合$G$に対して$G	\cap	(B-\{x\})	\ne	\varnothing$}	\\
+											&\Longleftrightarrow	
+												x	\in	D(A)	\text{または}	x	\in	D(B)	\\
+											&\Longleftrightarrow	x	\in	D(A)	\cup	D(B)	\\
+\end{align*}
+\■
+
+\例{３}
+直線$\R$において，$\overline{]a,b[}=\overline{]a,b]}=\overline{[a,b[}=\overline{[a,b]}=[a,b]$．
+
+\証明(1)
+\begin{align*}
+		\overline{]a,b[}	\:&=\:	]a,b[	\:\cup\:	D(\:]a,b[\:)		&\text{（定理１０）}		\\
+											\:&=\:	]a,b[	\:\cup\:	[a,b]						&\text{（§5.4 例１）}	\\
+											\:&=\:	[a,b]														&(]a,b[	\subset	[a,b])	
+\end{align*}
+
+(2)　$[a,b]$は$\R$上で閉集合であるから，定理８の（ⅲ）より$[a,b]=\overline{[a,b]}$．
+
+(3)　
+\begin{align*}
+		\overline{]a,b]}	\:&=\:	]a,b]	\cup	D(\:]a,b]\:)					&\because\text{（定理１０）}	\\
+											\:&=\:	]a,b]	\cup	D(\:]a,b[	\:\cup	\:	\{b\})												\\
+											\:&=\:	]a,b]	\cup	D(\:]a,b[)	\:\cup	D(\{b\})												\\
+											\:&=\:	]a,b]	\cup	[a,b]	\:\cup	\{b\}		&\because\text{（補題＃）}		\\
+											\:&=\:	[a,b]																														\\
+											\:&=\:	\overline{[a,b]}									&\because\text{（2)}					\\
+\end{align*}
+
+(4)　
+\begin{align*}
+		\overline{[a,b[}	\:&=\:	[a,b[	\:\cup	D(\:[a,b[\:)					&\because\text{（定理１０）}	\\
+											\:&=\:	[a,b[	\:\cup	D(\{a\}	\:\cup	\:]a,b[)														\\
+											\:&=\:	[a,b[	\:\cup	D(\{a\})\:\cup	D(\:]a,b[)													\\
+											\:&=\:	[a,b[	\:\cup	\{a\}	\:\cup	[a,b]		&\because\text{（補題＃）}		\\
+											\:&=\:	[a,b]																														\\
+											\:&=\:	\overline{[a,b]}									&\because\text{（2)}					\\
+\end{align*}
+
+
+\例{４}
+直線$\R$において，有理数全体の集合$\Q$の閉包は$\R$である．実際，
+各実数は$Q$の集積点である（§4.4例３）から，定理１０より
+$\overline{Q}=\Q \cup D(Q) = Q \cup \R = \R$．
+
+\vspace{3mm}
+\定義{}
+位相空間$X$の部分集合$A$が$X$で\textgt{稠密}であるといわれるのは，
+$\overline{A}=X$が成り立つときである．
+例３より$]a,b[$は$[a,b]$で稠密，例４より$\Q$は$\R$で稠密である．
+
+\vspace{3mm}
+部分空間の閉包に関して，次が成り立つ．
+
+\定理{１１}
+$A$を$X$の部分空間とし，$B$を$A$の部分集合とする．
+$B$の$X$に関する閉包を$\overline{B}$とすれば，$B$の$A$に関する閉包$\widetilde{B}$は$\overline{B} \cap A$
+に等しい．
+
+\証明
+$\overline{B}$は$X$で閉である（定理８(ⅰ)）から，$\overline{B} \cap A$は
+$A$で閉である(定理７)．また，$B \subseteq B \cap A$である（$B$は$A$の部分集合だから）．
+よって，$\widetilde{B} \subseteq B	\cap	A	\subseteq	\overline{B} \cap A$が示される．
+
+次に，$A$の部分集合族$\{K \,|\, K \supseteq B,\,K\text{は}A\text{で閉} \}=\{K_\alpha\,|\,\alpha \in \Lambda \}$
+($\Lambda$は添え字の集合）を考えると，$K_\alpha=F_\alpha \cap A$となる$X$の閉集合$F_\alpha$が存在して（定理７），
+\[
+\textstyle
+	\widetilde{B}=\bigcap_{\alpha \in \Lambda} K_\alpha = \bigcap_{\alpha \in \Lambda}(F_\alpha \cap A)
+							=\bigl(\bigcap_{\alpha \in \Lambda} F_\alpha\bigr) \cap A 
+\]
+が成り立つ．$K_\alpha	=	F_\alpha	\cap	A	\supseteq	B$より，
+すべての$\alpha \in \Lambda$に対して$B \subseteq F_\alpha$だから，
+$B \subseteq \bigcap_{\alpha \in \Lambda}F_\alpha$である．ところが，
+$\bigcap_{\alpha \in \Lambda}F_\alpha$は$X$で閉（定理５［C$_3$］）であるから，
+$\overline{B} \subseteq \bigcap_{\alpha \in \Lambda} F_\alpha$が成り立つ．
+それゆえ，$\overline{B} \cap A \subseteq	(\bigcap_{\alpha	\in	\Lambda}	F_\alpha)	\cap	A	\subseteq \widetilde{B}$が示される．
+
+よって，$\overline{B} \cap A = \widetilde{B}$が得られる．
+\■
+
+
+

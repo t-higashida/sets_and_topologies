@@ -1,0 +1,196 @@
+\section{連続写像}
+{\small
+本節では，連続写像の定義を近傍の言葉で述べ，次いで，開集合，閉集合，
+閉包，開基などのを用いて,写像が連続であるための条件を確立する．
+これは第４章定理１２，定理１３の一般化である．終わりに，開写像と閉写像に触れる．
+}
+\subsection{連続写像}
+§4.5で述べた関数$f:\R \rightarrow \R$の連続性の概念が，位相空間から位相空間
+への写像の連続性の概念に一般化される．
+
+\定義{}
+$X$，$Y$を位相空間とする．写像$f:X \rightarrow Y$が点$x \in X$で\textgt{連続}
+であるといわれるのは，$Y$における$f(x)$の任意の近傍$U$に対し，$f^{-1}(U)$が$X$における
+$x$の近傍であるときである．すべての点$x \in X$で連続であるような写像$f$は，
+\textgt{連続写像}といわれる．
+
+\vspace{3mm}
+\例{１}
+$X$，$Y$を位相空間，$c \in Y$を１つの点とする．定値写像$f:X \rightarrow Y;x \mapsto c$は
+連続写像である．実際，すべての$x \in X$に対し$U$を$f(x)=c$の近傍とすると，
+$f^{-1}(U)=X$で，これは$x$の近傍である．
+
+\vspace{3mm}
+\例{２}
+$X$を位相空間とする．恒等写像$1_X:X \rightarrow X;x \mapsto x$は連続写像である．
+実際，すべての$x \in X$に対し$1_X(x)=x$の任意の近傍$U$をとると，
+$1_X^{-1}(U)=U$は$x$の近傍である．
+
+\vspace{3mm}
+\定理{５}
+位相空間$X$から位相空間$Y$への写像$f:X \rightarrow Y$に対し，次の６つの条件は同値である．
+\begin{list}{}{}
+	\item (１)　$f$は連続写像である．
+	\item (２)　$G$を$Y$の任意の開集合とすれば，$f^{-1}(G)$は$X$の開集合である．
+	\item (３)　$F$を$Y$の任意の閉集合とすれば，$f^{-1}(F)$は$X$の閉集合である．
+	\item (４)　$A$を$X$の任意の部分集合とすれば，$f(\overline{A}) \subseteq \overline{f(A)}$が成り立つ．
+	\item (５)　$X$，$Y$の基本近傍系の集合族$\{\mathscr{N}_1^*(x)\,|\,x \in X \}$，$\{\mathscr{N}_2^*(y)\,|\,y \in Y \}$
+が与えられたとき，任意の点$x \in X$において，$V \in \mathscr{N}_2^*(f(x))$ならば，
+$W \subseteq f^{-1}(V)$となる$W \in \mathscr{N}_1^*(x)$が存在する．
+	\item (６)　$Y$の開基$\mathscr{B}(Y)$が与えられたとき，$V \in \mathscr{B}(Y)$ならば，
+$f^{-1}(V)$は$X$の開集合である．
+\end{list}
+
+\証明
+(１)$\Rightarrow$(２)：$G$を$Y$の任意の開集合とする．$f^{-1}(G)=\varnothing$ならば，それは$X$の開集合である．
+$f^{-1}(G) \ne \varnothing$とし，$x \in f^{-1}(G)$とすれば，$f(x) \in G$であり，
+したがって$G$は$f(x)$の近傍である．（１）より$f$は連続であるから$f^{-1}(G)$は$x$の近傍，つまり開集合である．
+
+(２)$\Rightarrow$(１)：任意の点$x \in X$をとる．$U$を$Y$における$f(x)$の任意の近傍とすると，$U$は$f(x)$を含む
+開集合である．（２）より$f^{-1}(U)$は$X$の開集合で点$x$を含むから$x$の近傍である．よって定義より$f$は連続である．
+
+(２)$\Rightarrow$(３)：$F$を$Y$の任意の閉集合とすると，$Y-F$は$Y$の開集合である．
+（２）より$f^{-1}(Y-F)$は$X$の開集合であるが，
+\[
+	f^{-1}(Y-F)=X-f^{-1}(F)	\quad	\text{（§1.3.5　写像と集合算　定理１５系）}
+\]
+が成り立つから，$f^{-1}(F)$は$X$の閉集合である．
+
+(３)$\Rightarrow$(２)：$G$を$Y$の任意の開集合とすると，$Y-G$は$Y$の閉集合である．
+（２）より$f^{-1}(Y-G)$は$X$の閉集合であるが，
+\[
+	f^{-1}(Y-G)=X-f^{-1}(G)	\quad	\text{（§1.3.5　写像と集合算　定理１５系）}
+\]
+が成り立つから，$f^{-1}(G)$は$X$の開集合である．
+
+(３)$\Rightarrow$(４)：$A \subseteq X$とする．§5.5定理８(ⅰ)より$\overline{f(A)}$は$Y$の閉集合であるから
+(３）より
+$f^{-1}(\overline{f(A)})$は$X$の閉集合である．$f(A) \subseteq \overline{f(A)}$より
+$A \subseteq f^{-1}(\overline{f(A)})$がいえるから（§1.3　定理１５），
+§5.5定理８(ⅱ)より$\overline{A} \subseteq f^{-1}(\overline{f(A)})$．ゆえに，
+$f(\overline{A}) \subseteq \overline{f(A)}$が成立する．
+
+(４)$\Rightarrow$(３)：$F$を$Y$の閉集合とすれば，§5.5定理(ⅲ)より$\overline{F} = F$である．
+(４）より$f(\overline{f^{-1}(F)}) \subseteq \overline{f(f^{-1}(F))}$だから，
+\[
+	\overline{f^{-1}(F)} \subseteq f^{-1}(\overline{f(f^{-1}(F))}) \subseteq f^{-1}(\overline{F}) = f^{-1}(F)
+\]
+が成立する．それゆえ，$\overline{f^{-1}(F)}=f^{-1}(F)$が得られ，再び§5.5定理８(ⅲ)により，
+$f^{-1}(F)$は$X$の閉集合である．
+
+(１)$\Rightarrow$(５)：$V \in \mathscr{N}_2^*(f(x))$とすると，$V$は$Y$における$f(x)$の近傍だから，
+(１）より$f^{-1}(V)$は$X$における$x$の近傍である．
+したがって，$W \subseteq f^{-1}(V)$となる
+基本近傍$W \in \mathscr{N}_1^*(x)$が存在する．
+
+(５)$\Rightarrow$(１)：
+$x \in X$とし，$Y$における$f(x)$の任意の近傍を$U$とすると，$x \in f^{-1}(U)$である．
+任意の$ z \in f^{-1}(U)$をとると$f(z) \in U$だから，
+基本近傍系の定義より$V \subseteq U$となる$V \in \mathscr{N}_2^*(f(z))$が存在する．
+このとき（５）より$W \subseteq f^{-1}(V)$となる$W \in \mathscr{N}_1^*(z)$が存在するから，$z \in W \subseteq f^{-1}(U)$が得られ，$f^{-1}(U)$は$X$で開である．よって，$f^{-1}(U)$は$x$の近傍である．よって$f$は連続である．
+
+(２)$\Rightarrow$(６)：
+$V	\in	\mathscr{B}(Y)$は$Y$の開集合だから，（２）より$f^{-1}(V)$は$X$の開集合である．
+
+(６)$\Rightarrow$(２)：
+$G$を$Y$の開集合とする．$f^{-1}(G)$の任意の点を$x$とすると，$f(x) \in G$．
+このとき開基の定義より，$\mathscr{B}(Y)$の元$V$で，$f(x) \in V \subseteq G$を満たすものがある．
+したがって，$x \in f^{-1}(G)$．(６)より$f^{-1}(V)$は$X$で開であり，よって$f^{-1}(V)$は$x$の近傍である．
+よって，§6.1.2　注意３より$f^{-1}(G)$は開である．
+\■
+
+{\small
+\注意{１}$X$，$Y$ともに距離位相をもつ位相空間の場合を考える．$X$，$Y$の距離を
+それぞれ，$d$，$d'$とするとき，写像$f:X \rightarrow Y$が点$x \in X$で連続であるのは，
+任意の正数$\varepsilon$が与えられたとき，
+\[
+	d(y,x) < \delta \text{なるすべての} y \in X \text{に対して}d'(f(y),f(x))<\varepsilon
+\]
+となるような正数$\delta$が存在するときである（定理５(１) $\Longleftrightarrow$(５)．
+このことから，位相空間から位相空間への連続写像の概念は，§4.5で述べた連続関数
+$\R \rightarrow \R$の概念の一般化になっていることが，容易にわかるであろう．
+
+上の正数$\delta$は，一般には，点$x$と正数$\varepsilon$に関係している．
+もし$\delta$を，$\varepsilon$のみに関係し，点$x$には無関係であるように選ぶことができるならば，
+写像$f:X \rightarrow Y$は\textgt{一様連続}であるといわれる．
+}
+
+\pagebreak
+\問{４}
+$a$，$b$を２つの実数とする．$f:\R \rightarrow \R;x \mapsto ax+b$は一様連続であるが，
+$g:\R \rightarrow \R;x \mapsto x^2$は一様連続でないことを示せ．
+
+\証明
+前半：$a=0$のときは定値写像となり，$\forall	\delta>0$で成り立つ．
+
+$a	\ne	0$のとき，§4.5例２で示されるように$\displaystyle	\delta	=	\frac{\varepsilon}{|a|}$とおくと，
+\begin{align*}
+	|y-x|	<	\frac{\varepsilon}{|a|}	
+		&\Longrightarrow	|a||y-x|	<	\varepsilon	\\
+		&\Longrightarrow	|ay+b-(ax+b)|	<	\varepsilon	\\
+		&\Longrightarrow	|f(y)-f(x)|	<	\varepsilon	\\
+\end{align*}
+で，任意の正数$\varepsilon$に対し$\delta$は明らかに$y$に無関係である．よって$f$は一様連続である．
+
+
+後半：$g$を一様連続と仮定すると，正数$\varepsilon=1>0$に対して，
+$|x-y|<\delta \Rightarrow |x^2-y^2|<1$
+なる正数$\delta$が存在する．
+$\displaystyle \frac{1}{n}<\delta$なる$n \in \N$を
+とれば，
+$x,y$が$\displaystyle \frac{1}{n+1}<|x-y|<\frac{1}{n}$かつ
+$\displaystyle y > x \geqq 0$のとき，
+$\displaystyle	\Rightarrow 1 >|x^2-y^2|>2x|x-y|>\frac{2x}{n+1}$．
+すなわち$2x<n+1$となるが，$x$は$[0,\infty[$の任意の点であるからこれは矛盾．
+
+
+\■
+
+\例{３}
+$X$，$Y$，$Z$を位相空間とする．$f:X \rightarrow Y$，$g:Y \rightarrow Z$がともに連続写像
+ならば，合成写像$g \circ f:X \rightarrow Z$も連続写像である．実際，$Z$の任意の開集合$G$に
+対し$(g \circ f)^{-1}(G)=f^{-1}(g^{-1}(G))$は，仮定から$X$の開集合となる．
+
+\vspace{3mm}
+\例{４}
+$A$を位相空間$X$の部分空間とするとき，包含写像$i:A \rightarrow X;x\mapsto x$は連続写像である．
+実際，$G$を$X$の任意の開集合とすると，$i^{-1}(G)=G \cap A$は$A$の開集合である．
+
+
+\vspace{3mm}
+\例{５}
+$X$，$Y$を位相空間，$A$を$X$の部分空間とする．$f:X \rightarrow Y$が連続写像ならば，
+$f$の制限$f|A:A \rightarrow Y;x \mapsto f(x)$も連続写像である．
+実際，$G$を$Y$の任意の開集合とするとき，$(f|A)^{-1}(G)=f^{-1}(G) \cap A$は$A$の開集合である．
+
+\vspace{3mm}
+\例{６}
+$X$が離散空間ならば，すべての位相空間$Y$に対して，任意の写像$X \rightarrow Y$は連続である．
+実際，$X$のすべての部分集合は，$X$の開集合だから，このことは明らか．
+
+\vspace{3mm}
+\例{７}
+$Y$が密着位相ならば，すべての位相空間$X$に対して，任意の写像$f:X \rightarrow Y$は連続である．
+実際，$Y$の開集合は$Y$と$\varnothing$だけで，$f^{-1}(Y)=X$，$f^{-1}(\varnothing)=\varnothing$
+はともに$X$の開集合である．
+
+\vspace{3mm}
+\例{８}
+第一座標への射影$p_1:\R^2 \rightarrow \R;(x,y) \mapsto x$は連続写像である．実際，
+$\R$の任意の点$x$の$\varepsilon$近傍$]x-\varepsilon,x+\varepsilon[$に対し，
+$p_1^{-1}(]x-\varepsilon,x+\varepsilon[)=]x-\varepsilon,x+\varepsilon[ \times \R$．
+ここで$U((x,y);\varepsilon)	\subseteq	]x-\varepsilon,x+\varepsilon[ \times \R	p_1^{-1}(]x-\varepsilon,x+\varepsilon[)$
+であり，$U((x,y);\varepsilon)	\in	\mathscr{N}^*((x,y))$であるから	
+定理５(５)$\Leftrightarrow$（１）によって，$p_1$は連続である．
+同様に第二座標への射影$p_2:\R^2 \rightarrow \R;(x,y) \mapsto y$も連続である．
+
+\pagebreak
+\問{５}
+$X$，$Y$を位相空間とし，$f:X \rightarrow Y$を１つの写像とする．$A$，$B$を$X=A \cup B$であるような
+$X$の閉集合とするとき，$f$の制限$f|A:A \rightarrow Y$，$f|B: B \rightarrow Y$がともに連続ならば，
+$f$は連続であることを証明せよ．
+
+\証明
+$F$を$Y$の閉集合とすると，$f^{-1}(F)=f^{-1}(F) \cap (A \cup B)=(f^{-1}(F) \cap A) \cup (f^{-1}(F)\cap B)
+=(f|A)^{-1}(F) \cup (f|B)^{-1}(F)$より，$f^{-1}(F)$は$X$で閉，
+\■

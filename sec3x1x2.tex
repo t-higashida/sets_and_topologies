@@ -1,0 +1,142 @@
+\subsection{順序同型}
+順序集合$(\N,<)$と，正の偶数全体の集合$E$に実数の大小関係によって順序関係を定義して得られる順序集合
+\[
+	(E,<)=(2,4,6,\cdots,2n,\cdots)
+\]
+とを考える．写像$f:\N \rightarrow E;n \mapsto 2n$は全単射であり，$\N$の元$n,m$に対し
+\[
+	n<m \Rightarrow f(n)<f(m) \text{　すなわち　}2n < 2m
+\]
+が成り立つ．つまり，$\N$と$E$とは１対１の対応にあり，しかもこの対応によって元の順序が変わらない
+という性質をもつ．このような$\N$と$E$は，互いに順序同型であるといわれる．一般に，次のように定義される．
+
+　
+
+\定義{}
+$(X,\prec)$，$(Y,\prec')$を２つの順序集合とする．写像$f:X \rightarrow Y$は，次の性質(１)，(２)をもつとき，
+$(X,\prec)$から$(Y,\prec)$への\textgt{順序同型写像}といわれる．
+\begin{list}{}{}
+		\item	(１)　$f$は全単射である．
+		\item	(２)　$x$，$y \in X$に対し，$x \prec y \Rightarrow f(x) \prec' f(y)$	
+\end{list}
+が成り立つ((２)を満たす写像$f$は，\textgt{順序を保つ写像}といわれる)．
+
+　
+
+$(X,\prec)$から$(Y,\prec')$への順序同型写像がすくなくとも１つ存在するとき，
+$(X,\prec)$は$(Y,\prec')$と\textgt{順序同型}であるといわれ，
+\[
+	(X,\prec) \simeq (Y,\prec') \text{　　　　　(または単に$X	\simeq	Y$)}
+\]
+と表わされる．
+
+　
+
+{\small
+\注意{２}
+上の定義において，（1）は次の（$1'$）におきかえてもよい．
+
+（$1'$）　$f$は全射である．
+
+なぜならば，（2）が成立すれば，前項定義1（2）を用いて，$x \ne y \Rightarrow f(x) \ne f(y)$が
+導かれ，$f$は必然的に単射となるからである．
+}
+
+　
+
+\例{６}
+$(\N,<)=(1,2,3,\cdots,n,\cdots)$は，$(D,<)=(1,3,\cdots,2n-1,\cdots)$
+と順序同型である．実際，写像$\N \rightarrow D;n \mapsto 2n-1$は順序同型写像である．
+
+　
+
+\問{１}
+$m$を任意の自然数とする．$M=(m,m+1,m+2,\cdots,m+n,\cdots)$は，$(\N,<)$と順序同型であることを示せ．
+
+\証明
+$M \rightarrow \N;m+n-1 \mapsto n$は順序同型写像である．
+実際，$g:\N	\rightarrow	M	\,;\,n	\mapsto	m+n-1$とおくと，$f	\circ	g=1_\N$，$g	\circ	f=1_M$より，
+$f$は全単射
+
+$m+n'$，$m+n''	\in M$に対し，$m+n'	< m+n''	\Longrightarrow	n'	<	n''	\quad	(n',n''	\in \N)$
+\■
+
+\定理{１}
+順序同型という関係について，次が成り立つ．
+\begin{list}{}{}
+		\item	(ⅰ)　$(X,\prec) \simeq (X,\prec)$
+		\item	(ⅱ)　$(X,\prec) \simeq (Y,\prec')	\Rightarrow (Y,\prec') \simeq (X,\prec)$
+		\item	(ⅲ)　$(X,\prec) \simeq (Y,\prec')$，$(Y,\prec') \simeq (Z,\prec'') \Rightarrow (X,\prec) \simeq (Z,\prec'')$
+\end{list}
+
+\証明
+(ⅰ)　恒等写像$1_X:X \rightarrow X;x \mapsto x$は，全単射．
+
+$\forall	x	,\,	\forall y	\in X$に対して，$x	\prec	y	\Longrightarrow	f(x)=x	\prec	y=f(y)$．
+よって$(X,\prec)	\simeq	(X,\prec)$．
+
+(ⅱ)　仮定によって，順序同型写像$f:X \rightarrow Y$が存在する．$f$は全単射であるから，逆写像$f^{-1}$が存在し，
+$x,y \in Y$に対し
+\[
+x \prec' y \Rightarrow f^{-1}(x) \prec' f^{-1}(y)
+\]
+が成立する．実際，もし$f^{-1}(x) \prec' f^{-1}(y)$が成立しないと仮定すれば，前項定義１(２)により，
+$f^{-1}(x) = f^{-1}(y)$かまたは $f^{-1}(y) \prec f^{-1}(x)$である．
+$f^{-1}(x)=f^{-1}(y) \Rightarrow f(f^{-1}(x))=f(f^{-1}(y))$，すなわち$x=y$で矛盾．また，$f$は順序を保つから，
+$f^{-1}(y) \prec f^{-1}(x) \Rightarrow f(f^{-1}(y)) \prec' f(f^{-1}(x))$，すなわち$y \prec' x$となり矛盾である．
+ゆえに，$f^{-1}$は順序同型写像で，したがって$(Y,\prec') \simeq (X,\prec)$．
+
+(ⅲ)　$f:X \rightarrow Y$，$g:Y \rightarrow Z$をともに順序同型写像とすれば，$g \circ f:X \rightarrow Z$も順序同型写像である．
+なぜならば，$g	\circ	f:X	\rightarrow	Z$は全単射であり，$x	\,	,\,y	\in X$について，
+$x	\prec	y	\Longrightarrow	f(x)	\prec'	f(y)	\Longrightarrow	g(f(x))	\prec''	g(f(y))$
+\■
+
+\問{３}
+$(X,\prec)$を順序集合，$Y$を$X$と同じ濃度をもつ任意の集合とする．このとき，$Y$に適当な順序$\prec'$を定めて，
+$(Y,\prec')$が$(X,\prec)$と順序同型であるようにすることができる．これを証明せよ．
+
+\証明
+仮定より，全単射$f:X \rightarrow Y$が存在する．$x,\,y \in Y$に対し$x \prec' y$を$f^{-1}(x) \prec f^{-1}(y)$によって定義すれば，$(Y,\prec')$は順序集合，$f$は順序同型となる．
+\■
+
+次の例７，例８のように，順序集合としては等しくなくても，順序同型となることはあり得る．
+
+　
+
+\例{７}
+例１と例２の２つの順序集合$(\R,<)$，$(\R,<^{-1})$は順序同型である．実際，写像
+\[
+	f:\R \rightarrow \R; x \mapsto -x
+\]
+を考えれば，$f$は全単射で，しかも$x < y \Longleftrightarrow f(y)<f(x)$が成り立つから，これは
+$(\R,<)$から$(\R,<^{-1})$への順序同型写像である．
+
+\vspace{3mm}
+\例{８}
+$n$個の異なる元$a_1,a_2,\cdots,a_n$から成る有限集合$A$には，$n!$通りの異なる順序が定義されるが，これらの順序に
+よって得られる順序集合は，すべて順序同型である．実際，順序を定めることは，$A$に属する$n$個の元の並べ方を
+定めることであり，並べ方の総数は，$n$文字の順列の数$_n{\text P}_n=n!$にほかならない．次に，$(A,\prec)=(a_1,a_2.
+,\cdots,a_n)$，$(A,\prec')=(b_1,b_2,\cdots,b_n)$を,集合$A$任意に順序を定めて得られる２つの順序集合とするとき，
+\[
+	f(a_i)=b_i  \,\, (i=1,2,\cdots,n)
+\]
+と定義すれば，明らかに，$f$は$(A,\prec)$から$(A,\prec')$への順序同型写像である．
+
+\vspace{3mm}
+例８のようなことは，無限集合に対しては成立しない．つまり，下の例９で見られるように，同じ濃度の集合であっても，
+決して順序同型にならないような順序が存在する．
+
+\vspace{3mm}
+\例{９}
+$(\Z,<)$，$(\N,<)$は，順序同型ではない．このことを証明するには，どんな全単射$g:\N \rightarrow \Z$も，順序を
+保たないことを示せばよい．$g$が順序を保つものと仮定すれば，
+\[
+1<2<3<\cdots<n<\cdots
+\]
+より，
+\[
+g(1)<g(2)<g(3)<\cdots<g(n)<\cdots
+\]
+が導かれる．したがって，すべての$n \in \N$に対し$g(1) \leqq g(n)$が成り立つ．$<$が$\Z$における通常の
+大小関係であることに注意すれば，$\Z$には，$z < g(1)$を満たす元$z \in \Z$が存在する．ところが，$g(m)=z$となる
+$m \in \N$は存在しないから，$g$は全射ではない．これは矛盾である．よって，$g$は順序を保たない．

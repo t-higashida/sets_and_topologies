@@ -1,0 +1,232 @@
+\section{積空間}
+2つの位相空間$X$，$Y$が与えられたとき，集合としての直積に，どのような
+位相が入れるのが自然であろうか．本節では，
+$X$の開集合と$Y$の開集合の直積の全体が$X \times Y$の
+開基となるような位相（すなわち積位相）について説明し，
+連続性との関連にも触れる．
+
+\subsection{積位相}
+２つの位相空間$X$，$Y$の位相をそれぞれ$\mathscr{T}(X)$，$\mathscr{T}(Y)$
+とするとき，
+\[
+	\mathscr{B}(X \times Y) = \{ G \times H \,|\, G \in \mathscr{T}(X),\, H \in	\mathscr{T}(Y)\}
+\]
+は定理３の［B$_1$］，［B$_2$］を満たす．
+実際，全体集合$X	\times	Y$の任意の点$(x,y)$に対して，
+$(x,y)	\in	X \times Y$となり，$X	\times	Y$は$	X	\times	Y	\in \mathscr{B}(X \times Y)$であるから，
+［B$_1$］を満たす．次に，$G \times H$，$G' \times H' \in \mathscr{B}(X \times Y)$
+に対し
+\[
+	(G \times H) \cap (G' \times H') = 	(G \cap G') \times (H \cap H')
+\]
+が成立する（第１章の問題３）から，この集合が空でないとき，この集合に属する点$(x,y)$をとれば，
+$x \in G \cap G'$，$y \in H \cap H'$であるから，
+\[
+	x \in U \subseteq G \cap G',\quad y \in V \subseteq H \cap H'
+\] 
+となる
+$U \in \mathscr{B}(X) \subseteq \mathscr{T}(X)$，$V \in \mathscr{B}(Y) \subseteq \mathscr{T}(Y)$
+が存在する（ここで$B(X),B(Y)$は$X,Y$の開基）．このとき，$U \times V \in \mathscr{B}(X \times Y)$に対し
+\[
+	(x,y) \in U \times V \subseteq (G \times H) \cap (G' \times H')
+\]
+が成り立つから，［B$_2$］が示される．したがって，§6.1注意３により，
+$X \times Y$に$\mathscr{B}(X \times Y)$を開基とする位相が定義される．この位相を\textgt{積位相}
+といい，積位相を与えた直積$X \times Y$を\textgt{積空間}という．積位相が自然なものであることは，次の
+例からもわかる．
+
+\vspace{3mm}
+\例{１}
+$\R	\times	\R$には$\mathscr{B}(\R	\times	\R)$を開基とする積位相が定義できる．
+\[
+	\mathscr{B}(\R	\times	\R)	=	\{G	\times	H	\:|\:	G	\in	\mathscr{T}(\R),	H	\in	\mathscr{T}(\R)	\}
+\]
+$\mathscr{B}(\R	\times	\R)$は定理３の[B${_1}$]，[B${_2}$]を満たす．
+平面$\R^2$の上の通常の位相(§5.3例２)は直積$\R \times \R$の積位相と等しい．
+
+\証明
+§6.1の注意３に従って位相$\mathscr{T}(\R	\times	\R)$を定義すると，
+\begin{align*}
+	&G	\in	\mathscr{T}(\R	\times	\R)	\\
+	&	\stackrel{\text{def}}{\Longleftrightarrow}	\\
+	&\text{任意の	$x	\in	G$に対して$	x	\in	V	\subseteq	G$となる
+								$V	\in	\mathscr{B}(\R	\times	\R)$が存在する．}
+\end{align*}
+したがって，位相空間として$\R^2=\R \times \R$である．このことは，
+正数$\varepsilon$と点$z=(x,y) \in \R^2$に対し
+２つの開基$\mathscr{B}(\R^2)$と$\mathscr{B}(\R	\times	\R)$を定理４に順じて比較すると，
+
+（１）任意の$U((x,y);\varepsilon)	\in	\mathscr{B}(\R^2)$と
+任意の$(x,y)	\in	U((x,y);\varepsilon)$に対して，
+$\displaystyle	U\left(x;\frac{\varepsilon}{\sqrt{2}}\right)	\times	U\left(y;\frac{\varepsilon}{\sqrt{2}}\right)	\in	\mathscr{B}(\R	\times	\R)$は
+\begin{align*}
+	&U\left(x;\frac{\varepsilon}{\sqrt{2}}\right)	\times	U\left(y;\frac{\varepsilon}{\sqrt{2}}\right)
+		\subseteq
+		U((x,y);\varepsilon)	\\
+	&\because
+		\sqrt{\frac{\varepsilon^2}{\sqrt{2}^2}+\frac{\varepsilon^2}{\sqrt{2}^2}}
+		=\varepsilon
+\end{align*}
+を満たす．
+
+（２）任意の$U(x;\varepsilon)	\times	U(x;\varepsilon)	\in	\mathscr{B}(\R	\times	\R)$と
+任意の$(x,y)	\in	U(x;\varepsilon)	\times	U(x;\varepsilon)$に対して，
+$U((x,y);\varepsilon)	\in	\mathscr{B}(\R^2)$は，
+\[
+	U(z;\varepsilon) \subseteq U(x:\varepsilon) \times U(y:\varepsilon)
+\]
+を満たす．
+よって定理４から２つの位相$\mathscr{T}(\R	\times	\R)$と$\mathscr{T}(\R^2)$は同じ位相である．
+
+\vspace{3mm}
+\例{２}
+$F$，$K$を，それぞれ位相空間$X$，$Y$の閉集合とするとき，
+$F \times K$は積空間$X \times Y$の閉集合である．このことは，
+\begin{align*}
+	(x,y)	\in	X \times Y - F \times K
+	&\Longleftrightarrow	(x,y)	\in			X	\times	Y	
+												\text{　かつ　}
+												(x,y)	\notin	F	\times	K	\\
+	&\Longleftrightarrow	(x	\in	X	\text{　かつ　}	y	\in	Y)
+												\text{　かつ　}
+												(x	\notin	F	\text{　または　}	y	\notin	K)	\\
+	&\Longleftrightarrow	((x	\in	X	\text{　かつ　}	y	\in	Y)	\text{　かつ　}	x	\notin	F)	\\
+				&\quad\quad			\text{　または　}	\\
+				&\quad\quad\:\:	((x	\in	X	\text{　かつ　}	y	\in	Y)	\text{　かつ　}	y	\notin	K)	\\
+	&\Longleftrightarrow	((x	\in	X-F	\text{　かつ　}	y	\in	Y)	\text{　または　}
+												((x	\in	X	\text{　かつ　}	y	\in	Y-K)	\\
+	&\Longleftrightarrow	(x,y)	\in	(X-F)	\times	Y	\cup	X	\times	(Y	-	K)
+\end{align*}
+が成り立つことから，
+[B$_2$]より
+\begin{align*}
+		\exists	U	\times	V	\in	\mathscr{B}(X	\times	Y)	\\
+		&\text{ s.t }	\\
+		&(x,y)	\in	U	\times	V	\subseteq	(X-F)	\times	Y	\cap	X	\times	(Y-K)	\\
+\end{align*}
+よって開基から得られる開集合の定義より，$X	\times	Y	-	F	\times K$は$X	\times	Y$の開集合である．
+よって$F	\times	F$は$X	\times	Y$の閉集合である．
+
+\vspace{3mm}
+\問{９}
+$X$，$Y$の開基をそれぞれ，$\mathscr{B}(X)$，$\mathscr{B}(Y)$とするとき，
+$
+	\{U \times V \,|\, U \in \mathscr{B}(X), V \in \mathscr{B}(Y) \}
+$
+は積空間$ X \times Y$の開基であることを示せ．
+
+\証明
+$A$を$X \times Y$の任意の開集合，$(x,y) \in A$を任意の点とする．
+このとき，$G	\times	H	\in	\mathscr{B}(X	\times)$が存在して，
+$(x,y)	\in	G	\times	H	\subseteq	A$．
+$(x,y) \in G \times H \subseteq A$
+なる$G \in \mathscr{T}(X)$，$H \in \mathscr{T}(Y)$が存在する．よって$U \in \mathscr{B}(X)$，
+$V \in \mathscr{B}(Y)$が存在して，$(x,y) \in U \times V \subseteq G \times H \subseteq	A$．
+よって$\mathscr{B}(X)	\times	\mathscr{B}(Y)$は積空間$X	\times	Y$の開基である．
+\■
+
+\定義{}
+有限個の位相空間$X_1,X_2,\cdots,X_n$の直積$X_1 \times X_2 \times \cdots \times X_n$に対する
+積位相は，$X_i$の位相を$\mathscr{T}(X_i)\,(i=1,2,\cdots,n)$とするとき，
+\[
+	\{G_1 \times G_2 \times \cdots \times G_n \,|\, G_i \in \mathscr{T}(X_i), i=1,2,\cdots,n \}
+\]
+を開基としてもつものである．実際，
+$X_1	\times	X_2	\times	\cdots	\times	X_n	
+	\in	\mathscr{B}(X_1	\times	X_2	\times	\cdots	\times	X_n)$
+であるから，[B$_1$]を満たすことは明らか．次に
+$G_1	\times	G_2	\times	\cdots	\times	G_n$，
+$G'_1	\times	G'_2\times	\cdots	\times	G'_n	\in	
+	\mathscr{B}(X_1	\times	X_2	\times	\cdots	\times	X_n)$
+に対し，
+\[
+	(G_1	\times	G_2	\times	\cdots	\times	G_n)
+	\cap
+	(G'_1	\times	G'_2\times	\cdots	\times	G'_n)
+	=
+	(G_1	\cap	G'_1)	\times	
+	(G_2	\cap	G'_2)	\times	
+	\cdots						\times
+	(G_n	\cap	G'_n)
+\]
+が成立するから，この集合が空でないとき，この集合に属する点
+$(x_1,x_2,\cdots,x_n)$をとれば，$x_i	\in	G_i	\cap	G'_i$
+であるから，
+$x_i	\in	U_i	\subseteq	G_i	\cap	G_i'$となる
+$U_i	\in	\mathscr{B}(X_i)	\subseteq \mathscr{T}(X_i)$
+が存在する．
+このとき$U_1	\times	U_2	\times	\cdots	\times	U_n	\in
+\mathscr{B}(X_1	\times	X_2	\times	\cdots	\times	X_n)$
+に対し
+\[
+	(x_1,x_2,\cdots,x_n)	\in	U_1	\times	U_2	\times	\cdots	\times	U_n
+												\subseteq	(G_1	\times	G_1')	\cap
+																	(G_2	\times	G_2')	\cap
+																	\cdots
+																	(G_n	\times	G_n')
+\]
+が成り立つから，[B$_2$]が示される．したがって，§6.1注意３により
+$X_1	\times	X_2	\times	\cdots	\times	X_n$に
+$\mathscr{B}(X_1	\times	X_2	\times	\cdots	\times	X_n)$を開基とする位相が定義される．
+
+\vspace{3mm}
+\例{３}
+$n$次元ユークリッド空間$\R^n$の位相（§5.3例２）は$\R$の$n$個の直積
+$\R \times \R \times \cdots \times \R$の積位相と等しい．
+したがって，位相空間として$\R^n = \R \times \R \times \cdots \times \R$（$n$個）である．
+
+$\R	\times	\R	\times	\cdots	\times	\R$には
+$\mathscr{B}(\R	\times	\R	\times	\cdots	\times	\R)$を開基とする積位相が定義できる．
+\[
+	\mathscr{B}(\R	\times	\R	\times	\cdots	\times	\R)	
+	=	\{G_1	\times	G_2	\times	\cdots	\times	G_n	
+	\:|\:	G_i	\in	\mathscr{T}(\R)	\}
+\]
+$\mathscr{B}(\R	\times	\R	\times	\cdots	\times	\R)$は定理３の[B${_1}$]，[B${_2}$]を満たす．
+
+ユークリッド空間$\R^n$の上の通常の位相(§5.3例２)は直積$\R \times \cdots	\times	\R$の積位相と等しい．
+したがって，§6.1の注意３に従って位相$\mathscr{T}(\R	\times	\cdots	\times	\R)$を定義すると，
+\begin{align*}
+	&G	\in	\mathscr{T}(\R	\times	\cdots	\times	\R)	\\
+	&	\stackrel{\text{def}}{\Longleftrightarrow}	\\
+	&\text{任意の	$x	\in	G$に対して$	x	\in	V	\subseteq	G$となる
+								$V	\in	\mathscr{B}(\R	\times	\cdots	\times	\R)$が存在する．}
+\end{align*}
+したがって，位相空間として$\R^2=\R \times \R$である．このことは，
+正数$\varepsilon$と点$z=(x_1,\cdots,x_n) \in \R^n$に対し
+２つの開基$\mathscr{B}(\R^n)$と$\mathscr{B}(\R	\times	\cdots	\times	\R)$を定理４に順じて比較すると，
+
+（１）任意の$U(z;\varepsilon)	\in	\mathscr{B}(\R^n)$と
+任意の$z'=(x'_1,\cdots,x'_n)	\in	U(z;\varepsilon)$に対して，
+\[
+	U\left(x_1;\frac{\varepsilon}{\sqrt{2}}\right)	
+			\times	\cdots	\times	
+	U\left(x_n;\frac{\varepsilon}{\sqrt{2}}\right)	
+	\in	\mathscr{B}(\R	\times	\cdots	\times	\R)
+\]
+は
+\begin{align*}
+	&	U\left(x_1;\frac{\varepsilon}{\sqrt{n}}\right)	
+			\times	\cdots	\times
+		U\left(x_n;\frac{\varepsilon}{\sqrt{n}}\right)
+		\subseteq
+		U((x_1,\cdots,x_n);\varepsilon)	\\
+	&\because
+		\sqrt{\frac{\varepsilon^2}{\sqrt{n}^2}
+			+	\cdots	+
+					\frac{\varepsilon^2}{\sqrt{n}^2}}
+		=\varepsilon
+\end{align*}
+を満たす．
+
+（２）任意の
+$U(x_1;\varepsilon)	\times	\cdots	\times	U(x_n;\varepsilon)	
+		\in	\mathscr{B}(\R	\times	\cdots	\times	\R)$と
+任意の$z'=(x'_1,\cdots,x'_n)	\in	U(x_1;\varepsilon)	\times	\cdots	\times	U(x_n;\varepsilon)$に対して，
+$U((x_1,\cdots,x_n);\varepsilon)	\in	\mathscr{B}(\R^n)$は，
+\[
+	U(z;\varepsilon) \subseteq U(x_1;\varepsilon) \times \cdots	\times	U(x_n;\varepsilon)
+\]
+を満たす．
+よって定理４から２つの位相$\mathscr{T}(\R	\times	\dots	\times	\R)$と$\mathscr{T}(\R^n)$は同じ位相である．
+\■

@@ -1,0 +1,61 @@
+\subsection{連結成分}
+$X$を位相空間とし，$x \in X$とする．$x$を含む連結な部分集合全体を和集合を
+$X$における$x$の\textgt{連結成分}（または単に\textgt{成分}）といい，
+$C(x)$と書く．$C(x)$が連結であること，
+したがって$C(x)$は$x$を含む最大の連結な部分集合であることは，
+したの定理から直ちにわかる．
+
+\定理{６}
+$\{Y_\lambda\,|\, \lambda \in \Lambda \}$（$\Lambda$は添え字の集合）を
+$X$の連結部分空間から成る1つの族とし，$\bigcap_{\lambda \in \Lambda} Y_\lambda \ne \varnothing$
+とする．このとき，$\bigcap_{\lambda \in \Lambda} Y_\lambda \ne \varnothing$とする．
+このとき，$\bigcup_{\lambda \in \Lambda} Y_\lambda = Y$は連結である．
+
+\証明
+$f:Y \rightarrow \{0,1\}$を連続写像とする．$Y_\lambda$は連結であるから，定理１により$f|Y_\lambda$は
+定値となり，$\bigcap_{\lambda_\Lambda} Y_\lambda \ne \varnothing$であることから，$f$は定値である．
+よって，定理１により$Y$は連結である．
+\■
+
+定理４の系より$\overline{C(x)}$も連結であるから，$C(x)=\overline{C(x)}$．したがって，
+$C(x)$は$X$の閉集合であることがわかる．
+
+\vspace{3mm}
+\例{８}
+例１の$X=\R-\{0\}$において，点$x > 0$の連結成分は$A=]0,\infty[$，点$x<0$の連結成分は$B=]-\infty,0[$
+である．
+
+\vspace{3mm}
+{\small
+\注意{２}
+連結成分は開集合とは限らない．
+たとえば，$\R$の部分空間$\displaystyle X=\{0\} \cup \biggl\{\frac{1}{n} \,\biggl|\, n \in \N \biggr\}$において，
+$0$の連結成分は$\{0\}$であり，これは$X$において閉であるが，開ではない．
+}
+
+\vspace{3mm}
+\問{３}
+上のことを確かめよ．
+
+\証明
+$C$を$\{0\} \subset C \subseteq X$であるような連結集合とする．
+$\displaystyle C \ni \frac{1}{n}$なる$n \in \N$が存在するから，
+$\displaystyle A = \biggl\{ x \,\biggl\|\, x \leqq \frac{1}{n+1} \biggr\} \cap C$，
+$B= \biggl\{x \,\biggl|\, x \geqq \frac{1}{n} \biggr\} \cap C$とおくと，
+$A$，$B$はどちらも空でない$C$の閉集合で，$A \cap B=C$，$A \cap B\ne \varnothing$を満たす．
+よって，$C$は連結でない．これは矛盾だから，$C=\{0\}$．次に，$\{0\}$は$\R$で閉だから，
+$\{0\}= \{0\} \cap X$は$X$で閉．$X-\{0\}$は$X$で閉ではないから，$\{0\}$は$X$で開ではない．
+\■
+
+\vspace{3mm}
+\問{４}
+$\R$の部分空間$\Q$の任意の点$a$の連結成分は，$\{a\}$であることを証明せよ
+（各点の連結成分がただ1点からなるような位相空間は，\textgt{完全不連結}であるといわれる．
+$\Q$は完全不連結である）．
+
+\証明
+$C$を$\{a\} \subset C \subseteq \Q$であるような連結集合とする．$C$の元$b$で$a$と異なるものがあるから，
+$a < c < b$または$a > c > b$となる$c \in \R-\Q$が存在する．$A=\{x \,|\,x < c\} \cap C$，
+$B=\{x \,|\,x > c\} \cap C$，とおくと$A$，$B$はどちらも空でない$C$の開集合で，
+$A \cup B =C$，$A \cap B =\varnothing$を満たすから，$C$は連結でない．これは矛盾だから，$C=\{a\}$．
+\■
